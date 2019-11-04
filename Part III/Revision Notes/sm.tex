@@ -1,0 +1,1467 @@
+\label{sm}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Standard Model}
+\vspace{-30pt}
+\centering\normalsize\textit{Lent Term 2018 - Dr C. Thomas}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Introduction}
+The Standard Model\index{standard model} (SM) describes physics of three of the fundamental forces: Electromagnetism (EM)\index{electromagnetism}, Weak force\index{weak force}, Strong force\index{strong force}. The forces are mediated by gauge bosons\index{boson!gauge};
+\begin{itemize}
+\item EM: mediated by the photon, $\gamma$ (QED)\index{photon}
+\item Weak force: mediated by $W^{\pm}$ and $Z$ bosons\index{boson!W}\index{boson!Z}
+\item Strong force: mediated by \emph{gluons}, $g$ (QCD) \index{gluon}
+\end{itemize}
+These are manifestations of a local gauge symmetry which have spin $1$. There is also the matter content of the model, which are spin-$\tfrac{1}{2}$ fermions\index{fermion};
+\begin{itemize}
+\item Neutrinos: $\nu_e, \nu_\mu, \nu_\tau$\index{neutrinos}
+\item Charged Leptons\index{lepton}: $e^{\pm}, \mu^{\pm}, \tau^{\pm}$
+\item Quarks\index{quark}:
+\begin{equation*}
+\colvec{2}{u}{d}, \colvec{2}{c}{s}, \colvec{2}{t}{b} \begin{cases}Q = +\tfrac{2}{3} \\ Q = -\tfrac{1}{3} \end{cases}
+\end{equation*}
+\end{itemize}
+Finally we have the Higgs boson\index{boson!Higgs} (spin $0$) which gives the $W^{\pm}, Z$ bosons mass. In some sense the course is about unpacking the fact that the SM gauge group is;
+\begin{equation*}
+\SU{3}_C \times \SU{2}_L \times \Uni{1}_\gamma
+\end{equation*}
+The subscripts refer to the colour in QCD; the fact that the $\SU{2}$ symmetry is chiral\index{chiral}, only acting on left handed components; and that $\gamma$ refers to the hypercharge\index{hypercharge}, respectively. The Electroweak\index{electroweak} symmetry group $\SU{2}_L \times \Uni{1}_\gamma$ gets spontaneously broken to $\Uni{1}_{\text{EM}}$. 
+\newpage
+\section{Chiral and Gauge Symmetries}
+\subsection{Chiral Symmetries}
+A spin-$\tfrac{1}{2}$ fermion, $\psi$; a \emph{spinor} field\index{spinor}, satisfies the Dirac equation\index{equation!Dirac};
+\begin{equation}
+i\left(\slashed{\del}- m\right)\psi = 0
+\end{equation}
+Then the Dirac adjoint\index{Dirac adjoint}, $\bar{\psi} = \psi\dagg \gamma_0$ satisfies;
+\begin{equation}
+\bar{\psi}\left(-i \slashed{\del}- m \right) = 0
+\end{equation}
+where the operator acts to the left here since we cannot move the gamma matrices past the adjoint field. Furthermore we use the following definitions\footnote{Note that $\gamma^5$ is different to that in Tong's QFT notes.};
+\begin{equation}
+\set{\gamma^\mu, \gamma^\nu} = 2g^{\mu \nu} \mathbb{I}_4, \qquad \gamma^5 = + i \gamma^0 \gamma^1 \gamma^2 \gamma^3
+\end{equation}
+where $\gamma^5$ satisfies $\left(\gamma^5\right)^2 = \mathbb{I}_4, \set{\gamma^5, \gamma^\mu} = 0$. In the chiral/Weyl basis\index{basis!chiral}\index{basis!Weyl};
+\begin{equation}
+\gamma^0 = \twobytwo{0}{\mathbb{I}_2}{\mathbb{I}_2}{0}, \quad \gamma^i = \twobytwo{0}{\sigma^i}{-\sigma^i}{0}, \quad \gamma^5 = \twobytwo{-\mathbb{I}_2}{0}{0}{\mathbb{I}_2}
+\end{equation}
+Importantly, in the massless limit of the Dirac equation;
+\begin{equation}
+\slashed{\del}\psi = 0 \quad \overset{\tiny{\text{anticommute }\gamma^5}}{\Longrightarrow} \quad \slashed{\del}\left(\gamma^5 \psi\right) = 0
+\end{equation}
+Defining the projection operators\index{operator!projection} $P_{R, L} = \tfrac{1}{2}\left(1 \pm \gamma^5\right)$ and the spinors, $\psi_{R, L} \coloneqq P_{R, L}\psi$, which have definite chirality\index{chirality}\footnotemark; $\gamma^5 \psi_{R, L} = \pm \psi_{R, L}$. In the chiral basis, $\psi_{R, L}$ only contains lower or upper two-component spinor degrees of freedom since $P_{R, L}$ are block diagonal with zero in the lower/upper entry. Furthermore, $\psi_{R, L}$ will annihilate right-handed or left-handed spinors respectively. Also we should be precise regarding;
+\footnotetext{
+This follows by considering $\gamma^5 P_{R, L} = \pm P_{R, L}$.
+}
+\begin{equation}
+\bar{\psi}_{R, L} = \left(P_{R, L}\psi\right)\dagg \gamma^0 = \psi\dagg \tfrac{1}{2}\left(1 \pm \gamma^5\right)\gamma^0 = \bar{\psi}P_{L, R}
+\end{equation}
+A massless Dirac fermion has a global $\Uni{1}_L \times \Uni{1}_R$ chiral symmetry\footnote{The transformation in \eqref{eq:chiraltrans} follows from $\left(P_{L, R}\psi\right)\dagg \rightarrow e^{-i\alpha_{L, R}}\psi\dagg P_{L, R}$};
+\begin{equation}
+\psi_{L, R}(x) \rightarrow e^{i\alpha_{L, R}}\psi_{L, R}(x)
+\end{equation}
+\begin{equation}
+\label{eq:chiraltrans}
+\bar{\psi}_{L, R}(x) \rightarrow e^{-i\alpha_{L, R}}\bar{\psi}_{L, R}(x)
+\end{equation}
+The requirement that the fermion be massless follows from the Dirac Lagrangian;
+\begin{align*}
+\mL &= \bar{\psi}\left(i \slashed{\del} - m\right) \psi \\
+&= \bar{\psi}_L i \slashed{\del} \psi_L + \bar{\psi}_R i \slashed{\del} \psi_R - m \left(\bar{\psi}_R \psi_L + \bar{\psi}_L \psi_R \right)
+\end{align*}
+The mass term \emph{breaks} the chiral symmetry\index{symmetry!chiral}\index{symmetry!broken} to a vector symmetry\index{symmetry!vector} where $\alpha_L = \alpha_R = \alpha$; $\psi(x) = e^{i\alpha}\psi(x)$. So $\Uni{1}_L \times \Uni{1}_R \rightarrow \Uni{1}_V$. Finally, an axial symmetry\index{symmetry!axial} has $\alpha_L = - \alpha_R$. 
+
+\paraskip
+Now we consider expanding the Dirac field, $\psi(x)$ using the notation $\sum_p = \int{\ud^3 p/(2\pi)^3}$;
+\begin{equation}
+\psi(x) = \sum_{p, s}{\set{b_s(p)u_s(p)e^{-ip\cdot x} + d_s\dagg(p)v_s(p)e^{ip\cdot x}}}
+\end{equation}
+where $b\dagg$ and $d\dagg$ create positive and negative frequency particles respectively. We take the relativistic normalisation of states to be $\braket{p}{q} = (2\pi)^3 (2E_p)\delta^{(3)}(\vec p - \vec q)$. Then the completeness relation\index{completeness} is;
+\begin{equation}
+\mathbb{I} = \sum_{p}{\ket{p}\bra{p}}, \qquad \ket{p} = b\dagg(p)\ket{0}
+\end{equation}
+Also in the chiral basis;
+\begin{equation}
+u_s(p) = \colvec{2}{\sqrt{p\cdot \sigma}\xi^s}{\sqrt{p\cdot \bar{\sigma}}\xi^s}, \qquad v_s(p) = \colvec{2}{\sqrt{p\cdot \sigma}\eta^s}{-\sqrt{p\cdot \bar{\sigma}}\eta^s}
+\end{equation}
+The \emph{helicity}\index{helicity} is defined as the projection of the ang. mom. onto the linear momentum variable, $h = \vec{J} \cdot \vec{\hat{p}} = \vec{S} \cdot \vec{\hat{p}}$. For more details see the Quantum Field Theory course, but 
+\begin{equation}
+S_i = \tfrac{i}{4}\epsilon_{ijk}\gamma^j \gamma^k \overset{\text{\tiny{chiral basis}}}{=} \frac{1}{2}\twobytwo{\sigma^i}{0}{0}{\sigma^i}
+\end{equation}
+and we may show that a massless spinor satisfies $hu = \tfrac{1}{2}\gamma^5 u$ so that $h u_{R, L} = \pm \tfrac{1}{2}u_{R, L}$. To summarise this subsection;
+\begin{itemize}
+\item Chiral states are only eigenstates of the Dirac equation when $m = 0$
+\item Helicity is defined for both $m = 0$ and $m \neq 0$ but it is not a Lorentz invariant in the massive case\footnote{This follows by considering boosting to.a frame where the particle is travelling in the opposite direction. Then $\vec{\hat{p}}\cdot \vec S$ changes sign. This is possible in the massive case so it is not LI then, but not possible in the massless case. In the latter scenario there is a $1$-$1$ correspondence between chirality and helicity.}
+\end{itemize}
+\subsection{Gauge Symmetries\index{symmetry!gauge}}
+Now we promote $\alpha$ to be a function of $x$, $\alpha(x)$ (we gauge the $\Uni{1}$ symmetry). Then the kinetic term no longer invariant;
+\begin{equation}
+\bar{\psi}i\slashed{\del}\psi \mapsto \bar{\psi}i\slashed{\del} \psi - (\bar{\psi}\gamma^\mu \psi)\del_\mu \alpha(x)
+\end{equation}
+Introducing a \emph{gauge covariant derivative}\index{covariant derivative!gauge}, $D_\mu$, and a \emph{gauge field}\index{field!gauge}\index{gauge field}, $A_\mu$;
+\begin{equation}
+D_\mu \psi \mapsto \exp\left(i\alpha(x)\right)D_\mu \psi, \qquad D_\mu \psi = \left(\del_\mu + igA_\mu\right)\psi
+\end{equation}
+where the gauge field transforms as;
+\begin{equation}
+A_\mu (x) \mapsto A_\mu - \tfrac{1}{g}\del_\mu \alpha
+\end{equation}
+Then the modified kinetic term $\bar{\psi}i\slashed{D}\psi$ is gauge invariant. In the Lagrangian we must then include the kinetic term for the $A_\mu$ given by $-\tfrac{1}{4}F_{\mu \nu}F^{\mu \nu}$, where;
+\begin{equation}
+F_{\mu \nu} = \del_\mu A_\nu - \del_\nu A_\mu = -i \left[D_\mu, D_\nu\right]
+\end{equation}
+We can match this up with a discussion of QED\index{QED}, where there is a vector $\Uni{1}$ gauge symmetry $\alpha_L(x) = \alpha_R(x)$.
+\subsection{Types of Symmetry}
+We can classify the types of symmetry we may encounter as follows;\footnote{See \emph{Donoghue, Golowich, Holsten}}
+\begin{itemize}
+\item The symmetry is \emph{intact}\index{symmetry!intact}; examples include $\Uni{1}_{\text{EM}}$ and $\SU{3}_C$ gauge symmetries.
+\item Symmetries of $\mL$ are broken by an anomaly\index{anomaly}; the symmetry holds classically, but broken by quantum effects. Example is the global axial $\Uni{1}$ symmetry in the standard model.
+\item Symmetry holds for some terms in $\mL$ but not others; the symmetry is broken \emph{explicitly}\index{symmetry breaking!explicit}. There may be an \emph{approximate symmetry}\index{symmetry!approximate} if the symmetry breaking terms are small e.g. isospin symmetry between $u$ and $d$ quarks.
+\item A \emph{hidden symmetry}\index{symmetry!hidden} is respected by $\mL$ but not by the vacuum. If the \emph{vacuum expectation value} (VEV)\index{vacuum expectation value, VEV} is non zero for one or more scalar fields, e.g. in the Higg's mechanism\index{Higg's mechanism}, then the symmetry is \emph{spontaneously broken}\index{symmetry breaking!spontaneous}. We can get \emph{dynamical breaking}\index{symmetry breaking!dynamical} even in the absence of scalar fields.
+\end{itemize}
+\newpage
+\section{Discrete Symmetries}
+We will consider the following discrete symmetries\index{symmetry!discrete}
+\begin{enumerate}
+\item Parity\index{symmetry!discrete!parity}\index{parity}, $P : (t, \vec x) \mapsto (t, -\vec x)$
+\item Time Reversal\index{symmetry!discrete!time reversal}\index{time reversal}, $T : (t, \vec x) \mapsto (-t, \vec x)$
+\item Charge Conjugation\index{symmetry!discrete!charge conjugation}\index{charge conjugation}, $C : \text{particles} \leftrightarrow \text{antiparticles}$
+\end{enumerate}
+Gauge theories with vector couplings to the gauge fields are invariant under $P, C, T$ independently. The weak interaction, a chiral symmetry\index{symmetry!chiral} does not respect $P, C$ or $CP$ however. The $PCT$ theorem\index{PCT theorem} then implies it must also break $T$ so it is not time reversal invariant.
+\subsection{Symmetry Operators}
+\begin{thm}
+Wigner\index{Wigner} showed\footnote{For a more precise statement of the theorem, see for example \href{https://en.wikipedia.org/wiki/Wigner\%27s_theorem\#Symmetry_transformations}{Wigner's Theorem}} that if physics is invariant under a transformation $\psi \mapsto \psi\pr$ where $\psi, \psi\pr$ are in some Hilbert space\index{Hilbert space}, then there is an operator $W$ such that $\psi\pr = W\psi$, where either;
+\begin{enumerate}
+\item $W$ is unitary\index{operator!unitary} and linear;
+\begin{equation}
+(W\phi, W\psi) = (\phi, \psi), \quad W(\alpha \phi + \beta \psi) = \alpha W\phi + \beta W\psi
+\end{equation}
+\item $W$ is anti-unitary\index{operator!anti-unitary} and antilinear;
+\begin{equation}
+(W\phi, W\psi) = (\phi, \psi)^{\star}, \quad W(\alpha \phi + \beta \psi) = \alpha^{\star}W\phi + \beta^{\star} W\psi
+\end{equation}
+\end{enumerate}
+\end{thm}
+We consider the case of a general Poincaré transformation, $x^{\mu} \rightarrow \tilde{x}^\mu = \Lambda\indices{^{\mu}_{\nu}}x^\nu + a^{\mu}$ which we refer to as $W(\Lambda, a)$. Then $W(\Lambda, a)$ satisfies;
+\begin{equation}
+\label{eq:Wcomp}
+W(\Lambda_2, a_2)W(\Lambda_1, a_1) = W(\Lambda_2 \Lambda_1, \Lambda_2 a_1 + a_2)
+\end{equation}
+We will consider the special cases of $\hat{P} = W(\mathbb{P}, 0)$ and $\hat{T} = W(\mathbb{T}, 0)$, where;
+\begin{equation}
+\mathbb{P} = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1\end{pmatrix}, \quad \mathbb{T} = \begin{pmatrix}-1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}
+\end{equation}
+Infinitesimally, we can expand $\Lambda\indices{^{\mu}_{\nu}} = \delta\indices{^{\mu}_{\nu}} + \omega\indices{^{\mu}_{\nu}}, a^{\mu} = \epsilon^{\mu}$. Then we can expand the corresponding $W(\Lambda, a)$ as;\footnotemark
+\footnotetext{
+Suppose we have generators $P^{\mu}$ (spatiotemporal translations) and $J^{\mu\nu}$ (boosts/rotations) of the Poincaré Algebra\index{Poincaré!algebra}. We can relate this to the connected part of the Poincaré group via the exponential map;
+\begin{equation*}
+W = \exp i\left(\tfrac{1}{2}\omega_{\mu\nu}J^{\mu \nu} - \epsilon_\mu P^{\mu}\right) = 1 + \tfrac{i}{2}\omega_{\mu\nu}J^{\mu\nu} - i \epsilon_\mu P^{\mu} + \cdots
+\end{equation*}
+}
+\begin{equation}
+W(\Lambda, a) = W(1 + \omega, \epsilon) = 1 + \frac{i}{2}\omega_{\mu \nu}J^{\mu \nu} - i\epsilon_\mu P^\mu
+\end{equation} 
+where $J^{\mu\nu}$ are the generators of rotations and boosts, and $P^{\mu}$ are the $4$-momentum operators; $P^0 = \hamilt$ and $P^i$ is the linear momentum operator. We want to consider the action of $\hat{P}$ and $\hat{T}$ on this general operator. Under the composition rule defined in \eqref{eq:Wcomp}, we see that;
+\begin{align}
+\hat{P}W\hat{P}^{-1} &= W(\mathbb{P}\Lambda\mathbb{P}^{-1}, \mathbb{P}a) \\
+\hat{T}W\hat{T}^{-1} &= W(\mathbb{T}\Lambda\mathbb{T}^{-1}, \mathbb{T}a)
+\end{align}
+Expanding the right and left hand sides of these expressions we find;
+\begin{align}
+\hat{P}iP^{\mu}\hat{P}^{-1} &= i \mathbb{P}\indices{_{\nu}^{\mu}}P^{\nu} \\
+\hat{T}iP^{\mu}\hat{T}^{-1} &= i \mathbb{T}\indices{_{\nu}^{\mu}}P^{\nu}
+\end{align}
+So, for $\mu = 0$ we have;
+\begin{align}
+\hat{P}i\hamilt \hat{P}^{-1} &= +i\hamilt \label{eq:pH} \\
+\hat{T}i\hamilt \hat{T}^{-1} &= -i\hamilt
+\end{align}
+Suppose now that $\psi$ is an eigenstate of $\hamilt$ with energy $E$, i.e. $(\psi, \hamilt \psi) = E \Rightarrow (\psi, i\hamilt \psi) = iE$. Then if $\hat{P}, \hat{T}$ are symmetries, $\hat{P}\psi$ and $\hat{T}\psi$ should also be eigenstates with energy $E$. Suppose that $\hat{P}$ is linear, then by Wigner's theorem, if this is consistent we must have $\hat{P}$ begin unitary and linear;
+\begin{align*}
+(\hat{P}\psi, i\hamilt \hat{P}\psi) &= (\hat{P}\psi, \hat{P}i\hamilt \psi) \\
+&= (\hat{P}\psi, \hat{P}iE \psi) \\
+&= iE(\hat{P}\psi, \hat{P}\psi) = iE
+\end{align*}
+where in the first line we have used \eqref{eq:pH} and going from the second to the third, we have used the assumed linearity of $\hat{P}$. Suppose instead we perform the same calculation but instead with $\hat{T}$, we will reach a contradiction if we assume $\hat{T}$ is linear; $(\hat{T}\psi, i\hamilt \hat{T}\psi) = -iE$. Hence we instead deduce that $\hat{T}$ is anti-linear. So;
+\begin{definitionbox}
+\begin{enumerate}
+\item $\hat{P}$ is \emph{unitary} and \emph{linear}
+\item $\hat{T}$ is \emph{antiunitary} and \emph{antilinear}
+\end{enumerate}
+\end{definitionbox}
+With these observations noted, we can consider the other terms in the expansion of $W$. For example the angular momentum operators which generate rotations have;
+\begin{equation*}
+\hat{P}iJ^{\mu\nu}\hat{P}^{-1} = i\mathbb{P}\indices{^{\mu}_{\rho}}\mathbb{P}\indices{^{\nu}_{\sigma}}J^{\rho\sigma}, \quad \hat{T}iJ^{\mu\nu}\hat{T}^{-1} = i\mathbb{T}\indices{^{\mu}_{\rho}}\mathbb{T}\indices{^{\nu}_{\sigma}}J^{\rho\sigma}
+\end{equation*}
+Then, using the (anti)-linearity of $\hat{P}$ and $\hat{T}$, we find that $\vec J = (J^{23}, J^{31}, J^{12})$ satisfies;
+\begin{align}
+\hat{P}\vec J \hat{P}^{-1} &= \vec J \\
+\hat{T}\vec J\hat{T}^{-1} &= \vec T
+\end{align}
+\subsection{Parity}
+Under parity we have $x^{\mu} \mapsto x_{P}^{\mu} = (x^0, -\vec x)$ and $p^{\mu} \mapsto p_{P}^{\mu} = (p^0, -\vec p)$. 
+\subsubsection{The Scalar Field}
+We start by considering a complex scalar field\index{field!complex scalar};
+\begin{equation*}
+\phi(x) = \sum_{p}{\set{a(p)e^{-ip\cdot x} + c\dagg(p)e^{ip\cdot x}}}
+\end{equation*}
+The parity operator should map $\ket{p} = a(p)\ket{0}$ to some phase times $\ket{p_{P}}$, $\ket{p}\mapsto (\eta_a^{\star})\ket{p_{P}}$. So we have;
+\begin{equation*}
+\hat{P}a\dagg(p)\ket{0} = (\eta_a^{\star})a\dagg(p_{P})\ket{0} \Rightarrow \hat{P}a\dagg(p)\hat{P}\hat{P}^{-1}\ket{0} = (\eta_a^{\star}) a\dagg(p_{P})\ket{0}
+\end{equation*}
+We assume that the vacuum is invariant under a parity transformation, so that;
+\begin{equation}
+\hat{P}a\dagg(p)\hat{P}^{-1} = (\eta_a^{\star})a\dagg(p_{P})
+\end{equation}
+We should conserve the normalisations $\braket{p}{q}$ so $\hat{P}a(p)\hat{P}^{-1} = \eta_a a(p_{P})$. For the antiparticle operators, we have;
+\begin{equation*}
+\hat{P}c\dagg(p)\hat{P}^{-1} = (\eta_c^{\star})c\dagg(p_{P}), \quad \hat{P}c(p)\hat{P}^{-1} = (\eta_c)c(p_{P})
+\end{equation*} 
+Now we calculate $\hat{P}\phi(x)\hat{P}^{-1}$. In the following we will use the fact that since $\hat{P}$ is linear, $\hat{P}^{-1}\exp(-ip\cdot x) = \exp(-ip\cdot x)\hat{P}^{-1}$. Also since $\hat{P}$ is linear, we can take it through the integral ($\sum_{p}$), to see that;
+\begin{align*}
+\hat{P}\phi(x)\hat{P}^{-1} &= \sum_{p}{\set{\hat{P}a(p)\hat{P}^{-1}e^{-ip\cdot x} + \hat{P}c\dagg(p)\hat{P}^{-1}e^{ip\cdot x}}} \\
+&= \sum_{p}{\set{\eta_a a(p_{P})e^{-ip\cdot x} + \eta_c^{\star}c\dagg(p_{P}) e^{ip\cdot x}}}
+\end{align*}
+We are free to take $p_i \rightarrow -p_i$ in the integral, i.e. $p_P \rightarrow p$, then;
+\begin{equation*}
+\hat{P}\phi(x)\hat{P}^{-1} = \sum_{p_P}{\set{\eta_a a(p)e^{-ip_P\cdot x} + \eta_c^{\star}c\dagg(p) e^{ip_P\cdot x}}}
+\end{equation*}
+But $p_P \cdot x = p\cdot x_P$, and now we again can take $p_{P} \leftrightarrow p$;
+\begin{equation*}
+\Rightarrow \hat{P}\phi(x)\hat{P}^{-1} = \sum_{p}{\set{\eta_a a(p)e^{-ip\cdot x_P} + \eta_c^{\star}c\dagg(p) e^{ip\cdot x_P}}}
+\end{equation*}
+This is close to $\phi(x_P)$. To ensure it is in fact $\eta_a \phi(x_P)$ we would need $\eta_c^{\star} = \eta_a = \eta_{P}$. If this were not the case we would find;
+\begin{equation*}
+\left[\phi(y), \hat{P}\phi\dagg(x)\hat{P}^{-1}\right] = \sum_{p}{\abs{\eta_a}^2 e^{-ip\cdot (y - x_P)} - \abs{\eta_{c}}^2 e^{ip\cdot(y - x_{P})}}
+\end{equation*}
+For spacelike\index{spacelike} separations, we can find a Lorentz transformations that takes $(y - x_{P}) \mapsto (x_{P} - y)$ (see the discussion in the section on the Feynman propagator in QFT). So we have;
+\begin{equation}
+\hat{P}\phi(x)\hat{P}^{-1} = \eta_{P}\phi(x_{P})
+\end{equation}
+where $\eta_{P}$ is the \emph{intrinsic parity}\index{intrinsic parity} of the field. For a real field, $\eta_{P} = \pm 1$ with $\eta_{P} = +1$ corresponding to a scalar and $\eta_{P} = -1$ corresponding to a pseudoscalar\index{pseudoscalar}.
+\subsubsection{Vector Fields}\index{field!vector} 
+We can write a general vector field as;
+\begin{equation}
+V^{\mu}(x) = \sum_{p, \lambda = \pm1, 0}{\epsilon^{\mu}(\lambda, p)a^{\lambda}(p)e^{-ip\cdot x} + \epsilon^{\mu\star}(\lambda, p)c\dagg(p) e^{ip\cdot x}}
+\end{equation}
+Under parity, the polarisation vectors\index{polarisation vector} transform as;
+\begin{equation}
+\epsilon^{\mu}(\lambda, p_{P}) = -\mathbb{P}\indices{^{\mu}_{\nu}}\epsilon^{\nu}(\lambda, p)
+\end{equation}
+Then we can follow the steps as in the case of the scalar field to find;
+\begin{equation}
+\hat{P}V^{\mu}(x)\hat{P}^{-1} = -\eta_{P} \mathbb{P}\indices{^{\mu}_{\nu}}V^{\nu}(x_{P}), \quad \eta_{P} = \pm 1
+\end{equation}
+Thus, vectors have $\eta_{P} = - 1$, and \emph{axial vectors}\index{axial vector} have $\eta_{P} = +1$
+\subsubsection{Dirac Fields}
+The creation and annihilation operators transform just as in the bosonic case, with the spin components unchanged;
+\begin{equation}
+\hat{P}b^{s}(p)\hat{P}^{-1} = \eta_b b^{s}(p_P), \quad \hat{P}d^{s\dagger}(p)\hat{P}^{-1} = \eta_d^{\star}d^{s\dagger}(p_P)
+\end{equation}
+Following again the prescription set out above we find that the Dirac field transforms as;
+\begin{equation}
+\hat{P}\psi(x)\hat{P}^{-1} = \sum_{p, s}{\set{\eta_b b^{s}(p)u^{s}(p_P)e^{-ip\cdot x_{P}} + \eta_d^{\star}d^{s\dagger}(p)v^{s}(p_P)e^{ip\cdot x_P}}}
+\end{equation}
+Using the explicit expressions;
+\begin{equation}
+\gamma^{0} = \twobytwo{0}{\mathbb{I}_2}{\mathbb{I}_2}{0}, \quad u^{s}(p) = \colvec{2}{\sqrt{p\cdot \sigma}\xi^{s}}{\sqrt{p\cdot\bar{\sigma}}\xi^{s}}, \quad v^{s}(p) = \colvec{2}{\sqrt{p\cdot\sigma}\eta^{s}}{-\sqrt{p\cdot\bar{\sigma}}\eta^{s}}
+\end{equation}
+Then we see that taking $p \mapsto p_{P}$ induces the following relations;
+\begin{equation}
+u^{s}(p_P) = \gamma^0 u^{s}(p), \qquad v^{s}(p_P) = -\gamma^0 v^{s}(p)
+\end{equation}
+Then we have found that (note the minus sign);
+\begin{equation}
+\hat{P}\psi(x)\hat{P}^{-1} = \sum_{p,s}{\eta_b b^{s}(p)\gamma^{0}u^{s}(p)e^{-ip\cdot x_{P}} - \eta_d^{\star}d^{s\dagger}(p)\gamma^{0}v^{s}(p)e^{ip\cdot x_{P}}}
+\end{equation}
+Then to avoid violating the causality relations, we instead need $\eta_b = - \eta_d^{\star} = \eta_{P}$, so particles and antiparticles have opposite internal parity. So the final expressions are;
+\begin{equation}
+\hat{P}\psi(x)\hat{P}^{-1} = \eta_b \gamma^{0}\psi(x_P), \quad \hat{P}\bar{\psi}(x)\hat{P}^{-1} = \eta_b^{\star}\bar{\psi}(x_P)\gamma^{0}
+\end{equation}
+We make a few notes about this;
+\begin{itemize}
+\item Helicity\index{helicity} changes sign under parity since $\vec S \mapsto \vec S$, but $\vec p \mapsto -\vec p$
+\item Using the projection operators\index{projection operator}, $P_{R, L} = \tfrac{1}{2}(1 \pm \gamma^5)$ and $\set{\gamma^5, \gamma^\mu} = 0$, we see;
+\begin{align*}
+\hat{P}\psi_L(x)\hat{P}^{-1} &= \hat{P}\tfrac{1}{2}(1 - \gamma^5)\psi(x)\hat{P}^{-1} \\
+&= \tfrac{1}{2}(1- \gamma^5)\eta_b \gamma^0 \psi(x_P) \\
+&= \eta_b \gamma^0 \tfrac{1}{2}(1 + \gamma^5) \psi(x_P) = \eta_b \gamma^0 \psi_R(x_P)
+\end{align*}
+so an interaction that only couples to left handed fields won't conserve parity.
+\item We also note that under parity the following hold;
+\begin{align*}
+\bar{\psi}(x) \psi(x) &\mapsto \bar{\psi}(x_P) \psi(x_P) \\
+\bar{\psi}(x) \gamma^5 \psi(x) &\mapsto -\bar{\psi}(x_P)\gamma^5 \psi(x_P) 
+\end{align*}
+so $\bar{\psi}(x) \psi(x)$ is a scalar, and $\bar{\psi}(x) \gamma^5 \psi(x)$ is a pseudoscalar. Also;
+\begin{align*}
+\bar{\psi}(x) \gamma^0 \psi(x) &\mapsto \bar{\psi}(x_P)\gamma^0 \psi(x_P) \\
+\bar{\psi}(x) \gamma^i \psi(x) &\mapsto -\bar{\psi}(x_P)\gamma^i \psi(x_P)  \\
+\Rightarrow \bar{\psi}(x) \gamma^\mu \psi(x) &\mapsto \mathbb{P}\indices{^{\mu}_{\nu}}\bar{\psi}(x_P)\gamma^\nu \psi(x_P)
+\end{align*}
+So $\bar{\psi}(x) \gamma^\mu \psi(x)$ is a vector, and $\bar{\psi}(x) \gamma^\mu \gamma^5 \psi(x)$ is an axial vector.\index{axial vector}
+\end{itemize}
+\subsection{Charge Conjugation}
+The operator for \emph{charge conjugation}\index{charge conjugation}, $\hat{C}$ is a unitary, linear operator. It changes particles into anti-particles. In a similar way to parity\index{parity}, Lorentz symmetry constrains the phases. We examine this in the different cases.
+\subsubsection{Complex Scalar Field}
+Under charge conjugation, the creation and annihilation operators transform as;
+\begin{itemize}
+\item $\hat{C}a(p)\hat{C}^{-1} = \eta_c c(p)$
+\item $\hat{C}c(p)\hat{C}^{-1} = \eta^{\star}_c a(p)$
+\end{itemize}
+Thus, for example $\hat{C}a\dagg(p)\ket{0} = \eta_c^{\star}c\dagg(p)\ket{0}$, i.e. a particle is transformed into its antiparticle. From the decomposition we find simply;
+\begin{align}
+\hat{C}\phi(x)\hat{C}^{-1} &= \eta_c \phi\dagg(x) \\
+\hat{C}\phi\dagg(x)\hat{C}^{-1} &= \eta^{\star}_c \phi(x)
+\end{align}
+Note that $x \leftrightarrow x$ since this is an \emph{internal symmetry}\index{symmetry!internal}. $\eta_c$ is known as the \emph{intrinsic charge conjugation parity}\index{parity!intrinsic charge conjugation}, and is a property of the field. It can allow us to constrain processes. For example, suppose a $\pi^0$ meson decays into two photons, the assuming $\hat{C}$ is a symmetry, we find $\eta_c^{\pi^0} = + 1$.
+\subsubsection{Dirac Field}
+We define a matrix $C$ such that $(\gamma^{\mu}C)^{\text{T}} = \gamma^{\mu} C$, for example, in the chiral basis\index{chiral basis} a suitable choice is $C = -i\gamma^0 \gamma^2$. In the chiral basis, $(\gamma^0)^{\text{T}} = \gamma^{0}$, $(\gamma^2)^{\text{T}} = \gamma^{2}$, $(\gamma^1)^{\text{T}} = -\gamma^{1}$, and , $(\gamma^3)^{\text{T}} = -\gamma^{3}$. In this basis we then have;
+\begin{equation}
+C = - i \gamma^0 \gamma^2 = \twobytwo{i\sigma^2}{0}{0}{-i\sigma^2}
+\end{equation}
+With this choice then;
+\begin{equation}
+C = - C^{\text{T}} = - C\dagg = - C^{-1}
+\end{equation}
+We can then use $(\gamma^\mu C)^{\text{T}} = \gamma^\mu C$ to deduce that;
+\begin{itemize}
+\item $(\gamma^{\mu})^{\text{T}} = - C^{-1} \gamma^\mu C$
+\item $(\gamma^5)^{\text{T}} = C^{-1} \gamma^{5}C$
+\end{itemize}
+The creation and annihilation operators transform in an identical way to bosons;
+\begin{equation}
+\hat{C}b^{s}(p)\hat{C}^{-1} = \eta_c d^{s}(p), \quad \hat{C}d^{s\dagger}(p)\hat{C}^{-1} = \eta_c b^{s\dagger}(p)
+\end{equation}
+Now we can compute;
+\begin{equation}{}
+\hat{C}\psi(x)\hat{C}^{-1} = \eta_c \sum_{p, s}{\set{d^{s}(p)u^{s}(p)e^{-ip\cdot x} = b^{s\dagger}(p)v^{s}(p)e^{ip\cdot x}}}
+\end{equation}
+On the other hand we have;
+\begin{equation}
+\bar{\psi}^{\text{T}}(x) = \sum_{p, s}{\set{b^{s\dagger}(p)\bar{u}^{s\text{T}}(p)e^{ip\cdot x} + d^{s}(p)\bar{v}^{s\text{T}}(p)e^{-ip\cdot x}}}
+\end{equation}
+If we take $\eta^{s} = i\sigma^2 \xi^{s\star}$, then;\footnotemark
+\begin{equation}
+v^{s}(p) = C \bar{u}^{s\text{T}}(p), \qquad u^{s}(p) = C\bar{v}^{s\text{T}}(p)
+\end{equation}
+\footnotetext{
+We will show this in the first case, we have;
+\begin{equation*}
+u^{s}(p) = \colvec{2}{\sqrt{p\cdot \sigma}\xi^s}{\sqrt{p\cdot\bar{\sigma}}}, \quad v^{s}(p) = \colvec{2}{\sqrt{p\cdot \sigma \eta^{s}}}{-\sqrt{p\cdot\bar{\sigma}}\eta^{s}}
+\end{equation*}
+Then we have $\bar{u}^{s}(p) = u^{s\dagger}(p)\gamma^0 \Rightarrow \bar{u}^{s\text{T}}(p) = \gamma^{0\text{T}}(u^{s\dagger})^{\text{T}}(p) = \gamma^{0}(u^{s\dagger})^{\text{T}}(p)$. Then;
+\begin{align*}
+C\bar{u}^{s\text{T}}(p) &= -i\gamma^0 \gamma^2 \gamma^0 (u^{s\dagger})^{\text{T}}(p) \\
+&= i\gamma^2 (u^{s\dagger})^{\text{T}}(p) \\
+&= \twobytwo{0}{i\sigma^2}{-i\sigma^2}{0} (u^{s\dagger})^{\text{T}}(p) \\
+&= \colvec{2}{\sqrt{p\cdot\sigma}(i\sigma^2 \xi^{s\star})}{-\sqrt{p\cdot\bar{\sigma}}(i\sigma^2 \xi^{s\star})} = v^{s}(p)
+\end{align*}
+}
+Then we deduce that;\footnotemark
+\footnotetext{
+Note that $\psi^{c}(x)$ satisfies the Dirac equation provided that $\psi(x)$ does also;
+\begin{align*}
+\eta_c\bar{\psi}(x)(-i\slashed{\del} - m) &= 0 \\
+\Rightarrow \eta_c\left(-i(\gamma^{\mu})^{\text{T}}\del_\mu - m\right)\bar{\psi}^{\text{T}}(x) &= 0 \\
+\Rightarrow \left(-iC(\gamma^{\mu})^{\text{T}}C^{-1}\del_\mu - m\right)\eta_c C\bar{\psi}^{\text{T}}(x) &= 0 \\
+\Rightarrow (i\slashed{\del} - m)\eta_c C\bar{\psi}^{\text{T}}(x) = (i\slashed{\del} - m)\psi^{c}(x) &= 0
+\end{align*}
+}
+\begin{align}
+\psi^{c}(x) \coloneqq \hat{C}\psi(x)\hat{C}^{-1} &= \eta_c C\bar{\psi}^{\text{T}}(x) \\
+\bar{\psi}^{c}(x) \coloneqq \hat{C}\bar{\psi}(x)\hat{C}^{-1} &= \eta_c^{\star} \psi^{T}(x)C = -\eta_c^{\star} \psi^{\text{T}}(x)C^{-1}
+\end{align}
+\subsubsection*{Majorana Fermions\index{Majorana fermions}}
+These particles have $b^{s}(p) = d^{s}(p)$ i.e. the particle is its own antiparticle. In this case $\psi^{c} = \psi$. It's unknown as to whether the only neutral fermions, neutrinos\index{neutrino}, are Majorana.
+\subsubsection*{Fermion Bilinears\index{bilinear!fermion}}
+We start by considering $j^{\mu}(x) = \bar{\psi}\gamma^{\mu}\psi$, then;
+\begin{align*}
+\hat{C}j^{\mu}(x)\hat{C}^{-1} &= -\eta_c\eta_c^{\star}\psi^{\text{T}}C^{-1}\gamma^{\mu}C\bar{\psi}^{\text{T}} \\
+&= -\psi^{\text{T}}C^{-1}\gamma^{\mu}C\bar{\psi}^{\text{T}} \\
+&= - \psi_\alpha^{\text{T}} (C^{-1}\gamma^{\mu} C)_{\alpha\beta} \bar{\psi}_\beta^{\text{T}}
+\end{align*}
+But fermion fields anti-commute; $\set{\psi_\alpha, \bar{\psi}_\beta} = c$ where $c$ is some complex number that we drop, then;
+\begin{align*}
+\hat{C}j^{\mu}(x)\hat{C}^{-1} &= \bar{\psi}_\beta (C^{-1}\gamma^{\mu}C)_{\alpha\beta}\psi_{\alpha} \\
+&= \bar{\psi}_\beta (C^{-1}\gamma^{\mu}C)^{\text{T}}_{\beta \alpha} \psi_{\alpha} \\
+&= -\bar{\psi}_\beta \gamma^{\mu}_{\beta\alpha}\psi_{\alpha} = -j^{\mu}(x)
+\end{align*}
+Importantly, we have that $A_{\mu}(x)\mapsto -A_{\mu}(x)$ under $\hat{C}$. So terms such as $j^{\mu}A_{\mu}$ are invariant under $\hat{C}$. On the other hand we could calculate the axial current\index{axial current} transformation;
+\begin{equation}
+\hat{C}j^{\mu}_5 (x) \hat{C}^{-1} = j^{\mu}_5(x), \qquad j^{\mu}_5(x) = \bar{\psi}\gamma^\mu \gamma^5 \psi
+\end{equation}
+\subsection{Time Reversal\index{time reversal}}
+Under time reversal $x^{\mu} \mapsto x^{\mu}_T = (-x^0, \vec x)$, $p^{\mu} \mapsto p^{\mu}_T = (p^0, - \vec p)$ which can be seen in a similar fashion to the transformations under parity.
+\subsubsection{Boson Fields}
+We have similar relations to the case of parity including our discussion of Lorentz invariance;\footnote{We might ask why creation operators aren't changed into annihilation operators under time reversal. This is because the operator $\hat{T}$ acts (abstractly) on states as follows: $\hat{T}\ket{\psi_s(p)}\mapsto \eta_T \ket{\psi_{-s}(p_T)}$ where $s$ is a spin label. Then if $\ket{\psi_s(p)} = f_s\dagg(p)\ket{0}$ it must be that $\hat{T}f_s\dagg(p) \hat{T}^{-1} = \eta_T f_{-s}\dagg (p_T)$}
+\begin{equation}
+\hat{T}a(p)\hat{T}^{-1} = \eta_T a(p_T), \qquad \hat{T}c\dagg(p)\hat{T}^{-1} = \eta_T c\dagg(p_T)
+\end{equation}
+The only difference arises because $\hat{T}$ is anti-linear\index{anti-linear}, so that $e^{-ip\cdot x}\hat{T}^{-1} = \hat{T}^{-1}e^{+ip\cdot x}$. Then;
+\begin{align*}
+\hat{T}\phi(x)\hat{T}^{-1} &= \sum_{p}{\set{\hat{T}a(p)\hat{T}^{-1}e^{ip\cdot x} + \hat{T}c\dagg(p)\hat{T}^{-1}e^{-ip\cdot x}}} \\
+&= \eta_T \sum_{p}{a(p)e^{-ip\cdot x_T} + c\dagg(p)e^{ip\cdot x_T}}
+\end{align*}
+where we have used $p_T \cdot x = -p\cdot x_T$, so;
+\begin{equation}
+\hat{T}\phi(x) \hat{T}^{-1} = \eta_T\phi(x_T)
+\end{equation}
+\subsection{Dirac Fields}
+Under $\hat{T}$, $\vec r \rightarrow \vec r$ and $\vec p \rightarrow -\vec p$, so $\vec L \rightarrow -\vec L$. Hence the spin also changes since and the creation and annihilation operators can be taken to transform as;\footnote{The details of this are given on page $67$ of \emph{Peskin and Schroeder}}
+\begin{equation}
+\hat{T}b^{s}(p)\hat{T}^{-1} = \eta_T(-1)^{\tfrac{1}{2} - s}b^{-s}(p_T), \quad \hat{T}d^{s\dagger}(p)\hat{T}^{-1} = \eta_T(-1)^{\tfrac{1}{2} - s}d^{-s\dagger}(p_T),
+\end{equation}
+We can also show that;
+\begin{align}
+(-1)^{\tfrac{1}{2} - s}u^{-s\star}(p_T) &= -C^{-1}\gamma^5 u^{s}(p) \coloneqq -Bu^{s}(p) \\
+(-1)^{\tfrac{1}{2} - s}v^{-s\star}(p_T) &= -Bv^{s}(p)
+\end{align}
+where in the chiral basis\index{chiral basis}, $B = \twobytwo{i\sigma^2}{0}{0}{i\sigma^2}$, then we have;
+\begin{align*}
+\hat{T}\psi(x)\hat{T}^{-1} &= \eta_T \sum_{p, s}{(-1)^{\tfrac{1}{2} - s}\set{b^{-s}(p_T)u_s^{\star}(p)e^{ip\cdot x} + d^{-s\dagger}(p_T)v_{s}^{\star}e^{-ip\cdot x}}} \\
+&= \eta_T \sum_{p, s}{(-1)^{\tfrac{1}{2} - s + 1}\set{b^{s}(p) u_{-s}^{\star}(p_T)e^{-ip\cdot x_T} + d^{s\dagger}(p)v_{-s}^{\star}(p_T)e^{ip\cdot x_T}}}
+\end{align*}
+where in the second line we have performed the standard manipulations including $p\cdot x_T = -p_T \cdot x$, and taken $s \mapsto -s$ in the sum. So we find that;
+\begin{equation}
+\hat{T}\psi(x)\hat{T}^{-1} = \eta_T B\psi(x_T), \quad \hat{T}\bar{\psi}(x)\hat{T}^{-1} = \eta_T^{\star}\bar{\psi}(x_T)B^{-1}
+\end{equation}
+We see this implies trivially $\bar{\psi}(x)\psi(x) \mapsto \bar{\psi}(x_T)\psi(x_T)$ under $\hat{T}$. We have to be more careful with $\bar{\psi}\gamma^{\mu}\psi$. Since $\hat{T}$ is anti-linear, we find the following;
+\begin{equation*}
+\bar{\psi}(x)\gamma^{\mu}\psi(x) \mapsto \bar{\psi}(x_T)B^{-1}\gamma^{\mu\star}B\psi(x_T)
+\end{equation*}
+Either doing the calculation explicitly in the chiral basis, or otherwise, we can show that $B^{-1}\gamma^{0}B = \gamma^{0}$ and $B^{-1}\gamma^{i}B = - \gamma^{i}$ so that;\footnote{We should perhaps expect this result. Since $\mathbb{T}\indices{^{0}_{0}} = -1$, we find that the charge density\index{charge density} is invariant under $\hat{T}$. On the other hand, the $3$-vector like current density changes sign under time reversal.}
+\begin{equation}
+\bar{\psi}(x)\gamma^{\mu}\psi(x) \mapsto - \mathbb{T}\indices{^{\mu}_{\nu}}\bar{\psi}(x_T)\gamma^{v}\psi(x_T)
+\end{equation}
+\subsection{Scattering S-matrix\index{S-matrix}}
+The S-matrix gives the amplitude for scattering\index{scattering} between two states $\ket{p_1, \ldots}, \ket{k_1, \ldots}$. It is given by the time ordered operator;
+\begin{equation}
+\mathcal{S} = \mathcal{T}\exp\left(-i \int_{-\infty}^{\infty}{\upd{t}V(t)}\right), \quad V(t) = -\int{\upd{^3 x}\mL_I(x)}
+\end{equation}
+As as example we consider the QED\index{QED} Lagrangian; 
+\begin{equation}
+\mL_I = -e\bar{\psi}(x)\gamma^{\mu}A_\mu(x) \psi(x)
+\end{equation}
+under $\hat{C}, \hat{P}, \hat{T}$ we have;
+\begin{center}
+\begin{mytable}{c|ccc}
+\textbf{Object} 	& $\mathbf{\hat{C}}$ & $\mathbf{\hat{P}}$ & $\mathbf{\hat{T}}$ \\ \midrule
+$\mL_I(x)$ 	& $\mL_I(x)$ 		& $\mL_I(x_P)$ 		& $\mL_I(x_T)$ 		\\
+$V(t)$ 		& $V(t)$ 			& $V(t)$ 			& $V(-t)$ 			\\
+$\mathcal{S}$ 	& $\mathcal{S}$ 	& $\mathcal{S}$		& ?	
+\end{mytable}
+\captionof{table}{Transformations of various quantities derived from the QED Lagrangian under $\hat{C}, \hat{P}, \hat{T}$}
+\end{center}
+We will spend a bit of time on the bottom right entry. Expanding $\mathcal{S}$ we have;
+\begin{equation}
+\mathcal{S} = \sum_{n = 0}^{\infty}{(-i)^{n}\int_{-\infty}^{\infty}{\ud t_1 \int_{-\infty}^{t_1}{\ud t_2 \ldots \int_{-\infty}^{t_{n-1}}{\ud t_n V(t_1)\cdots V(t_n)}}}}
+\end{equation}
+Writing $\mathcal{S}_T = \hat{T}\mathcal{S}\hat{T}^{-1}$ and using $\hat{T}(-i)^{n} = (+i)^{n}\hat{T}$ we have;
+\begin{equation*}
+\mathcal{S}_T = \sum_{n = 0}^{\infty}{(+i)^{n}\int_{-\infty}^{\infty}{\ud t_1 \int_{-\infty}^{t_1}{\ud t_2 \ldots \int_{-\infty}^{t_{n-1}}{\ud t_n V(-t_1)\cdots V(-t_n)}}}}
+\end{equation*}
+We substitute $\tau_i = -t_{n + 1 - i}$ so that;
+\begin{align*}
+\mathcal{S_T} &= \sum_{n = 0}^{\infty}{(+i)^{n}\int_{\infty}^{-\infty}{-\ud \tau_n \int_{\infty}^{-t_1}{-\ud \tau_{n-1} \ldots \int_{\infty}^{-t_{n-1}}{-\ud \tau_1 V(\tau_n)\cdots V(\tau_1)}}}} \\
+&= \sum_{n = 0}^{\infty}{(+i)^{n}\int_{-\infty}^{\infty}{\ud \tau_n \int_{-t_1}^{\infty}{\ud \tau_{n-1} \ldots \int^{\infty}_{-t_{n-1}}{\ud \tau_1 V(\tau_n)\cdots V(\tau_1)}}}} \\
+&= \sum_{n = 0}^{\infty}{(+i)^{n}\int_{-\infty}^{\infty}{\ud \tau_n \int_{\tau_n}^{\infty}{\ud \tau_{n-1} \ldots \int^{\infty}_{\tau_2}{\ud \tau_1 V(\tau_n)\cdots V(\tau_1)}}}}
+\end{align*}
+It can be shown that (obvious in the $2$d case) this is equivalent to;
+\begin{equation*}
+\mathcal{S}_T = \sum_{n = 0}^{\infty}{(+i)^{n}\int_{-\infty}^{\infty}{\ud \tau_1 \int_{-\infty}^{\tau_1}{\ud \tau_2 \ldots \int_{-\infty}^{\tau_{n-1}}{\ud \tau_n V(\tau_n)\cdots V(\tau_1)}}}} = \mathcal{S}\dagg
+\end{equation*}
+So we find that $\mathcal{S}_T = \mathcal{S}\dagg$. Similarly we could find $\mathcal{S}_T\dagg = \hat{T}\mathcal{S}\dagg \hat{T}^{-1} = S$. Consider some states $\ket{\eta}, \ket{\xi}$ and the corresponding time reversed states $\ket{\eta_T}, \ket{\xi_T}$. Then the scattering process;
+\begin{align*}
+\bra{\eta_T}S\ket{\xi_T} &= (\eta_T, S\xi_T) = (\eta_T, S\dagg_T \xi_T) \\
+&= (\hat{T}\eta, \hat{T} S\dagg \hat{T}^{-1}\hat{T}\xi) = (\hat{T}\eta, \hat{T}S\dagg \xi) \\
+&= (\eta, S\dagg \xi)^{\star} = (S\eta, \xi)^{\star} = (\xi, S\eta) \\
+\Rightarrow \bra{\eta_T}S\ket{\xi_T} &= \bra{\xi}S\ket{\eta}
+\end{align*}
+So \emph{if the Lagrangian is such that} $\hat{T}\mL_I(x)\hat{T}^{-1} = \mL_I(x_T)$,\footnote{Note that this won't be the case always} then the S-matrix elements for the time reversed process are equal to those for the forward process with initial and final states interchanged.
+\subsection{CPT Theorem\index{theorem!CPT}}
+\begin{thm}[CPT Theorem]
+Any Lorentz invariant Lagrangian with a hermitian\index{hermitian} Hamiltonian is invariant under the product of $\hat{P}. \hat{T}, \hat{C}$. In other words, a left-handed forward propagating particle can't be distinguished from a right-handed backwards propagating antiparticle\footnote{See Streater and Wightman, \emph{PCT, Spin Statistics and all that} (1989)}
+\end{thm}
+\subsubsection{Baryongenesis\index{baryogenesis}}
+As an application of this theorem, consider the problem of matter-antimatter asymmetry. Baryogenenesis is the generation of this process. The \emph{Sakarhov conditions}\index{Sakarhov conditions} are a set of necessary constraints on this process;
+\begin{itemize}
+\item Baryon\index{baryon} number must be violated in some process
+\item We must be in non-equilibrium, else the forward reaction in the point above would occur at the same rate as the backwards reaction and they would cancel
+\item We must independently have C and CP violation. The former occurs because else there would an identical process that produces an excess of antibaryons\index{antibaryons}. The latter follows else there would be a process;
+\begin{equation*}
+\Gamma(X \rightarrow n q_L) + \Gamma(X \rightarrow n q_R) = \Gamma(\bar{X} \rightarrow n\bar{q}_R) + \Gamma(\bar{X} \rightarrow n \bar{q}_L)
+\end{equation*}
+which again would cancel.
+\end{itemize}
+\newpage
+\section{Spontaneous Symmetry Breaking}
+\begin{definitionbox}
+Spontaneous symmetry breaking\index{symmetry breaking!spontaneous} occurs when we have a symmetry of the Lagrangian that is not a symmetry of the vacuum.
+\end{definitionbox}
+\subsection{Spontaneous symmetry breaking of a discrete symmetry}
+Consider a real scalar field $\phi(x)$ with a symmetric potential $V(\phi)$, so $\mL = \tfrac{1}{2}\del_\mu \phi \del^{\mu} \phi - V(\phi)$. We will consider $\phi^4$ theory;
+\begin{equation}
+V(\phi) = \tfrac{1}{2}m^2 \phi^2 + \tfrac{\lambda}{4}\phi^4
+\end{equation}
+The usual case is $m^2 > 0$ where $V(\phi)$ has a minimum at $\phi = 0$, but we now need to consider the possibility where $m^2 < 0$. This is the case shown in \autoref{fig:ssb}. Now we can write;
+\begin{mygraphic}{aqft/ssb}{0.5}{The quartic potential $V(\phi)$ now has a non-zero minima/vacua when $m^2 < 0$. The choice of vacuum spontaneously breaks the $\ZZ_2$ symmetry $\phi \rightarrow -\phi$.}{ssb}\end{mygraphic}
+\begin{equation}
+V(\phi) = \frac{\lambda}{4}(\phi^2 - v^2)^2 + \,\,\text{const.}, \quad v = \sqrt{-\frac{m^2}{\lambda}}
+\end{equation}
+The two degenerate stable minima at $\phi = \pm \phi_0 = \pm v$ ensure that $\phi$ acquires a non-zero \emph{vacuum expectation value (VEV)}\index{vacuum expectation value, VEV}. Without loss of generality we can expand around $\phi = +v$, writing $\phi(x) = v + f(x)$. We should write $\mL$ in terms of $f$ to ensure that we really around expanding around the stable vacua. So;
+\begin{equation}
+\mL = \tfrac{1}{2}\del_\mu f \del^{\mu} f - \lambda\left(v^2 f^2 + v f^3 + \tfrac{1}{4}f^4\right) + \,\,\text{const.}
+\end{equation}
+which is no longer symmetric under $f \rightarrow -f$. It is now perfectly consistent to interpret $f$ as a scalar field with mass $m_f^2 = 2\lambda v^2 > 0$. However, we should remember that this arose by the broken symmetry of the original Lagrangian by the VEV of $\phi$.
+\subsection{Spontaneous symmetry breaking of a continuous symmetry}
+Consider now an $N$-component real scalar field, $\phi = (\phi_1, \ldots, \phi_N)$ with Lagrangian;
+\begin{equation}
+\mL = \tfrac{1}{2}(\del_\mu \phi)\cdot(\del^{\mu}\phi) - V(\phi)
+\end{equation}
+where $V(\phi) = \tfrac{1}{2}m^2 \phi^2 + \tfrac{\lambda}{4}\phi^4$, $\phi^{2} = \phi\cdot\phi$, $\phi^{4} = (\phi\cdot\phi)^{2}$. We should also have $\lambda > 0$ to ensure convergence. This is invariant under global $\Orth{N}$ transformations of $\phi$. If we consider $m^2 < 0$ as above, then;
+\begin{equation*}
+V(\phi) = \frac{\lambda}{4}(\phi^2 - v^2)^2 + \,\,\text{const.}, \quad v^{2} = -\frac{m^2}{\lambda} > 0
+\end{equation*} 
+which is the sombrero/Mexican hat potential with a continuum of vacua at $\phi^2 = v^2$. Without loss of generality we can choose;
+\begin{equation*}
+\phi_0 = (0, \ldots, 0, v)^{\text{T}}
+\end{equation*}
+and study the small fluctuations about this;
+\begin{equation}
+\phi(x) = \left(\pi_{1}(x), \pi_2(x), \ldots, \pi_{N-1}, v + \sigma(x)\right)
+\end{equation}
+Substituting this into the Lagrangian we find;
+\begin{align*}
+\mL(x) &= \tfrac{1}{2}\del_\mu \pi \cdot \del^{\mu}\pi + \tfrac{1}{2}\del_\mu \sigma \del^{\mu}\sigma - V(\pi, \sigma) \\
+V(\pi, \sigma)&=\tfrac{1}{2}m_\sigma^2 \sigma^2 + \lambda v(\sigma^2 + \pi^2)\sigma + \tfrac{\lambda}{4}(\sigma^2 + \pi^2)
+\end{align*}
+where $m_\sigma = \sqrt{2\lambda v^2}$. So we see that the $\sigma$ field now has a non-zero mass, but the $(N-1)$ $\pi$ fields are massless. In terms of the potential, we understand the $\sigma$ field as a radial excitations, we see a non-zero curvature in the potential. On the other hand, the $\pi$ excitations see the flat, azimuthal directions in the neighbourhood of the vacuum chosen. This also introduces new vertices that describe the interactions between the $\phi$ and the $\pi$ fields.
+
+\paraskip
+We want to generalise this idea to a symmetry group $G$ of the Lagrangian which is broken to a subgroup $H \subset G$ by the choice of vacuum.\footnote{We will only consider the case where $H$ is a normal subgroup\index{normal subgroup} here} The group $G$ acts on $\phi$ via;
+\begin{equation*}
+\phi(x) \mapsto g\phi(x)
+\end{equation*}
+in some representation\index{representation} of the field. The statement that $G$ is a symmetry group of the Lagrangian is that;
+\begin{equation*}
+\mL(g\phi) = \mL(\phi) \quad \forall \,\, g \in G
+\end{equation*}
+If $G$ is indeed spontaneously broken, then the vacuum states form a manifold;
+\begin{equation*}
+\Phi_0 = \set{\phi_0 : V(\phi_0) = V_{\text{min}}}
+\end{equation*}
+Then the \emph{invariant subgroup}\index{invariant subgroup} or \emph{stability group}\index{stability group} $H \subset G$ is defined by;
+\begin{equation*}
+H = \set{h \in G : h\phi_0 = \phi_0}
+\end{equation*}
+As an example, for our example above, $H = \Uni{1}$. Now, different vacua are related by $\phi_0\pr = g\phi_0$. Furthermore, the stability groups for different vacua are isomorphic. Indeed for a normal subgroup $H$ they are the same group. This follows by the observation that;
+\begin{equation*}
+H = \set{h : h\phi_0 = \phi_0}, \qquad H\pr = \set{h : h\phi_0\pr = \phi_0\pr}
+\end{equation*}
+But $\phi_0\pr = g\phi_0$ for some $g \in G$, and we note that;
+\begin{equation*}
+ghg^{-1}\phi_0\pr = gh\phi_0 = g\phi_0 = \phi_0\pr
+\end{equation*}
+so $ghg^{-1} \in H\pr$. However, $H$ is normal, so $ghg^{-1} \in H$ also $\Rightarrow H\pr \subset H$. Similarly $H \subset H\pr$ and we deduce $H \simeq H\pr$. Now we say $g_1 \sim g_2$ if $\exists h \in H$ such that $g_1 = g_2 h$. Correspondingly $\phi_0\pr = g_1 \phi_0 = g_2 \phi_0$ implies $g_2^{-1}g_1 \in H$, so with each $\phi_0\pr \in \Phi_0$ we can associate an equivalence class. Thus we see that;
+\begin{equation*}
+\Phi_0 \simeq G / H
+\end{equation*}
+Now consider an infinitesimal transformation $g\phi = \phi + \delta \phi$ where we now write $\delta \phi$ in terms of the generators of the Lie Algebra;\footnote{Assuming that we can get everywhere from the identity etc.}
+\begin{equation}
+\delta \phi = i \alpha^a t^a \phi
+\end{equation}
+where $a = 1, \ldots, \dim G$ and $\alpha^a$ are small parameters. Then invariance under $G$ is equivalent to;
+\begin{equation}
+\label{eq:gen}
+V(\phi + \delta \phi) = V(\phi) \Rightarrow V(\phi + \delta \phi) - V(\phi) = i \alpha^a (t^a \phi)_r \frac{\del V}{\del \phi_r} = 0
+\end{equation}
+where $r = 1, \ldots, N$ indexes the components of the scalar field. Now if $\phi_0$ is a minimum of $V$ then;
+\begin{equation*}
+V(\phi_0 + \delta \phi) - V(\phi_0) = \tfrac{1}{2}\delta\phi_r \frac{\del^2 V}{\del \phi_r \del \phi_s} \delta \phi_s + \cdots
+\end{equation*}
+Considering \eqref{eq:gen} we differentiate the second expression with respect to $\phi_s$ and evaluate it at $\phi = \phi_0$;
+\begin{align*}
+i\alpha^a \left(\frac{\del}{\del \phi_s}(t^a \phi)_r\right)\left.\frac{\del V}{\del \phi_r}\right|_{\phi_0} + i\alpha^a(t^a \phi)_r \left.\frac{\del^2 V}{\del \phi_r \del \phi_s}\right|_{\phi_0} &= 0 \\
+\Rightarrow i\alpha^a (t^a\phi)_r\left.\frac{\del^2 V}{\del\phi_r \del\phi_s}\right|_{\phi_) }
+\end{align*}
+Then there are two cases:
+\begin{enumerate}
+\item There is an unbroken symmetry $g \phi_0 = \phi_0$ for all $g \in G$ so $\delta \phi = 0$ and $t^a \phi_0 = 0$
+\item There is some $g \in G$ such that $\exists a$ with $t^a \phi_0 \neq 0$. Then $t^a \phi_0$ is an eigenvector of $M^2_{rs}$ with eigenvalue zero\footnote{$M^2_{rs} = \left.\frac{\del^2 V}{\del \phi_r \del \phi_s}\right|_{\phi_0}$}
+\end{enumerate}
+Let the generators of $H \subset G$ be $\tilde{t}^{i}$ with $i = 1, \ldots \dim H$ and $\tilde{t}^{i}\phi_0 = 0$. For a compact, semi simple $G$ we can define a group invariant inner product and the concept of orthogonality. Choose a basis for the Lie Algebra $t^a = (\tilde{t}^{i}, \theta^{\tilde{a}})$ where the $\theta^{\tilde{a}}$ are orthogonal to $\tilde{t}^{i}$.\footnote{Orthogonal in the sense that $\tr \tilde{t}^{i}\theta^{\tilde{a}} = 0$} There are by definition $(\dim G - \dim H)$ generators $\theta^a$ which each correspond to a unique zero eigenvector of the mass matrix. So there are $(\dim G - \dim H)$ massless modes known as \emph{Goldstone bosons}\index{(Nambu)-Goldstone bosons}. In general then there will be $(N - \dim G + \dim H)$ massive modes.\footnotemark
+\footnotetext{
+Note that this agrees with our $\Orth{N}$ example where $\Orth{N} \mapsto \Orth{N - 1}$. Then $\dim G = N(N - 1)/2$ and $\dim H = (N - 1)(N - 2)/2$ giving $\dim G - \dim H = N - 1$ as expected (and one massive mode). 
+}
+\subsection{Goldstone's Theorem\index{theorem!Goldstone}}
+We want to consider the symmetry breaking in a fully quantum way. We still have a symmetry group $G$ of the Lagrangian, broken to $H$ but now $\phi$ gets a VEV\index{VEV};
+\begin{equation}
+\bra{0}\phi(x)\ket{0} = \phi_0 \neq 0
+\end{equation}
+which is invariant under $h \in H$: $\bra{0}h\phi(x)\ket{0} = \phi_0$, but not invariant under some $g\pr \in G, g\pr \notin H$. We also still have Lie Algebras of $G$ and $H$ with generators $\set{t^{a}}$, $\set{\tilde{t}^{i}}$ respectively. $G$ is a symmetry of $\mL$ so we have conserved currents generated by the generators of the Lie Algebra;
+\begin{equation}
+(j^a)^{\mu}(x) = i \frac{\del \mL}{\del(\del_\mu \phi)}t^a \phi
+\end{equation}
+with associated conserved charges;
+\begin{equation}
+Q^a = \int{\upd{^3 x}(j^a)^{0}(x)} = \int{\upd{^3 x}\pi(x)t^a \phi(x)}
+\end{equation}
+These charges ``induce a representation'' on the Lie Algebra;
+\begin{align*}
+-\left[Q^a, \phi(y)\right] &= -\int{\upd{^3 x}[\pi(x), \phi(y)]t^a \phi(x)} \\
+&= i\int{\upd{^3 x}\delta(x - y)t^a \phi(x)} = it^a \phi(y) \\
+\Rightarrow \delta\phi(y) &= i\alpha^a t^a \phi(y) = -\left[Q^a, \phi(y)\right]\alpha^a
+\end{align*}
+Now we consider (for reasons that will become clear);
+\begin{align*}
+(C^a)^{\mu} &= \bra{0}\left[(j^a)^{\mu}(x), \phi(0)\right]\ket{0} \\
+&= \sum_{n}\left(\bra{0}(j^a)^{\mu}(x)\ket{n}\bra{n}\phi(0)\ket{0} - \bra{0}\phi(0)\ket{n}\bra{n}(j^a)^{\mu}(x)\ket{0}\right)
+\end{align*}
+We can use the translation operator to write;
+\begin{equation*}
+(j^a)^{\mu}(x) = \exp(i p\cdot x)(j^a)^{\mu}(0)\exp(-ip\cdot x)
+\end{equation*}
+Then we find;
+\begin{equation}
+(C^a)^{\mu} = i\int{\frac{\upd{^4 k}}{(2\pi)^3}\left((\rho^a)^{\mu}(k)e^{-ik\cdot x} - (\tilde{\rho}^{a})^{\mu}e^{ik\cdot x}\right)}
+\end{equation}
+where;\footnote{Just plug it into the definition and note that $\bra{0}e^{-ip\cdot x}e^{ip\cdot x}(j^{a})^{\mu} = \bra{0}e^{ip\cdot x}(j^a)^{\mu}$ by the action of $e^{ip\cdot x}$ on the vacuum.}
+\begin{align*}
+i(\rho^a)^{\mu}(k) &= (2\pi)^3 \sum_{n}{\delta^{(4)}(k - p_n)\bra{0}(j^a)^{\mu}(0)\ket{n}\bra{n}\phi(0)\ket{0}} \\
+i(\tilde{\rho}^a)^{\mu}(k) &= (2\pi)^3 \sum_{n}{\delta^{(4)}(k - p_n)\bra{0}\phi(0)\ket{n}\bra{n}(j^a)^{\mu}(0)\ket{0}}
+\end{align*}
+We can now invoke Lorentz covariance to deduce that $(\rho^{a})^{\mu}$ and $(\tilde{\rho}^{a})^{\mu}$ are both proportional to $k^{\mu}$.\footnote{They both depend only on the $4$-vector $k^{\mu}$ which is the only Lorentz object in the problem.} Physical states must have $k^0 > 0$ so we can write;
+\begin{equation*}
+(\rho^a)^{\mu}(k) = k^{\mu}\Theta(k^0)\rho^{a}(k^2), \quad (\tilde{\rho}^{a})^{\mu} = k^{\mu}\Theta(k^0)\tilde{\rho}^{a}(k^2)
+\end{equation*}
+where $\Theta(k)$ is the Heaviside step function and $\rho^{a}(k^2)$ is now a Lorentz scalar. With this definition;
+\begin{equation*}
+(C^a)^{\mu} = -\del^\mu \int{\frac{\ud^4 k}{(2\pi)^3}\Theta(k^0)\set{\rho^a(k^2)e^{-ik\cdot x} + \tilde{\rho}^a(k^2)e^{ik\cdot x}}}
+\end{equation*}
+For a scalar field of mass $\sqrt{\sigma}$, the propagator is;
+\begin{equation}
+D(z - x; \sigma) = \bra{0}\phi(z)\phi(y)\ket{0} = \int{\frac{\ud^4 p}{(2\pi)^3}\Theta(p^0)\delta(p^2 - \sigma)e^{-ip\cdot(z - x)}}
+\end{equation}
+We are free to write $\rho^a(k^2) = \int{\upd{\sigma}\rho(\sigma) \delta(k^2 - \sigma)}$, then;
+\begin{equation*}
+(C^a)^{\mu} = -\del^\mu\int{\upd{\sigma}\set{\rho^a(\sigma)D(x;\sigma) + \tilde{\rho}^{a}(\sigma)D(-x; \sigma)}}
+\end{equation*}
+We know that for spacelike $x$ i.e. $x^2 < 0$ the vacuum expectation value of $[\phi(x), \phi(0)]$ vanishes and hence $D(x;\sigma) = D(-x, \sigma)$. So in order that $(C^a)^{\mu}$, which is a vacuum expectation of a commutator, must also vanish for spacelike $x$ fixes;
+\begin{equation}
+\tilde{\rho}^{a}(\sigma) = -\rho^{a}(\sigma)
+\end{equation}
+which in turn implies that;
+\begin{equation}
+\label{eq:ca}
+(C^a)^{\mu} = - \del^\mu\int{\upd{\sigma}\rho^a(\sigma)i \Delta(x; \sigma)}
+\end{equation}
+where $i\Delta(x; \sigma) = D(x;\sigma) - D(-x, \sigma)$ is the Feynman propagator. $(j^a)^{\mu}$ is a conserved current, so $\del_\mu (j^{a})^{\mu} = 0 \Rightarrow \del_\mu (C^{a})^{\mu} = 0$, so;
+\begin{equation*}
+-\del^2 \int{\upd{\sigma}\rho^a(\sigma)i\Delta(x;\sigma)} = 0
+\end{equation*}
+Now, $\Delta$ satisfies the Klein-Gordon\index{equation!Klein-Gordon} equation, $(\del^2 + \sigma)\Delta = 0$, so;
+\begin{equation*}
+\int{\upd{\sigma}\sigma\rho^a(\sigma) i \Delta(x; \sigma)} = 0
+\end{equation*}
+This has to hold for all $x$ so we have two options for the $\dim G$ spectral densities $\rho^a$;
+\begin{enumerate}
+\item $$\rho^{a}(\sigma) = 0 \Rightarrow (C^a)^{\mu} = 0$$
+But then $\delta \phi(0) = \alpha^a [Q^a, \phi(0)] t^{a}\phi(0)$ and $Q^a = \int{\upd{^3 x}(j^a)^{0}(x)}$ we see that this implies $\delta \phi(0) = 0$, so $t^a$ is not a broken generator.
+\item $$\delta^a(\sigma) = N^a \delta(\sigma)$$
+where $N^a$ is a dimensionful non-zero constant.\footnote{Note that to get to this form, we have used the fact that we have a non-negative inner product on states so that there can be no cancellation in $(C^{a})^{\mu}$. The other assumption made is that we have a Lorentz invariant theory in $d > 2$.}
+\end{enumerate}
+This second case is interesting, and substituting the form for $\rho^a$ into \eqref{eq:ca} we find $(C^a)^{\mu} = -iN^a \del^\mu \Delta(x;0)$ i.e. we have picked out $\sigma = 0$. Integrating over spatial values we have;\footnotemark
+\footnotetext{
+We want to evaluate $\int{\upd{^3 x}\Delta(x; 0)}$, putting in the definition of $D(x;0)$ we see that;
+\begin{align*}
+\int{\upd{^3 x}D(x;\sigma)} &= \int{\frac{\ud^3 x \ud^4 p}{(2\pi)^3}\Theta(p^0)\delta(p^2 - \sigma)e^{-ip\cdot x}} \\
+&= \int{\upd{^4 p}\delta^{(3)}(\vec{p})\Theta(p^0)\delta(p^2 - \sigma)e^{-ip^0 x_0}} \\
+&= \int{\upd{p^0}\delta(p^2 - \sigma)e^{-ip^0 x_0}}
+\end{align*}
+Now we need the identity;
+\begin{equation*}
+\delta\left(g(x)\right) = \sum_{i}{\frac{\delta(x - x_i)}{\abs{g\pr(x_i)}}}, \quad g(x_i) = 0
+\end{equation*}
+So that $\delta\left((p^0)^2 - \sigma\right) = \abs{2\sqrt{\sigma}}^{1/2}\left(\delta(p^0 - \sqrt{\sigma}) + \delta(p^0 + \sqrt{\sigma})\right)$. Then;
+\begin{equation*}
+\int{\upd{^3 x}D(x;\sigma)} = \int{\upd{p^0}\Theta(p^0)\frac{1}{\abs{2\sqrt{\sigma}}}\left(\delta(p^0 - \sqrt{\sigma}) + \delta(p^0 + \sqrt{\sigma})\right)e^{-ip^0 x_0}} = \frac{1}{\abs{2\sqrt{\sigma}}}e^{-i\sqrt{\sigma}x_0}
+\end{equation*}
+Finally we deduce that;
+\begin{equation*}
+\int{\upd{^3 x}\Delta(x;0)} = \lim_{\sigma \rightarrow 0}\frac{1}{\abs{2\sqrt{\sigma}}}\left(e^{-i\sqrt{\sigma}x_0} - e^{i\sqrt{\sigma}x_0}\right) = -x_0
+\end{equation*}
+}
+\begin{equation*}
+\bra{0}[Q^a, \phi(0)]\ket{0} = -iN^a \int{\upd{^3 x} \del^0 \Delta(x; 0)} = -iN^a \del^0 \int{\upd{^3 x}\Delta(x; 0)} = iN^a
+\end{equation*}
+Thus we find that;
+\begin{equation}
+t^a \phi_0 = \bra{0}t^a \phi(0)\ket{0} = i\bra{0}[Q^a, \phi(0)]\ket{0} = -N^a
+\end{equation}
+with $N^a, \phi_0 \neq 0$. For this to be the case, there must be some elements in $(\rho^a)^{\mu}$ that have non-zero matrix elements. Label these states by $\ket{B(p)}$, then we can apply a general covariance argument with $p^{\mu}$ the only $4$-vector in the picture to deduce;
+\begin{equation*}
+\bra{0}(j^a)^{\mu}\ket{B(p)} = iF\indices{^{a}_{B}}p^{\mu}, \quad \bra{B(p)}\phi(0)\ket{0} = z^{B}
+\end{equation*}
+where $F\indices{^{a}_{B}}$ is dimensionful with units of inverse mass and $z^{B}$ is dimensionless. Now, the $\ket{B(p)}$ are massless since $\rho^{a}(\sigma)$ only contributes when $\sigma = 0$ and they also have spin $0$ since $\phi(0)\ket{0}$ is rotationally invariant. Now for massless fields, $E(\vec{p}) = \abs{\vec{p}}$ so we have;
+\begin{align*}
+i(\rho^a)^{\mu}(k) &= ik^\mu \Theta(k^0)N^a \delta(k^2) \\
+&= \sum_{B}{\int{\frac{\ud^3 p}{2\abs{\vec{p}}}\delta^{(4)}(k - p)\bra{0}(j^a)^{\mu}\ket{B(p)}\bra{B(p)}\phi(0)\ket{0}}} \\
+&= \int{\frac{\ud^3 p}{2\abs{\vec{p}}}ik^\mu \sum_{B}{F\indices{^{a}_{B}}z^{B}}}
+\end{align*}
+But we also note that;
+\begin{align*}
+\int{\frac{\ud^3 p}{2\abs{\vec{p}}}\delta^{(4)}(k - p)ik^{\mu}N^a} &= \int{\frac{\ud^3 p}{2\abs{p}}\delta^{k^0 - p^0}\delta^{(3)}(\vec{k} - \vec{p})i k^{\mu}N^a} \\
+&= ik^{\mu}N^a \frac{\delta(k^0 - \abs{\vec{k}})}{2\abs{\vec{k}}} \\
+&= ik^{\mu}N^a \Theta(k^0)\delta(k^0 - \abs{k}^2) = ik^{\mu}N^a \Theta(k^0)\delta(k^2)
+\end{align*}
+So we deduce that $N^a = \sum_{B}{F\indices{^{a}_{B}}z^{B}}$. Since there are $\dim H$ generators of $H$ which are unbroken, there must be exactly $d = \dim G - \dim H$ broken generators, and the same number of densities $\rho^a(?)$ which have nonzero contributions at $\sigma = 0$. Therefore $F\indices{^{a}_{B}}$ is a matrix of rank $n$ and there are $n$ Goldstone bosons\index{boson!Goldstone}.
+\subsection{The Higgs Mechanism\index{Higgs!mechanism}}
+We mentioned in the last section that we needed a Lorentz invariant theory that had a positive definite norm. Gauge theories can violate these conditions. For example in QED, imposing a Lorentz invariant gauge conditions $\del_\mu A^{\mu} = 0$ leads to negative norm states. 
+
+\paraskip
+As an introduction to the idea of the Higgs mechanism, we consider the case of scalar electrodynamics\footnote{This is also used as a model for superconductivity\index{superconductivity} and the Meissner effect\index{Meissner effect} where the non-zero mass of the `photon' leads to a skin depth below which the field cannot penetrate i.e. field exclusion.} with a complex scalar field $\phi(x)$ and a photon $A_\mu (x)$. Then the Lagrangian is;
+\begin{equation}
+\mL = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \left(D_{\mu} \phi\right)^{\star}D_{\mu}\phi - V\left(\phi^{\star}\phi\right)
+\end{equation}
+where $F_{\mu\nu} = \del_\mu A_\nu - \del_\nu A_\mu$ and $D_\mu\phi = \left(\del_\mu + iqA_\mu \right)\phi$ are the usual field-strength tensor\index{tensor!field-strength} and covariant derivative\index{covariant derivative}. The Lagrangian has a $\Uni{1}$ gauge invariance under which the fields transform as;
+\begin{itemize}
+\item $\phi(x) \mapsto e^{i\alpha(x)} \phi(x)$
+\item $A_\mu(x)\mapsto A_{\mu}(x) - \frac{1}{q}\del_\mu \alpha(x)$
+\end{itemize}
+We choose here $V(\phi^{\star}\phi) = \mu^2\abs{\phi}^2 + \lambda \abs{\phi}^{4}$ with $\lambda > 0$. iF $\mu^2 > 0$ then we have a unique vacuum and a \emph{massless photon} (the $A_\mu A^{\mu}$ terms vanish). The $\Uni{1}$ gauge symmetry is preserved by the vacuum and as such the photon has two polarisation states.
+
+\paraskip
+On the other hand if $\mu^2 < 0$ there are now minima at $\abs{\phi_0}^{2} = -\mu^2 / 2\lambda \coloneqq v^2/2$. Without loss of generality we can expand when $\phi_0$ is real and write;
+\begin{equation}
+\phi(x) = \frac{1}{\sqrt{2}}e^{i\theta(x)/v}\left(v + \eta(x)\right)
+\end{equation}
+where $v > 0, \eta \in \RR, \theta \in \RR$. For small fluctuations this becomes;
+\begin{equation*}
+\phi(x) \sim \frac{1}{\sqrt{2}}\left(v + \eta(x) + i \theta(x)\right)
+\end{equation*}
+which when substituted into the Lagrangian gives;
+\begin{multline*}
+\mL = \frac{1}{2}\left(\del_\mu \eta \del^{\mu}\eta + 2\mu^2 \eta^2\right) + \frac{1}{2}\del_\mu \theta \del^\mu \theta - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}\\ + qvA_\mu \del^{\mu}\theta + \frac{q^2 v^2}{2}A_\mu A^{\mu} + \mL_{\text{int}}
+\end{multline*}
+It looks like we have a massless $\theta$, and massive $\eta$ and $A_\mu$ fields. However, we are always allowed to make a gauge transformation that simply shifts the phase of $\phi$ (note that this is equivalent to expanding around a new vacuum state which can be done without loss of generality). Transforming to the \emph{unitary gauge}\index{unitary gauge} via $\alpha(x) = -\tfrac{1}{v}\theta(x)$ we see that;
+\begin{equation}
+\mL = \frac{1}{2}\left(\del_\mu \eta \del^\mu \eta + 2\mu^2 \eta \right) - \frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \frac{q^2 v^2}{2}A_\mu A^{\mu} + \mL_{\text{int}}
+\end{equation} 
+from which we can read off the photon mass, $m_A^2 = q^2 v^2$ and the mass of the scalar field $m_{\eta}^2= -2\mu^2 = 2\lambda v^2 > 0$. The Goldstone mode $\theta$ has disappeared, we say it has been `eaten' by the new longitudinal polarisation of the photon $A_\mu$ that has arisen due to the photon acquiring mass. Also note that the interaction part of the Lagrangian gives;
+\begin{equation*}
+\mL_{\text{int}} = \frac{q^2}{2}A_\mu A^{\mu}\eta^2 + qm_A A_\mu A^{\mu}\eta - \frac{\lambda}{4}\eta^4 - m_\eta \sqrt{\frac{\lambda}{2}}\eta^3
+\end{equation*}
+which generates the Feynman diagrams shown in \autoref{fig:scalqed};
+\begin{mygraphic}{sm/scalqed}{0.9}{The Feynman diagrams arising due to the interaction terms in the Lagrangian.}{scalqed}\end{mygraphic}
+\subsection{Non-Abelian Gauge Theories}\index{non-Abelian gauge theory}
+We review non-Abelian gauge symmetries here; under a non-Abelian gauge transformation the field $\psi_i$ in some representation of the algebra transforms as;
+\begin{equation}
+\psi_i(x) \mapsto U_{ij}(x)\psi_j(x) = \exp\left(it^a \theta^a(x)\right)_{ij}\psi_j(x)
+\end{equation}
+where $U$ are matrices for an $n$-dimensional representation $R$ of a unitary Lie group\index{group!Lie}. The $t^{a}$ are then the hermitian generators in the corresponding representation of the Lie algebra. The $\theta^a$ are simply real parameters. The Lie algebra is then defined by;
+\begin{equation*}
+\left[t^a, t^b\right] = if\indices{^{ab}_{c}}t^{c}
+\end{equation*}
+Furthermore,
+\begin{equation*}
+\tr \left(t^a t^b\right) = (\tr R) \delta^{ab}
+\end{equation*}
+where $\tr R$ is the Dynkin index\index{Dynkin index} of the representation. In the standard model, fermions belong to the trivial representation. The covariant derivative is defined by;
+\begin{equation}
+\left(D_\mu\right)_{ij} = \delta_{ij}\del_\mu + ig\left(t^a A^{a}_{\mu}\right)_{ij}
+\end{equation}
+Then, under a gauge transformation, $\left(D_\mu \psi\right)_i \mapsto (UD_\mu \psi)_i$, and the gauge field transforms as;
+\begin{equation}
+\delta_X A_\mu = -\epsilon \del_\mu X + \epsilon \left[X, A_\mu\right]
+\end{equation}
+The field strength tensor is defined as;
+\begin{equation}
+igt^{a}F^{a}_{\mu\nu} = \left[D_\mu, D_{\nu}\right]
+\end{equation}
+which, using the definition of the covariant derivative and the structure constants gives;
+\begin{equation}
+F^{a}_{\mu\nu} = \del_\mu A^{a}_{\nu} - \del_v A^{a}_{\mu} - gf\indices{^{a}_{bc}}A^{b}_{\mu}A^{c}_{\nu}
+\end{equation}
+Then the gauge invariant Lagrangian kinetic term is;
+\begin{equation}
+\mL_{g} = -\frac{1}{4}F_{\mu\nu}^{a}(F^{a})^{\mu\nu} = -\frac{1}{2}\tr\left(F_{\mu\nu}F^{\mu\nu}\right)
+\end{equation}
+\subsection{Insert on Group Theory}
+Suppose we have a Lagrangian written in terms of a complex $N \times N$ matrix field $M$, and that $\mL$ is invariant under a global symmetry $M \mapsto AMB^{-1}$ where $A, B \in \Uni{N}$. Then is the symmetry $\Uni{N} \times \Uni{N}$? We should have only one identity map; in particular it should be the case that $\mathbb{I} = A\mathbb{I}B^{-1}$ so that $A = B$. Then we see that $AM = MA$ for arbitrary $M$. \index{lemma!Schurr}
+\begin{thm}[Schurr's Lemma]
+If $S\,D(g) = D(g)\, S$ for all $g \in G$, where $D(g)$ is an irrep. of $G$, then $S \propto I$
+\end{thm}
+Applying this to the example above, we deduce that $A \propto \mathbb{I}$ i.e. $A = e^{i\theta}\mathbb{I}$. These elements for a $\Uni{1}$ subgroup of $\Uni{N}\times\Uni{N}$, so we deduce that $\Uni{N}\times\Uni{N}/\Uni{1}$ is the symmetry group of the Lagrangian.
+\newpage
+\section{Electroweak Theory}\index{electroweak theory}
+\subsection{Electroweak Gauge Theory}
+The gauge symmetry of electroweak theory that agrees with experiment is $\SU{2}_{L}\times \Uni{1}_{Y}$, where the $L$ subscript indicates that the symmetry only acts on left-handed fields. We consider a scalar field, $\phi(x)$ in the fundamental representation of $\SU{2}$ with hypercharge\index{hypercharge} $Y = \tfrac{1}{2}$, so that under a gauge transformation;\footnote{Note that the $\tfrac{1}{2}$ in the second exponential arises due to the hypercharge}
+\begin{equation}
+\phi(x) \mapsto e^{i\alpha^{a}(x)\tau^a}e^{\tfrac{1}{2}i\beta(x)}\phi(x)
+\end{equation}
+where $\tau^a = \tfrac{1}{2}\sigma^a$ are $\SU{2}$ generators. The scalar then acquires a VEV\index{VEV} which without loss of generality we choose to be;
+\begin{equation}
+\phi_0 = \frac{1}{\sqrt{2}}\colvec{2}{0}{v}
+\end{equation}
+which breaks $\SU{2}_L \times \Uni{1}_Y \rightarrow \Uni{1}_{\text{EM}}$ with $\alpha^1 = \alpha^2 = 0$ and $\alpha^3 = \beta$. Explicitly;
+\begin{align*}
+e^{\tfrac{1}{2}i\beta(x)\sigma^3}e^{\tfrac{1}{2}i\beta(x)}\phi(x) &= e^{\tfrac{1}{2}i\beta(x)}\twobytwo{e^{\tfrac{1}{2}i\beta(x)}}{0}{0}{e^{-\tfrac{1}{2}i\beta(x)}}\phi(x) \\
+&= e^{\tfrac{1}{2}i\beta(x)}\twobytwo{e^{\tfrac{1}{2}i\beta(x)}}{0}{0}{e^{-\tfrac{1}{2}i\beta(x)}}\frac{1}{\sqrt{2}}\colvec{2}{0}{v} \\
+&= \frac{1}{\sqrt{2}}\colvec{2}{0}{v}
+\end{align*}
+The part of the Lagrangian that governs the gauge bosons\index{boson!gauge} and $\phi$ is;
+\begin{dmath}
+\mL_{\text{gauge,}\phi} = -\frac{1}{2}\tr\left[F_{\mu\nu}^{(W)}F^{(W)\mu\nu}\right] - \frac{1}{4}F_{\mu\nu}^{(B)}F^{(B)\mu\nu} + (D_{\mu}\phi)\dagg (D^{\mu}\phi)- \mu^2 \abs{\phi}^2 - \lambda \abs{\phi}^{4}
+\end{dmath}
+where the covariant derivative is;
+\begin{equation}
+D_{\mu}\phi = \left(\del_\mu + ig W^{a}_\mu \tau^a + \frac{i}{2}g\pr B_\mu\right)\phi
+\end{equation}
+Note that in the unbroken phase $\mu^2 > 0$, the bosons are massless, and that the $\tfrac{1}{2}$ in front of $g\pr$ is due to the hypercharge. The field strength tensors are then;
+\begin{align}
+F_{\mu\nu}^{(W)} &= \left(F_{\mu\nu}^{(W)}\right)^{a}\tau^{a} = \left(\del_\mu W_\nu^{a} - \del_{\nu}W_{\mu}^{a} - \underbrace{g\epsilon^{abc}W_{\mu}^{b}W_{\nu}^{c}}_{\SU{2}\,\,\text{algebra}}\right)\tau^a \\
+F_{\mu\nu}^{(B)} &= \del_\mu B_\nu - \del_\nu B_\mu
+\end{align}
+Assuming that spontaneous symmetry breaking occurs so that $\mu^2 = -\lambda v^2 < 0$, there is a contribution from the term $(D_\mu \phi)\dagg (D^\mu \phi)$ of the form;\footnotemark
+\footnotetext{This comes about by substituting in the explicit form of the Pauli matrices and neglecting the $\del_\mu$ part of $D_\mu$. Also, we have defined $B^2 = B_\mu B^{\mu}$ etc.}
+\begin{equation*}
+\frac{1}{2}\frac{v^2}{4}\left(g^2(W^1)^2 + g^2(W^2)^2 + (-g W^3 + g\pr B)^2\right)
+\end{equation*}
+Then we define $4$ new gauge fields in terms of suitable linear combinations;
+\begin{align}
+W_\mu^{+} &= \frac{1}{\sqrt{2}}\left(W_\mu^1 - iW_{\mu}^{2}\right) \\
+W_\mu^{-} &= \frac{1}{\sqrt{2}}\left(W_\mu^1 + iW_{\mu}^{2}\right) \\
+Z_\mu^{0} &= \frac{1}{\sqrt{g^2 + (g\pr)^2}}\left(gW_\mu^3 - g\pr B_\mu\right) \\
+A_\mu &= \frac{1}{\sqrt{g^2 + (g\pr)^2}}\left(gW_\mu^3 + g\pr B_\mu\right)
+\end{align}
+Then the contribution becomes;
+\begin{equation}
+\frac{v^2}{4}\left(g^2 (W^{+})^2 + g^2 (W^{-})^2 + \left(g^2 + (g\pr)^2\right)\left(Z_{\mu}^{0}\right)^2\right)
+\end{equation}
+from which we can read off the masses $m_{W^{\pm}} = vg/2$, $m_{Z_0} = v\sqrt{g^2 + (g\pr)^2}/2$, $m_{A_\mu} = 0$. So $A_\mu$ corresponds to the massless photon of EM. The mixing of $\SU{2}$ and $\Uni{1}$ gauge bosons is governed by;
+\begin{equation}
+\colvec{2}{Z_{\mu^0}}{A_\mu} = \twobytwo{\cos\theta_W}{-\sin\theta_W}{\sin\theta_W}{\cos\theta_W}\colvec{2}{W_{\mu}^3}{B_\mu}
+\end{equation}
+From this we see that $m_{W} = m_{Z}\cos\theta_W$, and indeed experimentally we find;
+\begin{equation*}
+m_{W} \sim 80 \,\,\text{GeV}, \quad m_{Z} \sim 91 \,\,\text{GeV}, \quad m_{\gamma} < 10^{-18} \,\, \text{eV}
+\end{equation*}
+The Higgs gets a mass $m_H = \sqrt{2\lambda v^2}$, but $\lambda$ is a free parameter, so it is not predicted by the SM. Experimentally we find $m_H \sim 125\,\,\text{GeV}$. Note that the Higgs couples to the $W^{\pm}, Z$ bosons, but not to the photon. It also has self-interactions. 
+\subsection{Coupling to Matter - Leptons\index{lepton}}
+We have the generators $T^a$ in some suitable representation, so that;
+\begin{equation*}
+D_\mu = \del_\mu + ig W_\mu^a T^a + ig\pr YB_\mu
+\end{equation*}
+where $Y$ is the hypercharge. Thus, putting in the definitions above we see that;
+\begin{multline*}
+D_\mu = \del_\mu + \frac{ig}{\sqrt{2}}\left(W_\mu^+ T^+ + W_\mu^- T^- \right) \\ + \frac{ig Z_\mu^0}{\cos\theta_W}\left(\cos^2 \theta_W T^3 - \sin^2\theta_W Y\right) + i \underbrace{g \sin\theta_W}_{e} A_\mu \underbrace{(T^3 + Y)}_{Q}
+\end{multline*}
+$W^{\pm}$ only couple to LH quarks and leptons (experimentally) so we should put RH fermions in the trivial (scalar) rep. of $\SU{2}_L$ where $T^a = 0$ i.e. $R(x) = e_R(x) = \tfrac{1}{2}(1 + \gamma^5)e(x)$ whilst the LH fermions $e_L(x) = \tfrac{1}{2}(1 - \gamma^5)e(x)$ are in the fundamental rep with $T^a = \tfrac{1}{2}\sigma^a$. Now we define;
+\begin{equation}
+L(x) = \colvec{2}{\nu_{e_L}(x)}{e_L(x)}
+\end{equation}
+The $\nu_{e_L}$ represent the neutrinos. We have assumed that they are massless, so that it is possible to describe them using only their LH part. For $R(x)$, we know that $Q = Y = -1$. On the other hand, for $L(x)$;
+\begin{equation*}
+Q = \twobytwo{0}{0}{0}{-1} \Rightarrow Y = -\frac{1}{2}
+\end{equation*}
+The part of the Lagrangian that corresponds to the leptons/gauge bosons is;
+\begin{equation*}
+\mL^{\text{EW}}_{\text{lept.}} = \bar{L}i\slashed{D}L + \bar{R}i\slashed{D}R
+\end{equation*}
+The lepton mass term $m_e (\bar{e}_L e_R + \bar{e}_R e_L)$ can't appear in $\mL$ as it would break the $\SU{2}\times \Uni{1}$ gauge invariance. So we need the Higgs mechanism to give mass to charged leptons. This interaction between the Higgs doublet, $\phi$, with $Y = \tfrac{1}{2}$ and the leptons is;
+\begin{equation*}
+\mL_{\text{lept.,}\phi} = -\sqrt{2}\lambda_e \left(\bar{L}\phi R + \bar{R}\phi\dagg L\right)
+\end{equation*}
+This is gauge invariant since $\sum{Y} = 0$ for each term. In the unitary gauge\index{gauge!unitary} we can expand;
+\begin{equation*}
+\phi(x) = \colvec{2}{0}{v + h(x)}
+\end{equation*}
+From which we find that;
+\begin{equation*}
+\mL_{\text{lept.,}\phi} = -m_e \bar{e}e - \lambda_e h \bar{e}e
+\end{equation*}
+where we can then read off $m_e = \lambda_e v$. Furthermore, the coupling between the Higgs field $h$ and the leptons is proportional to the mass of the lepton, so that heavier leptons interact more with the Higgs field.
+
+\paraskip
+We can describe the gauge boson/fermion interaction by the following component of the Lagrangian;
+\begin{equation*}
+\mL^{\text{EW, int}}_{\text{lept.}} = -\frac{g}{2\sqrt{2}}\left(J^\mu W_\mu^+ + (J^\mu)\dagg W_\mu^- \right) - eJ_{\text{EM}}^{\mu}A_\mu - \frac{g}{2\cos\theta_W}J_n^{\mu}Z_\mu^{0}
+\end{equation*}
+Where we have the following definitions;
+\begin{enumerate}
+\item \textbf{Charged weak current}
+$$J^{\mu} = \bar{\nu}_{e_L}\gamma^\mu (1 - \gamma^5)e$$
+
+\paraskip
+This describes processes where e.g. electrons are converted into neutrinos along with a $W^{-}$ boson.
+\item \textbf{EM current}
+$$J_{\text{EM}}^{\mu} = \tfrac{1}{2}\bar{L}\gamma^\mu (\sigma^3 - \mathbb{I})L - \bar{R}\gamma^\mu R = -\bar{e}\gamma^\mu e$$
+\item \textbf{Neutral weak current}
+$$J_{n}^{\mu} = \tfrac{1}{2}\left(\underbrace{\bar{\nu}_{e_L}\gamma^\mu(1 - \gamma^5)\nu_e}_{\text{Only couples to LH}} - \underbrace{\bar{e}\gamma^\mu (1 - \gamma^5 - 4\sin^2 \theta_W)e}_{\text{Couples to both LH and RH}}\right)$$
+\end{enumerate}
+The standard model has three generations of leptons, $\mu, e, \tau$, we write;
+\begin{align*}
+L^1 = \colvec{2}{\nu_e}{e}_L, \qquad R^1 = e_R
+\end{align*}
+etc. so that;
+\begin{equation*}
+\mL_{\text{lept.,}\phi} = -\sqrt{2}\left((\lambda^{ij})\bar{L}^{i}\phi R^{j} + (\lambda\dagg)^{ij}\bar{R}^{i}\phi\dagg L^{j}\right)
+\end{equation*}
+The $\lambda^{ij}$ are explicitly not predicted by the standard model. They are $3 \times 3$ complex matrices, and $\lambda \lambda\dagg$ is hermitian. Hence there exists $K \in \Uni{3}$ such that;
+\begin{equation*}
+\lambda \lambda\dagg = K \Lambda^2 K\dagg
+\end{equation*}
+where $\Lambda^2$ is diagonal and positive definite. If we then choose $S = \lambda\dagg K \Lambda^{-1}$ then $S$ is unitary and $\lambda\dagg \lambda = S\Lambda^2 S\dagg$, then;
+\begin{equation}
+\lambda = K \Lambda S\dagg
+\end{equation}
+where $K$ and $S$ are both unitary. If we then let $L^{i} \mapsto K^{ij}L^{j}$ and $R^{i}\mapsto S^{ij}R^{j}$ diagonalises $\mL_{\text{lept.,}\phi}$ and leaves $\mL^{\text{EW}}_{\text{lept}}$ invariant. Thus we can simultaneously diagonalise both interactions; hence the mass eigenstates are also weak eigenstates. 
+\subsection{Coupling to Matter - Quarks\index{quark}}
+There are $6$ flavours of quarks in nature (we think). We put the RH quarks in $\SU{2}$ singlets;
+\begin{align*}
+U_R^i &= (u_R, c_R, t_R), \qquad Y = Q = \frac{2}{3} \\
+D_R^i &= (d_R, s_R, b_R), \qquad Y = Q = -\frac{1}{3}
+\end{align*}
+and the LH ones in $\SU{2}$ doublets;
+\begin{equation*}
+Q_L^i = \colvec{2}{U^i_L}{D^i_R} = \left(\colvec{2}{u}{d}_L, \colvec{2}{c}{s}_L, \colvec{2}{t}{b}_L\right)
+\end{equation*}
+As before consider different parts of the Lagrangian;
+\begin{equation}
+\mL_{\text{quark}}^{\text{EW}} = \bar{Q}_L i\slashed{D}Q_L + \bar{U}i\slashed{D}U_R + \bar{D}_R i \slashed{D}D_R
+\end{equation}
+Note that the second two terms have a different covariant derivative with $T^a = 0$ since they are in the trivial rep. of $\SU{2}$. Hence they do not couple to the $W, Z$ bosons. We also have;
+\begin{equation}
+\mL_{\text{quark,}\phi} = -\sqrt{2}\left[\lambda_d^{ij}\bar{Q}_L^i \phi D_R^j = \lambda_u^{ij}\bar{Q}_L^i \phi^c U_R^i + \text{h.c.}\right]
+\end{equation}
+where $\phi$ is in the fundamental rep. of $\SU{2}$. Note that $\sum{Y} = 0$ for each term. We have introduced $(\phi^c)^{\alpha} = \epsilon^{\alpha \beta}(\phi\dagg)^{\beta}$, which transforms in the fundamental rep. as well. In terms of symmetries, $\mL^{\text{EW}}_{\text{quark/lept.}}$ do not conserve $C$ or $P$ but they do conserve $CP$ and $T$. Also $\mL_{\text{gauge,}\phi}$ is invariant under $C$, $P$ and $T$ individually. $\mL_{\text{quark,}\phi}$ violates $CP$ unless;
+\begin{equation*}
+\lambda_q^{ij} = (\lambda_q^{ij})^{\star}
+\end{equation*}
+i.e. they are real. Now, we diagonalise $\lambda_q$ as before;
+\begin{equation*}
+\lambda_u = K_u \Lambda_u S_u\dagg, \qquad \lambda_d = K_d \Lambda_d S_d\dagg
+\end{equation*} 
+Transforming the fields as;
+\begin{align*}
+U_L^i \mapsto K_u^{ij}U_L^j ,&\qquad D_L^i \mapsto K_d^{ij}D_L^{j} \\
+U_R^i \mapsto S_u^{ij}U_R^j ,&\qquad D_R^i \mapsto S_d^{ij}D_R^{j} 
+\end{align*}
+So that $\lambda_d^{ij}\bar{Q}_L^{i}\phi D_R^{j} \mapsto \bar{Q}_L \phi \Lambda_d D_R$. Now we have that;
+\begin{equation*}
+\phi = \frac{1}{\sqrt{2}}\colvec{2}{0}{v + h(x)}
+\end{equation*}
+So that the $\phi_0$ terms give a contribution;
+\begin{equation*}
+-\sum_{i}{\left(m_D^{i}\bar{D}_L^{i}D_R^{i} + m_U^{i}\bar{U}_L^i U_R^i + \text{h.c.}\right)}
+\end{equation*}
+This is real and positive with $m_q^{i} = \Lambda_q^{ii}v$. In this basis, $\mL_{\text{quark,}\phi}$ is $C$, $P$ and $T$ invariant. \emph{However}, this basis transformation has an effect on $\mL_{\text{quark}}^{\text{EW}}$ where the term $\bar{Q}_L i \slashed{D}Q_L$ is transformed. In particular the piece in;
+\begin{equation*}
+-\frac{g}{2\sqrt{2}}(J^{\pm})^{\mu}W_\mu^{\pm}
+\end{equation*}
+under a transformation goes to;
+\begin{equation*}
+(J^{+})^{\mu} = 2\bar{U}_L^i \gamma^\mu D_L^{i} \mapsto 2\bar{U}_L^i \gamma^\mu (K_u\dagg K_d)^{ij}D_L^{j}
+\end{equation*}
+So that interactions with $W^{\pm}$ lead to intergenerational quark coupling unlike in the lepton case. The weak eigenstates (flavour eigenstates) are now linear combinations of the mass eigenstates. The matrix $K_u\dagg K_d$ is known as the \emph{Cabibbo-Kobyashi-Maskawa (CKM)}\index{Cabibbo-Kobyashi-Maskawa (CKM) matrix} matrix, $V_{\text{CKM}}$;
+\begin{equation*}
+\thrbythr{V_{ud}&V_{us}&V_{ub}}{V_{cd}&V_{cd}&V_{cb}}{V_{td}&V_{ts}&V_{tb}}
+\end{equation*}
+In terms of parameters, for $2$ generations, we have $4$ parameters, $1$ angle and $3$ phases. Redefining the three relative phases between $\set{u, c, d, s}$ with a $\Uni{1}$ transformation, we can remove all the phases. So we just have;
+\begin{equation*}
+V = \twobytwo{\cos\theta_c}{\sin\theta_c}{-\sin\theta_c}{\cos\theta_c}
+\end{equation*}
+This is real with $\sin\theta_c \sim 0.22$ so the combination $CP$ is conserved. Furthermore;
+\begin{dmath*}
+\frac{1}{2}(J^{+})^{\mu} = \cos\theta_c \bar{u}_L \gamma^{\mu}d_L + \sin\theta_c \bar{u}_L \gamma^{\mu}s_L - \sin\theta_c \bar{c}_L \gamma^{\mu}d_L + \cos\theta_c \bar{c}_L \gamma^{\mu}s_L
+\end{dmath*}
+For three generations, there are more parameters, $3$ angles and $6$ phases. Now we can remove $5$ phases by redefining the relative phases between the $6$ flavours, leaving one undetermined. Thus, in general $\lambda^{ij}$ is not real and we observe $CP$ violation\index{CP violation}.
+\subsection{Neutrino Oscillations and Mass\index{neutrino oscillations}}
+We now know (circa. 2000) that the mass eigenstates and weak eigenstates are not the same for neutrinos. Thus, there is an analogous matrix to $V_{\text{CKM}}$ called $U_{\text{PMNS}}$ that describes their mixing. If neutrinos are Dirac fermions, we have $3$ angles and $1$ phase. On the other hand if neutrinos are Majorana fermions\index{Majorana fermion} then we have $3$ angles and $3$ phases.
+\subsubsection{Dirac Fermions}
+We should introduce the RH neutrino fields;
+\begin{equation*}
+N^{i} = \nu_R^{i} = \left((\nu_e)_R, (\nu_\mu)_R, (\nu_\tau)_R\right)
+\end{equation*}
+and modify the relevant parts of the Lagrangian;
+\begin{equation*}
+\mL_{\text{lept,}\phi} = -\sqrt{2}\left(\lambda^{ij}\bar{L}^{i}\phi R^{j} + \lambda_\nu^{ij}\bar{L}^{i}\phi^{c}N^{j} + \text{h.c.}\right)
+\end{equation*}
+Then in a completely analogous manner to quarks, neutrinos get a mass term via the Higgs;
+\begin{equation*}
+-\sum_{i}{m_{\nu}^{i}(\bar{\nu}_{R}^{i}\nu_L^{i} + \bar{\nu}_L^{i}\nu_R^{i})}
+\end{equation*}
+\subsubsection{Majorana Fermions}
+Since neutrinos are neutral, they could possibly be their own antiparticle. In that case $b_s(p) = d_s(p)$ and;
+\begin{equation*}
+\nu(x) = \sum_{p, s}{\left(b_s(p)u_s(p)e^{-ip\cdot x} + b_s\dagg(p)v_s(p)e^{-ip\cdot x}\right)}
+\end{equation*}
+If we take the c-parity to be $c = 1$ then;
+\begin{equation*}
+\nu^{c}(x) = C\bar{\nu}^{\text{T}}(x) = C(C^{-1}\nu(x)) = \nu(x)
+\end{equation*}
+So we find that $\nu_R(x) = \nu_L^{c}(x) = C\bar{\nu}_L^{\text{T}}(x)$. In other words, the RH neutrino field is not independent. Then the mass term becomes;
+\begin{equation*}
+-\frac{1}{2}\sum_{i}{m_\nu^{i}\left(\bar{\nu}_L^{i, c}\nu_L^{i} + \bar{\nu}_L^{i}\nu_L^{i, c}\right)}
+\end{equation*}
+It turns out that these sort of terms can only arise from a Higgs VEV if we have a term;
+\begin{equation*}
+-\frac{Y^{ij}}{M}\left(L^{i, \text{T}}\phi^{c}C\left((\phi^{c})^{\text{T}}L^{j} + \text{h.c.}\right)\right)
+\end{equation*}
+This is a dimension $5$ operator so they are non-renormalisable\index{non-renormalisable}. This isn't necessarily an issue provided we think of the SM as an effective field theory\index{effective field theory} describing physics at scales much less than some new physics scale $M$.
+\subsection{Summary of Electroweak Theory}
+We review the different terms in the Lagrangian and the role they play in Electroweak theory;
+\begin{enumerate}
+\item $\mL_{\text{gauge,}\phi}$: gives masses for the $W^{\pm}, Z^{0}$ bosons and the Higgs boson. It also includes $W^{\pm}, Z^{0}$-Higgs interactions and Higgs-Higgs interactions.
+\item $\mL_{\text{lept,}\phi}$: lepton masses and lepton-Higgs interactions
+\item $\mL_{\text{quark,}\phi}$: quark masses and quark-Higgs interactions
+\item $\mL_{\text{lept}}^{\text{EW}}$: lepton interaction with $W^{\pm}, Z$ via the PMNS matrix which details $\nu$ mixing and (possibly) CP violation
+\item $\mL_{\text{quark}}^{EW}$: quark interaction with $W^{\pm}, Z$ via the CKM matrix which details flavour mixing and CP violation
+\end{enumerate}
+\newpage
+\section{Weak Interactions}
+\subsection{Effective Weak Lagrangian}
+We want to consider processes where the energies are much less than $m_{W}, m_{Z}$ so that we can use an effective field theory, the \emph{Fermi effective Lagrangian}\index{Fermi effective Lagrangian}. The weak interaction part of the electroweak Lagrangian is;
+\begin{equation}
+\mL_{W} = -\frac{g}{2\sqrt{2}} \left(J^{\mu}W_{\mu}^{+} + \left(J^{\mu}\right)\dagg W_{\mu}^{-}\right) - \frac{g}{2\cos\theta_W} J_{n}^{\mu}Z_{mu}
+\end{equation} 
+which leads to the S-matrix;;
+\begin{equation}
+\mS = \mT \exp\left[i\int{\upd{^4 x}\mL_{W}(x)} \right]
+\end{equation}
+If the coupling $g$ is small we can expand this in a power series in $g$. If we assume that there are no $W^{\pm}, Z$ in the initial and final stats then the $\mO(g)$ contribution vanishes as there is nothing for the $W^{\pm}, Z$ fields to contract with. Then the leading order contribution is;
+\begin{multline}
+\bra{f}\mT\left(1 - \frac{g^2}{8}\int{\ud^4 x \upd{^4 x\pr} (J^{\mu})\dagg(x)D^{W}_{\mu\nu}(x - x\pr)J^{\nu}(x\pr) }\right. \\ \left. + \frac{1}{\cos^2\theta_W}(J_n^{\mu})\dagg(x)D_{\mu\nu}^{Z}(x - x\pr)J_n^{\nu}(x\pr) + \mO(g^4)\right)\ket{i}
+\end{multline}
+The propagators are defined by;
+\begin{equation*}
+D_{\mu\nu}^{W}(x - x\pr) = \bra{0}\mT W_{\mu}^{-}(x)W_{\nu}^{+}(x\pr)\ket{0}
+\end{equation*}
+and similarly for $D_{\mu\nu}^{Z}$. In momentum space we  have;
+\begin{align}
+D_{\mu\nu}^{W/Z}(x - y) &= \int{\frac{\ud^4 p}{(2\pi)^4}e^{-ip \cdot (x - y)}\tilde{D}_{\mu\nu}^{W/Z}(p)} \\
+\tilde{D}_{\mu\nu}^{W/Z}(p) &= \frac{i(-\eta_{\mu\nu} + p_{\mu}p_{\nu}/m_{W/Z}^2)}{p^2 - m_{W/Z}^2 + i\epsilon}
+\end{align}
+To derive this expression, consider the free part of the electroweak Lagrangian;
+\begin{equation*}
+\mL_{Z}^{\text{free}} = -\frac{1}{4}(\del_\mu Z_\nu - \del_\nu Z_\mu)(\del^{\mu}Z^{\nu} - \del^{\nu}Z^{\mu}) + \frac{1}{2}m_Z^{2}Z_\mu Z^{\mu}
+\end{equation*}
+from which we can deduce the Euler-Lagrange equations;
+\begin{equation*}
+\del^2 Z_\rho - \del_\rho \del\cdot Z + m_Z^2 Z_\rho = 0
+\end{equation*}
+We can take the divergence of the above equation to find $m_Z^2 \del \cdot Z = 0$. But $m_Z^2 \neq 0$ after spontaneous symmetry breaking so that $\del \cdot Z = 0$ in \emph{any} gauge. Then the equation of motion is simply the Klein-Gordon equation;
+\begin{equation*}
+(\del^2 + m_Z^2)Z_\rho = 0
+\end{equation*}
+Now, introducing an external current with a term $j^{\mu}(x)Z_\mu(x)$ in the Lagrangian, the equations of motion become;
+\begin{equation*}
+\del^2 Z_\rho - \del_\rho \del \cdot Z + m_Z^2 Z_\rho = -j_\rho
+\end{equation*}
+Now taking the divergence to find that $m_Z^2 \del\cdot Z + -\del \cdot j$, substituting into the modified equation of motion we find;
+\begin{equation*}
+(\del^2 + m_Z^2)Z_\mu = -\left(\eta_{\mu\nu} + \frac{\del_\mu \del_\nu}{m_Z^2}\right)j^{\nu}
+\end{equation*}
+Which is solved via the Green's function;
+\begin{equation*}
+Z_\mu(x) = i\int{\upd{^4 y} D_{\mu\nu}^{Z}(x - y) j^{\nu}(y)}
+\end{equation*}
+with;
+\begin{equation*}
+D_{\mu\nu}^{Z}(x - y) = \int{\frac{\ud^4 p}{(2\pi)^4}e^{-ip \cdot (x - y)}\tilde{D}^{Z}_{\mu\nu}(p)}
+\end{equation*}
+At low energies\footnote{i.e. decays of leptons/quarks with the exception of the top quark which has a mass comparable to the $W$ boson.} we have $m_{W/Z}^{2} \gg p^2$ for any combination of initial or final momenta. This allows us to approximate the propagator by;
+\begin{equation}
+\tilde{D}_{\mu\nu}^{W/Z} \sim \frac{i\eta_{\mu\nu}}{m_{W/Z}^2} \Rightarrow D_{\mu\nu}^{W/Z}(x - y) \sim \frac{i \eta_{\mu\nu}}{m_{W/Z}^{2}}\delta^{(4)}(x - y)
+\end{equation}
+This can be described with a $4$-fermion interaction term. Note that with this propagator;
+\begin{equation*}
+-\frac{g^2}{8}(J^{\mu})\dagg(x) D_{\mu\nu}(x - x\pr)J^{\nu}(x\pr) \mapsto -\frac{ig^2}{8m^{2}_{W/Z}}(J^{\mu})\dagg(x)J^{\nu}(x\pr)\delta^{(4)}(x - x\pr)\eta_{\mu\nu}
+\end{equation*}
+The effective weak Lagrangian then becomes;
+\begin{equation}
+\mL_{W}^{\text{eff.}} = -\frac{iG_F}{\sqrt{2}}\left[(J^{\mu})\dagg(x)J_{\mu}(x) + \rho (J^{\mu}_n)\dagg(x)J_{n\mu}(x)\right]
+\end{equation}
+where $G_F$ is the Fermi constant\index{Fermi constant}, and $\rho$ is defined by;
+\begin{equation*}
+\frac{G_F}{\sqrt{2}} \equiv \frac{g^2}{8m_{W}^2}, \quad \rho \equiv \frac{m_W^2}{m_Z^2 \cos^2\theta_W}
+\end{equation*}
+In more generality we can write $\rho = 1 + \Delta \rho$ where $1$ is the tree level value and $\Delta \rho$ is from quantum loops. This is sensitive to beyond SM physics. Now re-exponentiating the S-matrix we have;
+\begin{align*}
+\bra{f}\mS\ket{i} &\sim \bra{f}\mT \left(1 + i \int{\upd{^4 x}\mL_{W}^{\text{eff.}}} + \cdots\right)\ket{i} \\
+&\sim \bra{f}\mT \exp\left(i \int{\upd{^{4} x}\mL_{W}^{\text{eff.}}}\right)\ket{i}
+\end{align*}
+These manipulations only work if we don't have $W^{\pm}, Z$ scattering or high energies. Furthermore, the dimension of $G_F$ is $(\text{mass})^{-2}$ so that the operators coupled to it must have dimension $6$. This is enough to deduce that the theory is non-renormalisable. This isn't necessarily an issue provided we only use it for calculations at energy scales $\ll m_{W}$. Indeed, it breaks down at energies $\sim m_{W}$ as expected.
+\subsection{Decay Rates \& Cross Sections}\index{decay rate}\index{cross section}
+What questions can we ask of a particle physics experiment?
+\begin{enumerate}
+\item How often does a species $X$ decay into $A_1 + A_2 + \cdots$?
+\item Given $N$ collisions between $A$ and $B$, how many times do we produce $X$?
+\end{enumerate}
+\subsubsection{Decay Rate}
+\begin{definitionbox}
+$\Gamma_X$ is the number of decays of $X$ per unit time in the \emph{rest frame} of the decaying particle, divided by the number of $X$ present. The lifetime is then given by $\tau = \Gamma^{-1}_X$.
+\end{definitionbox}
+If there are a number of possible decays we can write;
+\begin{equation*}
+\Gamma_X = \sum_{i}{\Gamma_{X \rightarrow f_i}}
+\end{equation*}
+To make computations we need the objects $\bra{f}\mS\ket{i}$, writing $\mS = 1 i i\mT$ as is customary, we have;
+\begin{equation}
+\bra{f}\mS - 1 \ket{i} = (2\pi)^4 \delta^{(4)}(p_f - p_i)i\mM_{fi}
+\end{equation}
+Then the probability of the process $i \rightarrow f$ is;
+\begin{equation}
+\mathbb{P}(i \rightarrow f) = \frac{\abs{\bra{f}\mS - 1\ket{i}}^2}{\braket{f}{f}\braket{i}{i}}
+\end{equation}
+In what follows, to avoid some technical difficulties we consider working in a finite volume so that $(2\pi)^4 \delta^{(4)}(0) \mapsto VT$. This ensures that since we are using relativistic normalisation;
+\begin{equation*}
+\braket{i}{i} = (2\pi)^3 2p_i^{0}\delta^{(3)}(0) = 2p_i^{0}V
+\end{equation*}
+In the case of a decay we further have, $p_i^{0} = m_i$. Then the final state normalisation is;
+\begin{equation*}
+\braket{f}{f} = \prod_{r}{2p_r^{0}V}
+\end{equation*}
+Putting this together we find that the probability is given by;
+\begin{equation*}
+\mathbb{P}(i \rightarrow f) = \frac{\abs{\mM_{fi}}^2 (2\pi)^4 \delta^{(4)}\left(p_i - \sum_r{p_r}\right)VT}{2m_i V \prod_{r}{2p_r^{0}V}}
+\end{equation*}
+We never measure these final momenta with infinite precision so we integrate over possible values;
+\begin{equation*}
+\Gamma_{i \rightarrow f} = \frac{1}{T}\int{\mathbb{P}(i \rightarrow f)\prod_{r}{\frac{V}{(2\pi)^3}\ud^3 p_r}}
+\end{equation*}
+This is not manifestly Lorentz invariant so we introduce the integration measure;
+\begin{equation}
+\ud \rho_f = (2\pi)^4 \delta^{(4)}\left(p_i - \sum_{r}{p_r}\right)\prod_{r}{\frac{\ud^3 p_r}{(2\pi)^3 2 p_r^{0}}}
+\end{equation}
+which on substitution into the decay rate gives;
+\begin{equation*}
+\Gamma_{i \rightarrow f} = \frac{1}{T}\int{\frac{\abs{\mM_{fi}}^2}{2m_i}T\, \ud \rho_f \, \left(\prod_{r}{\frac{(2\pi)^3 V}{V (2\pi)^3}}\right)} = \frac{1}{2m_i}\int{\abs{\mM_{fi}}^2 \,\, \ud \rho_f}
+\end{equation*}
+Thus the total decay rate is given by;
+\begin{equation}
+\Gamma_i = \frac{1}{2m_i} \sum_{f}{\int{\abs{\mM_{fi}}^2}\,\,\ud \rho_f}
+\end{equation}
+\subsubsection{Cross-Sections\index{cross-section}}
+We define the cross section, $\sigma$, by $n = F \sigma$ where;
+\begin{itemize}
+\item $n$ is the number of scattering particles per unit time per unit target particle
+\item $F$ is the incident flux of particles which is the number of incoming particles per unit time per unit area
+\end{itemize}
+If we consider colliding two beams of particles with densities $\rho_{a, b}$ and particle velocities $\vec{v}_{a, b}$ then we see that $F = \abs{\vec{v}_a - \vec{v}_b}\rho_a$. Then the total number of scattering events per unit time is;
+\begin{equation*}
+N = n\rho_b B = F\sigma \rho_b V \Rightarrow N = \abs{\vec{v}_a - \vec{v}_b} \rho_a \rho_b V\sigma
+\end{equation*}
+In our normalisation the density of states is $\rho_{a, b} = V^{-1}$ so that;
+\begin{equation*}
+\ud N = \ud \sigma \frac{\abs{\vec{v}_a - \vec{b}}}{V}
+\end{equation*}
+But we could also generalise our expression for $\mathbb{P}(i \rightarrow f)$ to deduce that;
+\begin{equation*}
+\ud N = \frac{1}{4 E_a E_b V} \abs{\mM_{fi}}^2 \ud \rho_f
+\end{equation*}
+Comparing the two expressions, we see that;
+\begin{equation}
+\ud \sigma = \frac{1}{\abs{\vec{v}_a - \vec{v}_b}}\frac{1}{4E_a E_b}\abs{\mM_{fi}}^2 \ud \rho_f
+\end{equation}
+More often that not, cross sections are quoted in barns\index{barn} where $1$ barn $= 10^{-28} \,\,\text{m}^2$.
+\subsection{Muon Decay\index{muon decay}}
+We want to consider the decay $\mu \rightarrow e^{-}\bar{\nu}_e \nu_\mu$ which is shown schematically in \autoref{fig:mudecay}. 
+\begin{mygraphic}{sm/mudecay}{0.6}{$\mu \rightarrow e^{-}\bar{\nu}_e \nu_\mu$ decay with the assigned momenta}{mudecay}\end{mygraphic}
+We assume that $m_{\bar{\nu}_e} = m_{\nu_\mu} = 0$ so that the electroweak Lagrangian is given by;
+\begin{equation*}
+\mL^{\text{eff}}_{W} = - \frac{G_F}{\sqrt{2}}\left((J^{\alpha})\dagg J_\alpha + \rho (J_n^{\alpha})\dagg J_{n\alpha}\right)
+\end{equation*}
+We are interested in the first part of the Lagrangian, not the neutral currents, where we have;
+\begin{equation*}
+J^{\alpha} = \bar{\nu}_e \gamma^{\alpha}(1 - \gamma^5) e + \bar{\nu}_\mu \gamma^{\alpha}(1 - \gamma^5)\mu + \bar{\nu}_\tau \gamma^{\alpha}(1 - \gamma^5) \tau
+\end{equation*}
+We have $m_{\mu} \sim 106\,\text{MeV} \ll m_{W} \sim 80 \, \text{GeV}$ so the effective Lagrangian should give a good description. Now the amplitude is given by;
+\begin{align*}
+\mM &= \bra{e^{-}(k)\bar{\nu}_e(q)\nu_\mu(q\pr)}\mL_{W}^{\text{eff}}(0)\ket{\mu^{-}(p)} \\
+&= -\frac{G_F}{\sqrt{2}}\ket{e^{-}(k)\bar{\nu}_e(q)}\bar{e}\gamma^{\alpha}(1 - \gamma^5)\nu_e \ket{0} \\
+&\qquad \times \bra{\nu_\mu(q\pr)}\bar{\nu}_\mu \gamma_\alpha (1 - \gamma^5)\mu\ket{\mu^{-}(p)}
+\end{align*}
+where we note that for example $\bar{\nu}_e$ generates an electron neutrino (not an anti electron-neutrino) in the final states etc. Now, in this calculation, we are not interested in the final state spins, so we sum over them. We also don't know the spin of the initial $\mu^{-}$ so we should average over initial spin states. Thus;
+\begin{align*}
+\frac{1}{2}\sum_{\text{spins}}{\abs{\mM}^2} &= \frac{1}{2}\frac{G_F}{2}\sum_{\text{spins}}\bar{u}_e(k)\gamma^{\alpha}(1 - \gamma^5)v_{\nu_e}(q)\bar{v}_{\nu_e}(q)\gamma^{\beta}(1 - \gamma^5)u_e(k) \\
+& \qquad \qquad \times \bar{u}_{\nu_\mu}(q\pr)\gamma_\alpha(1 - \gamma^5)u_\mu(p)\bar{u}_{\mu}(p)\gamma_\beta( 1- \gamma^5)u_{\nu_\mu}(q\pr) \\
+&\equiv \frac{G_F}{4}S_1^{\alpha \beta}S_{2\,\alpha \beta}
+\end{align*}
+Now we make use of the results;
+\begin{equation}
+\sum_s{u^s(p)\bar{u}^s(p)} = \slashed{p} + m, \qquad \sum_{s}{v^s(p)\bar{v}^s(p)} = \slashed{p} - m
+\end{equation}
+Recalling that $m_{\nu_e} = m_{\nu_\mu} = 0$, we see that;
+\begin{align}
+S_1^{\alpha \beta} &= \tr\left[(\slashed{k} + m_e)\gamma^{\alpha}(1 - \gamma^5)\slashed{q}\gamma^{\beta}(1 - \gamma^5)\right] \\
+S_{2 \,\alpha \beta} &= \tr\left[\slashed{q}\pr \gamma_\alpha (1 - \gamma^5)(\slashed{p} + m_\mu)\gamma_\beta(1 - \gamma^5)\right]
+\end{align}
+Using the fact that:
+\begin{align*}
+\tr(\gamma^{\mu_1}\cdots\gamma^{\mu_{2n - 1}}) &= 0 \\
+\tr(\gamma^{\mu}\gamma^{\nu}\gamma^{\rho}\gamma^{\sigma}) &= 4(\eta^{\mu\nu}\eta^{\rho\sigma} - \eta^{\mu\rho}\eta^{\nu\sigma} + \eta^{\mu\sigma}\eta^{\nu\rho}) \\
+\tr(\gamma^5 \gamma^{\mu}\gamma^{\nu}\gamma^{\rho}\gamma^{\sigma}) &= -4i \epsilon^{\mu\nu\rho\sigma}
+\end{align*}
+This allows us to deduce that;
+\begin{align*}
+S_1^{\alpha \beta} &= 8\set{k^\alpha q^\beta + k^\beta q^\alpha - k\cdot q \eta^{\alpha \beta} - i \epsilon^{\alpha \beta \mu\rho}k_\mu q_\rho} \\
+S_{2 \alpha \beta} &= 8\set{q\pr_\alpha p_\beta + q\pr_\beta p_\alpha - q\pr \cdot p \eta_{\alpha \beta} - i\epsilon_{\alpha \beta \mu \rho}q^{\prime \mu}p^\rho}
+\end{align*}
+Thus we find that;
+\begin{equation}
+\frac{1}{2}\sum_{\text{spins}}{\abs{\mM}^2} = 64G_F^2 (p\cdot q)(k \cdot q\pr)
+\end{equation}
+To illustrate some of the features of this equation, consider the case where $e^{-}$ and $\nu_\mu$ are propagating along the $+z$ direction whilst $\bar{\nu}_e$ is moving in the $-z$ direction. Then;
+\begin{equation*}
+k \cdot q\pr = \sqrt{m_e^2 + k_z^2} q_z\pr - k_z q_z\pr
+\end{equation*}
+Thus we see that $k\cdot q\pr \rightarrow 0$ if $m_e \rightarrow 0$. This can be understood due to the fact that the weak interaction only couples to left-handed chiral fermions ($\equiv$ negative helicity). Making the observation that the $\bar{\nu}_e$ should be right handed if it is to couple to the weak force, we end up with the following diagram for the process.
+\begin{mygraphic}{sm/mezero}{0.6}{The weak force couples to left-handed chiral fermions, or equivalently right-handed chiral anti-fermions.}{mezero}\end{mygraphic}
+We see that if $m_e = 0$ then $\abs{s_z} = \tfrac{3}{2} > \tfrac{1}{2} = s_\mu$, so this cannot happen. If $m_e \neq 0$, then the LH and RH components are coupled together so that chirality and helicity are \emph{not} equivalent, and the process may occur. This being said, the process is said to be ``helicity suppressed''. Now we look to calculate the decay rate;
+\begin{equation*}
+\Gamma = \frac{1}{2m_\mu} \int{\frac{\ud^3 k}{(2\pi^3)2k^0}\frac{\ud^3 q}{(2\pi)^32q^0}\frac{\ud^3 q\pr}{(2\pi)^3 2q^{\prime 0}}(2\pi)^4 \delta(p - k - q - q\pr)\frac{1}{2}\sum_{\text{spins}}\abs{\mM}^2}
+\end{equation*}
+So we find that;
+\begin{equation*}
+\Gamma = \frac{G_F^2}{8\pi^5 m_\mu}\int{\frac{\ud^3 k \ud^3 q \ud^3 q\pr}{k^0 \abs{\vec{q}} \abs{\vec{q}\pr}}\delta(p - k - q - q\pr)(p\cdot q)(k\cdot q\pr)}
+\end{equation*}
+To evaluate this integral, we consider the following;
+\begin{equation*}
+I_{\mu\nu}(p, k) = \int{\frac{\ud^3 q \ud^3 q\pr}{\abs{\vec{q}}\abs{\vec{q}\pr}}\delta^{(4)}(p - k - q - q\pr) q_\mu q\pr_\nu}
+\end{equation*}
+Now, this is a Lorentz tensor so it must transform as such. Note that it is a function of $(p - k)$ so by symmetry, it must be able to be written as;
+\begin{equation*}
+I_{\mu\nu}(p - k) = a(p - k)_\mu (p - k)_\nu + b \eta_{\mu\nu}(p - k)\cdot(p - k)
+\end{equation*}
+where $a, b$ are functions of $(p - k)^2$ (they can only be Lorentz scalars). Now;
+\begin{align*}
+\eta^{\mu\nu}I_{\mu\nu} &= \int{\cdots q\cdot q\pr} = \underbrace{\int{\cdots (p - k)^2}}_{\text{by momentum conser.}} = a(p - k)^2 + 4b(p - k)^2 \\
+&\Rightarrow a + 4b = \frac{1}{2}I , \qquad I = \int{\frac{\ud^3 q}{\abs{\vec{q}}}\frac{\ud^3 q\pr}{\abs{\vec{q}\pr}}\delta^{(4)}(p - k - q - q\pr)}
+\end{align*}
+and;
+\begin{align*}
+(p - k)^{\mu}(p - k)^{\nu}I_{\mu\nu} &= a(p - k)^4 + b(p - k)^4 = \int{\cdots [q\cdot (p - k)][q\pr \cdot (p - k)]} \\
+&\Rightarrow a + b = \frac{I}{4}
+\end{align*}
+Now, $I$ is Lorentz invariant, so we can calculate it in any frame. In particular, we can calculate it in the frame where $\vec{p} - \vec{k} = 0$ so that $\vec{q} = - \vec{q}\pr$. Then we find that since $q^0 = \abs{\vec{q}}$ we have, setting $\sigma = p^{0} - k^{0}$;
+\begin{equation*}
+I = \int{\frac{\ud^3 q}{\abs{\vec{q}}^2} \delta(\sigma - 2\abs{\vec{q}})} = 4\pi \int{\upd{\abs{\vec{q}}}\delta(\sigma - 2\abs{\vec{q}})} = 2\pi
+\end{equation*}
+So we deduce that $a = \pi/3$ and $b = \pi/6$, hence;
+\begin{equation*}
+\Gamma = \frac{G_F^2}{(2\pi)^4 3m_\mu}\int{\frac{\ud^3 k}{k^0}\set{2p\cdot(p - k) k \cdot (p - k) + (p\cdot k)(p - k)^2}}
+\end{equation*}
+where $k^0 = E$ is the energy of the electron. Now, recall that $\Gamma$ is defined to the the decay rate in the rest frame of the muon, so that $p\cdot k = m_\mu E$, $p\cdot p = m_\mu^2$ and $k\cdot k = m_e^2$. Now we have;
+\begin{equation*}
+\frac{m_e}{m_\mu} \sim 0.0048 \ll 1
+\end{equation*}
+so we can approximate $m_e = 0$ so that;
+\begin{align*}
+\Gamma &= \frac{G_F^2}{(2\pi)^4 3m_\mu}\int{\frac{\ud^3 k}{E}\left(3m_\mu^3 E - 4E^2 m_\mu\right)} \\
+&= \frac{G_F^2 m_\mu}{2(2\pi)^4}\cdot4\pi \int{\upd{E}E(3m_\mu - 4E)}
+\end{align*}
+In terms of the limits of this integration, $E_{\text{min}}$ occurs when the electron is at rest, so $E_{\text{min}} = 0$. On the other hand, $E_{\text{max}}$ occurs when the $\bar{\nu}_e$ and $\nu_\mu$ are in the same direction so that conservation of energy and momentum give;
+\begin{equation*}
+E_{\text{max}} + E_{\nu_e} + E_{\nu_\mu} = m_\mu, \qquad E_{\text{max}} - E_{\nu_\mu} - E_{\nu_\mu} = 0
+\end{equation*}
+Hence we find that $E_{\text{max}} = m_\mu / 2$, and that after performing the integration;
+\begin{equation}
+\Gamma = \frac{G_F^2 m_\mu^5}{192 \pi^3}
+\end{equation}
+This is actually the only decay channel for the muon, due to its mass, so by measuring the lifetime $\tau_\mu = \Gamma^{-1} \sim 2.1970 \times 10^{-6}\text{s}$ experimentally, we can determine $G_F = 1.164 \times 10^{-5}\,\,\text{GeV}^2$. The one loop corrections to this are at order $10^{-6}$. We could also get $G_F$ from the decay of the tau for example which cold decay via the $e^{-}$ channel or the $\mu^{-}$ channel. We find it to be consistent with our calculation above, which provides evidence for universality across lepton interactions by flavour.
+\subsection{Pion Decay}\index{pion}
+We consider specifically the process $\pi^{-}(\bar{u}d) \rightarrow e^{-}\bar{\nu}_e$ and assume that $m_{\nu_e} = 0$. In Fermi theory\index{Fermi theory}, we have a point interaction, which is ultimately mediated by a $W^{-}$ boson as illustrated in \autoref{fig:piondec}.
+\begin{mygraphic}{sm/piondec}{0.7}{The Feynman diagram for $\pi^{-}$ decay first in the case of the effective Lagrangian, and then with the full electroweak Lagrangian.}{<label>}\end{mygraphic}
+A pion is a pseudoscalar meson with spin $0$ and negative parity. The $\bar{u}$ and the $d$ don't themselves propagate but are bound into the $\pi^{-}$. As such the relevant currents are;
+\begin{align*}
+J_{\text{lept}}^{\alpha} &= \bar{\nu}_e \gamma^\alpha (1 - \gamma^5)e \\
+J_{\text{had}}^{\alpha} &= \bar{u}\gamma^\alpha (1 - \gamma^5) (V_{ud}d + V_{us}s + V_{ub}b) \coloneqq V_{\text{had}}^{\alpha} - A_{\text{had}}^{\alpha}
+\end{align*}
+where $V_{\text{had}}$ and $A_{\text{had}}$ are the parts of $J_{\text{had}}$ containing $\gamma^\alpha$ and $\gamma^{\alpha}\gamma^{5}$ respectively. Now the amplitude is;
+\begin{align*}
+\mM &= \bra{e^{-}(k)\bar{\nu}_e(q)}\mL^{\text{eff}}_W(0)\ket{\pi^{-}(p)} \\
+&= -\frac{G_F}{\sqrt{2}}\bra{e^{-}(k)\bar{\nu}_e(q)}\bar{e}\gamma_\alpha (1 - \gamma^5) \nu_e \ket{0} \bra{0}J^{\alpha}_{\text{had}}\ket{\pi^{-}(p)}
+\end{align*}
+Now consider the two terms in $J_{\text{had}}^{\alpha}$, by the Lorentz structure of the indices;\footnote{Note that we have excluded the possibility of $\epsilon^{\alpha \beta \gamma \delta}p_{\beta}p_{\gamma}p_{\delta}$ as $p^{\alpha}$ is the only $4$-vector present and the expression vanishes by antisymmetry.}
+\begin{equation*}
+\bra{0}V_{\text{had}}^{\alpha}\ket{\pi^{-}(p)} \equiv C p^{\alpha}
+\end{equation*}
+But under parity, $\bra{0}V_{\text{had}}^{\alpha}\ket{\pi^{-}(p)} \mapsto -\mathbb{P}\indices{^{\alpha}_{\beta}}\bra{0}V_{\text{had}}^{\beta}\ket{\pi^{-}(p)}$ whilst the left hand side remains unchanged up to a multiple of $\mathbb{P}\indices{^{\alpha}_{\beta}}$. So we deduce that it must be zero. On the other hand, the axial current\index{axial current} does not have these issues and we write;
+\begin{equation}
+\bra{0}A_{\text{had}}^{\alpha}\ket{\pi^-(p)} \coloneqq i\sqrt{2}F_\pi p^{\alpha}
+\end{equation}
+So we can replace the whole matrix element $\bra{0}J^{\alpha}_{\text{had}}\ket{\pi^{-}(p)}$ by $i\sqrt{2}F_\pi p^{\alpha}$. After expanding the $e$ and $\bar{\nu}_e$ fields, and contracting $p^{\alpha}$ with $\gamma_\alpha$ we find;
+\begin{align*}
+\mM &= iG_F F_\pi V_{ud}\bar{u}_e(k)\slashed{p}(1 - \gamma^5)v_{\nu_e}(q) \\
+&= iG_F F_\pi V_{ud} m_e \bar{u}_e(k)(1 - \gamma^5)v_{\nu_e}(q)
+\end{align*}
+To get from the first to the second line, note that conserving momentum gives $p = k + q$ from which we can use that;
+\begin{equation*}
+\bar{u}_e(k)\slashed{k} = \bar{u}_e(k)m_e, \qquad \slashed{q}v_{\nu_e}(q) = 0
+\end{equation*}
+This again illustrates the concept of helicity suppression as if $m_e = 0$, then in the rest frame of the spin $0$ pion, it must be that the electron and anti-electron neutrino are travelling in opposite directions with helicities in the direction of travel. Thus we would find that the electron was right handed, and that the decay would not happen. Now, to calculate the decay rate we sum over the spins of final states; 
+\begin{align*}
+\sum_{\text{spins}}{\abs{\mM}^2} &= \sum_{\text{spins}}{\abs{G_F F_\pi m_e V_{ud}}^2 \bar{u}_e(k)(1 - \gamma^5)v_{\nu_e}(q)\bar{v}_{\nu_e}(q)(1 + \gamma^5)u_e(k)} \\
+&= 8\abs{G_F F_\pi m_e V_{ud}}^2 (k\cdot q)
+\end{align*}
+Thus we find that the decay rate is given by;
+\begin{align*}
+\Gamma_{\pi \rightarrow e\bar{\nu}_e} &= \frac{1}{2m_\mu}\int{\frac{\ud^3 k \ud^3 q}{(2\pi)^3 2 k^0 (2\pi)^3 2q^0}(2\pi)^4 \delta^{(4)}(p - k - q)8\abs{G_F F_\pi m_e V_{ud}}^2 (k\cdot q)} \\
+&= \frac{\abs{G_F F_\pi m_e V_{ud}}^2}{4\pi^2 m_\pi} \int{\frac{\ud^3 k}{k^0 q^0}\delta(m_\pi - E(\abs{\vec{k}}) - \abs{k})(E\abs{\vec{k}} + \abs{\vec{k}}^2)} \\
+&=\frac{\abs{G_F F_\pi m_e V_{ud}}^2}{4\pi^2 m_\pi} \int{\frac{\ud^3 k}{E\abs{\vec{k}}}\delta(m_\pi - E(\abs{\vec{k}}) - \abs{\vec{k}})(E\abs{\vec{k}} + \abs{\vec{k}}^2)}
+\end{align*}
+where we have used the fact that $E = k^0$ and $\abs{\vec{k}} = q^0 = \abs{\vec{q}}$. We can then use the fact that;
+\begin{equation*}
+\delta\left(f(k)\right) = \frac{\delta(k - k_0)}{\abs{f\pr(k_0)}}
+\end{equation*}
+where $k_0^2 = E - m_e^2$, so we find that;
+\begin{align*}
+\Gamma_{\pi \rightarrow e\bar{\nu}_e} &= \frac{\abs{G_F F_\pi m_e V_{ud}}^2}{\pi}\frac{m_e^2}{m_\pi}\left(\frac{m_\pi^2 - m_e^2}{2m_\pi}\right)^2 \\
+\Rightarrow \Gamma_{\pi \rightarrow e\bar{\nu}_e} &= \frac{\abs{G_F F_\pi m_e V_{ud}}^2}{4\pi}m_e^2 m_\pi \left(1 - \frac{m_e^2}{m_\pi^2}\right)^2
+\end{align*}
+What happens if we compare this with the decay of a pion to a muon and anti-muon neutrino? Nothing changes in terms of the expression except $m_e \rightarrow m_\mu$. We find;
+\begin{equation*}
+\frac{\Gamma_{\pi \rightarrow e\bar{\nu}_e}}{\Gamma_{\pi \rightarrow \mu \bar{\nu}_\mu}} = \frac{m_e^2}{m_\mu^2}\left(\frac{m_\pi^2 - m_e^2}{m_\pi^2 - m_\mu^2}\right) \sim  1.28 \times 10^{-4} <1
+\end{equation*}
+Experimentally we find that this ratio is $(1.230 \pm 0.004)\times 10^{-4}$, which is in reasonable agreement but need the quantum loop effects to sort out the details.
+\subsection{$K^0$ + $\bar{K}^0$ Mixing}
+Kaons\index{kaon} are mesons that contain a strange quark/antiquark. The flavour eigenstates are $K^0(\bar{s}d)$, $\bar{K}^{0}(\bar{d}s)$, $K^+ (\bar{s}u)$ and $K^{-}(\bar{u}s)$. These are the lightest known eigenstates with spin $J = 0$ and parity $P = - 1$, so they are pseudoscalars. 
+
+\paraskip
+For kaons at rest we can take the relative phases such that $\hat{C}\hat{P}\ket{K^0} = -\ket{\bar{K}^0}$, and $\hat{C}\hat{P}\ket{\bar{K}^0} = - \ket{K^0}$. So we see that the CP eigenstates are;
+\begin{equation}
+\ket{K^0_+} = \frac{1}{\sqrt{2}}\left(\ket{K^0} - \ket{\bar{K}^0}\right), \quad \ket{K_-^0} = \frac{1}{\sqrt{2}}\left(\ket{K^0} + \ket{\bar{K}^0}\right)
+\end{equation}
+To expand on this a bit further, consider the processes $K^0 \rightarrow \pi^0 \pi^0$ and $K^0 \rightarrow \pi^+ \pi^-$, These are weak decays since they change favour, so we have the diagrams as in \autoref{fig:kaondec};
+\begin{mygraphic}{sm/kaondec}{0.9}{The two diagrams for the two decays of the $K^0$}{kaondec}\end{mygraphic}
+Conserving angular momentum and using the fact that the $\pi$'s have zero spin we deduce that the angular momentum of $\pi \pi$ must be zero. So;
+\begin{align*}
+\hat{C}\hat{P}\ket{\pi^+\pi^-} &= (-1)^L \ket{\pi^+ \pi-} = \ket{\pi^+ \pi^-} \\
+\hat{C}\hat{P}\ket{\pi^0 \pi^0} &= \ket{\pi^0 \pi^0}
+\end{align*}
+So $\ket{\pi^+ \pi^-}$ and $\ket{\pi^0 \pi^0}$ are eigenstates of $\hat{C}\hat{P}$ with eigenvalue $+ 1$. If CP were conserved in the weak interaction, then we should have a short lived decay, $K^0_+ \rightarrow \pi \pi$ but not $K^0_- \rightarrow \pi \pi$. In this second case we must have something like $K^0_- \rightarrow \pi \pi \pi$, but this has a smaller phase space as the mass of the right hand side is closer to the left than the original decay. Experimentally, we find a short lifetime kaon $K_s^{0}$ with $\tau \sim 9\times 10^{-11}\text{s}$ and a long lived one $K^0_l$ with $\tau \sim 5.1 \times 10^{-8}\text{s}$. Now, we define;
+\begin{equation*}
+\eta_{+-} \coloneqq \frac{\abs{\bra{\pi_+ \pi_-}H\ket{K_l^{0}}}}{\abs{\bra{\pi_+ \pi_-}H\ket{K_s^0}}}
+\end{equation*}
+and analogously for $\eta_{00}$. Experimentally we find that these ratios are significantly not zero, with $\eta_{+-} \sim \eta_{00} \sim 2.2\times10^{-3}$. Thus, this is an experimental manifestation of CP violation\index{CP violation} in the Standard Model.
+
+\paraskip
+In general there are two main ways in which CP can be violated. Firstly, we can have direct CP violation of $s \rightarrow u$ due to the phase in the CKM matrix. We can also have indirect CP violation due to $K^0$, $\bar{K}^0$ mixing, then decay. It turns out that the latter case is the factor responsible here. The two dominant contributions are illustrated in the box diagrams shown in \autoref{fig:boxdiag}.
+\begin{mygraphic}{sm/boxdiag}{0.9}{The two dominant contributions to $K^0$-$\bar{K}^0$ mixing in the standard model. Note that the strangeness changes by $2$ and that they are \emph{not} tree level.}{boxdiag}\end{mygraphic}
+More generally we have;
+\begin{equation*}
+\ket{K_{s/l}^0} = \frac{1}{\sqrt{1 + \abs{\epsilon_{s,l}}^2}}\left(\ket{K_+^0} + \epsilon_{s,l} \ket{K_-^0}\right)
+\end{equation*}
+where $\epsilon_{s,l} \in \CC$. Note that here we are assuming that we have two state mixing and that we can ignore the details of the strong interaction. Now, writing;
+\begin{equation*}
+\ket{K_{s,l}(t)} = a_{s,l}(t)\ket{K^0} + b_{s,l}(t)\ket{\bar{K}^0}
+\end{equation*}
+then, $i\del_t \ket{\psi(t)} = H \ket{\psi(t)}$ becomes;
+\begin{equation}
+i\frac{\ud}{\ud t}\colvec{2}{a}{b} = \twobytwo{\bra{K^0}H\ket{K^0}}{\bra{K^0}H\ket{\bar{K}^0}}{\bra{\bar{K}^0}H\ket{K^0}}{\bra{\bar{K}^0}H\ket{\bar{K}^0}}
+\end{equation}
+where $H$ is the relevant non-linear order weak Hamiltonian. We define the matrix in the expression above to be $R$ then simply because kaons decay, it cannot be the case that $R$ is hermitian. But we can write it as $R = M - \tfrac{i}{2}\Gamma$ where $M$ (the mass matrix)\index{mass matrix} and $\Gamma$ (the decay matrix) are hermitian. Letting $\hat{\theta} = \hat{C}\hat{P}\hat{T}$, then the CPT theorem\index{theorem!CPT} says that our theory should be invariant under $\hat{\theta}$. In other words, we should have $\hat{\theta}H\hat{\theta}^{-1} = H\dagg$. Furthermore, in the rest frame of the kaons we have $\hat{T} \ket{K^0} = \ket{K^0}$ and similarly for $\ket{\bar{K}^0}$. Using the fact that $\hat{T}$ is anti-linear and anti-unitary, we find;
+\begin{align*}
+R_{11} &= (K^0, HK^0) = (\hat{\theta}^{-1}\hat{\theta}K^0, H\hat{\theta}^{-1}\hat{\theta}K^0) \\
+&= (\hat{\theta}^{-1}\bar{K}^0, H\hat{\theta}^{-1}\bar{K}^0) \\
+&= (\bar{K}^0, \hat{\theta}H \hat{\theta}^{-1}\bar{K}^{0})^{\star} \\
+&= (\bar{K}^0, H\bar{K}^0) = R_{22}
+\end{align*} 
+where we have used $\hat{\theta}\ket{K^0} = -\ket{\bar{K}^0}$. Now, using CPT invariance gives no condition on $R_{12}, R_{21}$. If we make the stronger assumption that CP is good, then we must also have that our theory respects time reversal, so $\hat{T}H\hat{T}^{-1} = H\dagg$, then;
+\begin{align*}
+R_{12} &= (K^0, H\bar{K}^0) = (\hat{T}^{-1}\hat{T}K^0, H\hat{T}^{-1}\hat{T}\bar{K}^0) \\
+&= (\hat{T}^{-1}K^0, H\hat{T}^{-1}\bar{K}^0) \\
+&= (K^0, \hat{T}H \hat{T}^{-1}\bar{K}^0)^{\star} \\
+&= (K^0, H\dagg \bar{K}^0)^{\star} = (\bar{K}^0, HK^0) = R_{21}
+\end{align*}
+So we see that \emph{if} CP is good, then $R_{12} = R_{21}$. We can ultimately find that;
+\begin{equation*}
+\epsilon_s = \epsilon_l \coloneqq \epsilon = \frac{\sqrt{R_{12}} - \sqrt{R_{21}}}{\sqrt{R_{12}} + \sqrt{R_{21}}}
+\end{equation*}
+so that this vanishes if $R_{12} = R_{21}$. In \emph{Dynamics of the Standard Model} it is shown that $\eta_{+-} = \epsilon + \epsilon\pr$ and $\eta_{00} = \epsilon - 2\epsilon\pr$ where $\epsilon\pr$ characterises the direct CP violation. Experimentally we find that;
+\begin{equation*}
+\abs{\epsilon} = (2.228 \pm 0.011)\times 10^{-3}, \qquad \frac{\epsilon\pr}{\epsilon} = (1.66 \pm 0.23) \times 10^{-3}
+\end{equation*}
+so there is highly significant experimental evidence that there is CP violation\index{CP violation} in the standard model via this process.
+\subsection{Other Decays}
+We can use other decays to probe this mixing, for example semi-leptonic decays\index{semi-leptonic decay};
+\begin{align*}
+K^0 \rightarrow \pi^- e^{+}\nu_e, &\qquad K^0 \not\rightarrow \pi^+ e^{-}\bar{\nu}_e \\
+\bar{K}^0 \not\rightarrow \pi^- e^{+}\nu_e, &\qquad \bar{K}^0 \rightarrow \pi^+ e^- \bar{\nu}_e
+\end{align*}
+If CP was conserved we would expect that $\Gamma(K_{l,s}^{0} \rightarrow \pi^- e^+ \nu_e) = \Gamma(K_{l,s}^{0} \rightarrow \pi^+ e^- \bar{\nu}_e)$ since $\ket{K_{l,s}^{0}} = \tfrac{1}{\sqrt{2}}(\ket{K^0} \mp \ket{\bar{K}^0})$ are CP eigenstates. Define;
+\begin{equation*}
+A_{l,s} = \frac{\Gamma(K_{l,s}^{0} \rightarrow \pi^- e^+ \nu_e) - \Gamma(K_{l,s}^{0} \rightarrow \pi^+ e^- \bar{\nu}_e)}{\Gamma(K_{l,s}^{0} \rightarrow \pi^- e^+ \nu_e) + \Gamma(K_{l,s}^{0} \rightarrow \pi^+ e^- \bar{\nu}_e)}
+\end{equation*}
+We can measure the long lifetime decay and find that $A_l = (3.32 \pm 0.06)\times 10^{-3}$ which again is significantly non-zero, indicating CP violation.\footnote{It is an interesting thought experiment to think how this could be used to tell the difference between matter and antimatter. First note that $\Gamma(K_{l,s}^{0} \rightarrow \pi^- e^+ \nu_e) > \Gamma(K_{l,s}^{0} \rightarrow \pi^+ e^- \bar{\nu}_e)$, it then remains to define the \emph{positron} as the result of the longest living neutral kaon decay.}
+\newpage
+\section{Quantum Chromodynamics}
+We start by making the observation that protons and neutrons have approximately the same mass, as do $\pi^{+/-/0}$, which leads to the postulate that there is a global $\text{SU}(2)$ isospin\index{isospin} symmetry. Then $(p,n)$ lie in the $I = 1/2$ doublet and $\pi^{+/-/0}$ in the $I = 1$ triplet. In reality we know that the proton and neutron do not have exactly the same mass though, so the mass terms in the Lagrangian explicitly break this symmetry, but it is still a good approximation. To understand the properties of strange hadrons, this idea was extended to an $\text{SU}(3)_f$ flavour symmetry. Note that this is \emph{not} a local gauge symmetry $\text{SU}(3)_c$ as in the full quantum theory. This is also broken (and more severely than the isospin symmetry) since the quarks have significantly different masses, however it is still useful for classfying hadrons. In particular, we consider;
+\begin{itemize}
+\item The lightest (pseudoscalar) mesons to lie in the $\vec{8} + \vec{1}$ representation
+\item The lightest baryons to lie in $\vec{1} + \vec{8} + \vec{10}$
+\end{itemize}
+This sort of behaviour is explained by the \emph{quark model}\index{quark model} where we consider constituent quarks $u, d, s$ lying in the $\vec{3}$ (i.e. fundamental) representation of $\text{SU}(3)$. Then the group structure ensures that $\vec{3}\otimes \bar{\vec{3}} = \vec{8} + \vec{1}$ and $\vec{3} \otimes \vec{3} \otimes \vec{3}. = \vec{8} + \vec{10}$. Then baryons are $(qqq)$ whilst mesons are $(q\bar{q})$.
+
+\paraskip
+An issue arose with the discovery of the $\Delta^{++}(uuu)$ particle which importantly had spin $\tfrac{3}{2}$. We see that the wavefunction appears to be symmetric in violation of Fermi statistics. The lead to the postulate that there is a new quantum number, \emph{colour}, that distinguishes the quarks. It was further postulated that observed states are colour singlets with no net colour, which encodes the principle of confinement\index{confinement}. Now, to get singlets we could consider;
+\begin{equation*}
+\vec{3} \otimes \bar{\vec{3}} \sim q\bar{q},\quad \vec{3} \otimes \vec{3} \otimes \vec{3} \sim qqq, \quad qqq\bar{q}q, \quad qq\bar{q}\bar{q}
+\end{equation*}
+Indeed these predicted the existence of the $\Omega^{-}(sss)$ baryon which was subsequently observed.
+\subsection{QCD Lagrangian}
+The modern description of the strong interactions of quarks is QCD, which is an $\text{SU}(3)_c$ gauge theory with quarks lying in the fundamental representation. The $8$ gauge bosons/generators correspond to the $8$ gluons in the theory. In this case, the symmetry is exact, and not broken. We have;
+\begin{equation}
+\mL_{\text{QCD}} = -\frac{1}{4}(F_{\mu\nu})^a(F^{\mu\nu})^a + \sum_f{\bar{q}_f (i \slashed{D} - m_f)q_f}
+\end{equation}
+where the sum is over the quark flavours $(u, d, s, c, b, t)$. We have;
+\begin{equation*}
+D_\mu = \del_\mu + igA_\mu^a T^a, \quad F_{\mu\nu}^a = \del_\mu A_\nu^a - \del_\nu A_\mu^a - gf^{abc}A_\mu^b A_\nu^c
+\end{equation*}
+Also note that were we to write down the full theory, including the electroweak component, we would have additional terms in the covariant derivative. Furthermore, we are working in the diagonal basis where the quark-gauge boson interactions are contained in the CKM matrix. Now, the quarks are in the fundamental representation so the generators are $T^a = \tfrac{1}{2}\lambda^a$ where $\lambda^a$ are the Gell-Mann matrices\index{Gell-Mann matrix}.
+\subsection{Renormalisation}
+Suppose $\mL$ contains a set of coupling constants $\set{g_j}$ including the masses. Then for each of these, we need a physical/observable/derived quantity $g_i^0$ and a renormalisation condition that relates them;
+\begin{equation}
+g_i^0 = G_i^0\left(g(\mu), \mu\right)
+\end{equation}
+where here $g(\mu)$ denotes the set $\set{g_i}$, the renormalised couplings. Also, $\mu$, is the renormalisation point, which is just some energy scale. Ultimately, we will consider a perturbative expression for $G_i^0$ although we could do this non-perturbatively through lattice QCD for example. We can define the beta function;
+\begin{equation}
+\beta_j \left(g(\mu), \mu\right) = \mu \frac{\ud}{\ud \mu}g_j(\mu)
+\end{equation}
+In an identical manner to the derivation of the Callan-Symantik equation in \emph{Advanced Quantum Field Theory}, $g_i^{0}$ should not depend on $\mu$, so we see that;
+\begin{equation*}
+\mu\frac{\ud}{\ud \mu}G_i^0\left(g(\mu), \mu\right) = \left(\mu \frac{\ud}{\ud \mu} + \beta_j \frac{\del}{\del g_j}\right)G_i^0 = 0
+\end{equation*}
+Ignoring the quark masses, the general expression for a non-Abelian gauge theory to one loop order is;
+\begin{equation}
+\beta(g) = -\beta_0 \frac{g^3}{16\pi^2} + \mO(g^5), \quad \beta_0 = \frac{11}{3}C - \frac{4}{3}\sum_f{T_f}
+\end{equation}
+where $f^{acd}f^{bcd} = C \delta^{ab}$ and $\tr(t^a_f t^b_f) = T_f \delta^{ab}$ where $t_f^a$ are the generators for the fermion $f$. Implicitly we are assuming that we couple to LH and RH fermions equally. For $\text{SU}(N)$ we have $C \equiv N$ and for fermions in the fundamental rep, $T_f = \tfrac{1}{2}$. So the one loop expression for QCD is;
+\begin{equation}
+\beta(g) = -\left(11 - \frac{2}{3}N_f\right)\frac{g^3}{16\pi^2}
+\end{equation}
+Now, there are $6$ flavours of quark, but the number of \emph{active} quarks depends on the scale. For energies $\sim 100\,\,\text{MeV}$ we have $N_f = 3$, however for $m_b \leq E \ll m_t \sim 173\,\,\text{GeV}$ we instead have $N_f = 5$ which we must deal wth carefully. Furthermore, we have the strong coupling\index{strong coupling} defined by;
+\begin{equation}
+\alpha_s = \frac{g^2}{4\pi}
+\end{equation}
+in analogy with the electromagnetic case. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

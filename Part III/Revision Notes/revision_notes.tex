@@ -1,0 +1,62 @@
+\documentclass[10pt,openany,twoside]{book}
+\input{packagemaster1}
+
+% Additional Options
+\fancyhead[LO,LE]{\textsc{\nouppercase{\leftmark}}}
+\chead{}
+\fancyhead[RO,RE]{}
+\lfoot{}
+\cfoot{\footnotesize{\thepage}}
+\rfoot{}
+
+% Begin Document
+\begin{document}
+\begin{titlepage}
+\noindent
+\includegraphics[width=\textwidth]{graphics/cambridge.jpg}\\[-1em]
+\color{black}
+\par\vspace{20pt}
+\hrule\vspace{10pt}
+\noindent
+{\Huge \textbf{University of Cambridge} \\ \textsf{Mathematical Tripos Part III}}
+\vskip\baselineskip
+\hrule
+\vspace{10pt}
+\noindent
+\Large\textbf{Theoretical Physics Notes 2017-18} \\ \normalsize\textit{\textsf{J.B.G. Alvey (St John's College) - Typeset: \today\hspace{1.5pt}at \currenttime}}
+\vspace{40pt}
+
+\normalsize \textit{These are a collection of summaries for courses taken during the 2017-18 academic year. They are distributed freely for whomever may wish to use them. Hopefully they form a comprehensive set of notes that would provide a strong background to a number of fields in Theoretical Physics. They represent the exposition of the theories and ideas that were the reason I started the Tripos 4 years ago. As such, I see them as the end product of a very formative part of my life, as well as hopefully the beginning of yet more physical endeavours.}
+\end{titlepage}
+\dominitoc
+\tableofcontents
+\vspace{20pt}
+\hrule
+\newpage
+\input{advcosmo}
+\newpage
+\input{aqft}
+\newpage
+\input{cosmo}
+\newpage
+\input{gr}
+\newpage
+\input{qft}
+\newpage
+\input{sm}
+\newpage
+\input{sft}
+\newpage
+\input{strings}
+\newpage
+\input{sfp}
+\newpage
+\input{tpscm}
+\newpage
+\input{appends}
+\newpage
+\nocite{*}
+\bibliography{revisionbib}
+\newpage
+\printindex
+\end{document}

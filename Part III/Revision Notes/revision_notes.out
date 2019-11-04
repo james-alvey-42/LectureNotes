@@ -1,0 +1,317 @@
+\BOOKMARK [0][-]{chapter.1}{Advanced Cosmology}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Statistics of Cosmological Fluctuations}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Random Fields and Statistics in 3D}{section.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.1.1}{Power Spectrum}{subsection.1.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.1.2}{Correlation Functions}{subsection.1.1.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.1.1.3}{Higher Order Correlators for n-spectra}{subsection.1.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.2}{Fourier Conventions}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.3}{Shape of the Power Spectrum}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.4}{Gaussian Random Field}{section.1.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.1.4.1}{Wick's Theorem}{subsection.1.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.1.4.2}{Weakly non-Gaussian Fields}{subsection.1.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.1.5}{Estimators and Cosmic Variance}{section.1.1}% 12
+\BOOKMARK [2][-]{subsection.1.1.6}{Random Fields on the Sphere}{section.1.1}% 13
+\BOOKMARK [3][-]{subsubsection.1.1.6.1}{Rotations}{subsection.1.1.6}% 14
+\BOOKMARK [3][-]{subsubsection.1.1.6.2}{Projections of 3D Fields}{subsection.1.1.6}% 15
+\BOOKMARK [1][-]{section.1.2}{Physics of the Cosmic Microwave Background}{chapter.1}% 16
+\BOOKMARK [2][-]{subsection.1.2.1}{Relativistic Kinetic Theory and the Boltzmann equation}{section.1.2}% 17
+\BOOKMARK [3][-]{subsubsection.1.2.1.1}{Distribution Function}{subsection.1.2.1}% 18
+\BOOKMARK [3][-]{subsubsection.1.2.1.2}{The CMB Dipole}{subsection.1.2.1}% 19
+\BOOKMARK [3][-]{subsubsection.1.2.1.3}{The Boltzmann Equation}{subsection.1.2.1}% 20
+\BOOKMARK [3][-]{subsubsection.1.2.1.4}{Line of Sight Solution}{subsection.1.2.1}% 21
+\BOOKMARK [3][-]{subsubsection.1.2.1.5}{Stress-Energy Tensor}{subsection.1.2.1}% 22
+\BOOKMARK [2][-]{subsection.1.2.2}{Temperature anistropies from scalar perturbations}{section.1.2}% 23
+\BOOKMARK [3][-]{subsubsection.1.2.2.1}{d/d for scalar perturbations}{subsection.1.2.2}% 24
+\BOOKMARK [3][-]{subsubsection.1.2.2.2}{Temperature Anisotropies}{subsection.1.2.2}% 25
+\BOOKMARK [3][-]{subsubsection.1.2.2.3}{Evolution of Plasma Fluctuations}{subsection.1.2.2}% 26
+\BOOKMARK [3][-]{subsubsection.1.2.2.4}{Large-scale Temperature Anisotropies}{subsection.1.2.2}% 27
+\BOOKMARK [3][-]{subsubsection.1.2.2.5}{Intermediate-scale Temperature Anisotropies}{subsection.1.2.2}% 28
+\BOOKMARK [2][-]{subsection.1.2.3}{Scalar Perturbations on Small Scales}{section.1.2}% 29
+\BOOKMARK [3][-]{subsubsection.1.2.3.1}{Machinery for Accurate Calculation}{subsection.1.2.3}% 30
+\BOOKMARK [3][-]{subsubsection.1.2.3.2}{Boltzmann Hierarchy}{subsection.1.2.3}% 31
+\BOOKMARK [2][-]{subsection.1.2.4}{CMB Anistropies from Gravitational Waves}{section.1.2}% 32
+\BOOKMARK [3][-]{subsubsection.1.2.4.1}{Gravitational Waves from Inflation}{subsection.1.2.4}% 33
+\BOOKMARK [3][-]{subsubsection.1.2.4.2}{Cosmological Evolution of Gravitational Waves}{subsection.1.2.4}% 34
+\BOOKMARK [3][-]{subsubsection.1.2.4.3}{Gravity Waves and the CMB}{subsection.1.2.4}% 35
+\BOOKMARK [2][-]{subsection.1.2.5}{CMB Polarisation}{section.1.2}% 36
+\BOOKMARK [3][-]{subsubsection.1.2.5.1}{Stokes Parameters}{subsection.1.2.5}% 37
+\BOOKMARK [2][-]{subsection.1.2.6}{E and B Mode Decomposition}{section.1.2}% 38
+\BOOKMARK [3][-]{subsubsection.1.2.6.1}{Statistics of Polarisation}{subsection.1.2.6}% 39
+\BOOKMARK [3][-]{subsubsection.1.2.6.2}{Boltzmann equation for Polarisation}{subsection.1.2.6}% 40
+\BOOKMARK [3][-]{subsubsection.1.2.6.3}{Polarisation from Scalar Perturbations}{subsection.1.2.6}% 41
+\BOOKMARK [1][-]{section.1.3}{Primordial Non-Gaussianity}{chapter.1}% 42
+\BOOKMARK [2][-]{subsection.1.3.1}{Local NG and the Shape Function}{section.1.3}% 43
+\BOOKMARK [2][-]{subsection.1.3.2}{In-in Formalism}{section.1.3}% 44
+\BOOKMARK [2][-]{subsection.1.3.3}{Cubic Actions}{section.1.3}% 45
+\BOOKMARK [3][-]{subsubsection.1.3.3.1}{Review of Slow Roll}{subsection.1.3.3}% 46
+\BOOKMARK [2][-]{subsection.1.3.4}{Introduction to the ADM Formalism}{section.1.3}% 47
+\BOOKMARK [2][-]{subsection.1.3.5}{ADM Formalism for Minimally Coupled Scalar Fields}{section.1.3}% 48
+\BOOKMARK [3][-]{subsubsection.1.3.5.1}{The Cubic Action}{subsection.1.3.5}% 49
+\BOOKMARK [2][-]{subsection.1.3.6}{The three-point function in slow roll single field inflation}{section.1.3}% 50
+\BOOKMARK [3][-]{subsubsection.1.3.6.1}{Consistency Condition for Single Field Inflation}{subsection.1.3.6}% 51
+\BOOKMARK [2][-]{subsection.1.3.7}{Non-standard Kinetic Terms}{section.1.3}% 52
+\BOOKMARK [1][-]{section.1.4}{Large Scale Structure}{chapter.1}% 53
+\BOOKMARK [2][-]{subsection.1.4.1}{The Fluid Equations}{section.1.4}% 54
+\BOOKMARK [2][-]{subsection.1.4.2}{Linearised Equations of Motion}{section.1.4}% 55
+\BOOKMARK [2][-]{subsection.1.4.3}{Fluid Equations in Fourier Space}{section.1.4}% 56
+\BOOKMARK [3][-]{subsubsection.1.4.3.1}{Perturbative Solution of the Fluid Equations}{subsection.1.4.3}% 57
+\BOOKMARK [3][-]{subsubsection.1.4.3.2}{Feynman Rules for n-spectra}{subsection.1.4.3}% 58
+\BOOKMARK [3][-]{subsubsection.1.4.3.3}{Matter Power Spectrum at 1-loop}{subsection.1.4.3}% 59
+\BOOKMARK [2][-]{subsection.1.4.4}{Effective Field Theory of Large Scale Structure}{section.1.4}% 60
+\BOOKMARK [3][-]{subsubsection.1.4.4.1}{Problems with standard perturbation theory}{subsection.1.4.4}% 61
+\BOOKMARK [3][-]{subsubsection.1.4.4.2}{Coarse-grained Equation of Motion}{subsection.1.4.4}% 62
+\BOOKMARK [3][-]{subsubsection.1.4.4.3}{EFT and the Power Spectrum}{subsection.1.4.4}% 63
+\BOOKMARK [2][-]{subsection.1.4.5}{Biased Tracers}{section.1.4}% 64
+\BOOKMARK [0][-]{chapter.2}{Advanced Quantum Field Theory}{}% 65
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 66
+\BOOKMARK [2][-]{subsection.2.1.1}{Boundaries and Hilbert Spaces}{section.2.1}% 67
+\BOOKMARK [1][-]{section.2.2}{QFT in Zero Dimensions}{chapter.2}% 68
+\BOOKMARK [2][-]{subsection.2.2.1}{Free Field Theory}{section.2.2}% 69
+\BOOKMARK [2][-]{subsection.2.2.2}{Perturbation Theory}{section.2.2}% 70
+\BOOKMARK [3][-]{subsubsection.2.2.2.1}{Feynman Diagrams}{subsection.2.2.2}% 71
+\BOOKMARK [2][-]{subsection.2.2.3}{Effective Actions}{section.2.2}% 72
+\BOOKMARK [2][-]{subsection.2.2.4}{Integrating out Fields}{section.2.2}% 73
+\BOOKMARK [2][-]{subsection.2.2.5}{The 1PI/Quantum Effective Action}{section.2.2}% 74
+\BOOKMARK [2][-]{subsection.2.2.6}{Fermions}{section.2.2}% 75
+\BOOKMARK [3][-]{subsubsection.2.2.6.1}{Free fermionic field theory}{subsection.2.2.6}% 76
+\BOOKMARK [3][-]{subsubsection.2.2.6.2}{Supersymmetric Localisation}{subsection.2.2.6}% 77
+\BOOKMARK [1][-]{section.2.3}{QFT in One Dimension}{chapter.2}% 78
+\BOOKMARK [2][-]{subsection.2.3.1}{Worldline Quantum Mechanics}{section.2.3}% 79
+\BOOKMARK [2][-]{subsection.2.3.2}{The Partition Function}{section.2.3}% 80
+\BOOKMARK [2][-]{subsection.2.3.3}{Operators and Correlation Functions}{section.2.3}% 81
+\BOOKMARK [3][-]{subsubsection.2.3.3.1}{Non-commutativity}{subsection.2.3.3}% 82
+\BOOKMARK [2][-]{subsection.2.3.4}{Effective Quantum Mechanics}{section.2.3}% 83
+\BOOKMARK [2][-]{subsection.2.3.5}{Quantum Gravity in One Dimension}{section.2.3}% 84
+\BOOKMARK [1][-]{section.2.4}{The Renormalisation Group}{chapter.2}% 85
+\BOOKMARK [2][-]{subsection.2.4.1}{Integrating out Degrees of Freedom}{section.2.4}% 86
+\BOOKMARK [3][-]{subsubsection.2.4.1.1}{Anomalous Dimensions}{subsection.2.4.1}% 87
+\BOOKMARK [2][-]{subsection.2.4.2}{Renormalisation Group Flow}{section.2.4}% 88
+\BOOKMARK [2][-]{subsection.2.4.3}{Continuum QFT}{section.2.4}% 89
+\BOOKMARK [3][-]{subsubsection.2.4.3.1}{Counterterms}{subsection.2.4.3}% 90
+\BOOKMARK [2][-]{subsection.2.4.4}{One-loop Renormalisation of ^4}{section.2.4}% 91
+\BOOKMARK [3][-]{subsubsection.2.4.4.1}{Renormalisation Schemes}{subsection.2.4.4}% 92
+\BOOKMARK [3][-]{subsubsection.2.4.4.2}{Quartic Coupling Renormalisation}{subsection.2.4.4}% 93
+\BOOKMARK [3][-]{subsubsection.2.4.4.3}{The Role of Irrelevant Couplings}{subsection.2.4.4}% 94
+\BOOKMARK [2][-]{subsection.2.4.5}{Dimensional Regularisation}{section.2.4}% 95
+\BOOKMARK [3][-]{subsubsection.2.4.5.1}{The \040Renormalisation Scheme}{subsection.2.4.5}% 96
+\BOOKMARK [2][-]{subsection.2.4.6}{One-loop Renormalisation of QED}{section.2.4}% 97
+\BOOKMARK [3][-]{subsubsection.2.4.6.1}{Vacuum Polarisation}{subsection.2.4.6}% 98
+\BOOKMARK [3][-]{subsubsection.2.4.6.2}{The -function of QED}{subsection.2.4.6}% 99
+\BOOKMARK [1][-]{section.2.5}{Symmetries in QFT}{chapter.2}% 100
+\BOOKMARK [2][-]{subsection.2.5.1}{Symmetries of the Effective Action}{section.2.5}% 101
+\BOOKMARK [2][-]{subsection.2.5.2}{Ward-Takahashi Identities}{section.2.5}% 102
+\BOOKMARK [2][-]{subsection.2.5.3}{Current Conservation in QFT}{section.2.5}% 103
+\BOOKMARK [2][-]{subsection.2.5.4}{Ward-Takahashi Identity in QED}{section.2.5}% 104
+\BOOKMARK [1][-]{section.2.6}{Yang-Mills Theory}{chapter.2}% 105
+\BOOKMARK [2][-]{subsection.2.6.1}{The Yang-Mills Path Integral}{section.2.6}% 106
+\BOOKMARK [2][-]{subsection.2.6.2}{Ghosts}{section.2.6}% 107
+\BOOKMARK [2][-]{subsection.2.6.3}{BRST Transformations}{section.2.6}% 108
+\BOOKMARK [3][-]{subsubsection.2.6.3.1}{Ward-Takahashi Identity for BRST}{subsection.2.6.3}% 109
+\BOOKMARK [2][-]{subsection.2.6.4}{BRST Cohomology}{section.2.6}% 110
+\BOOKMARK [2][-]{subsection.2.6.5}{Feynman Rules in R_ Gauge}{section.2.6}% 111
+\BOOKMARK [2][-]{subsection.2.6.6}{Vacuum Polarisation}{section.2.6}% 112
+\BOOKMARK [2][-]{subsection.2.6.7}{The Yang-Mills -function}{section.2.6}% 113
+\BOOKMARK [0][-]{chapter.3}{Cosmology}{}% 114
+\BOOKMARK [1][-]{section.3.1}{Geometry and Dynamics}{chapter.3}% 115
+\BOOKMARK [2][-]{subsection.3.1.1}{The Metric}{section.3.1}% 116
+\BOOKMARK [2][-]{subsection.3.1.2}{Kinematics}{section.3.1}% 117
+\BOOKMARK [2][-]{subsection.3.1.3}{Redshift}{section.3.1}% 118
+\BOOKMARK [2][-]{subsection.3.1.4}{Dynamics}{section.3.1}% 119
+\BOOKMARK [1][-]{section.3.2}{Inflation}{chapter.3}% 120
+\BOOKMARK [2][-]{subsection.3.2.1}{The Horizon Problem}{section.3.2}% 121
+\BOOKMARK [2][-]{subsection.3.2.2}{The Horizon Problem - Solution}{section.3.2}% 122
+\BOOKMARK [2][-]{subsection.3.2.3}{The Physics of Inflation}{section.3.2}% 123
+\BOOKMARK [3][-]{subsubsection.3.2.3.1}{Slow Roll Inflation}{subsection.3.2.3}% 124
+\BOOKMARK [2][-]{subsection.3.2.4}{Reheating}{section.3.2}% 125
+\BOOKMARK [2][-]{subsection.3.2.5}{Problems with Inflation}{section.3.2}% 126
+\BOOKMARK [3][-]{subsubsection.3.2.5.1}{Perhaps things aren't so bad?}{subsection.3.2.5}% 127
+\BOOKMARK [1][-]{section.3.3}{Cosmological Perturbation Theory}{chapter.3}% 128
+\BOOKMARK [2][-]{subsection.3.3.1}{Perturbed Metric}{section.3.3}% 129
+\BOOKMARK [2][-]{subsection.3.3.2}{The Gauge Problem}{section.3.3}% 130
+\BOOKMARK [2][-]{subsection.3.3.3}{Perturbed Matter}{section.3.3}% 131
+\BOOKMARK [2][-]{subsection.3.3.4}{Linearised Equations}{section.3.3}% 132
+\BOOKMARK [3][-]{subsubsection.3.3.4.1}{Constraint Equations}{subsection.3.3.4}% 133
+\BOOKMARK [3][-]{subsubsection.3.3.4.2}{The Einstein Equation}{subsection.3.3.4}% 134
+\BOOKMARK [2][-]{subsection.3.3.5}{Adiabatic Perturbations}{section.3.3}% 135
+\BOOKMARK [2][-]{subsection.3.3.6}{Curvature Perturbations}{section.3.3}% 136
+\BOOKMARK [3][-]{subsubsection.3.3.6.1}{Superhorizon and Subhorizon Modes}{subsection.3.3.6}% 137
+\BOOKMARK [2][-]{subsection.3.3.7}{Curvature Perturbations on Superhorizon Scales}{section.3.3}% 138
+\BOOKMARK [0][-]{chapter.4}{General Relativity}{}% 139
+\BOOKMARK [1][-]{section.4.1}{Manifolds}{chapter.4}% 140
+\BOOKMARK [2][-]{subsection.4.1.1}{Curves and Vector Fields}{section.4.1}% 141
+\BOOKMARK [2][-]{subsection.4.1.2}{Covectors \(Differential Forms\)}{section.4.1}% 142
+\BOOKMARK [2][-]{subsection.4.1.3}{Tensors}{section.4.1}% 143
+\BOOKMARK [2][-]{subsection.4.1.4}{Metrics}{section.4.1}% 144
+\BOOKMARK [3][-]{subsubsection.4.1.4.1}{Extremising Proper Time}{subsection.4.1.4}% 145
+\BOOKMARK [2][-]{subsection.4.1.5}{Covariant Derivatives and the Levi-Civita Connection}{section.4.1}% 146
+\BOOKMARK [3][-]{subsubsection.4.1.5.1}{Fundamental Theorem of Riemannian Geometry}{subsection.4.1.5}% 147
+\BOOKMARK [2][-]{subsection.4.1.6}{Parallel Transport}{section.4.1}% 148
+\BOOKMARK [2][-]{subsection.4.1.7}{The Riemann Tensor}{section.4.1}% 149
+\BOOKMARK [3][-]{subsubsection.4.1.7.1}{Curvature and Parallel Transport}{subsection.4.1.7}% 150
+\BOOKMARK [3][-]{subsubsection.4.1.7.2}{Symmetries of the Riemann Tensor}{subsection.4.1.7}% 151
+\BOOKMARK [0][-]{chapter.5}{Quantum Field Theory}{}% 152
+\BOOKMARK [1][-]{section.5.1}{Classical Field Theory}{chapter.5}% 153
+\BOOKMARK [2][-]{subsection.5.1.1}{Units}{section.5.1}% 154
+\BOOKMARK [2][-]{subsection.5.1.2}{Dynamical Principles of Classical Field Theory}{section.5.1}% 155
+\BOOKMARK [3][-]{subsubsection.5.1.2.1}{Lorentz Invariance}{subsection.5.1.2}% 156
+\BOOKMARK [2][-]{subsection.5.1.3}{Noether's Theorem \046 Symmetries}{section.5.1}% 157
+\BOOKMARK [1][-]{section.5.2}{Canonical Quantisation}{chapter.5}% 158
+\BOOKMARK [2][-]{subsection.5.2.1}{Review of the Simple Harmonic Oscillator}{section.5.2}% 159
+\BOOKMARK [2][-]{subsection.5.2.2}{Free Field Theory}{section.5.2}% 160
+\BOOKMARK [3][-]{subsubsection.5.2.2.1}{The Vacuum}{subsection.5.2.2}% 161
+\BOOKMARK [3][-]{subsubsection.5.2.2.2}{Particles}{subsection.5.2.2}% 162
+\BOOKMARK [2][-]{subsection.5.2.3}{Relativistic Normalisation}{section.5.2}% 163
+\BOOKMARK [2][-]{subsection.5.2.4}{Complex Scalar Field}{section.5.2}% 164
+\BOOKMARK [2][-]{subsection.5.2.5}{The Heisenberg Picture}{section.5.2}% 165
+\BOOKMARK [0][-]{chapter.6}{Standard Model}{}% 166
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 167
+\BOOKMARK [1][-]{section.6.2}{Chiral and Gauge Symmetries}{chapter.6}% 168
+\BOOKMARK [2][-]{subsection.6.2.1}{Chiral Symmetries}{section.6.2}% 169
+\BOOKMARK [2][-]{subsection.6.2.2}{Gauge Symmetries}{section.6.2}% 170
+\BOOKMARK [2][-]{subsection.6.2.3}{Types of Symmetry}{section.6.2}% 171
+\BOOKMARK [1][-]{section.6.3}{Discrete Symmetries}{chapter.6}% 172
+\BOOKMARK [2][-]{subsection.6.3.1}{Symmetry Operators}{section.6.3}% 173
+\BOOKMARK [2][-]{subsection.6.3.2}{Parity}{section.6.3}% 174
+\BOOKMARK [3][-]{subsubsection.6.3.2.1}{The Scalar Field}{subsection.6.3.2}% 175
+\BOOKMARK [3][-]{subsubsection.6.3.2.2}{Vector Fields}{subsection.6.3.2}% 176
+\BOOKMARK [3][-]{subsubsection.6.3.2.3}{Dirac Fields}{subsection.6.3.2}% 177
+\BOOKMARK [2][-]{subsection.6.3.3}{Charge Conjugation}{section.6.3}% 178
+\BOOKMARK [3][-]{subsubsection.6.3.3.1}{Complex Scalar Field}{subsection.6.3.3}% 179
+\BOOKMARK [3][-]{subsubsection.6.3.3.2}{Dirac Field}{subsection.6.3.3}% 180
+\BOOKMARK [2][-]{subsection.6.3.4}{Time Reversal}{section.6.3}% 181
+\BOOKMARK [3][-]{subsubsection.6.3.4.1}{Boson Fields}{subsection.6.3.4}% 182
+\BOOKMARK [2][-]{subsection.6.3.5}{Dirac Fields}{section.6.3}% 183
+\BOOKMARK [2][-]{subsection.6.3.6}{Scattering S-matrix}{section.6.3}% 184
+\BOOKMARK [2][-]{subsection.6.3.7}{CPT Theorem}{section.6.3}% 185
+\BOOKMARK [3][-]{subsubsection.6.3.7.1}{Baryongenesis}{subsection.6.3.7}% 186
+\BOOKMARK [1][-]{section.6.4}{Spontaneous Symmetry Breaking}{chapter.6}% 187
+\BOOKMARK [2][-]{subsection.6.4.1}{Spontaneous symmetry breaking of a discrete symmetry}{section.6.4}% 188
+\BOOKMARK [2][-]{subsection.6.4.2}{Spontaneous symmetry breaking of a continuous symmetry}{section.6.4}% 189
+\BOOKMARK [2][-]{subsection.6.4.3}{Goldstone's Theorem}{section.6.4}% 190
+\BOOKMARK [2][-]{subsection.6.4.4}{The Higgs Mechanism}{section.6.4}% 191
+\BOOKMARK [2][-]{subsection.6.4.5}{Non-Abelian Gauge Theories}{section.6.4}% 192
+\BOOKMARK [2][-]{subsection.6.4.6}{Insert on Group Theory}{section.6.4}% 193
+\BOOKMARK [1][-]{section.6.5}{Electroweak Theory}{chapter.6}% 194
+\BOOKMARK [2][-]{subsection.6.5.1}{Electroweak Gauge Theory}{section.6.5}% 195
+\BOOKMARK [2][-]{subsection.6.5.2}{Coupling to Matter - Leptons}{section.6.5}% 196
+\BOOKMARK [2][-]{subsection.6.5.3}{Coupling to Matter - Quarks}{section.6.5}% 197
+\BOOKMARK [2][-]{subsection.6.5.4}{Neutrino Oscillations and Mass}{section.6.5}% 198
+\BOOKMARK [3][-]{subsubsection.6.5.4.1}{Dirac Fermions}{subsection.6.5.4}% 199
+\BOOKMARK [3][-]{subsubsection.6.5.4.2}{Majorana Fermions}{subsection.6.5.4}% 200
+\BOOKMARK [2][-]{subsection.6.5.5}{Summary of Electroweak Theory}{section.6.5}% 201
+\BOOKMARK [1][-]{section.6.6}{Weak Interactions}{chapter.6}% 202
+\BOOKMARK [2][-]{subsection.6.6.1}{Effective Weak Lagrangian}{section.6.6}% 203
+\BOOKMARK [2][-]{subsection.6.6.2}{Decay Rates \046 Cross Sections}{section.6.6}% 204
+\BOOKMARK [3][-]{subsubsection.6.6.2.1}{Decay Rate}{subsection.6.6.2}% 205
+\BOOKMARK [3][-]{subsubsection.6.6.2.2}{Cross-Sections}{subsection.6.6.2}% 206
+\BOOKMARK [2][-]{subsection.6.6.3}{Muon Decay}{section.6.6}% 207
+\BOOKMARK [2][-]{subsection.6.6.4}{Pion Decay}{section.6.6}% 208
+\BOOKMARK [2][-]{subsection.6.6.5}{K^0 + ^0 Mixing}{section.6.6}% 209
+\BOOKMARK [2][-]{subsection.6.6.6}{Other Decays}{section.6.6}% 210
+\BOOKMARK [1][-]{section.6.7}{Quantum Chromodynamics}{chapter.6}% 211
+\BOOKMARK [2][-]{subsection.6.7.1}{QCD Lagrangian}{section.6.7}% 212
+\BOOKMARK [2][-]{subsection.6.7.2}{Renormalisation}{section.6.7}% 213
+\BOOKMARK [0][-]{chapter.7}{Statistical Field Theory}{}% 214
+\BOOKMARK [1][-]{section.7.1}{From Spins to Fields}{chapter.7}% 215
+\BOOKMARK [2][-]{subsection.7.1.1}{The Ising Model}{section.7.1}% 216
+\BOOKMARK [3][-]{subsubsection.7.1.1.1}{The Effective Free Energy}{subsection.7.1.1}% 217
+\BOOKMARK [2][-]{subsection.7.1.2}{Landau Theory of Phase Transitions}{section.7.1}% 218
+\BOOKMARK [3][-]{subsubsection.7.1.2.1}{Critical Exponents}{subsection.7.1.2}% 219
+\BOOKMARK [3][-]{subsubsection.7.1.2.2}{Universality}{subsection.7.1.2}% 220
+\BOOKMARK [2][-]{subsection.7.1.3}{Landau-Ginzburg Theory}{section.7.1}% 221
+\BOOKMARK [3][-]{subsubsection.7.1.3.1}{The Saddle Point}{subsection.7.1.3}% 222
+\BOOKMARK [1][-]{section.7.2}{My First Path Integral}{chapter.7}% 223
+\BOOKMARK [0][-]{chapter.8}{String Theory}{}% 224
+\BOOKMARK [1][-]{section.8.1}{Prehistory/History}{chapter.8}% 225
+\BOOKMARK [2][-]{subsection.8.1.1}{The Relativistic Point Particle}{section.8.1}% 226
+\BOOKMARK [3][-]{subsubsection.8.1.1.1}{Hamiltonian Formalism}{subsection.8.1.1}% 227
+\BOOKMARK [3][-]{subsubsection.8.1.1.2}{Noether's Theorem}{subsection.8.1.1}% 228
+\BOOKMARK [2][-]{subsection.8.1.2}{Quantization}{section.8.1}% 229
+\BOOKMARK [3][-]{subsubsection.8.1.2.1}{Covariant Quantisation}{subsection.8.1.2}% 230
+\BOOKMARK [1][-]{section.8.2}{The Nambu-Goto String}{chapter.8}% 231
+\BOOKMARK [2][-]{subsection.8.2.1}{Hamiltonian Formalism}{section.8.2}% 232
+\BOOKMARK [2][-]{subsection.8.2.2}{Symmetries of the Nambu-Goto Action}{section.8.2}% 233
+\BOOKMARK [2][-]{subsection.8.2.3}{Monge Gauge}{section.8.2}% 234
+\BOOKMARK [0][-]{chapter.9}{Symmetries, Fields and Particles}{}% 235
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 236
+\BOOKMARK [2][-]{subsection.9.1.1}{Mathematical Formulation}{section.9.1}% 237
+\BOOKMARK [2][-]{subsection.9.1.2}{Simple, Complex Lie Algebras}{section.9.1}% 238
+\BOOKMARK [3][-]{subsubsection.9.1.2.1}{Cartan Classification}{subsection.9.1.2}% 239
+\BOOKMARK [2][-]{subsection.9.1.3}{Gauge Symmetry}{section.9.1}% 240
+\BOOKMARK [1][-]{section.9.2}{Lie Groups}{chapter.9}% 241
+\BOOKMARK [2][-]{subsection.9.2.1}{Manifolds}{section.9.2}% 242
+\BOOKMARK [2][-]{subsection.9.2.2}{Back to Lie Groups}{section.9.2}% 243
+\BOOKMARK [2][-]{subsection.9.2.3}{Matrix Groups}{section.9.2}% 244
+\BOOKMARK [3][-]{subsubsection.9.2.3.1}{Subgroups of GL \( n, R \)}{subsection.9.2.3}% 245
+\BOOKMARK [3][-]{subsubsection.9.2.3.2}{Subgroups of GL\(n, C\)}{subsection.9.2.3}% 246
+\BOOKMARK [1][-]{section.9.3}{Lie Algebras}{chapter.9}% 247
+\BOOKMARK [2][-]{subsection.9.3.1}{Lie Algebras from Lie Groups}{section.9.3}% 248
+\BOOKMARK [3][-]{subsubsection.9.3.1.1}{Preliminaries}{subsection.9.3.1}% 249
+\BOOKMARK [3][-]{subsubsection.9.3.1.2}{The Lie Algebra, L\(G\)}{subsection.9.3.1}% 250
+\BOOKMARK [2][-]{subsection.9.3.2}{Why are Lie Groups special?}{section.9.3}% 251
+\BOOKMARK [3][-]{subsubsection.9.3.2.1}{Vector Fields on M\(G\)}{subsection.9.3.2}% 252
+\BOOKMARK [2][-]{subsection.9.3.3}{Constructing G from L\(G\)}{section.9.3}% 253
+\BOOKMARK [3][-]{subsubsection.9.3.3.1}{Back to SU\(2\) vs. SO\(3\)}{subsection.9.3.3}% 254
+\BOOKMARK [1][-]{section.9.4}{Introduction to Representations}{chapter.9}% 255
+\BOOKMARK [2][-]{subsection.9.4.1}{Representations of Lie Groups}{section.9.4}% 256
+\BOOKMARK [3][-]{subsubsection.9.4.1.1}{Types of Representation}{subsection.9.4.1}% 257
+\BOOKMARK [0][-]{chapter.10}{Theoretical Physics of Soft Condensed Matter}{}% 258
+\BOOKMARK [1][-]{section.10.1}{Introduction \046 Statics}{chapter.10}% 259
+\BOOKMARK [2][-]{subsection.10.1.1}{Statistical Physics Review}{section.10.1}% 260
+\BOOKMARK [2][-]{subsection.10.1.2}{Coarse Graining}{section.10.1}% 261
+\BOOKMARK [2][-]{subsection.10.1.3}{Landau-Ginzburg Theory for Nematic Liquid Crystals}{section.10.1}% 262
+\BOOKMARK [2][-]{subsection.10.1.4}{Functional Integration}{section.10.1}% 263
+\BOOKMARK [3][-]{subsubsection.10.1.4.1}{Stress Tensor for scalar \(r\)}{subsection.10.1.4}% 264
+\BOOKMARK [2][-]{subsection.10.1.5}{Functional Integrals}{section.10.1}% 265
+\BOOKMARK [2][-]{subsection.10.1.6}{Hartree Theory}{section.10.1}% 266
+\BOOKMARK [2][-]{subsection.10.1.7}{Isotropic to Smectic Transition}{section.10.1}% 267
+\BOOKMARK [3][-]{subsubsection.10.1.7.1}{Applying the Variational Method}{subsection.10.1.7}% 268
+\BOOKMARK [1][-]{section.10.2}{Dynamics}{chapter.10}% 269
+\BOOKMARK [2][-]{subsection.10.2.1}{Building a Toolbox}{section.10.2}% 270
+\BOOKMARK [3][-]{subsubsection.10.2.1.1}{The Overdamped Limit}{subsection.10.2.1}% 271
+\BOOKMARK [2][-]{subsection.10.2.2}{From One Particle to Many}{section.10.2}% 272
+\BOOKMARK [2][-]{subsection.10.2.3}{Dynamics of Fluctuations}{section.10.2}% 273
+\BOOKMARK [3][-]{subsubsection.10.2.3.1}{Model B}{subsection.10.2.3}% 274
+\BOOKMARK [3][-]{subsubsection.10.2.3.2}{Droplet Growth \(Coarsening\)}{subsection.10.2.3}% 275
+\BOOKMARK [3][-]{subsubsection.10.2.3.3}{Model H}{subsection.10.2.3}% 276
+\BOOKMARK [2][-]{subsection.10.2.4}{Liquid-Crystal Hydrodynamics}{section.10.2}% 277
+\BOOKMARK [3][-]{subsubsection.10.2.4.1}{Polar Liquid Crystal}{subsection.10.2.4}% 278
+\BOOKMARK [3][-]{subsubsection.10.2.4.2}{Nematic Liquid Crystal}{subsection.10.2.4}% 279
+\BOOKMARK [3][-]{subsubsection.10.2.4.3}{Topological Defects in Nematic Liquid Crystals}{subsection.10.2.4}% 280
+\BOOKMARK [3][-]{subsubsection.10.2.4.4}{Topological Defects in 3D}{subsection.10.2.4}% 281
+\BOOKMARK [3][-]{subsubsection.10.2.4.5}{Homotopy Theory}{subsection.10.2.4}% 282
+\BOOKMARK [3][-]{subsubsection.10.2.4.6}{Topological Defects in Polar Liquid Crystals}{subsection.10.2.4}% 283
+\BOOKMARK [1][-]{section.10.3}{Active Soft Matter}{chapter.10}% 284
+\BOOKMARK [2][-]{subsection.10.3.1}{Active Model B}{section.10.3}% 285
+\BOOKMARK [2][-]{subsection.10.3.2}{Active Liquid Crystals}{section.10.3}% 286
+\BOOKMARK [3][-]{subsubsection.10.3.2.1}{Active Polar Liquid Crystals}{subsection.10.3.2}% 287
+\BOOKMARK [3][-]{subsubsection.10.3.2.2}{Active Nematic Liquid Crystals}{subsection.10.3.2}% 288
+\BOOKMARK [2][-]{subsection.10.3.3}{Defect Motion in Active Nematics}{section.10.3}% 289
+\BOOKMARK [0][-]{section*.43}{Appendix}{}% 290
+\BOOKMARK [1][-]{section.1..1}{Functional Integrals}{section*.43}% 291
+\BOOKMARK [1][-]{section.1..2}{Motivating Quantum Field Theory}{section*.43}% 292
+\BOOKMARK [2][-]{subsection.1..2.1}{Quantisation}{section.1..2}% 293
+\BOOKMARK [3][-]{subsubsection.1..2.1.1}{Connecting the Harmonic Oscillator and Special Relativity}{subsection.1..2.1}% 294
+\BOOKMARK [2][-]{subsection.1..2.2}{To what extent should we believe Quantum Field Theory?}{section.1..2}% 295
+\BOOKMARK [1][-]{section.1..3}{Symmetry, Groups, and Field Theory}{section*.43}% 296
+\BOOKMARK [2][-]{subsection.1..3.1}{Symmetry}{section.1..3}% 297
+\BOOKMARK [3][-]{subsubsection.1..3.1.1}{Continuous parameters and local one-parameter groups}{subsection.1..3.1}% 298
+\BOOKMARK [3][-]{subsubsection.1..3.1.2}{Symmetries from the classical Hamiltonian}{subsection.1..3.1}% 299
+\BOOKMARK [3][-]{subsubsection.1..3.1.3}{Quantum Mechanics}{subsection.1..3.1}% 300
+\BOOKMARK [2][-]{subsection.1..3.2}{Switching from Particles to Fields}{section.1..3}% 301
+\BOOKMARK [2][-]{subsection.1..3.3}{Finite Dimensional Lagrangian Systems}{section.1..3}% 302
+\BOOKMARK [2][-]{subsection.1..3.4}{The Poincaré Group}{section.1..3}% 303
+\BOOKMARK [1][-]{section.1..4}{How do we study Cosmology?}{section*.43}% 304
+\BOOKMARK [1][-]{section.1..5}{Algebras}{section*.43}% 305
+\BOOKMARK [2][-]{subsection.1..5.1}{Algebras and Ideals}{section.1..5}% 306
+\BOOKMARK [2][-]{subsection.1..5.2}{Ideals and Factor Algebras}{section.1..5}% 307
+\BOOKMARK [2][-]{subsection.1..5.3}{Complexification of a real vector space}{section.1..5}% 308
+\BOOKMARK [2][-]{subsection.1..5.4}{Complex Structure on a vector space}{section.1..5}% 309
+\BOOKMARK [2][-]{subsection.1..5.5}{Clifford Algebras}{section.1..5}% 310
+\BOOKMARK [2][-]{subsection.1..5.6}{Grassman Algebras}{section.1..5}% 311
+\BOOKMARK [3][-]{subsubsection.1..5.6.1}{The Exterior Product}{subsection.1..5.6}% 312
+\BOOKMARK [2][-]{subsection.1..5.7}{Exterior Algebra}{section.1..5}% 313
+\BOOKMARK [3][-]{subsubsection.1..5.7.1}{r-Vectors and r-Forms}{subsection.1..5.7}% 314
+\BOOKMARK [1][-]{section.1..6}{Can we do anything without knowing everything?}{section*.43}% 315
+\BOOKMARK [2][-]{subsection.1..6.1}{Universality}{section.1..6}% 316
+\BOOKMARK [0][-]{chapter*.46}{Index}{}% 317

@@ -1,0 +1,317 @@
+\contentsline {chapter}{\numberline {1}Advanced Cosmology}{12}{chapter.1}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Statistics of Cosmological Fluctuations}{15}{section.1.1}
+\contentsline {subsection}{\numberline {1.1}Random Fields and Statistics in 3D}{15}{subsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Power Spectrum}{15}{subsubsection.1.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Correlation Functions}{16}{subsubsection.1.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Higher Order Correlators for $n$-spectra}{16}{subsubsection.1.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Fourier Conventions}{17}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.3}Shape of the Power Spectrum}{18}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.4}Gaussian Random Field}{19}{subsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Wick's Theorem}{19}{subsubsection.1.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Weakly non-Gaussian Fields}{20}{subsubsection.1.1.4.2}
+\contentsline {subsection}{\numberline {1.5}Estimators and Cosmic Variance}{20}{subsection.1.1.5}
+\contentsline {subsection}{\numberline {1.6}Random Fields on the Sphere}{22}{subsection.1.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Rotations}{23}{subsubsection.1.1.6.1}
+\contentsline {subsubsection}{\numberline {1.6.2}Projections of $3$D Fields}{25}{subsubsection.1.1.6.2}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Physics of the Cosmic Microwave Background}{27}{section.1.2}
+\contentsline {subsection}{\numberline {2.1}Relativistic Kinetic Theory and the Boltzmann equation}{27}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Distribution Function}{27}{subsubsection.1.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}The CMB Dipole}{29}{subsubsection.1.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}The Boltzmann Equation}{30}{subsubsection.1.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Line of Sight Solution}{34}{subsubsection.1.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.5}Stress-Energy Tensor}{37}{subsubsection.1.2.1.5}
+\contentsline {subsection}{\numberline {2.2}Temperature anistropies from scalar perturbations}{39}{subsection.1.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}$\text {d}\log \epsilon /\text {d}\eta $ for scalar perturbations}{40}{subsubsection.1.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Temperature Anisotropies}{41}{subsubsection.1.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Evolution of Plasma Fluctuations}{43}{subsubsection.1.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Large-scale Temperature Anisotropies}{50}{subsubsection.1.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Intermediate-scale Temperature Anisotropies}{51}{subsubsection.1.2.2.5}
+\contentsline {subsection}{\numberline {2.3}Scalar Perturbations on Small Scales}{52}{subsection.1.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Machinery for Accurate Calculation}{52}{subsubsection.1.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Boltzmann Hierarchy}{53}{subsubsection.1.2.3.2}
+\contentsline {subsection}{\numberline {2.4}CMB Anistropies from Gravitational Waves}{53}{subsection.1.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Gravitational Waves from Inflation}{54}{subsubsection.1.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Cosmological Evolution of Gravitational Waves}{55}{subsubsection.1.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Gravity Waves and the CMB}{56}{subsubsection.1.2.4.3}
+\contentsline {subsection}{\numberline {2.5}CMB Polarisation}{57}{subsection.1.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Stokes Parameters}{57}{subsubsection.1.2.5.1}
+\contentsline {subsection}{\numberline {2.6}E and B Mode Decomposition}{58}{subsection.1.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Statistics of Polarisation}{60}{subsubsection.1.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Boltzmann equation for Polarisation}{60}{subsubsection.1.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Polarisation from Scalar Perturbations}{61}{subsubsection.1.2.6.3}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Primordial Non-Gaussianity}{63}{section.1.3}
+\contentsline {subsection}{\numberline {3.1}Local NG and the Shape Function}{63}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {3.2}In-in Formalism}{65}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {3.3}Cubic Actions}{68}{subsection.1.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Review of Slow Roll}{68}{subsubsection.1.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Introduction to the ADM Formalism}{68}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {3.5}ADM Formalism for Minimally Coupled Scalar Fields}{69}{subsection.1.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}The Cubic Action}{71}{subsubsection.1.3.5.1}
+\contentsline {subsection}{\numberline {3.6}The three-point function in slow roll single field inflation}{72}{subsection.1.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Consistency Condition for Single Field Inflation}{73}{subsubsection.1.3.6.1}
+\contentsline {subsection}{\numberline {3.7}Non-standard Kinetic Terms}{74}{subsection.1.3.7}
+\contentsline {section}{\numberline {IV\hspace {-5pt}}Large Scale Structure}{77}{section.1.4}
+\contentsline {subsection}{\numberline {4.1}The Fluid Equations}{77}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {4.2}Linearised Equations of Motion}{79}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {4.3}Fluid Equations in Fourier Space}{80}{subsection.1.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Perturbative Solution of the Fluid Equations}{81}{subsubsection.1.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Feynman Rules for $n$-spectra}{83}{subsubsection.1.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Matter Power Spectrum at $1$-loop}{83}{subsubsection.1.4.3.3}
+\contentsline {subsection}{\numberline {4.4}Effective Field Theory of Large Scale Structure}{86}{subsection.1.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Problems with standard perturbation theory}{86}{subsubsection.1.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Coarse-grained Equation of Motion}{87}{subsubsection.1.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}EFT and the Power Spectrum}{89}{subsubsection.1.4.4.3}
+\contentsline {subsection}{\numberline {4.5}Biased Tracers}{90}{subsection.1.4.5}
+\contentsline {chapter}{\numberline {2}Advanced Quantum Field Theory}{93}{chapter.2}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Introduction}{95}{section.2.1}
+\contentsline {subsection}{\numberline {1.1}Boundaries and Hilbert Spaces}{97}{subsection.2.1.1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}QFT in Zero Dimensions}{100}{section.2.2}
+\contentsline {subsection}{\numberline {2.1}Free Field Theory}{100}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2}Perturbation Theory}{102}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Feynman Diagrams}{104}{subsubsection.2.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Effective Actions}{107}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.4}Integrating out Fields}{109}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.5}The $1$PI/Quantum Effective Action}{111}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.6}Fermions}{114}{subsection.2.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Free fermionic field theory}{115}{subsubsection.2.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Supersymmetric Localisation}{116}{subsubsection.2.2.6.2}
+\contentsline {section}{\numberline {III\hspace {-5pt}}QFT in One Dimension}{119}{section.2.3}
+\contentsline {subsection}{\numberline {3.1}Worldline Quantum Mechanics}{119}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {3.2}The Partition Function}{121}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {3.3}Operators and Correlation Functions}{121}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Non-commutativity}{122}{subsubsection.2.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Effective Quantum Mechanics}{125}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {3.5}Quantum Gravity in One Dimension}{128}{subsection.2.3.5}
+\contentsline {section}{\numberline {IV\hspace {-5pt}}The Renormalisation Group}{131}{section.2.4}
+\contentsline {subsection}{\numberline {4.1}Integrating out Degrees of Freedom}{131}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Anomalous Dimensions}{132}{subsubsection.2.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Renormalisation Group Flow}{133}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {4.3}Continuum QFT}{135}{subsection.2.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Counterterms}{136}{subsubsection.2.4.3.1}
+\contentsline {subsection}{\numberline {4.4}One-loop Renormalisation of $\lambda \phi ^4$}{136}{subsection.2.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Renormalisation Schemes}{138}{subsubsection.2.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Quartic Coupling Renormalisation}{139}{subsubsection.2.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}The Role of Irrelevant Couplings}{140}{subsubsection.2.4.4.3}
+\contentsline {subsection}{\numberline {4.5}Dimensional Regularisation}{142}{subsection.2.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}The $\mathaccentV {bar}016{\text {\textbf {MS}}}$ Renormalisation Scheme}{144}{subsubsection.2.4.5.1}
+\contentsline {subsection}{\numberline {4.6}One-loop Renormalisation of QED}{145}{subsection.2.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Vacuum Polarisation}{146}{subsubsection.2.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}The $\beta $-function of QED}{148}{subsubsection.2.4.6.2}
+\contentsline {section}{\numberline {V\hspace {-5pt}}Symmetries in QFT}{150}{section.2.5}
+\contentsline {subsection}{\numberline {5.1}Symmetries of the Effective Action}{150}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {5.2}Ward-Takahashi Identities}{153}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {5.3}Current Conservation in QFT}{154}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {5.4}Ward-Takahashi Identity in QED}{155}{subsection.2.5.4}
+\contentsline {section}{\numberline {VI\hspace {-5pt}}Yang-Mills Theory}{158}{section.2.6}
+\contentsline {subsection}{\numberline {6.1}The Yang-Mills Path Integral}{159}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {6.2}Ghosts}{159}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {6.3}BRST Transformations}{162}{subsection.2.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Ward-Takahashi Identity for BRST}{164}{subsubsection.2.6.3.1}
+\contentsline {subsection}{\numberline {6.4}BRST Cohomology}{165}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {6.5}Feynman Rules in $R_{\xi }$ Gauge}{167}{subsection.2.6.5}
+\contentsline {subsection}{\numberline {6.6}Vacuum Polarisation}{169}{subsection.2.6.6}
+\contentsline {subsection}{\numberline {6.7}The Yang-Mills $\beta $-function}{170}{subsection.2.6.7}
+\contentsline {chapter}{\numberline {3}Cosmology}{174}{chapter.3}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Geometry and Dynamics}{176}{section.3.1}
+\contentsline {subsection}{\numberline {1.1}The Metric}{176}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {1.2}Kinematics}{177}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {1.3}Redshift}{178}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {1.4}Dynamics}{178}{subsection.3.1.4}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Inflation}{184}{section.3.2}
+\contentsline {subsection}{\numberline {2.1}The Horizon Problem}{184}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {2.2}The Horizon Problem - \emph {Solution}}{186}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {2.3}The Physics of Inflation}{188}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Slow Roll Inflation}{190}{subsubsection.3.2.3.1}
+\contentsline {subsection}{\numberline {2.4}Reheating}{192}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {2.5}Problems with Inflation}{193}{subsection.3.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Perhaps things aren't so bad?}{193}{subsubsection.3.2.5.1}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Cosmological Perturbation Theory}{195}{section.3.3}
+\contentsline {subsection}{\numberline {3.1}Perturbed Metric}{196}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2}The Gauge Problem}{197}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3}Perturbed Matter}{200}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Linearised Equations}{204}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Constraint Equations}{205}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}The Einstein Equation}{207}{subsubsection.3.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Adiabatic Perturbations}{211}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.6}Curvature Perturbations}{212}{subsection.3.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Superhorizon and Subhorizon Modes}{214}{subsubsection.3.3.6.1}
+\contentsline {subsection}{\numberline {3.7}Curvature Perturbations on Superhorizon Scales}{214}{subsection.3.3.7}
+\contentsline {chapter}{\numberline {4}General Relativity}{217}{chapter.4}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Manifolds}{218}{section.4.1}
+\contentsline {subsection}{\numberline {1.1}Curves and Vector Fields}{219}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {1.2}Covectors (Differential Forms)}{221}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {1.3}Tensors}{222}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {1.4}Metrics}{224}{subsection.4.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Extremising Proper Time}{225}{subsubsection.4.1.4.1}
+\contentsline {subsection}{\numberline {1.5}Covariant Derivatives and the Levi-Civita Connection}{226}{subsection.4.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}Fundamental Theorem of Riemannian Geometry}{227}{subsubsection.4.1.5.1}
+\contentsline {subsection}{\numberline {1.6}Parallel Transport}{228}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {1.7}The Riemann Tensor}{229}{subsection.4.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Curvature and Parallel Transport}{230}{subsubsection.4.1.7.1}
+\contentsline {subsubsection}{\numberline {1.7.2}Symmetries of the Riemann Tensor}{231}{subsubsection.4.1.7.2}
+\contentsline {chapter}{\numberline {5}Quantum Field Theory}{233}{chapter.5}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Classical Field Theory}{234}{section.5.1}
+\contentsline {subsection}{\numberline {1.1}Units}{234}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {1.2}Dynamical Principles of Classical Field Theory}{234}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Lorentz Invariance}{235}{subsubsection.5.1.2.1}
+\contentsline {subsection}{\numberline {1.3}Noether's Theorem \& Symmetries}{237}{subsection.5.1.3}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Canonical Quantisation}{239}{section.5.2}
+\contentsline {subsection}{\numberline {2.1}Review of the Simple Harmonic Oscillator}{240}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {2.2}Free Field Theory}{240}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}The Vacuum}{241}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Particles}{242}{subsubsection.5.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Relativistic Normalisation}{243}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {2.4}Complex Scalar Field}{244}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {2.5}The Heisenberg Picture}{246}{subsection.5.2.5}
+\contentsline {chapter}{\numberline {6}Standard Model}{247}{chapter.6}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Introduction}{249}{section.6.1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Chiral and Gauge Symmetries}{250}{section.6.2}
+\contentsline {subsection}{\numberline {2.1}Chiral Symmetries}{250}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {2.2}Gauge Symmetries}{252}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {2.3}Types of Symmetry}{252}{subsection.6.2.3}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Discrete Symmetries}{253}{section.6.3}
+\contentsline {subsection}{\numberline {3.1}Symmetry Operators}{253}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {3.2}Parity}{255}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}The Scalar Field}{255}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Vector Fields}{256}{subsubsection.6.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Dirac Fields}{257}{subsubsection.6.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Charge Conjugation}{258}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Complex Scalar Field}{258}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Dirac Field}{259}{subsubsection.6.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Time Reversal}{261}{subsection.6.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Boson Fields}{261}{subsubsection.6.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Dirac Fields}{262}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {3.6}Scattering S-matrix}{263}{subsection.6.3.6}
+\contentsline {subsection}{\numberline {3.7}CPT Theorem}{264}{subsection.6.3.7}
+\contentsline {subsubsection}{\numberline {3.7.1}Baryongenesis}{264}{subsubsection.6.3.7.1}
+\contentsline {section}{\numberline {IV\hspace {-5pt}}Spontaneous Symmetry Breaking}{266}{section.6.4}
+\contentsline {subsection}{\numberline {4.1}Spontaneous symmetry breaking of a discrete symmetry}{266}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {4.2}Spontaneous symmetry breaking of a continuous symmetry}{267}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {4.3}Goldstone's Theorem}{270}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {4.4}The Higgs Mechanism}{274}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {4.5}Non-Abelian Gauge Theories}{275}{subsection.6.4.5}
+\contentsline {subsection}{\numberline {4.6}Insert on Group Theory}{276}{subsection.6.4.6}
+\contentsline {section}{\numberline {V\hspace {-5pt}}Electroweak Theory}{277}{section.6.5}
+\contentsline {subsection}{\numberline {5.1}Electroweak Gauge Theory}{277}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {5.2}Coupling to Matter - Leptons}{279}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {5.3}Coupling to Matter - Quarks}{281}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {5.4}Neutrino Oscillations and Mass}{283}{subsection.6.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Dirac Fermions}{283}{subsubsection.6.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Majorana Fermions}{284}{subsubsection.6.5.4.2}
+\contentsline {subsection}{\numberline {5.5}Summary of Electroweak Theory}{284}{subsection.6.5.5}
+\contentsline {section}{\numberline {VI\hspace {-5pt}}Weak Interactions}{285}{section.6.6}
+\contentsline {subsection}{\numberline {6.1}Effective Weak Lagrangian}{285}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.2}Decay Rates \& Cross Sections}{287}{subsection.6.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Decay Rate}{287}{subsubsection.6.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Cross-Sections}{289}{subsubsection.6.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Muon Decay}{289}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.4}Pion Decay}{293}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.5}$K^0$ + $\mathaccentV {bar}016{K}^0$ Mixing}{296}{subsection.6.6.5}
+\contentsline {subsection}{\numberline {6.6}Other Decays}{298}{subsection.6.6.6}
+\contentsline {section}{\numberline {VII\hspace {-5pt}}Quantum Chromodynamics}{300}{section.6.7}
+\contentsline {subsection}{\numberline {7.1}QCD Lagrangian}{300}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {7.2}Renormalisation}{301}{subsection.6.7.2}
+\contentsline {chapter}{\numberline {7}Statistical Field Theory}{303}{chapter.7}
+\contentsline {section}{\numberline {I\hspace {-5pt}}From Spins to Fields}{304}{section.7.1}
+\contentsline {subsection}{\numberline {1.1}The Ising Model}{304}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}The Effective Free Energy}{304}{subsubsection.7.1.1.1}
+\contentsline {subsection}{\numberline {1.2}Landau Theory of Phase Transitions}{306}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Critical Exponents}{308}{subsubsection.7.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Universality}{309}{subsubsection.7.1.2.2}
+\contentsline {subsection}{\numberline {1.3}Landau-Ginzburg Theory}{310}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}The Saddle Point}{311}{subsubsection.7.1.3.1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}My First Path Integral}{314}{section.7.2}
+\contentsline {chapter}{\numberline {8}String Theory}{315}{chapter.8}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Prehistory/History}{316}{section.8.1}
+\contentsline {subsection}{\numberline {1.1}The Relativistic Point Particle}{318}{subsection.8.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Hamiltonian Formalism}{319}{subsubsection.8.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Noether's Theorem}{324}{subsubsection.8.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Quantization}{327}{subsection.8.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Covariant Quantisation}{327}{subsubsection.8.1.2.1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}The Nambu-Goto String}{328}{section.8.2}
+\contentsline {subsection}{\numberline {2.1}Hamiltonian Formalism}{328}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {2.2}Symmetries of the Nambu-Goto Action}{331}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {2.3}Monge Gauge}{333}{subsection.8.2.3}
+\contentsline {chapter}{\numberline {9}Symmetries, Fields and Particles}{335}{chapter.9}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Introduction}{337}{section.9.1}
+\contentsline {subsection}{\numberline {1.1}Mathematical Formulation}{337}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {1.2}Simple, Complex Lie Algebras}{337}{subsection.9.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Cartan Classification}{337}{subsubsection.9.1.2.1}
+\contentsline {subsection}{\numberline {1.3}Gauge Symmetry}{338}{subsection.9.1.3}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Lie Groups}{339}{section.9.2}
+\contentsline {subsection}{\numberline {2.1}Manifolds}{339}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {2.2}Back to Lie Groups}{339}{subsection.9.2.2}
+\contentsline {subsection}{\numberline {2.3}Matrix Groups}{340}{subsection.9.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Subgroups of $\textrm {GL} \mathopen {}\mathclose \bgroup \originalleft ( n, \mathbb {R} \aftergroup \egroup \originalright )$}{341}{subsubsection.9.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Subgroups of $\text {GL}(n, \mathbb {C})$}{343}{subsubsection.9.2.3.2}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Lie Algebras}{345}{section.9.3}
+\contentsline {subsection}{\numberline {3.1}Lie Algebras from Lie Groups}{346}{subsection.9.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Preliminaries}{346}{subsubsection.9.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}The Lie Algebra, $\mathcal {L}\mathopen {}\mathclose \bgroup \originalleft (\mathscr {G}\aftergroup \egroup \originalright )$}{346}{subsubsection.9.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Why are Lie Groups special?}{349}{subsection.9.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Vector Fields on $\mathcal {M}(\mathscr {G})$}{350}{subsubsection.9.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Constructing $\mathscr {G}$ from $\mathcal {L}(\mathscr {G})$}{352}{subsection.9.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Back to $\textrm {SU}\mathopen {}\mathclose \bgroup \originalleft (2\aftergroup \egroup \originalright )$ vs. $\textrm {SO}\mathopen {}\mathclose \bgroup \originalleft (3\aftergroup \egroup \originalright )$}{353}{subsubsection.9.3.3.1}
+\contentsline {section}{\numberline {IV\hspace {-5pt}}Introduction to Representations}{354}{section.9.4}
+\contentsline {subsection}{\numberline {4.1}Representations of Lie Groups}{354}{subsection.9.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Types of Representation}{354}{subsubsection.9.4.1.1}
+\contentsline {chapter}{\numberline {10}Theoretical Physics of Soft Condensed Matter}{356}{chapter.10}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Introduction \& Statics}{358}{section.10.1}
+\contentsline {subsection}{\numberline {1.1}Statistical Physics Review}{359}{subsection.10.1.1}
+\contentsline {subsection}{\numberline {1.2}Coarse Graining}{360}{subsection.10.1.2}
+\contentsline {subsection}{\numberline {1.3}Landau-Ginzburg Theory for Nematic Liquid Crystals}{364}{subsection.10.1.3}
+\contentsline {subsection}{\numberline {1.4}Functional Integration}{367}{subsection.10.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Stress Tensor for scalar $\phi (\mathbf r)$}{368}{subsubsection.10.1.4.1}
+\contentsline {subsection}{\numberline {1.5}Functional Integrals}{369}{subsection.10.1.5}
+\contentsline {subsection}{\numberline {1.6}Hartree Theory}{371}{subsection.10.1.6}
+\contentsline {subsection}{\numberline {1.7}Isotropic to Smectic Transition}{372}{subsection.10.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Applying the Variational Method}{374}{subsubsection.10.1.7.1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Dynamics}{379}{section.10.2}
+\contentsline {subsection}{\numberline {2.1}Building a Toolbox}{379}{subsection.10.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}The Overdamped Limit}{381}{subsubsection.10.2.1.1}
+\contentsline {subsection}{\numberline {2.2}From One Particle to Many}{383}{subsection.10.2.2}
+\contentsline {subsection}{\numberline {2.3}Dynamics of Fluctuations}{385}{subsection.10.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Model B}{385}{subsubsection.10.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Droplet Growth (Coarsening)}{389}{subsubsection.10.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Model H}{393}{subsubsection.10.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Liquid-Crystal Hydrodynamics}{397}{subsection.10.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Polar Liquid Crystal}{397}{subsubsection.10.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Nematic Liquid Crystal}{399}{subsubsection.10.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Topological Defects in Nematic Liquid Crystals}{400}{subsubsection.10.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Topological Defects in 3D}{402}{subsubsection.10.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Homotopy Theory}{402}{subsubsection.10.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}Topological Defects in Polar Liquid Crystals}{404}{subsubsection.10.2.4.6}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Active Soft Matter}{406}{section.10.3}
+\contentsline {subsection}{\numberline {3.1}Active Model B}{407}{subsection.10.3.1}
+\contentsline {subsection}{\numberline {3.2}Active Liquid Crystals}{408}{subsection.10.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Active Polar Liquid Crystals}{408}{subsubsection.10.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Active Nematic Liquid Crystals}{409}{subsubsection.10.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Defect Motion in Active Nematics}{412}{subsection.10.3.3}
+\contentsline {chapter}{Appendix}{413}{section*.43}
+\contentsline {section}{\numberline {I\hspace {-5pt}}Functional Integrals}{414}{section.1..1}
+\contentsline {section}{\numberline {II\hspace {-5pt}}Motivating Quantum Field Theory}{415}{section.1..2}
+\contentsline {subsection}{\numberline {2.1}Quantisation}{416}{subsection.1..2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Connecting the Harmonic Oscillator and Special Relativity}{416}{subsubsection.1..2.1.1}
+\contentsline {subsection}{\numberline {2.2}To what extent should we believe Quantum Field Theory?}{417}{subsection.1..2.2}
+\contentsline {section}{\numberline {III\hspace {-5pt}}Symmetry, Groups, and Field Theory}{418}{section.1..3}
+\contentsline {subsection}{\numberline {3.1}Symmetry}{418}{subsection.1..3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Continuous parameters and local one-parameter groups}{419}{subsubsection.1..3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Symmetries from the classical Hamiltonian}{420}{subsubsection.1..3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Quantum Mechanics}{421}{subsubsection.1..3.1.3}
+\contentsline {subsection}{\numberline {3.2}Switching from Particles to Fields}{422}{subsection.1..3.2}
+\contentsline {subsection}{\numberline {3.3}Finite Dimensional Lagrangian Systems}{423}{subsection.1..3.3}
+\contentsline {subsection}{\numberline {3.4}The Poincaré Group}{424}{subsection.1..3.4}
+\contentsline {section}{\numberline {IV\hspace {-5pt}}How do we study Cosmology?}{424}{section.1..4}
+\contentsline {section}{\numberline {V\hspace {-5pt}}Algebras}{426}{section.1..5}
+\contentsline {subsection}{\numberline {5.1}Algebras and Ideals}{426}{subsection.1..5.1}
+\contentsline {subsection}{\numberline {5.2}Ideals and Factor Algebras}{427}{subsection.1..5.2}
+\contentsline {subsection}{\numberline {5.3}Complexification of a real vector space}{428}{subsection.1..5.3}
+\contentsline {subsection}{\numberline {5.4}Complex Structure on a vector space}{428}{subsection.1..5.4}
+\contentsline {subsection}{\numberline {5.5}Clifford Algebras}{429}{subsection.1..5.5}
+\contentsline {subsection}{\numberline {5.6}Grassman Algebras}{430}{subsection.1..5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}The Exterior Product}{431}{subsubsection.1..5.6.1}
+\contentsline {subsection}{\numberline {5.7}Exterior Algebra}{433}{subsection.1..5.7}
+\contentsline {subsubsection}{\numberline {5.7.1}$r$-Vectors and $r$-Forms}{433}{subsubsection.1..5.7.1}
+\contentsline {section}{\numberline {VI\hspace {-5pt}}Can we do anything without knowing everything?}{434}{section.1..6}
+\contentsline {subsection}{\numberline {6.1}Universality}{434}{subsection.1..6.1}
+\contentsline {chapter}{Index}{437}{chapter*.46}

@@ -1,0 +1,850 @@
+\indexentry{isotropy}{15}
+\indexentry{homogeneity}{15}
+\indexentry{CMB}{15}
+\indexentry{power spectrum}{15}
+\indexentry{power spectrum!dimensionless}{16}
+\indexentry{correlation function}{16}
+\indexentry{bispectrum}{16}
+\indexentry{trispectrum}{17}
+\indexentry{filter!spherical top hat}{17}
+\indexentry{field!Gaussian random}{19}
+\indexentry{covariance matrix}{19}
+\indexentry{characteristic function}{19}
+\indexentry{theorem!Wick's}{19}
+\indexentry{moment generating function}{20}
+\indexentry{Laplace transform!inverse}{20}
+\indexentry{Edgeworth expansion}{20}
+\indexentry{estimator}{20}
+\indexentry{power spectrum}{20}
+\indexentry{spherical harmonics}{22}
+\indexentry{associated Legendre polynomials}{22}
+\indexentry{spherical harmonics!orthogonality relation}{22}
+\indexentry{spherical harmonics!addition formula}{23}
+\indexentry{transformation!active}{23}
+\indexentry{transformation!passive}{23}
+\indexentry{Wigner matrices}{24}
+\indexentry{representation}{24}
+\indexentry{CMB}{25}
+\indexentry{Raleigh Expansion}{25}
+\indexentry{CMB}{27}
+\indexentry{anistropy}{27}
+\indexentry{kinetic theory}{27}
+\indexentry{equation!Boltzmann}{27}
+\indexentry{FLRW universe}{27}
+\indexentry{distribution function}{27}
+\indexentry{orthonormal tetrad}{27}
+\indexentry{null}{28}
+\indexentry{theorem!Liouville}{28}
+\indexentry{Lorentz factor}{28}
+\indexentry{theorem!Liouville}{29}
+\indexentry{distribution function}{29}
+\indexentry{worldline}{29}
+\indexentry{equation!geodesic}{29}
+\indexentry{CMB!dipole}{29}
+\indexentry{isotropic}{29}
+\indexentry{blackbody}{29}
+\indexentry{Doppler effect}{29}
+\indexentry{Jacobian}{29}
+\indexentry{equation!Boltzmann}{30}
+\indexentry{comoving energy}{30}
+\indexentry{ms}{30}
+\indexentry{kinematic dipole}{30}
+\indexentry{scattering!Thomson}{30}
+\indexentry{scattering!Compton}{30}
+\indexentry{recombination}{30}
+\indexentry{isotropic}{31}
+\indexentry{homogeneous}{31}
+\indexentry{Maxwell-Boltzmann distribution}{31}
+\indexentry{scattering!Thomson}{32}
+\indexentry{polarisation}{32}
+\indexentry{Sunyaev-Zel'dovich effect}{32}
+\indexentry{cross-section}{33}
+\indexentry{cross-section!differential}{33}
+\indexentry{bulk velocity}{34}
+\indexentry{convective derivative}{34}
+\indexentry{optical depth}{34}
+\indexentry{optical depth}{35}
+\indexentry{visibility function}{35}
+\indexentry{mean free path}{35}
+\indexentry{mean free path!comoving}{35}
+\indexentry{recombination}{35}
+\indexentry{last-scattering}{35}
+\indexentry{ionisation}{35}
+\indexentry{reionisation}{35}
+\indexentry{visibility function}{37}
+\indexentry{tensor!stress-energy}{37}
+\indexentry{fractional overdensity}{37}
+\indexentry{anisotropic stress}{37}
+\indexentry{perturbation!scalar}{39}
+\indexentry{gauge!conformal Newtonian}{39}
+\indexentry{gravitational lensing}{41}
+\indexentry{last scattering}{41}
+\indexentry{reionisation}{41}
+\indexentry{quadrupole}{41}
+\indexentry{power spectrum!angular}{43}
+\indexentry{Sachs-Wolfe}{43}
+\indexentry{Sachs-Wolfe!integrated}{43}
+\indexentry{last scattering}{43}
+\indexentry{scattering!Coulomb}{43}
+\indexentry{mean-free path}{43}
+\indexentry{tight-coupling limit}{43}
+\indexentry{equation!Euler}{44}
+\indexentry{acoustic oscillations}{45}
+\indexentry{WKB approximation}{45}
+\indexentry{sound horizon}{45}
+\indexentry{spherical Bessel function}{46}
+\indexentry{comoving gauge curvature perturbation}{47}
+\indexentry{super-Hubble}{47}
+\indexentry{diffusion damping}{51}
+\indexentry{transfer function}{52}
+\indexentry{diffusion damping}{52}
+\indexentry{visibility function}{52}
+\indexentry{Boltzmann hierarchy}{53}
+\indexentry{gauge!synchronous}{53}
+\indexentry{helicity state}{54}
+\indexentry{action!Einstein-Hilbert}{54}
+\indexentry{tensor to scalar ratio}{55}
+\indexentry{CMB!polarisation}{57}
+\indexentry{Stokes parameters}{57}
+\indexentry{spherical harmonic!spin-weighted}{59}
+\indexentry{non-gaussianity}{63}
+\indexentry{gravitational lensing}{63}
+\indexentry{shape function}{63}
+\indexentry{bispectrum}{64}
+\indexentry{shape function}{64}
+\indexentry{non-gaussianity!equilateral}{65}
+\indexentry{Planck}{65}
+\indexentry{in-in formalism}{65}
+\indexentry{Bunch-Davies vacuum}{66}
+\indexentry{equation!Mukhanov-Sasaki}{66}
+\indexentry{ADM formalism}{68}
+\indexentry{Einstein-Hilbert action}{68}
+\indexentry{shift function}{69}
+\indexentry{lapse function}{69}
+\indexentry{extrinsic curvature}{69}
+\indexentry{equation!constraint}{70}
+\indexentry{comoving gauge}{70}
+\indexentry{equation!Mukhanov-Sasaki}{70}
+\indexentry{cubic action}{71}
+\indexentry{shape function}{73}
+\indexentry{P(X) theory}{74}
+\indexentry{effective field theory!of inflation}{75}
+\indexentry{Planck}{75}
+\indexentry{DBI inflation}{75}
+\indexentry{inflaton}{76}
+\indexentry{inflation!single field}{76}
+\indexentry{vacuum!Bunch-Davies}{76}
+\indexentry{dark matter}{77}
+\indexentry{equation!Boltzmann}{77}
+\indexentry{distribution function}{77}
+\indexentry{equation!Vlaslov}{78}
+\indexentry{equation!continuity}{78}
+\indexentry{equation!Euler}{78}
+\indexentry{Helmholtz decomposition}{78}
+\indexentry{vorticity}{78}
+\indexentry{logarithmic growth factor}{80}
+\indexentry{effective field theory!large scale structure}{86}
+\indexentry{effective stress tensor}{88}
+\indexentry{tracer}{90}
+\indexentry{Press-Schechter mass function}{90}
+\indexentry{Lagrangian bias}{91}
+\indexentry{Eulerian bias}{91}
+\indexentry{displacement field}{92}
+\indexentry{tidal tensor}{92}
+\indexentry{field!scalar}{95}
+\indexentry{pions}{95}
+\indexentry{critical point}{95}
+\indexentry{path integral}{96}
+\indexentry{partition function}{96}
+\indexentry{correlation function}{96}
+\indexentry{operator}{96}
+\indexentry{operator!insertions}{96}
+\indexentry{correlation functions}{96}
+\indexentry{coupling constant}{96}
+\indexentry{Hilbert space}{98}
+\indexentry{field!momentum}{98}
+\indexentry{exterior derivative}{98}
+\indexentry{symplectic form}{99}
+\indexentry{Poisson bracket}{99}
+\indexentry{Green's function}{101}
+\indexentry{equation!Klein-Gordon}{101}
+\indexentry{theorem!Wick's}{102}
+\indexentry{Feynman diagram}{102}
+\indexentry{vacuum graphs}{104}
+\indexentry{Feynman!rules}{104}
+\indexentry{formula!Stirling's}{104}
+\indexentry{topological graph}{105}
+\indexentry{theorem!Orbit-Stabilizer}{106}
+\indexentry{automorphism}{106}
+\indexentry{symmetry factor}{106}
+\indexentry{graph!trivial}{106}
+\indexentry{effective action}{107}
+\indexentry{effective action!Wilsonian}{107}
+\indexentry{theorem!Euler}{108}
+\indexentry{vacuum graph}{108}
+\indexentry{tree level diagram}{109}
+\indexentry{effective action}{110}
+\indexentry{Legendre transform}{112}
+\indexentry{1-particle irreducible graphs}{113}
+\indexentry{field!fermionic}{114}
+\indexentry{Grassman algebra}{114}
+\indexentry{Berezin integration}{115}
+\indexentry{algebra!Grassman}{116}
+\indexentry{supersymmetry}{116}
+\indexentry{supersymmetric transformations}{117}
+\indexentry{SUSY}{117}
+\indexentry{compact manifold}{119}
+\indexentry{Levi-Civita connection}{119}
+\indexentry{target space}{119}
+\indexentry{worldline}{119}
+\indexentry{Hilbert space}{119}
+\indexentry{Laplacian}{119}
+\indexentry{heat kernel}{119}
+\indexentry{local operator}{121}
+\indexentry{worldline}{122}
+\indexentry{non-commutativity}{122}
+\indexentry{measure}{122}
+\indexentry{renormalisation}{123}
+\indexentry{measure!Lebesgue}{123}
+\indexentry{measure!Wiener}{123}
+\indexentry{Brownian motion}{123}
+\indexentry{regularisation}{125}
+\indexentry{renormalisation}{125}
+\indexentry{effective action}{125}
+\indexentry{Green's function}{126}
+\indexentry{equation!Einstein}{128}
+\indexentry{canonical quantisation}{129}
+\indexentry{quantum gravity}{129}
+\indexentry{moduli space}{129}
+\indexentry{worldgraph}{130}
+\indexentry{Hausdorff}{130}
+\indexentry{renormalisation group}{131}
+\indexentry{UV divergence}{131}
+\indexentry{effective action}{131}
+\indexentry{wavefunction renormalisation}{132}
+\indexentry{beta function}{132}
+\indexentry{anomalous dimension}{132}
+\indexentry{renormalisation group!flow}{133}
+\indexentry{equation!Callan-Symanjik}{133}
+\indexentry{operator!irrelevant}{134}
+\indexentry{operator!relevant}{134}
+\indexentry{critical trajectory}{134}
+\indexentry{operator!marginal}{134}
+\indexentry{renormalised couplings}{136}
+\indexentry{dimensional transmutation}{136}
+\indexentry{renormalisation!scheme}{138}
+\indexentry{dimensional regularisation}{142}
+\indexentry{constant!Euler-Mascheroni}{144}
+\indexentry{QED}{145}
+\indexentry{gauge!Lorenz}{146}
+\indexentry{polarisation!vacuum}{146}
+\indexentry{renormalisation!wavefunction}{147}
+\indexentry{action!quantum effective}{150}
+\indexentry{anomaly}{153}
+\indexentry{conformal transformation}{153}
+\indexentry{Ward-Takahashi identity}{153}
+\indexentry{selection rule}{154}
+\indexentry{Yang-Mills theory}{158}
+\indexentry{curvature}{158}
+\indexentry{tensor!field strength}{158}
+\indexentry{asymptotic freedom}{158}
+\indexentry{gluons}{158}
+\indexentry{affine}{159}
+\indexentry{ghost}{159}
+\indexentry{Fade'ev-Popov determinant}{161}
+\indexentry{ghost action}{161}
+\indexentry{ghost}{161}
+\indexentry{anti-ghost}{161}
+\indexentry{gauge-fixing action}{162}
+\indexentry{BRST transformation}{162}
+\indexentry{Nakanishi-Lautrup field}{162}
+\indexentry{canonical quantisation}{163}
+\indexentry{nilpotent}{163}
+\indexentry{BRST Cohomology}{165}
+\indexentry{axial gauge}{166}
+\indexentry{Landau gauge}{168}
+\indexentry{Feynman gauge}{168}
+\indexentry{lattice QCD}{169}
+\indexentry{spinor-helicity formalism}{169}
+\indexentry{twistor theory}{169}
+\indexentry{CMB}{176}
+\indexentry{FLRW universe}{176}
+\indexentry{comoving distance}{177}
+\indexentry{conformal time}{177}
+\indexentry{geodesic equation}{177}
+\indexentry{Christoffel symbols}{177}
+\indexentry{redshift}{178}
+\indexentry{Hubble!law}{178}
+\indexentry{Hubble!constant}{178}
+\indexentry{dark energy}{178}
+\indexentry{equation!conservation}{179}
+\indexentry{tensor!energy-momentum}{179}
+\indexentry{equation!of state}{179}
+\indexentry{equation!Friedman}{179}
+\indexentry{equation!Einstein}{179}
+\indexentry{equation!Friedman}{180}
+\indexentry{critical!density}{180}
+\indexentry{fractional density}{180}
+\indexentry{domination!radiation}{181}
+\indexentry{domination!matter}{181}
+\indexentry{domination!dark energy}{181}
+\indexentry{big bang nucleosynthesis}{184}
+\indexentry{CMB}{184}
+\indexentry{problem!flatness}{184}
+\indexentry{problem!relic}{184}
+\indexentry{topological defect}{184}
+\indexentry{problem!horizon}{184}
+\indexentry{conformal time}{184}
+\indexentry{horizon!event}{184}
+\indexentry{horizon!particle}{184}
+\indexentry{horizon}{185}
+\indexentry{horizon!particle}{185}
+\indexentry{horizon!event}{185}
+\indexentry{problem!horizon}{185}
+\indexentry{CMB}{185}
+\indexentry{inflation!e-folds}{187}
+\indexentry{inflation}{187}
+\indexentry{Planck mass}{189}
+\indexentry{slow roll parameters}{190}
+\indexentry{reheating}{192}
+\indexentry{measure problem}{193}
+\indexentry{gauge problem}{196}
+\indexentry{SVT decomposition}{196}
+\indexentry{gauge problem}{197}
+\indexentry{anisotropic stress}{200}
+\indexentry{gauge!uniform density}{203}
+\indexentry{gauge!comoving}{203}
+\indexentry{comoving density contrast}{204}
+\indexentry{curvature perturbation!comoving}{213}
+\indexentry{curvature perturbation}{213}
+\indexentry{superhorizon}{214}
+\indexentry{subhorizon}{214}
+\indexentry{manifold}{218}
+\indexentry{chart}{218}
+\indexentry{atlas}{218}
+\indexentry{topological space}{218}
+\indexentry{co-ordinate system}{218}
+\indexentry{field!scalar}{219}
+\indexentry{field!vector}{219}
+\indexentry{curve}{219}
+\indexentry{tangent vector}{219}
+\indexentry{tangent bundle}{219}
+\indexentry{co-ordinate basis}{220}
+\indexentry{integral curve}{220}
+\indexentry{invariant}{220}
+\indexentry{Lie bracket}{220}
+\indexentry{identity!Jacobi}{220}
+\indexentry{Lie algebra}{221}
+\indexentry{structure constant}{221}
+\indexentry{group action}{221}
+\indexentry{dual space}{221}
+\indexentry{covector}{222}
+\indexentry{covector bundle}{222}
+\indexentry{abstract indices}{222}
+\indexentry{tensor}{222}
+\indexentry{tensor!product}{223}
+\indexentry{tensor!(anti)symmetrisation}{223}
+\indexentry{exterior derivative}{223}
+\indexentry{wedge product}{223}
+\indexentry{tensor!metric}{224}
+\indexentry{non-degenerate}{224}
+\indexentry{signature}{224}
+\indexentry{manifold!Riemannian}{225}
+\indexentry{manifold!pseudo-Riemannian}{225}
+\indexentry{manifold!Lorentzian}{225}
+\indexentry{spacetime}{225}
+\indexentry{basis!orthonormal}{225}
+\indexentry{vector!timelike}{225}
+\indexentry{vector!null}{225}
+\indexentry{vector!lightlike}{225}
+\indexentry{vector!spacelike}{225}
+\indexentry{proper time}{225}
+\indexentry{equation!Euler-Lagrange}{225}
+\indexentry{equation!geodesic}{225}
+\indexentry{Christoffel symbols}{226}
+\indexentry{covariant derivative}{226}
+\indexentry{connection}{226}
+\indexentry{connection!Levi-Civita}{226}
+\indexentry{torsion free}{227}
+\indexentry{connection!Levi-Civita}{227}
+\indexentry{equation!Euler-Lagrange}{228}
+\indexentry{geodesic}{228}
+\indexentry{affine parameter}{228}
+\indexentry{normal co-ordinates}{228}
+\indexentry{connection!Levi-Civita}{228}
+\indexentry{parallel transport}{228}
+\indexentry{equation!parallel transport}{228}
+\indexentry{tensor!Riemann}{229}
+\indexentry{flatness}{229}
+\indexentry{tensor!Ricci}{229}
+\indexentry{parallel transport!and curvature}{230}
+\indexentry{tensor!curvature}{231}
+\indexentry{tensor!Riemann!symmetries}{231}
+\indexentry{normal co-ordinates}{231}
+\indexentry{connection!torsion free}{232}
+\indexentry{field}{234}
+\indexentry{Lagrangian}{234}
+\indexentry{equation!Euler-Lagrange}{235}
+\indexentry{equation!Klein-Gordon}{235}
+\indexentry{free theory}{235}
+\indexentry{harmonic oscillator}{235}
+\indexentry{Lorentz!invariance}{235}
+\indexentry{Lorentz!transformation}{236}
+\indexentry{field!scalar}{236}
+\indexentry{Noether's theorem}{237}
+\indexentry{on-shell}{237}
+\indexentry{field!complex scalar}{237}
+\indexentry{electric charge}{238}
+\indexentry{tensor!energy-momentum}{238}
+\indexentry{Hamiltonian}{239}
+\indexentry{conjugate momentum}{239}
+\indexentry{Hamiltonian!density}{239}
+\indexentry{equation!Hamilton's}{239}
+\indexentry{canonical quantisation}{239}
+\indexentry{Poisson bracket}{239}
+\indexentry{field!quantum}{239}
+\indexentry{free theory}{239}
+\indexentry{equation!Klein-Gordon}{239}
+\indexentry{Fourier transform}{239}
+\indexentry{harmonic oscillator}{240}
+\indexentry{normal ordering}{240}
+\indexentry{vacuum}{241}
+\indexentry{UV divergence}{241}
+\indexentry{normal ordering}{241}
+\indexentry{normal ordering}{242}
+\indexentry{dispersion relation}{242}
+\indexentry{boson}{242}
+\indexentry{Hilbert space}{242}
+\indexentry{Fock space}{242}
+\indexentry{number operator}{243}
+\indexentry{interacting theory}{243}
+\indexentry{field!complex scalar}{244}
+\indexentry{equation!Euler-Lagrange}{244}
+\indexentry{equation!Klein-Gordon}{245}
+\indexentry{anti-particle}{245}
+\indexentry{picture!Heisenberg}{246}
+\indexentry{picture!Schr{\"o}dinger}{246}
+\indexentry{standard model}{249}
+\indexentry{electromagnetism}{249}
+\indexentry{weak force}{249}
+\indexentry{strong force}{249}
+\indexentry{boson!gauge}{249}
+\indexentry{photon}{249}
+\indexentry{boson!W}{249}
+\indexentry{boson!Z}{249}
+\indexentry{gluon}{249}
+\indexentry{fermion}{249}
+\indexentry{neutrinos}{249}
+\indexentry{lepton}{249}
+\indexentry{quark}{249}
+\indexentry{boson!Higgs}{249}
+\indexentry{chiral}{249}
+\indexentry{hypercharge}{249}
+\indexentry{electroweak}{249}
+\indexentry{spinor}{250}
+\indexentry{equation!Dirac}{250}
+\indexentry{Dirac adjoint}{250}
+\indexentry{basis!chiral}{250}
+\indexentry{basis!Weyl}{250}
+\indexentry{operator!projection}{250}
+\indexentry{chirality}{250}
+\indexentry{symmetry!chiral}{251}
+\indexentry{symmetry!broken}{251}
+\indexentry{symmetry!vector}{251}
+\indexentry{symmetry!axial}{251}
+\indexentry{completeness}{251}
+\indexentry{helicity}{251}
+\indexentry{symmetry!gauge}{252}
+\indexentry{covariant derivative!gauge}{252}
+\indexentry{field!gauge}{252}
+\indexentry{gauge field}{252}
+\indexentry{QED}{252}
+\indexentry{symmetry!intact}{252}
+\indexentry{anomaly}{252}
+\indexentry{symmetry breaking!explicit}{252}
+\indexentry{symmetry!approximate}{252}
+\indexentry{symmetry!hidden}{252}
+\indexentry{vacuum expectation value, VEV}{252}
+\indexentry{Higg's mechanism}{252}
+\indexentry{symmetry breaking!spontaneous}{252}
+\indexentry{symmetry breaking!dynamical}{252}
+\indexentry{symmetry!discrete}{253}
+\indexentry{symmetry!discrete!parity}{253}
+\indexentry{parity}{253}
+\indexentry{symmetry!discrete!time reversal}{253}
+\indexentry{time reversal}{253}
+\indexentry{symmetry!discrete!charge conjugation}{253}
+\indexentry{charge conjugation}{253}
+\indexentry{symmetry!chiral}{253}
+\indexentry{PCT theorem}{253}
+\indexentry{Wigner}{253}
+\indexentry{Hilbert space}{253}
+\indexentry{operator!unitary}{253}
+\indexentry{operator!anti-unitary}{253}
+\indexentry{Poincaré!algebra}{254}
+\indexentry{field!complex scalar}{255}
+\indexentry{spacelike}{256}
+\indexentry{intrinsic parity}{256}
+\indexentry{pseudoscalar}{256}
+\indexentry{field!vector}{256}
+\indexentry{polarisation vector}{256}
+\indexentry{axial vector}{256}
+\indexentry{helicity}{257}
+\indexentry{projection operator}{257}
+\indexentry{axial vector}{258}
+\indexentry{charge conjugation}{258}
+\indexentry{parity}{258}
+\indexentry{symmetry!internal}{258}
+\indexentry{parity!intrinsic charge conjugation}{258}
+\indexentry{chiral basis}{259}
+\indexentry{Majorana fermions}{260}
+\indexentry{neutrino}{260}
+\indexentry{bilinear!fermion}{260}
+\indexentry{axial current}{261}
+\indexentry{time reversal}{261}
+\indexentry{anti-linear}{261}
+\indexentry{chiral basis}{262}
+\indexentry{charge density}{262}
+\indexentry{S-matrix}{263}
+\indexentry{scattering}{263}
+\indexentry{QED}{263}
+\indexentry{theorem!CPT}{264}
+\indexentry{hermitian}{264}
+\indexentry{baryogenesis}{264}
+\indexentry{Sakarhov conditions}{264}
+\indexentry{baryon}{264}
+\indexentry{antibaryons}{265}
+\indexentry{symmetry breaking!spontaneous}{266}
+\indexentry{vacuum expectation value, VEV}{266}
+\indexentry{representation}{268}
+\indexentry{invariant subgroup}{268}
+\indexentry{stability group}{268}
+\indexentry{normal subgroup}{268}
+\indexentry{(Nambu)-Goldstone bosons}{269}
+\indexentry{theorem!Goldstone}{270}
+\indexentry{VEV}{270}
+\indexentry{equation!Klein-Gordon}{272}
+\indexentry{boson!Goldstone}{273}
+\indexentry{Higgs!mechanism}{274}
+\indexentry{tensor!field-strength}{274}
+\indexentry{covariant derivative}{274}
+\indexentry{superconductivity}{274}
+\indexentry{Meissner effect}{274}
+\indexentry{unitary gauge}{275}
+\indexentry{non-Abelian gauge theory}{275}
+\indexentry{group!Lie}{275}
+\indexentry{Dynkin index}{276}
+\indexentry{lemma!Schurr}{276}
+\indexentry{electroweak theory}{277}
+\indexentry{hypercharge}{277}
+\indexentry{VEV}{277}
+\indexentry{boson!gauge}{277}
+\indexentry{lepton}{279}
+\indexentry{gauge!unitary}{280}
+\indexentry{quark}{281}
+\indexentry{Cabibbo-Kobyashi-Maskawa (CKM) matrix}{282}
+\indexentry{CP violation}{283}
+\indexentry{neutrino oscillations}{283}
+\indexentry{Majorana fermion}{283}
+\indexentry{non-renormalisable}{284}
+\indexentry{effective field theory}{284}
+\indexentry{Fermi effective Lagrangian}{285}
+\indexentry{Fermi constant}{287}
+\indexentry{decay rate}{287}
+\indexentry{cross section}{287}
+\indexentry{cross-section}{289}
+\indexentry{barn}{289}
+\indexentry{muon decay}{289}
+\indexentry{pion}{293}
+\indexentry{Fermi theory}{293}
+\indexentry{axial current}{294}
+\indexentry{kaon}{296}
+\indexentry{CP violation}{297}
+\indexentry{mass matrix}{297}
+\indexentry{theorem!CPT}{297}
+\indexentry{CP violation}{298}
+\indexentry{semi-leptonic decay}{298}
+\indexentry{isospin}{300}
+\indexentry{quark model}{300}
+\indexentry{confinement}{300}
+\indexentry{Gell-Mann matrix}{301}
+\indexentry{strong coupling}{302}
+\indexentry{Ising model}{304}
+\indexentry{free energy}{304}
+\indexentry{free energy!effective}{305}
+\indexentry{Stirling's formula}{305}
+\indexentry{phase transition}{306}
+\indexentry{phase transition!continuous}{306}
+\indexentry{symmetry breaking}{306}
+\indexentry{phase transition!first order}{307}
+\indexentry{phase diagram!ising}{307}
+\indexentry{critical!point}{308}
+\indexentry{critical!exponents}{308}
+\indexentry{liquid-gas transition}{309}
+\indexentry{field}{310}
+\indexentry{coarse-graining}{310}
+\indexentry{path integral}{310}
+\indexentry{symmetry breaking}{312}
+\indexentry{lower critical dimension}{312}
+\indexentry{path integral}{314}
+\indexentry{ultra-relativistic}{316}
+\indexentry{cosmic string}{316}
+\indexentry{Lorentz invariant}{316}
+\indexentry{tensor!energy-momentum}{316}
+\indexentry{hadron resonances}{316}
+\indexentry{Regge trajectories}{316}
+\indexentry{s-channel}{317}
+\indexentry{t-channel}{317}
+\indexentry{quark}{317}
+\indexentry{quark!antiquark}{317}
+\indexentry{string length}{317}
+\indexentry{Planck length}{317}
+\indexentry{tachyon}{317}
+\indexentry{graviton}{317}
+\indexentry{superstring}{317}
+\indexentry{supersymmetry}{317}
+\indexentry{topology}{318}
+\indexentry{path integral}{318}
+\indexentry{worldline}{318}
+\indexentry{Hamiltonian}{319}
+\indexentry{field!scalar}{319}
+\indexentry{field!gauge}{319}
+\indexentry{gauge invariance}{320}
+\indexentry{Poisson bracket}{320}
+\indexentry{first class!set of constraints}{321}
+\indexentry{phase space}{321}
+\indexentry{symplectic manifold}{321}
+\indexentry{Poisson bracket}{321}
+\indexentry{Darboux theorem}{321}
+\indexentry{Yang-Mills theory}{321}
+\indexentry{co-ordinates!Darboux}{322}
+\indexentry{identity!Jacobi}{322}
+\indexentry{Jacobi identity}{322}
+\indexentry{diffeomorphism!symplectic}{322}
+\indexentry{canonical transformation}{322}
+\indexentry{vector field!Hamiltonian}{322}
+\indexentry{first class constraints}{323}
+\indexentry{diffeomorphism!symplectic}{323}
+\indexentry{isometry}{323}
+\indexentry{gauge theory!non-abelian}{324}
+\indexentry{Noether charge}{324}
+\indexentry{topological charge}{324}
+\indexentry{Lorentz transformation}{324}
+\indexentry{group!Poincaré}{324}
+\indexentry{theorem!Noether}{325}
+\indexentry{gauge fixing}{325}
+\indexentry{gauge!temporal}{325}
+\indexentry{canonical transformation}{325}
+\indexentry{gauge!light-cone}{325}
+\indexentry{equation!Schr{\"o}dinger}{327}
+\indexentry{gauge invariance}{327}
+\indexentry{Hilbert space}{327}
+\indexentry{equation!Klein-Gordon}{327}
+\indexentry{worldline}{328}
+\indexentry{worldsheet}{328}
+\indexentry{string!open}{328}
+\indexentry{string!closed}{328}
+\indexentry{brane}{328}
+\indexentry{Nabu-Goto!action}{328}
+\indexentry{Nambu-Goto!string}{328}
+\indexentry{diffeomorphism}{328}
+\indexentry{Lagrangian!density}{329}
+\indexentry{momentum density}{329}
+\indexentry{Hamiltonian!density}{329}
+\indexentry{action!phase space}{329}
+\indexentry{Possion bracket}{330}
+\indexentry{first class constraint}{330}
+\indexentry{Lie!algebra}{330}
+\indexentry{conformal invariance}{330}
+\indexentry{gauge transformation}{331}
+\indexentry{boundary conditions!Dirichlet}{333}
+\indexentry{boundary conditions!Neumann}{333}
+\indexentry{D-brane}{333}
+\indexentry{energy density}{334}
+\indexentry{Nambu-Goto string}{334}
+\indexentry{group!Lie}{337}
+\indexentry{manifold}{337}
+\indexentry{symmetry!gauge}{338}
+\indexentry{chart}{339}
+\indexentry{Jacobian}{339}
+\indexentry{group!matrix}{340}
+\indexentry{group!general linear}{340}
+\indexentry{group!special linear}{340}
+\indexentry{subgroup!Lie}{340}
+\indexentry{subgroup!matrix}{341}
+\indexentry{group!orthogonal}{341}
+\indexentry{SO(2)}{341}
+\indexentry{SO(3)}{341}
+\indexentry{compact}{342}
+\indexentry{connected}{342}
+\indexentry{connected!simply}{342}
+\indexentry{loop}{342}
+\indexentry{loop!contractible}{342}
+\indexentry{group!homotopy}{342}
+\indexentry{group!Lorentz}{343}
+\indexentry{Minkowski metric}{343}
+\indexentry{group!unitary}{343}
+\indexentry{group!special unitary}{343}
+\indexentry{group!Lie!isomorphism}{343}
+\indexentry{Lie!algebra}{345}
+\indexentry{identity!Jacobi}{345}
+\indexentry{Lie!algebra!isomorphism}{345}
+\indexentry{subalgebra}{345}
+\indexentry{ideal!of a Lie algebra}{345}
+\indexentry{algebra!derived}{345}
+\indexentry{ideal!derived algebra}{345}
+\indexentry{ideal!centre}{345}
+\indexentry{Lie algebra!abelian}{345}
+\indexentry{Lie algebra!simple}{346}
+\indexentry{tangent space}{346}
+\indexentry{tangent vector}{346}
+\indexentry{curve!in a Lie group}{347}
+\indexentry{traceless}{348}
+\indexentry{anti-hermitian}{348}
+\indexentry{Pauli matrices}{348}
+\indexentry{structure constants}{349}
+\indexentry{translation}{349}
+\indexentry{differential}{350}
+\indexentry{vector field}{350}
+\indexentry{vector field!left-invariant}{351}
+\indexentry{one-parameter subgroup}{352}
+\indexentry{representation!faithful}{354}
+\indexentry{representation}{355}
+\indexentry{representation!fundamental}{355}
+\indexentry{representation!trivial}{355}
+\indexentry{representation!adjoint}{355}
+\indexentry{modulus!shear}{358}
+\indexentry{foam}{358}
+\indexentry{modulus!bulk}{358}
+\indexentry{incompressible}{358}
+\indexentry{polymer}{358}
+\indexentry{colloid}{358}
+\indexentry{LCD}{358}
+\indexentry{hydrodynamic}{358}
+\indexentry{stochastic}{358}
+\indexentry{nematic liquid crystal}{359}
+\indexentry{equation!Navier-Stokes}{359}
+\indexentry{microstate}{359}
+\indexentry{fluctuation dissipation theorem}{359}
+\indexentry{thermodynamics!first law}{360}
+\indexentry{free energy!Helmholtz}{360}
+\indexentry{coarse graining}{360}
+\indexentry{partition function!restricted}{361}
+\indexentry{Boltzman distribution}{361}
+\indexentry{Hamiltonian!effective}{361}
+\indexentry{symmetry}{361}
+\indexentry{mixture!binary}{361}
+\indexentry{(im)miscible}{361}
+\indexentry{phase separation}{362}
+\indexentry{free energy!Landau-Ginzburg}{362}
+\indexentry{mean field theory}{363}
+\indexentry{phase separation}{363}
+\indexentry{density!binodal}{363}
+\indexentry{spinodal instability}{364}
+\indexentry{density!spinodal}{364}
+\indexentry{interfacial tension}{364}
+\indexentry{interface}{364}
+\indexentry{nematic}{364}
+\indexentry{nematic!liquid crystal}{364}
+\indexentry{uniaxial}{366}
+\indexentry{functional!derivative}{367}
+\indexentry{chemical potential}{368}
+\indexentry{molecular field}{368}
+\indexentry{hydrodynamic}{368}
+\indexentry{local relaxation}{368}
+\indexentry{transformation!passive}{368}
+\indexentry{stress}{369}
+\indexentry{strain}{369}
+\indexentry{coarse-graining}{369}
+\indexentry{theorem!Parseval}{369}
+\indexentry{renormalisation group}{371}
+\indexentry{mean field theory}{371}
+\indexentry{Hartree theory}{371}
+\indexentry{effective Hamiltonian}{371}
+\indexentry{Hamiltonian!effective}{371}
+\indexentry{Feynman-Bogolinbov inequality}{372}
+\indexentry{variational method}{372}
+\indexentry{smectic}{372}
+\indexentry{dimer}{372}
+\indexentry{copolymer}{372}
+\indexentry{smectic crystal}{372}
+\indexentry{order parameter}{372}
+\indexentry{Landau-Ginzburg theory}{373}
+\indexentry{transition!fluctuation-induced}{376}
+\indexentry{transition!Brazovskii}{376}
+\indexentry{colloid}{379}
+\indexentry{equation!Langevin}{379}
+\indexentry{theorem!central limit}{379}
+\indexentry{white noise}{379}
+\indexentry{detailed balance}{380}
+\indexentry{mesostate}{381}
+\indexentry{theorem!fluctuation-dissipation}{381}
+\indexentry{mobility}{382}
+\indexentry{FDT}{383}
+\indexentry{mobility}{383}
+\indexentry{equation!Langevin}{383}
+\indexentry{colloid}{383}
+\indexentry{hydrodynamic level}{383}
+\indexentry{Boltzmann distribution}{383}
+\indexentry{multiplicative noise}{384}
+\indexentry{mobility!collective}{384}
+\indexentry{detailed balance}{384}
+\indexentry{model B}{385}
+\indexentry{spinodal}{385}
+\indexentry{nucleation}{385}
+\indexentry{spinodal decomposition}{387}
+\indexentry{domain growth}{387}
+\indexentry{interfacial tension}{387}
+\indexentry{nucleation barrier}{388}
+\indexentry{coarsening}{389}
+\indexentry{supersaturation}{391}
+\indexentry{model B}{391}
+\indexentry{Ostwald ripening}{392}
+\indexentry{emulsion}{392}
+\indexentry{FDT}{393}
+\indexentry{diffusion limited coalescence}{395}
+\indexentry{liquid crystal!polar}{397}
+\indexentry{liquid crystal!nematic}{397}
+\indexentry{molecular field}{398}
+\indexentry{liquid crystal!nematic}{399}
+\indexentry{quench!shallow}{399}
+\indexentry{quench!deep}{400}
+\indexentry{topological defect}{400}
+\indexentry{topological charge}{401}
+\indexentry{homotopy theory}{402}
+\indexentry{homotopic}{403}
+\indexentry{homotopy class}{403}
+\indexentry{group!homotopy}{403}
+\indexentry{topological defect}{403}
+\indexentry{group!fundamental homotopy}{403}
+\indexentry{dislocation loop}{404}
+\indexentry{liquid crystal!polar}{404}
+\indexentry{charge!topological}{404}
+\indexentry{homotopy class}{404}
+\indexentry{detailed balance}{406}
+\indexentry{active model B}{407}
+\indexentry{MIPS}{408}
+\indexentry{equation!Navier-Stokes}{409}
+\indexentry{director field}{410}
+\indexentry{activity parameter}{410}
+\indexentry{supersymmetry}{420}
+\indexentry{equation!Hamilton}{420}
+\indexentry{symplectic manifold}{420}
+\indexentry{involution}{420}
+\indexentry{subalgebra}{421}
+\indexentry{configuration space}{423}
+\indexentry{algebra}{426}
+\indexentry{ideal}{426}
+\indexentry{structure constant}{426}
+\indexentry{homomorphism!algebra}{427}
+\indexentry{subalgebra}{427}
+\indexentry{complexification}{428}
+\indexentry{complex structure}{428}
+\indexentry{realification}{429}
+\indexentry{Clifford algebra}{429}
+\indexentry{Grassman algebra}{430}
+\indexentry{bivector}{430}
+\indexentry{exterior product}{431}
+\indexentry{graded algebra}{432}
+\indexentry{algebra!exterior}{433}
+\indexentry{idempotent}{433}

@@ -1,0 +1,473 @@
+\label{sfp}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Symmetries, Fields and Particles}\label{chap:sfp}
+\vspace{-30pt}
+\centering\normalsize\textit{Michaelmas Term 2017 - Professor N. Dorey}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Introduction}
+\subsection{Mathematical Formulation}
+
+\begin{definitionbox}
+A Lie Group\index{group!Lie}, $\group$, is a group which is also a smooth manifold\index{manifold}. Each point on the manifold corresponds to an element of the group.
+\end{definitionbox}
+We need the group and manifold structure to be compatible, requiring continuity and smoothness for multiplicative and inverse properties of the group. This ensures $\group$ is almost entirely determined by the behaviour near $e$, i.e. by tangent vectors, $V \in \mathcal{T}_e(\group)$. $\mathcal{T}_e(\group)$ is equipped with a Lie Bracket:
+$$\left[\,\,\, , \,\,\,\right]:\mathcal{T}_e(\group)\times \mathcal{T}_e(\group) \rightarrow \mathcal{T}_e(\group)$$
+which defines a Lie Algebra, $\mathcal{L}(\group)$. \boxed{\textbf{I.i}} \boxed{\textbf{I.ii}} \boxed{\textbf{I.iii}}
+
+\subsection{Simple, Complex Lie Algebras}
+
+\subsubsection{Cartan Classification}
+
+\begin{definitionbox}
+All \emph{finite dimensional semi-simple} Lie Algebras over $\mathbb{C}$ either belong to four infinite families: $A_n, B_n, C_n, D_n$ with $n \in \mathbb{N}$, or are one of the five exceptional cases: $E_6, E_7, E_8, G_2, F_4$.
+\end{definitionbox}
+In quantum mechanics, the states of the system are states in some Hilbert space, $\mathfrak{H}$. To understand the symmetries, we just need to understand the commutators of the symmetry, e.g. $\left[ \hat{L}_i , \hat{L}_j \right] = i\epsilon\indices{_{ijk}} \hat{L}_k$ which is the algebra of $\mathcal{L}\left(\textrm{SO}(3)\right)$. The operators often act on some finite dimensional vector space, $\mathcal{H}$, the \emph{representation space}. For an electron, this is $\mathcal{H} = \mathbb{C}^2$, the operators then lie in a 2-dimensional representation of $\mathcal{L}\left(\textrm{SO}(3)\right)$: the Pauli matrices, $\sigma_i$ which preserves the Lie bracket structure. If the system is invariant under this symmetry, then we have $\left[ \mathcal{H} , \hat{L}_i \right] = 0$ and thus all the states in some irreducible representation have the same energy. This can be generalised:
+\begin{definitionbox}
+Degeneracies in the spectrum of a quantum system are determined by irreducible representations of a global symmetry.
+\end{definitionbox}
+\noindent Global symmetries split into two classes (note that these are distinct from gauge symmetries):
+\begin{itemize}
+\item \emph{Spacetime symmetries:} rotational, Lorentz, Poincar�, supersymmetry (?)
+\item \emph{Internal symmetries:} electric charge, flavour, baryon number
+\end{itemize}
+
+\subsection{Gauge Symmetry}
+
+In contrast, a gauge symmetry\index{symmetry!gauge} is a redundancy in the mathematical description, for example in the phase of the wavefunction, $\psi \rightarrow e^{i\delta}\psi$, or in Electromagnetism, $A_{\mu} \rightarrow A_{\mu} + \partial_{\mu}\chi$. The Standard Model is a non-Abelian gauge theory with $\group_{\textrm{SM}}=\textrm{SU}(3) \times \textrm{SU}(2) \times \textrm{U(1)}$.
+\newpage
+\section{Lie Groups}
+
+\subsection{Manifolds}
+
+We can cover a manifold of dimension $n$ with one-to-one functions called \emph{charts}\index{chart}, $\phi_{\alpha} : U_{\alpha} \rightarrow V_{\alpha} \subset \mathbb{R}^n$.
+
+\begin{thm}\label{thm:manifold}
+Suppose we have a map $F : \mathbb{R}^n \rightarrow \mathbb{R}^m$ where $m<n$ with co-ordinates $\left\{ x_i \right\}$, $i = 1, \ldots, n$ and $\left\{ w_{\alpha} \right\}$, $\alpha = 1, \ldots, m$. A manifold $\mathcal{M}$ is a solution to the equations:
+\begin{dmath}
+F_{\alpha}\left( x_1, \ldots, x_n \right) \hiderel{=} w^{(0)}_{\alpha} \hiderel{\iff} \mathcal{M} \hiderel{=} F^{-1}\left( \bm{w}^{(0)} \right) = \left\{ \bm{x} \hiderel{\in} \mathbb{R}^n \hiderel{:} F_{\alpha}\left( \bm{x} \right) \hiderel{=} w^{(0)}_{\alpha} \right\}
+\end{dmath}
+Now define the Jacobian\index{Jacobian} matrix:
+\begin{equation}
+\mathfrak{J}\indices{_{\alpha i}}=\frac{\partial F_{\alpha}}{\partial x_i}
+\end{equation}
+Then, if $\mathfrak{J}$ has full rank, $m$, $\mathcal{M}$ is a manifold of dimension $(n-m)$.
+\end{thm}
+
+\subsection{Back to Lie Groups}
+
+The dimension of $\group$, $\dim \group$, is the dimension of the group manifold $\mathcal{M}\left( \group \right)$. We can introduce co-ordinates $\left\{ \theta^i \right\}$, $i = 1, \ldots, \dim \group$ in some co-ordinate patch containing the identity $e \in \group$. Then the group elements depend continuously on $\bm{\theta}$, $g = g(\bm{\theta})$. Then:
+
+\begin{enumerate}
+\item \emph{Group Multiplication:} corresponds to a smooth map from $\group \times \group \rightarrow \group$. The co-ordinates
+$$\phi^i = \phi^i \left( \bm{\theta}, \bm{\theta}' \right)$$
+are differentiable and continuous. Then $g(0) = e \Rightarrow \phi^{i} \left( \bm{\theta}, 0 \right) = \theta^{i}, \,\,\, \phi^{i} \left( 0, \bm{\theta}' \right)  = \theta^{\prime i}$.
+\item \emph{Group Inversion:} This defines a smooth map from $\group \rightarrow \group$ where the co-ordinates:\footnote{To be a bit more precise, consider a map $f: \mM(\group) \rightarrow \mM(\group)$ that induces a map $\theta \mapsto \tilde{\theta}$. Suppose we have charts $\phi$ and $\tilde{\phi}$ on the domain space and the image space respectively, then the statement that $\theta \mapsto \tilde{\theta}$ is a smooth map is really the property that $\tilde{\phi}^{-1} \circ f \circ \phi$ is a smooth map from $\RR^{n}$ to $\RR^{n}$ where $\dim \mM(\group) = n$.}
+$$\tilde{\theta}^i = \tilde{\theta}^i\left( \bm{\theta} \right)$$
+
+\noindent are continuous and differentiable.
+\end{enumerate}
+
+\subsection{Matrix Groups\index{group!matrix}}\label{mat}
+
+We can define the general linear group\index{group!general linear} and the special linear group\index{group!special linear} as subsets of the set of $n \times n$ matrices, $\textrm{Mat}_n \left( \mathbb{F} \right)$:
+\begin{align}
+\textrm{GL} \left( n, \mathbb{F} \right) &= \left\{ \textrm{M} \in \textrm{Mat}_n \left( \mathbb{F} \right) : \det \textrm{M} \neq 0 \right\} \\
+\textrm{SL} \left( n, \mathbb{F} \right) &= \left\{ \textrm{GL}_n \left( n, \mathbb{F} \right) : \det \textrm{M} = 1 \right\}
+\end{align}
+Using a construction as in Theorem \ref{thm:manifold} for the case $\textrm{SL} \left( n, \mathbb{R} \right)$ we can choose $F : \mathbb{R}^{n^2} \rightarrow \mathbb{R}$ to be $F\left( \textrm{M} \right) = \det \textrm{M}$ which can be shown to have full rank. Then we deduce $\textrm{SL} \left( n, \mathbb{R} \right)$ is a Lie Group of dimension $(n^2 - 1)$. This can be done less obviously for $\textrm{GL} \left( n, \mathbb{F} \right)$ to find:\footnote{To understand the case of $\text{GL}\left(n, \mathbb{F}\right)$, one can view the condition $\det \text{M} \neq 0$ as excluding a set of matrices of measure $0$ in the space of $n \times n$ matrices. To understand why it is a manifold at all, it is useful to consider the idea of algebraic varieties. Note that $\det \text{M} = 0$ is an algebraic relation between the co-ordinates (matrix elements). The resulting subset of the larger group (in this case $\text{Mat}(n, \mathbb{F})$) is a manifold provided there are no singularities. Arguing as follows, suppose there was some singularity at $g_1 \in \group$, then there must be singularities everywhere since $g_2 g^{-1}_1$ is smooth in the larger group. This is a contradiction, so algebraically defined subgroups are indeed manifolds, and hence are Lie groups.}
+\begin{center}
+\begin{mytable}{lc}
+	\textbf{Group, }$\group$ 				& \textbf{Dimension, }$\dim \group$	\\ \midrule
+    	$\textrm{SL} \left( n, \mathbb{R} \right)$	& $n^2 - 1$					\\
+	$\textrm{SL} \left( n, \mathbb{C} \right)$	& $2n^2 - 2$					\\
+	$\textrm{GL} \left( n, \mathbb{R} \right)$	& $n^2$						\\
+	$\textrm{GL} \left( n, \mathbb{C} \right)$	& $2n^2$
+\end{mytable}
+\captionof{table}{Matrix Lie Groups and their dimensions, note that in the case of $\textrm{SL} \left( n, \mathbb{C} \right)$, the complex dimension of the space has decreased by $1$, and so the real dimension decreases by $2$.}
+\end{center}
+\begin{definitionbox}
+A subgroup, $\mathscr{H}$ of a Lie Group, $\group$, such that $\mathscr{H}$ is also a submanifold of $\group$ is a Lie subgroup\index{subgroup!Lie}.
+\end{definitionbox}
+
+\subsubsection{Subgroups of $\textrm{GL} \left( n, \mathbb{R} \right)$\index{subgroup!matrix}}
+
+\subsubsection*{Orthogonal Groups\index{group!orthogonal}}
+
+We define the orthogonal group, $\textrm{O}(n)$ by:
+\begin{equation}
+\textrm{O}(n) = \left\{ \textrm{M} \in \textrm{GL} \left( n, \mathbb{R} \right) : \textrm{M}^T \textrm{M} = \mathbb{I}_n \right\}
+\end{equation}
+We know that $\textrm{M} \in \textrm{O}(n)$ has $\det \textrm{M} = \pm 1$, so as a Lie group it has two disconnected components which follows from the lemma below applied to the function $\det : \textrm{O}(n) \rightarrow \left\{+1, -1\right\}$:
+\begin{thm}\label{thm:cts}
+Any continuous map from a continuous space to a discrete space must be a constant.
+\end{thm}
+If we pick only the part containing the identity we are just left with $\textrm{SO}(n)$. By considering the real constraints placed on the matrices and noting that since $\textrm{SO}(n)$ is the identity part of $\textrm{O}(n)$, it must have the same dimension as a manifold, we may deduce that:
+\begin{equation}
+\dim \textrm{SO}(n) = \dim \textrm{O}(n) = \tfrac{1}{2}n(n-1)
+\end{equation}
+We now investigate the manifold structure of $\textrm{SO}(2)$\index{SO(2)} and $\textrm{SO}(3)$\index{SO(3)}. For matrices in $\textrm{O}(n)$, the following holds:
+\begin{itemize}
+\item $\lambda$ is an eigenvalue $\Rightarrow$ $\lambda^*$ is also.
+\item $\left| \lambda \right|^2 = 1$
+\end{itemize}
+We apply this to the two examples mentioned.
+\begin{examplebox}[$\textrm{SO}(2)$]
+For $\group = \textrm{SO}(2)$, the eigenvalues must be $e^{i \theta}$, $e^{-i \theta}$, which in turn implies that;
+\begin{equation}
+\textrm{M}(\theta) = \twobytwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}
+\end{equation}
+On $\textrm{SO}(2)$, $\textrm{M}(\theta_1)\textrm{M}(\theta_2) = \textrm{M}(\theta_1 + \theta_2) = \textrm{M}(\theta_2)\textrm{M}(\theta_1)$, i.e. it is abelian. Noting further that $\theta \sim \theta + 2\pi$, $\theta \in \mathbb{R}$ we deduce that the group manifold is $\mathcal{M}\left( \textrm{SO}(2) \right) = \mathcal{S}^1$.
+\end{examplebox}
+\begin{examplebox}[$\textrm{SO}(3)$]
+The example of $\textrm{SO}(3)$ is less trivial. $\text{M} \in \SO{3}$ has eigenvalues $\set{e^{i\theta}, e^{-i\theta}, +1}$. Now consider eigenvector associated to $\lambda = 1$, $\vec n \in \mathbb{R}^3$ which satisfies $\text{M} \vec n = \vec n$. This is the axis of rotation. Now a general group element is;
+\begin{equation}
+\text{M}(\vec n, \theta)_{ij} = \cos \theta \delta_{ij} + (1- \cos \theta) n_i n_j + \sin \theta \epsilon_{ijk} n_k
+\end{equation}
+Now since $\cos(2\pi - \theta) = \cos \theta$ and $\sin(2\pi - \theta) = -\sin \theta$, we deduce that $\text{M}(\vec n, 2\pi - \theta) = \text{M}(-\vec n, \theta)$. Hence we must restrict to $0 \leq \theta \leq \pi$, but with the identification $(\vec n, +\pi) \sim (-\vec n, -\pi)$. Considering the vector $\vec w = \theta \vec n$, we see that it lies within the $3$-ball, $\mathcal{B}_3 = \set{\vec w \in \mathbb{R}^3 : \abs{\vec w} \leq \pi} \subset \mathbb{R}^3$ with the additional structure that antipodal points on the boundary, $\del \mathcal{B}_3 = \set{\vec w \in \mathbb{R}^3 : \abs{\vec w} = \pi}$ are identified. This makes the $3$-ball a manifold, and hence the manifold, $\mathcal{M}\left(\SO{3}\right)$ is the $3$-ball with boundary, with antipodal points identified.\footnotemark
+\end{examplebox}
+\footnotetext{This is also isomorphic to the real projective space $\mathbb{R}\mathbb{P}^3$}
+There is a little more to say about $\mathcal{M}\left(\SO{3}\right)$;
+\begin{enumerate}
+\item It is compact\index{compact}, i.e. it is closed and bounded where closed means the manifold contains all limit points, and bounded means $\exists A > 0 : \forall x \in \mathcal{M}\left(\SO{3}\right), \| x \| < A$
+\item It is without boundary due to the identification
+\item It is connected\index{connected}, but not simply connected\index{connected!simply}. We can draw paths between any two points but not all loops\index{loop} are contractible\index{loop!contractible}. A loop is a function $f : \mathcal{S}^1 \rightarrow \mathcal{M}$. Loops are equivalent if they can be continuously transformed. Then the \emph{homotopy group} is the set of equivalence classes of loops with composition\index{group!homotopy}. Here the loop $\ell = \set{\alpha \vec v : \alpha \in [-\pi, \pi]}$ is not contractible (joins two points on the boundary through the centre of the sphere), so $\ell \not\sim \set{1}$, but $\ell^2$ is (can move point at $\alpha = \pi$, say, both ways round the sphere to contract the loop to the identity at $\alpha = - \pi$. So the first homotopy group is $\pi_1\left(\SO{3}\right) = \mathbb{Z}_2$.
+\end{enumerate}
+\subsubsection*{Non-compact Subgroups of $\text{GL}(n, \mathbb{R})$}
+$\text{M} \in \Orth{n}$ preserve the Euclidean metric on $\mathbb{R}^n$. More generally, $\Orth{p,q}$ transformations preserve the flat metric with signature $(p, q)$. A key example of this is the Lorentz group\index{group!Lorentz}, $\Orth{3,1}$ which preserves the Minkowski metric\index{Minkowski metric}. The corresponding group manifolds are non-compact, e.g. $\SO{1,1}$ has matrices of the form,
+\begin{equation*}
+\twobytwo{\cosh \phi}{\sinh \phi}{\sinh \phi}{\cosh \phi}
+\end{equation*}
+where $\phi \in \mathbb{R}$, so $\SO{1,1} \simeq \mathbb{R}$.
+\subsubsection{Subgroups of $\text{GL}(n, \mathbb{C})$}
+\subsubsection*{Unitary Groups\index{group!unitary}}
+\begin{equation}
+\Uni{n} = \set{\text{U} \in \text{GL}(n, \mathbb{C}) : \text{U}^{\dagger}\text{U} = \mathbb{I}_n}
+\end{equation}
+Unitary transformations take vectors, $\vec v \in \mathbb{C}^n$ and preserve the length $\abs{\vec v} = \vec{v}^{\dagger} \vec v$. $\text{U} \in \Uni{n}$ have $\det \text{U} = e^{i\delta}$ for some $\delta \in [0,2\pi)$. The fact that this is a continuous function of $\delta$ ensures that the unitary group will be connected unlike the orthogonal group.
+\subsubsection*{Special Unitary Groups\index{group!special unitary}}
+\begin{equation}
+\SU{n} = \set{\text{U} \in \Uni{n} : \det \text{U} = 1}
+\end{equation}
+Since $\SU{n}$ and $\Uni{n}$ have a manifold structure, they are Lie groups, and hence Lie subgroups of $\text{GL}(n, \mathbb{C})$. The dimensions of the groups follows by considering the $n^2$ constraints on $\Uni{n}$ encoded in the columns of the matrix and their normalisation. The determinant condition then imposes one additional constraint. This is shown in Table \ref{tab:dim_orth_uni}.
+\begin{center}
+\begin{mytable}{lc}
+	\textbf{Group, }$\group$ 				& \textbf{Dimension, }$\dim \group$	\\ \midrule
+    	$\Orth{n}$						& $\tfrac{1}{2}n(n - 1)$					\\
+	$\SO{n}$							& $\tfrac{1}{2}n(n - 1)$					\\
+	$\Uni{n}$							& $n^2$						\\
+	$\SU{n}$							& $n^2 - 1$
+\end{mytable}
+\captionof{table}{Dimensions of the Unitary and Orthogonal Groups}
+\label{tab:dim_orth_uni}
+\end{center}
+\begin{definitionbox}[Lie Group Isomorphisms]
+Two Lie Groups $\group$ and $\group^{\prime}$ are isomorphic\index{group!Lie!isomorphism} if $\exists$ $1$:$1$ smooth map $f : \group \rightarrow \group^{\prime}$ such that $\forall g_1, g_2 \in \group$, $f(g_1, g_2) = f(g_1, g_2)$ i.e. it is a homeomorphism of manifolds that preserves the group structure.
+\end{definitionbox}
+A simple example of this idea is $\Uni{1}$ and $\SO{2}$. We can parametrise $z \in \Uni{1}$ by $\theta \in [0, 2\pi)$. Then an element in $\SO{2}$ can be written,
+\begin{equation}
+g = \text{M}(\theta) = \twobytwo{\cos\theta}{\sin\theta}{-\sin\theta}{\cos\theta}
+\end{equation}
+where the periodicity ensures, $\theta \sim \theta + 2\pi$. So $\Uni{1} \simeq \mathcal{S}^1 \simeq \SO{2}$.
+\begin{examplebox}[The case of $\SU{2}$]
+It can be shown that $\forall g \in \SU{2}$\footnotemark,  we can write;
+\begin{equation}
+\label{eq:pauli}
+g = a_0 \mathbb{I}_2 + i \vec a \cdot \vec \sigma, \quad a_0^2 + a_1^2 + a_2^2 + a_3^2 = 1
+\end{equation}
+Thus we deduce that $\mathcal{M}\left(\SU{2}\right) = \mathcal{S}^3$. Now $\pi_1\left(\mathcal{S}^3\right) = \pi_1\left(\SU{2}\right) = \varnothing$, so it cannot be the case that $\SU{2} \simeq \SO{3}$ even though they have the same dimension.
+\end{examplebox}
+\footnotetext{Simply expand the expression in \eqref{eq:pauli} in terms of the Pauli matrices, and apply the determinant condition.}
+\newpage
+\section{Lie Algebras}
+A Lie algebra\index{Lie!algebra}, $\alge$ is a vector space with a bracket, $\left[\,\,\,, \,\,\right] : \alge \times \alge \rightarrow \alge$ which satisfies;
+\begin{enumerate}
+\item Anti-symmetry - $\left[X, Y\right] = -\left[Y, X\right] \forall X, Y \in \alge$
+\item Linearity - $\left[\alpha X + \beta Y, Z\right] = \alpha\left[X, Z\right] + \beta\left[Y, Z\right] \forall X, Y, Z \in \alge$
+\item Jacobi Identity\index{identity!Jacobi} - $\left[X, [Y, Z]\right] + \left[Z, [X, Y]\right] + \left[Y, [Z, X]\right] = 0$
+\end{enumerate}
+With this in mind, if a vector space, $\mathcal{V}$, has an associative product $\star : \mathcal{V} \times \mathcal{V} \rightarrow \mathcal{V}$ then we can make it a Lie Algebra by setting $[X, Y] = X \star Y - Y \star X$. The dimension of a Lie algebra, $\alge$, is the dimension of the vector space. As it is a vector space, we can choose a basis $\mathcal{B}$ for $\alge$;
+\begin{equation}
+\mathcal{B} = \set{T^a, a = 1, \ldots \dim \alge}
+\end{equation}
+then we can write $X \in \alge$ as $X = X_a T^a$ with $X^a \in \mathbb{F}$. Then brackets of the basis elements define the brackets of the vectors $X, Y, \ldots \in \alge$
+\begin{equation}
+\left[X, Y\right] = X_a Y_b \left[T^a, T^b\right], \quad \left[T^a, T^b\right] = f\indices{^{ab}_{c}}T^c
+\end{equation}
+where the $\set{f\indices{^{ab}_{c}}}$ are the structure constants satisfying $f\indices{^{(ab)}_{c}} = 0$.
+\begin{definitionbox}[Lie Algebra Isomorphism]
+Two Lie algebras $\alge$, $\alge^{\prime}$ are isomorphic\index{Lie!algebra!isomorphism} if $\exists$ a $1$:$1$ linear map $f : \alge \rightarrow \alge^{\prime}$ such that the bracket structure is preserved;
+\begin{equation}
+\left[f(X), f(Y)\right] = f\left([X, Y]\right), \quad \forall X, Y \in \alge
+\end{equation}
+\end{definitionbox}
+A \emph{subalgebra}\index{subalgebra} $\mathfrak{h} \subset \alge$ is a subset of $\alge$ that is also a Lie algebra. Furthermore, an \emph{ideal}\index{ideal!of a Lie algebra} is a subalgebra $\mathfrak{h}$ of $\alge$ such that $[X, Y] \in \mathfrak{h} \forall X \in \alge, Y \in \mathfrak{h}$. Every Lie algebra has two trivial ideals; $\mathfrak{h} = \varnothing, \mathfrak{h} = \alge$, but there are two less trivial examples;
+\begin{enumerate}
+\item The \emph{derived} algebra\index{algebra!derived}\index{ideal!derived algebra};
+\begin{equation}
+\mathfrak{i} \coloneqq [\alge, \alge] = \vecspan\set{[X, Y] : X, Y \in \alge}
+\end{equation}
+\item The \emph{centre}\index{ideal!centre};
+\begin{equation}
+\zeta(\alge) = \set{X \in \alge : [X, Y] = 0 \quad \forall Y \in \alge}
+\end{equation}
+An abelian Lie algebra\index{Lie algebra!abelian} is one for which $\zeta(\alge) = \alge \Rightarrow \mathfrak{i} = \varnothing$.
+\end{enumerate}
+\begin{definitionbox}[Simple Lie Algebras]
+$\alge$ is \emph{simple}\index{Lie algebra!simple} if it is non-abelian and possesses no non-trivial ideal. Cartan's classification encompasses all finite dimensional, complex ($\mathbb{C}$), simple Lie algebras.
+\end{definitionbox}
+\subsection{Lie Algebras from Lie Groups}
+\subsubsection{Preliminaries}
+Let $\mathcal{M}$ be a smooth manifold, with $\dim \mathcal{M} = D$, and let $p \in \mathcal{M}$. Introduce co-ordinates $\set{x^i}, i = 1, \ldots, D$ in some region $\mathcal{P} \subset \mathcal{M}$ with $p$ at $x^i = 0$. Then;
+\begin{itemize}
+\item The tangent space\index{tangent space} $\TpM$ to $\mathcal{M}$ at $p$ is a $D$-dimensional vector space spanned by $\set{\tfrac{\del}{\del x^i}}$ acting on functions $f : \mathcal{M} \rightarrow \mathbb{R}$. Then a tangent vector\index{tangent vector} is defined by;
+\begin{equation}
+v = v^i \frac{\del}{\del x^i} \in \TpM, v^i \in \mathbb{R}
+\end{equation}
+which acts on functions, $f = f(x)$ via;
+\begin{equation}
+v \cdot f = \left.v^i \frac{\del f}{\del x^i}\right|_{x = 0}
+\end{equation}
+\item Let $\mathcal{C}$ be a smooth curve passing through $p$, then;
+\begin{equation*}
+\mathcal{C} : t \in \mathbb{R} \mapsto x^i(t) \in \mathbb{R}
+\end{equation*}
+where the $\set{x^i(t)}$ are continuous and differentiable with $x^i(0) = 0 \,\, \forall i$.
+\item The tangent vector to a curve $\mathcal{C}$ at the point $p$ is an element of $\TpM$, $v_{\mathcal{C}} = \dot{x}^i(0)\tfrac{\del}{\del x^i}$. Acting on functions corresponds to the derivative of $f$ along $\mathcal{C}$;
+\begin{equation}
+v_{\mathcal{C}} \cdot f = \left.\dot{x}^i(0) \frac{\del f(x)}{\del x^i}\right|_{x=0} = \left.\frac{\ud f}{\ud t}\right|_{t = 0}
+\end{equation}
+\end{itemize}
+\subsubsection{The Lie Algebra, $\lie{\group}$}
+Let $\group$ be a Lie group of dimension $D$. Introduce co-ordinates $\set{\theta^i}$ in some region containing the identity ($g = g(\theta) \in \group, g(0) = e$). Then the tangent space at the identity, $\TeG$ is $D$-dimensional vector space. We can define a bracket $[\,\,\,,\,\,] : \TeG \times \TeG \rightarrow \TeG$ such that $\lie{\group} = \left(\TeG, [\,\,\,,\,\,]\right)$ is a Lie algebra. We start by doing this for matrix groups. Let $\group \subset \text{Mat}_n(\mathbb{F})$ for some $n \in \mathbb{N}$. Now we can map tangent vectors to matrices;
+\begin{equation}
+e : \TeG \rightarrow \text{Mat}_n(\mathbb{F}), \quad v^i \frac{\del}{\del \theta^i} \in \TeG \mapsto \left.v^i \frac{\del g(\theta)}{\del \theta^i}\right|_{\theta = 0} \in \text{Mat}_n(\mathbb{F})
+\end{equation}
+This allows us to identify $\TeG$ with a subspace of $\text{Mat}_n(\mathbb{F})$ spanned by $\set{\left.\tfrac{\del g(\theta)}{\del \theta^i}\right|_{\theta = 0}}$, which is valid since $e$ is linear and injective (it will span some subspace of $\text{Mat}_n(\mathbb{F})$). Now the obvious bracket is just the matrix commutator;
+\begin{equation}
+[X, Y] \overset{\textrm{\tiny def}}{=} XY - YX, \quad \forall X, Y \in \TeG
+\end{equation}
+where we make the identification of $X, Y$ with $e(X), e(Y)$. Then since it is just a matrix commutator, all that remains is to show that the bracket is closed i.e. $[X, Y] \in \lie{\group} \,\,\forall X, Y \in \lie{\group}$\footnotemark. To prove this we use the correspondence between tangent vectors and curves; it is sufficient to construct a curve with tangent vector $[X_1, X_2]$ from two curves with tangent vectors $X_1, X_2$.
+\footnotetext{This ensures that it is okay to make the identification $X, Y \mapsto e(X), e(Y)$ as $e$ is only injective. If the commutator went outside the algebra, we would not have a defined inverse to map back to an element of the Lie algebra.}
+
+\paraskip
+Let $\mC$ be a smooth curve\index{curve!in a Lie group} on $\group$ passing through the identity, $\mC : t \mapsto g(t) \in \group, g(0) = \mathbb{I}_n$. Then;
+\begin{equation}
+\frac{\ud g(t)}{\ud t} = \frac{\ud \theta^i (t)}{\ud t} \frac{\del g(\theta)}{\del \theta^i} \Rightarrow \dot{g}(0) = \dot{\theta}^i(0)\left.\frac{\del g(\theta)}{\del \theta^i}\right|_{\theta = 0} \in \TeG
+\end{equation}
+Now near $t = 0$, $g(t) = \II_n + X t + o(t)$ with $X = \dot{g}(0) \in \lie{\group} \simeq \TeG$.\footnotemark$\,\,$ Then we can construct curves, $\mC_{k} : t \mapsto g_k(t) \in \group$ such that near $t = 0$;
+\begin{equation}
+g_1(t) = \II_n + X_1 t + W_1 t^2 + o(t^2), \quad g_2(t) + X_2 t + W_2 t^2 + o(t^2)
+\end{equation}
+for some $W_1, W_2 \in \text{Mat}_n(\FF)$ and $X_1 = \dot{g}_1(0), X_2 = \dot{g}_2(0) \in \lie{\group}$. Finally consider the curve, $h(t) = g_1^{-1}(t)g_2^{-1}(t)g_1(t)g_2(t) \in \group$. Expanding near $t = 0$ we find that;
+\begin{equation}
+h(t) = \II_n + [X_1, X_2] t^2 + o(t^3)
+\end{equation}
+Thus, defining a curve, $\mC_3 : s \mapsto g_3(s) \coloneqq h(\sqrt{s})$, we see that;
+\begin{equation}
+g_3(s) = \II_n + s[X_1, X_2] + o\left(s^{\tfrac{3}{2}}\right) \Rightarrow \dot{g}_3(0) = [X_1, X_2] \in \lie{\group}
+\end{equation}
+\footnotetext{Note that whilst in general $\dot{g}(0) \in \text{Mat}_n (\FF)$, it is not generally in $\group$. This is just because the Lie algebra has a different algebraic structure to the group.}
+
+Thus, $\lie{\group} = \left(\TeG, [\,\,\,,\,\,]\right)$ is a Lie algebra of dimension $D$.\footnote{To fill in the details, we only need our curve to be $\mC^1$. Differentiating gives lowest order terms $\mathcal{O}\left(s^{\tfrac{1}{2}}\right)$, so $\mC_3 \in \mC^1$.} We can apply these ideas to examples of matrix Lie groups covered in previous sections. Consider the case $\SO{n}$, we may write $g(t) = \text{R}(t) \in \SO{n} : \text{R}(0) = \II_n$, so $\text{R}^{\text{T}}(t) \text{R}(t) = \II_n$. Differentiating we find;
+\begin{equation}
+\dot{\text{R}}^{\text{T}}(t)\text{R}(t) + \text{R}^{\text{T}}\dot{\text{R}}(t) = 0 \,\,\, \forall t \in \RR \overset{t = 0}{\Longrightarrow} X^{\text{T}} + X = 0
+\end{equation}
+where we have set $X = \dot{\text{R}}(0)$ and used $\text{R}(0) = \text{R}^{\text{T}}(0) = \II_n$. Importantly, no further constraints come from the determinant condition since we are already in the neighbourhood of $\II_n$ and hence the determinant must be $1$ as $\Orth{n}$ is disconnected. Hence, $\lie{\Orth{n}} \simeq \lie{\SO{n}} \simeq \set{X \in \text{Mat}_n(\RR) : X^{\text{T}} = - X}$. We could do the same for $\Uni{n}$ and $\SU{n}$ (where now we do need the determinant condition\footnote{We make use of the identity $\det\left(\II_n + Zt + o(t)\right) = 1 + t(\text{tr}Z) + o(t)$ to deduce that $\text{tr}Z = 0$ in the case of $\SU{n}$.}) to find;
+\begin{equation}
+\lie{\SU{n}} = \set{Z \in \text{Mat}_n(\CC) : Z^\dagger = - Z, \text{tr}Z = 0}
+\end{equation}
+i.e. the set of traceless\index{traceless}, anti-hermitian\index{anti-hermitian} $n \times n$ matrices. Immediately we see that $\dim \SU{n} = \dim \lie{\SU{n}} = n^2 -1$. We can apply this directly to $\lie{\SU{2}}$ which has dimension $3$. The three basis elements are provided by the Pauli matrices\footnotemark\index{Pauli matrices}, $\sigma_a$, which are made anti-hermitian by defining the basis $T^a = -\tfrac{1}{2} i \sigma_a$. We can calculate the structure constants;
+\footnotetext{Recall that the Pauli matrices are given by;
+\begin{equation*}
+\sigma_1 = \twobytwo{0}{1}{1}{0}, \quad \sigma_2 = \twobytwo{0}{-i}{i}{0},\quad \sigma_3 = \twobytwo{1}{0}{0}{-1}
+\end{equation*}
+}
+\begin{equation}
+[T^a, T^b] = -\tfrac{1}{4}[\sigma_a, \sigma_b] = -\tfrac{1}{2}i\epsilon_{abc}\sigma_c = \epsilon_{abc}T^c \Rightarrow f\indices{^{ab}_{c}} = \epsilon_{abc}
+\end{equation}
+Picking the obvious basis for $\lie{\SO{3}}$ now;
+\begin{equation*}
+\tilde{T}^1 = \thrbythr{0 & 0 & 0}{0 & 0 & -1}{0 & 1 & 0}, \quad \tilde{T}^2 = \thrbythr{0 & 0 & 1}{0 & 0 & 0}{-1 & 0 & 0}, \quad \tilde{T}^3 = \thrbythr{0 & -1 & 0}{1 & 0 & 0}{0 & 0 & 0}
+\end{equation*}
+which can be shown to have the same structure constants\index{structure constants} as $\lie{\SU{2}}$.
+\begin{definitionbox}
+It is sufficient that the structure constants are the same for two Lie algebras to be isomorphic. Hence $\lie{\SO{3}} \simeq \lie{\SU{2}}$ despite the fact that $\SO{3} \not\simeq \SU{2}$. Indeed it is the case that $\SO{3} \simeq \SU{2} / \ZZ_2$
+\end{definitionbox}
+To prove this last statement, suppose we have two Lie algebras $\alge_1$, $\alge_2$ of the same dimension with bases $\set{T^a_1}$ and $\set{T^a_2}$ respectively such that;
+\begin{equation*}
+[T_1^a, T_1^b] = f\indices{^{ab}_{c}}T^c, \qquad [T^a_2, T^b_2] = g\indices{^{ab}_{c}}T^c_2
+\end{equation*}
+To show that the two are isomorphic, it is sufficient to construct a Lie algebra isomorphism $\phi : \alge_1 \rightarrow \alge_2$. In other words, a linear vector space automorphism that preserves the bracket structure $\phi([A, B]) = [\phi(A), \phi(B)]$. We propose the linear map that maps $\phi(T_a^2) = T^a_2$ which are clearly linearly independent in $\alge_2$ since $\set{T^a_2}$ is a basis. They also span $\alge_2$ so this is bijective. Now, consider;
+\begin{align*}
+\phi([T^a_1, T^b_1]) &= \phi(f\indices{^{ab}_{c}}T^c_1) \\
+&= f\indices{^{ab}_{c}}\phi(T^c_1) \\
+&= f\indices{^{ab}_{c}}T^c_2 \\
+[\phi(T^a_1), \phi(T^b_1)] &= [T^a_2, T^b_2] \\
+&= g\indices{^{ab}_{c}}T^c_2
+\end{align*}
+So we see that it is sufficient that $f\indices{^{ab}_{c}} = g\indices{^{ab}_{c}}$ for the Lie algebra isomorphism property to hold (taking suitable linear combinations of basis vectors). It is not necessary however since the structure constants are basis dependent. 
+\subsection{Why are Lie Groups special?}
+For each $h \in \group$, consider constructing the smooth maps;\footnote{They must be smooth since multiplication is smooth in $\mM(\group)$.}
+\begin{itemize}
+\item $L_h : \group \rightarrow \group$ such that $g \in \group \mapsto hg \in \group$
+\item $R_h : \group \rightarrow \group$ such that $g \in \group \mapsto gh \in \group$
+\end{itemize}
+These are known as left/right translations\index{translation}. We will now show that these are in fact bijections on $\group$;
+
+\paraskip
+\textbf{Surjective} Consider $h \in \group$, now for all $g\pr \in \group$, construct $h^{-1}g\pr$ which must be in the group. So $h^{-1}g\pr = g$ for some $g \in \group$. So $\forall g\pr \in \group$ $\exists g \in \group$ such that $g\pr = hg$. So $\group = h\group$. 
+
+\paraskip
+\textbf{Injective} Suppose that $L_h(g) = L_h(g\pr)$, then $hg = hg\pr$, but $h^{-1} \in \group$, so $g = h^{-1}hg\pr \Rightarrow g = g\pr$. 
+
+\paraskip
+So $L_h$ (and in an identical fashion $R_h$) is injective and surjective, so it is bijective. We now switch focus from $\group$ to $\mM(\group)$. As mentioned above, $L_h$ is smooth as a map on $\mM(\group)$ and we have just shown it is a bijection, so $L_h$ are \emph{diffeomorphisms of} $\mM(\group)$. Now, if we introduce co-ordinates on the manifold $\set{\theta^i}$ in some region containing the identity, and let $\tilde{g} = g(\tilde{\theta}) \coloneqq L_h\left(g(\theta)\right) = h\cdot g(\theta)$. Then $L_h$ is specified by $D$ real functions $\tilde{\theta}^i(\theta)$. But, $L_h$ is a diffeomorphism as a map on manifolds, so the Jacobian;
+\begin{equation*}
+J\indices{^{i}_{j}} = \frac{\del \tilde{\theta}^i}{\del \theta^j}
+\end{equation*}  
+is non-degenerate/invertible. This is the key feature to what follows.
+\subsubsection{Vector Fields on $\mM(\group)$}
+We can view the map $L_h$ (or diffeomorphisms in general) as a change of co-ordinates on our manifold $\theta \mapsto \tilde{\theta}$. In a co-ordinate basis, the tangent spaces are spanned by $\del/\del\theta^i$, so it is natural that $L_h : \mM(\group) \rightarrow \mM(\group)$ should induce a map $L_h^{\star}$ from tangent vectors at $g$ to tangent vectors at $L_h(g)$. We can think of this is a few ways; firstly we can imagine pulling back the vector/co-ordinates from the point $L_h(g)$. Secondly we can imagine changing co-ordinates across the manifold and leaving the vectors in place. More explicitly;
+\begin{equation*}
+L_h^{\star} : \mathcal{T}_g(\group) \rightarrow \mathcal{T}_{hg}(\group)
+\end{equation*} 
+maps $v = v^i \del_{\theta^i}$ to $\tilde{v} = \tilde{v}^i \del_{\tilde{\theta}^i}$, where;
+\begin{equation*}
+\tilde{v}^i = J\indices{^{i}_{j}} v^j
+\end{equation*}
+$L_h^{\star}$ is known as the \emph{differential}\index{differential} of $L_h$. As we mentioned above, the invertibility of $J$ is key here to ensure that this map has a trivial kernel i.e. no non-zero $v$ can be mapped to $\tilde{v} = 0$. Taking this further, a \emph{vector field}\index{vector field} on $\mM(\group)$, $V$ specifies a tangent vector $V(g) \in \mathcal{T}_g(\group)$ at each point $g \in \group$. In co-ordinates;
+\begin{equation*}
+V(\theta) = v^i(\theta)\frac{\del}{\del \theta^i} \in \mathcal{T}_{g(\theta)}(\group)
+\end{equation*}
+The vector field is smooth if the component functions $v^i(\theta)$ are differentiable. We are now in a position to understand the answer to the question posed at the start of this section. Starting from a tangent vector $\omega \in \mathcal{T}_e(\group)$, we can define a vector field on $\group$;\footnote{Note that we have been somewhat lazy throughout this section about when we use $\group$ and when we use $\mM(\group)$. Essentially the Lie group structure ensures there is a one-to-one correspondence between the two which does not break the algebraic/differentiable structures in each object. As long as you are happy that, for example, $\group$ doesn't have the notion of a tangent space (it is a group), but $\mM(\group)$ does so we can do the calculations there and transform back, then $\mathcal{T}_g(\group)$ should cause no confusion.}
+\begin{equation}
+V(g) = L_g^{\star}(\omega) \qquad \forall g \in \group
+\end{equation}
+We know that $L_g^{\star}$ is smooth, and more importantly invertible. If $\omega \neq 0$ initially, then it will remain as such. So $V(g)$ is smooth and everywhere non-vanishing. Starting from a basis $\set{\omega^a}$ of $\mathcal{T}_e(\group)$, we can thus construct $D$ nowhere vanishing vectors fields known as \emph{left-invariant vector fields}\index{vector field!left-invariant} on $\group$; $V^a(g) = L_g^\star(\omega^a)$. This is a very strong constraint on $\mM(\group)$. Indeed for $D = 2$, the hairy ball theorem states that $S^2$ does not admit a nowhere vanishing vector field, so it \emph{cannot be the case} that $\mM(\group) = S^2$ for any Lie group $\group$. In fact, in $D = 2$, the only compact manifold that admits these vector fields is the torus $T^2 = S^1 \times S^1$, so we can deduce that the only compact $2$-dimensional Lie group is actually $\Uni{1} \times \Uni{1}$
+\subsubsection*{Left Translation in a Matrix Group}
+Suppose now we have a matrix Lie Group $\group \subset \text{Mat}(n, \mathbb{F})$, then $\forall h \in \group$ and $X \in \mL(\group)$, we have $L_h^{\star} = hX \in \mathcal{T}_h(\group)$ where we can unambiguously understand $hX$ as matrix multiplication. We should check that $hX$ really lies in the tangent space at $h$;
+\begin{examplebox}[Left Translation of a Curve]
+Consider the curve $C : t \in \RR \mapsto g(t) \in \group$ such that $g(0) = e$ and $\dot{g}(0) = X$. Then near $t = 0$ we must have;
+\begin{equation*}
+g(t) = \mathbb{I}_n + tX + o(t)
+\end{equation*}
+Now, define a new curve $C\pr : t\in \RR \mapsto h(t) = hg(t) \in \group$, then near $t = 0$ we have;
+\begin{equation*}
+h(t) = h + t hX + o(t)
+\end{equation*}
+So we see that indeed $hX \in \mathcal{T}_h(\group)$. 
+\end{examplebox}
+We can extend this idea, indeed for any $V \in \mathcal{T}_g(\group)$, $L_h^\star(V) \in \mathcal{T}_{hg}(\group)$. Given a smooth curve $g(t) \in \group$, $\dot{g}(t) \in \mathcal{T}_{g(t)}(\group)$. Then, using our construction above;
+\begin{equation}
+L_{g^{-1}(t)}^{\star}\left(g(t)\right) \in \mathcal{T}_{g^{-1}(t)g(t)}(\group) \Rightarrow g^{-1}(t)\dot{g}(t) \in \mathcal{T}_e(\group) \equiv \mL(\group)
+\end{equation}
+So we can always construct an element of the \emph{Lie algebra} from $g^{-1}(t)\dot{g}(t)$. Seen another way, suppose we are given $X \in \mL(\group)$, we can reconstruct a curve $C : \RR \rightarrow \group$ by solving the ODE:
+\begin{equation}
+\label{eq:matrixexp}
+g^{-1}(t)\frac{\ud g(t)}{\ud t} = X \qquad \forall t \in \RR
+\end{equation}
+with boundary conditions $g(0) = \mathbb{I}_n$. If we define the exponential of a matrix;
+\begin{equation*}
+\exp(M) = \sum_{l = 0}^{\infty}{\frac{1}{l!}M^l} \in \text{Mat}(n, \mathbb{F})
+\end{equation*}
+Then we can solve \eqref{eq:matrixexp} by setting $g(t) = \exp(t X)$ for all $t \in \RR$. This follows just by noting that clearly $g(0) = \mathbb{I}_n$ and;
+\begin{equation*}
+\dot{g}(t) = \sum_{l = 1}^{\infty}{\frac{1}{(l - 1)!}t^{l - 1}X^l} = \exp(tX)X
+\end{equation*}
+The fact that $g(t)$ solves this differential equation is enough to deduce that $g(t) = \exp(tX) \in \group$. So we can exponentiate elements of the Lie algebra to get elements of the group. For a suitable range $J$, the set;
+\begin{equation*}
+S_{X, J} = \set{g(t) = \exp(t X), \,\, \forall t \in J \subset \RR}
+\end{equation*}
+is an Abelian Lie subgroup of $\group$, known as a \emph{one-parameter subgroup}.\index{one-parameter subgroup}
+\subsection{Constructing $\group$ from $\mL(\group)$}
+If we set $t = 1$ then we have a map $\exp : \mL(\group) \rightarrow \group$ that is $1$:$1$ in some neighbourhood of the identity. In such a region we can construct group elements $g_X = \exp(X)$, $g_Y = \exp(Y)$ for some $X, Y \in \mL(\group)$. The question then is how to take group products $g_X g_Y$. It turns out that if we identify $g_X g_Y = \exp(Z) = g_Z$, then we can construct $Z$ \emph{entirely from Lie Algebra operations} via the Baker-Campbell-Hasudorff formula;
+\begin{equation}
+Z = X + Y + \frac{1}{2}[X, Y] + \frac{1}{12}\left([X, [X, Y]] + [Y, [Y, X]]\right) + \cdots
+\end{equation}
+Note that this expression definitely lies within the Lie algebra since the Lie bracket is closed. We see then that in a suitable neighbourhood of the identity, the Lie algebra, $\mL(\group)$, completely determines $\group$. However, $\exp$ is not globally bijective. In particular, $\exp$ is not surjective when $\group$ is not connected as is the case for $\text{O}(3)$. This is because $\exp$ is continuous and so can only have an image which lies in the neighbourhood of the identity. More generally, the image of $\mL(\group)$ under $\exp$ is the whole of the component connected to the identity.
+
+\paraskip
+As an example of this consider $\group = \text{O}(n)$. Now $\mL\left(\text{O}(n)\right) = \set{X \in \text{Mat}(n, \RR): X + X^{\text{T}} = 0}$. So $X \in \mL\left(\text{O}(n)\right) \Rightarrow \tr X = 0$. We can then use;\footnote{To prove this, or at least convince yourself of its validity, transform to a basis in which $X$ is diagonal.}
+\begin{equation*}
+\det\left(\exp X\right) = \exp\left(\tr X\right) \Rightarrow \det\left(\exp X\right) = 1 \,\,\text{for}\,\,X \in \mL\left(\text{O}(n)\right)
+\end{equation*}
+So we see that indeed $\exp X \in \SO{n}$.
+\subsubsection{Back to $\SU{2}$ vs. $\SO{3}$}
+Returning to the discussion of $\SU{2}$ and $\SU{3}$, we have seen that $\mL\left(\SU{2}\right) \simeq \mL\left(\SO{3}\right)$, but that the two groups are not isomorphic since they have different homotopy classes. Now, we can construct a \emph{double-covering}\footnote{A globally $2$:$1$ map.} of $\SO{3}$ as follows;
+\begin{equation}
+d : \SU{2} \rightarrow \SO{3}, \qquad d(A)_{ij} = \frac{1}{2}\tr\left(\sigma_i A \sigma_j A\dagg\right)
+\end{equation}
+We see that $d(A) = d(-A)$. This map provides an explicit isomorphism;
+\begin{equation*}
+\SO{3} \simeq \SU{2}/\ZZ_2
+\end{equation*}
+where $\ZZ_2 = \set{\mathbb{I}, - \mathbb{I}}$ is the centre of $\SU{2}$. Geometrically, $\SU{2} \simeq S^3$, so $\SO{3} \simeq S^3/\ZZ_2$, which is the $3$-sphere with antipodal points identified as we found previously. Thus we can parametrise $\SO{3}$ by the upper hemisphere with points on the equator identified.
+\newpage
+\section{Introduction to Representations}
+In what follows, it is useful to keep in mind that there is a clear distinction between \emph{group} representations and representations of the \emph{Lie algebra}, although they are very much related as we shall show below.
+\subsection{Representations of Lie Groups}
+\begin{definitionbox}[Representation]
+A \emph{representation}, $D(\group)$ of any group, $\group$ (not necessarily Lie), is a linear group action $v \mapsto D(g)v$ of $\group$ on a vector space $V$ by invertible transformations. Equivalently, a representation is a set of non-singular matrices;
+\begin{equation*}
+\set{D(g) \in \text{Mat}(n, \mathbb{F}), g \in \group}
+\end{equation*}
+The fact that $D(g)$ is a linear map says that;
+\begin{equation}
+D(g)(\alpha v_1 + \beta v_2) = \alpha D(g)v_1 + \beta D(g)v_2
+\end{equation}
+In order to be a representation, it must also satisfy;
+\begin{equation}
+D(g_1 g_2) = D(g_1) D(g_2) \qquad \forall g_1, g_2 \in \group
+\end{equation}
+which is simply the statement that $D$ is a group homomorphism. In other words, the representation should preserve the group structure.
+\end{definitionbox}
+The vector space $V \simeq \mathbb{F}^n$ is known as the \emph{representation space}. The dimension of $V$ is the dimension of the representation. A representation is called \emph{faithful} if $D(g) = \mathbb{I}_N$ only for $g = e$. If $\group$ is also a Lie group, then we further need that $D$ is smooth.\index{representation!faithful}
+\subsubsection{Types of Representation}
+There are a number of representations that are present for all Lie groups. These will reappear when we discuss representations of Lie algebras, whose form can be deduced from those below. In our opinion however, it is more natural to see the group representations first as they appear to be more canonical.
+\begin{enumerate}
+\item Let $\group$ be a matrix Lie group with matrices of dimension $N$, then the representation $D(g) = g$ is called the \emph{fundamental} representation of the group and is $N$-dimensional.
+\item The representation of $\group$ that sets $D(g) = \mathbb{I}_N$ for all $g \in \group$ is known as the \emph{trivial} representation.\index{representation}\index{representation!fundamental}\index{representation!trivial}\index{representation!adjoint}
+\item Let $\group$ be a matrix Lie group, and let $V = \mL(\group)$. The \emph{adjoint} representation, $\text{Ad}$, is the natural representation of $\group$ on $\mL(\group)$.
+\begin{equation}
+D(g)X \equiv \text{Ad g}X \coloneqq g X g^{-1}, \quad g \in \group, \quad X \in \mL(\group)
+\end{equation}
+We should do a few checks to see that this is a well-defined representation.
+\begin{itemize}
+\item \textbf{Closure:} $g X g^{-1} \in \mL(\group)$ follows since there exists some curve $h(t) = \mathbb{I} + t X + \cdots$ in $\group$ with tangent $X$ at $t = 0$. Then $\tilde{h}(t) = g\cdot h(t)\cdot g^{-1}$ is another curve in $\group$ by group multiplication. But;
+\begin{equation*}
+\tilde{h}(t) = \mathbb{I} + t gX g^{-1} + \cdots
+\end{equation*}
+So we have constructed a curve with tangent $gX g^{-1}$, so $g X g^{-1} \in \mL(\group)$. 
+\item \textbf{Representation:} We should also show that $\text{Ad}$ really is a representation. This follows as;
+\begin{align*}
+(\text{Ad}g_1 g_2)X &= g_1 g_2 X (g_1 g_2)^{-1} \\
+&= g_1 g_2 X g_2^{-1} g_1^{-1} \\
+&= \left(\text{Ad}g_1\right)\left(\text{Ad}g_2\right)X
+\end{align*}
+\end{itemize}
+\item An $N$-dimensional representation $D$ of $\group$ is said to be \emph{unitary} if $D(g) \in \Uni{N}$ for all $g \in \group$.
+\item Two representations are \emph{equivalent} if $\tilde{D}(g) = AD(g)A^{-1}$ for some fixed invertible transformation $A$ on $V$. This is just the statement that the two representations are related by a change of basis on $V$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

@@ -1,0 +1,1067 @@
+\label{cosmo}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Cosmology}
+\vspace{-30pt}
+\centering\normalsize\textit{Michaelmas Term 2017 - Dr J. Fergusson \& Dr B. Sherwin}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Geometry and Dynamics}
+In Cosmology we work on scales much greater than $40 \, \textrm{Mpc}$ along with the assumptions;
+\begin{enumerate}
+\item Universe is isotropic in all directions
+\item Universe is homogeneous in all locations
+\item General Relativity holds on these large scales
+\end{enumerate}
+CMB\index{CMB} evidence strongly supports the first two but we need dark matter for the third.
+\subsection{The Metric}
+Homogeneity $\Rightarrow g_{\mu \nu} = g_{\mu \nu}(t)$. So $g_{00}$ component can be absorbed into definition of $t \Rightarrow g_{00} = -1$ wlog. Furthermore, isotropy $\Rightarrow g_{0i} = 0$, thus the most general form is;
+\begin{equation}
+\ud s^2 = -\ud t^2 + a(t)^2 \gamma_{ij} \ud x^i \ud x^j
+\end{equation}
+The only possible $\gamma_{ij}$ are constant curvature metrics, there are only $3$;
+\begin{enumerate}
+\item Positive curvature, Spherical, $\mathcal{S}^3$;
+\begin{equation}
+\ud l^2 = \ud \vec{x}^2 + \ud u^2, \quad |\vec x|^2 + u^2 = R^2 
+\end{equation}
+\item Zero curvature, Euclidean, $\mathbb{E}^3$;
+\begin{equation}
+\ud l^2 = \ud \vec{x}^2
+\end{equation}
+\item Negative curvature, Hyperbolic, $\mathbb{H}^3$;
+\begin{equation}
+\ud l^2 = \ud \vec{x}^2 - \ud u^2, \quad |\vec x|^2 - u^2 = -R^2
+\end{equation}
+\end{enumerate}
+We can eliminate $u$ using $x\ud x = \pm u \ud u$, and rescale $x \rightarrow Rx, u \rightarrow Ru$, to find the FLRW metric;
+\begin{examplebox}[The FLRW Metric\index{FLRW universe}]
+\begin{equation}
+\ud s^2 = -\ud t^2 + a(t)^2 \left\{\frac{\ud r^2}{1-kr^2} + r^2 \ud \Omega^2\right\}, \quad k = 
+      \begin{cases}
+      -1, & \text{hyperbolic} \\
+      0, & \text{flat} \\
+      1, & \text{spherical}
+      \end{cases}
+\end{equation}
+\end{examplebox}
+We make the following observations about the metric;
+\begin{enumerate}
+\item Invariant under rescaling $a \rightarrow \lambda a$, $r \rightarrow \tfrac{r}{\lambda}$, $k \rightarrow k \lambda^2$, so we are free to fix either $a$ or $k$ e.g. $a(t_0) = 1$.
+\item The metric is written in comoving\index{comoving distance} co-ordinates so physical distances are $r_{\text{phys}} = a r$ so that,
+\begin{equation}
+\label{eq:peculiar}
+v_{\text{phys}} = a\frac{\ud r}{\ud t} + \dot{a} r = v_{\text{pec}} + H r_{\text{phys}}
+\end{equation}
+\item Common to use conformal time\index{conformal time} $\ud t = a(\tau) \ud \tau$ so all the time dependence in the metric is in the scale factor.
+\item Also common to use;
+\begin{equation}
+\chi = \int{\frac{\ud r}{1 - kr^2}} \Rightarrow \ud s^2 = a(\tau)^2\left\{-\ud \tau^2 + \ud \chi^2 + \colvec{3}{\sin^2 \chi}{\chi^2}{\sinh^2\chi} \ud \Omega^2\right\}
+\end{equation}
+\end{enumerate}
+\subsection{Kinematics}
+Motion defined by the geodesic equation\index{geodesic equation};
+\begin{equation}
+\frac{\ud U^\mu}{\ud s} + \Gamma\indices{^\mu_{\alpha \beta}}U^{\alpha}U^{\beta} = U^{\alpha} \nabla_{\alpha} U^{\mu} = 0
+\end{equation}
+where we can calculate the Christoffel symbols\index{Christoffel symbols} in the standard way. We could write this in terms of momentum as well, which holds for massless particles;
+\begin{equation}
+\label{eq:momengeo}
+P^{\alpha} \del_\alpha P^\mu = -\Gamma\indices{^\mu_{\alpha \beta}}P^\alpha P^\beta
+\end{equation}
+Importantly, homogeneity and isotropy imply that $\del_i P^\mu = 0$, so the $\alpha = 0$ equation is the only non-trivial one. Thus;
+\begin{enumerate}
+\item $P^i = 0 \Rightarrow \del_t P^i = 0$, so particles at rest remain at rest.
+\item $\mu = 0$ gives $P^0 = E$, then \eqref{eq:momengeo} gives,
+\begin{equation}
+E\frac{\ud E}{\ud t} = -\frac{\dot{a}}{a}p^2, \quad p^2 = \gamma_{ij} P^i P^j
+\end{equation}
+But, $-m^2 = -E^2 + p^2 \Rightarrow E\ud E = p \ud p$, so;
+\begin{equation}
+\frac{\dot{p}}{p} = - \frac{\dot{a}}{a} \Rightarrow p(t) \propto \frac{1}{a(t)}
+\end{equation}
+Hence;
+\begin{itemize}
+\item For massless particles, $p = E$, so $E \propto a^{-1}$ decays
+\item For massive particles, $p = \tfrac{mv}{\sqrt{1- v^2}}$, so peculiar velocities decay
+\end{itemize}
+\end{enumerate}
+\subsection{Redshift\index{redshift}}
+For light, $\lambda = \tfrac{h}{p}$ and $p \propto a^{-1}$, so $\lambda \propto a$. Thus if a photon is emitted at time $t_i$ with wavelength $\lambda_i$ and observed at $t_o$ with wavelength $\lambda_o$, it must be that;
+\begin{equation}
+\lambda_o = \frac{a(t_o)}{a(t_i)} \lambda_i \Rightarrow 1 + z = \frac{a(t_o)}{a(t_i)}
+\end{equation}
+where $z$ is the redshift, $z = \tfrac{\lambda_o - \lambda_i}{\lambda_i}$. 
+\begin{examplebox}
+Expanding $a(t_o + \epsilon)$ about $t_o$ and setting $\epsilon = (t_i - t_o)$ gives Hubble's law\index{Hubble!law}\index{Hubble!constant},
+\begin{dmath}
+\frac{a(t_i)}{a(t_o)} = 1 - H_o (t_i - t_o) + \frac{\ddot{a}(t_o)}{2a(t_o)}(t_o - t_i)^2 + \cdots \Rightarrow z - 1 \hiderel{=} 1 \hiderel{+} H_o (t_o - t_i) \hiderel{+} \cdots \Rightarrow z \hiderel{\sim} H_o (t_o - t_i) \hiderel{=} H_o d \text{ for light with } c \hiderel{=} 1
+\end{dmath}
+\end{examplebox}
+\subsection{Dynamics}
+In the rest frame, homogeneity and isotropy imply that $T_{00} = \rho(t), T_{0i} = 0, T_{ij} = P(t) g_{ij}$, i.e. a perfect fluid. Transforming to a general frame, it must be then that;
+\begin{equation}
+T_{\mu \nu} = (\rho + P)U_{\mu}U_{\nu} + P g_{\mu \nu}
+\end{equation}
+In the Einstein equation, we could add a cosmological term $G_{\mu \nu} = 8\pi G T_{\mu \nu} + \Lambda g_{\mu \nu}$ to the Einstein tensor. However, we will include this as \emph{dark energy}\index{dark energy} with;
+\begin{equation}
+\rho = - P = \frac{\Lambda}{8\pi G}
+\end{equation}
+\begin{definitionbox}
+The \emph{conservation equation}\index{equation!conservation} arises from conservation of the energy momentum tensor\index{tensor!energy-momentum};
+\begin{equation}
+\nabla_\mu T\indices{^\mu_\nu} = \del_\mu T\indices{^\mu_\nu} + \Gamma\indices{^\mu_{\mu \lambda}}T\indices{^\lambda_\nu} - \Gamma\indices{^\lambda_{\mu\nu}}T\indices{^\mu_\lambda} = 0
+\end{equation}
+which can be unpacked to give;
+\begin{equation}
+\label{eq:coscons}
+\dot{\rho} + 3\frac{\dot{a}}{a}(\rho + P) = 0
+\end{equation}
+\end{definitionbox}
+Using \eqref{eq:coscons}, and defining an equation of state\index{equation!of state} $w = \tfrac{P}{\rho}$ we find;
+\begin{equation}
+\rho = \rho_0 \left(\frac{a}{a_0}\right)^{-3(1+w)}
+\end{equation}
+which gives rise to a number of possibilities;
+\begin{examplebox}[Components to the Universe]
+\begin{enumerate}
+\item Matter ($m$): $w = 0, \rho \propto a^{-3}$
+\begin{itemize}
+\item Cold Dark Matter ($c$)
+\item Baryons ($b$) - protons etc. 
+\end{itemize}
+\item Radiation ($r$): $w = \tfrac{1}{3}, \rho \propto a^{-4}$
+\begin{itemize}
+\item Photons ($\gamma$)
+\item Neutrinos ($\nu$)
+\item Gravitons ($g$)
+\end{itemize}
+\item Dark Energy ($\Lambda$): $w = -1, \rho \text{ const.}$
+\begin{itemize}
+\item Vacuum Energy
+\item Modified Gravity
+\end{itemize}
+\end{enumerate}
+\end{examplebox}
+Perhaps the most important aspect of this section is the derivation of the Friedman equations\index{equation!Friedman}. They arise from the Einstein equations\index{equation!Einstein} $G_{\mu \nu} = 8\pi G T_{\mu \nu}$. It is a lengthy but not conceptually difficult calculation to show that,
+\begin{align}
+G_{00} = 8\pi G T_{00} &\Longrightarrow 3\left( \left(\frac{\dot{a}}{a}\right)^2 + \frac{k}{a^2} \right) = 8\pi G \rho \\
+G_{ij} = 8\pi G T_{ij} &\Longrightarrow -\left(2\left(\frac{\ddot{a}}{a}\right) + \left(\frac{\dot{a}}{a}\right)^2 + \frac{k}{a^2}\right) = 8\pi G P
+\end{align}
+which can be combined to give the three Friedman equations, \eqref{eq:F1} - \eqref{eq:F3}; \boxed{\textbf{I.i - I.v}}
+\begin{definitionbox}[The Friedman Equations\index{equation!Friedman}]
+\begin{equation}
+\label{eq:F1}
+\left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G}{3} \rho - \frac{k}{a^2} \tag{F1}
+\end{equation}
+\begin{equation} 
+\label{eq:F2}
+\frac{\ddot{a}}{a} = - \frac{4\pi G}{3} (\rho + 3P) \tag{F2}
+\end{equation}
+The combination $\dot{\text{F}1} + \text{F}2$ gives the third Friedman equation;
+\begin{equation}
+\label{eq:F3}
+\dot{\rho} = -3 \frac{\dot{a}}{a} (\rho + P) \tag{F3}
+\end{equation}
+\end{definitionbox}
+As a quick aside, note that \eqref{eq:F3} holds independent of the conservation of the energy momentum tensor since $\rho = \sum{\rho_i}$ where $i$ runs over the different components. Conservation of the energy momentum tensor gives us more, it says that $\dot{\rho}_i = -3\tfrac{\dot{a}}{a}(\rho_i + P_i)$ holds for each component; a stronger condition. 
+
+\paraskip
+Now we can define a \emph{critical density}\index{critical!density} which is the reference density when $k = 0$, it follows directly from \eqref{eq:F1};
+\begin{equation}
+\rho_{\text{crit},0} = \frac{3H_0^2}{8\pi G} \sim 8 \times 10^{-24} \,\, \text{g}\,\text{cm}^{-3}
+\end{equation}
+Then the definition of the fractional densities\index{fractional density} follows naturally;
+\begin{examplebox}
+\begin{equation}
+\Omega_X = \frac{\rho_X}{\rho_{\text{crit},0}}
+\end{equation}
+So we have,
+\begin{equation}
+\Omega_r = \tfrac{\Omega_{r,0}}{a^4}, \Omega_m = \tfrac{\Omega_{m,0}}{a^3}, \Omega_{\Lambda} = \Omega_{\Lambda,0}
+\end{equation}
+Then we can rewrite \eqref{eq:F1}, \eqref{eq:F2} as;
+\begin{align}
+\dot{a}^2 &= H_0^2 \left(\frac{\Omega_{r,0}}{a^2} + \frac{\Omega_{m,0}}{a} + \Omega_{\Lambda, 0}a^2 \right) - k \\
+\ddot{a} &= - H_0^2 \left(\frac{\Omega_{r,0}}{a^3} + \frac{\Omega_{m,0}}{2a^2} - \Omega{\Lambda, 0}a \right)
+\end{align}
+\end{examplebox}
+This allows us to classify the evolution into eras of domination;
+\begin{enumerate}
+\item $0 < a < \tfrac{\Omega_{r,0}}{\Omega_{m,0}} \Rightarrow$ radiation domination\index{domination!radiation}
+\item $\tfrac{\Omega_{r,0}}{\Omega_{m,0}} < a < \left(\tfrac{\Omega_{m,0}}{\Omega_{\Lambda,0}}\right)^{\tfrac{1}{3}} \Rightarrow$ matter domination\index{domination!matter}
+\item $\left(\tfrac{\Omega_{m,0}}{\Omega_{\Lambda,0}}\right)^{\tfrac{1}{3}} < a \Rightarrow$ dark energy domination\index{domination!dark energy}
+\end{enumerate}
+as well as evaluate the possible models as shown in Figures \ref{fig:node} and \ref{fig:de}.
+\begin{mygraphic}{cosmo/node}{0.8}{The possible histories when $\Omega_{\Lambda} = 0$ distinguished by the sign of $k$}{node}\end{mygraphic}
+\begin{mygraphic}{cosmo/de}{0.8}{The possible histories when $\Omega_{\Lambda} \neq 0$; now there are more possibilities including the Einstein static universe.}{de}\end{mygraphic}
+A common feature however is that all stable expanding universes have a beginning at $a = 0$, so we must have had a Big Bang. Observations such as those in Figure \ref{fig:supern} give us the following parameter values (the $\Lambda$CDM model)
+\begin{multline*}
+\Omega_m = 0.32, \Omega_{\Lambda} = 0.68, \Omega_{\gamma} = 1 \times 10^{-4}, \\ \left|\Omega_k\right| < 1 \times 10^{-2} \text{ (we set } k = 0 \text{ from now on)}
+\end{multline*}
+\begin{mygraphic}{cosmo/supern}{0.8}{Type IA supernovae and the discovery dark energy. If we assume a flat universe, then the supernovae clearly appear fainter (or more distant) than predicted in a matter-only universe ($\Omega_m = 1.0$).}{supern}\end{mygraphic}
+\begin{definitionbox}[Scale Factor in different eras]
+With $k = 0$, we use \eqref{eq:F1} with a single component to find;
+\begin{equation}
+a(t) \propto \begin{cases} t^{\tfrac{1}{2}} & \text{(RD)} \\ t^{\tfrac{2}{3}} & \text{(MD)} \\ e^{H_0 t} & \text{(}\Lambda\text{D)} \end{cases} \Longrightarrow a(\tau) \propto \begin{cases} \tau & \text{(RD)} \\ \tau^2 & \text{(MD)} \\ -\tfrac{1}{\tau} & \text{(}\Lambda\text{D)} \end{cases}
+\end{equation}
+\end{definitionbox}
+\newpage
+\section{Inflation}
+The Big Bang model has some notable successes;
+\begin{itemize}
+\item \emph{Big Bang Nucleosynthesis}\index{big bang nucleosynthesis} - light element abundances predicted to high precision
+\item \emph{Cosmic Microwave Background}\index{CMB} - Neutral hydrogen formation leads to photon free streaming so must have been small and hot before this 
+\end{itemize}
+However it has three major issues;
+\begin{enumerate}
+\item \emph{Flatness Problem}\index{problem!flatness} - Curvature tends to grow, so why are we flat today?
+\item \emph{Relic Problem}\index{problem!relic} - We should see strange things from high energy processes such as topological defects\index{topological defect}
+\item \emph{Horizon Problem}\index{problem!horizon} - Universe looks the same everywhere and yet has not been in causal contact
+\end{enumerate}
+\subsection{The Horizon Problem}
+If we work in conformal time\index{conformal time} and consider only radial motion then we have $\ud s^2 = a^2(\tau)\left(-\ud \tau^2 + \ud \chi^2\right)$. So for null geodesics, $\ud s^2 \Rightarrow \ud \tau = \ud \chi$
+\begin{mygraphic}{cosmo/horizon}{0.6}{Spacetime diagram illustrating the concept of horizons. Dotted lines show the worldlines of comoving objects. The event horizon\index{horizon!event} is the maximal distance to which we can send signal. The particle horizon is the maximal distance from which we can receive signals.}{horizon}\end{mygraphic}
+In terms of the physical particle horizon\index{horizon!particle}, $r_{\text{ph}} = a \chi_{\text{ph}}$, we can use $\ud \tau = \ud \chi \Rightarrow r_{\text{ph}} = a_0 (\tau_0 - \tau_i)$ to see that;
+\begin{equation}
+r_{\text{ph}} = a_0 \int_{\tau_i}^{\tau_0}{\upd{\tau}\frac{1}{a}} = a_0 \int_{a_i}^{a_0}{\frac{\ud a}{\dot{a}a}} = a_0 \int_{\log a_i}^{\log a_0}{\upd{\log a} \frac{1}{aH}}
+\end{equation}
+But this implies that;
+\begin{equation}
+\chi_{\text{ph}} = \int_{\log a_i}^{\log a_0}{\frac{\ud \log a}{\hamilt}}
+\end{equation}
+where $\hamilt \coloneqq aH = \dot{a} = \tfrac{a\pr}{a}$. For a perfect fluid, we have $a \propto t^{\tfrac{2}{3(1+w)}}$ so that;
+\begin{equation}
+\label{eq:horizona}
+\hamilt = \dot{a} = H_0 a^{-\tfrac{1+3w}{2}} \Rightarrow \chi_{\text{ph}} = \frac{2 H_0^{-1}}{1 + 3w}\left(a_0^{\tfrac{1+3w}{2}} - a_i^{\tfrac{1+3w}{2}}\right) = \frac{2}{1 + 3w}\hamilt^{-1}
+\end{equation}
+assuming that $a_i = 0$ at the Big Bang. The fact that $\chi_{\text{ph}} \sim \hamilt^{-1}$ leads to the unfortunate fact that $\hamilt^{-1}$ is often referred to as the \emph{horizon}\index{horizon}. The different types of horizon are;
+\begin{enumerate}
+\item $r_{\text{ph}}$ is the particle horizon\index{horizon!particle} - everything you could have talked to
+\item The event horizon\index{horizon!event} - everything you can talk to in the future
+\item $H^{-1}$ - everything you can talk to now\footnote{This follows from recalling the expression in \eqref{eq:peculiar} where we see that if $r = H^{-1}$ and $v_{\text{pec}} = 0$, $v_{\text{ph}} = 1$, i.e. objects appear to move apart at the speed of light ($c = 1$). Hence $H^{-1}$ is referred to as the horizon.}
+\end{enumerate}
+\begin{mygraphic}{cosmo/cmbcausal}{0.5}{The horizon problem\index{problem!horizon} in the conventional Big Bang model. All events that we currently observe are on our past light cone. The intersection of our past light cone with the spacelike slice labelled CMB corresponds to two opposite points in the observed CMB. Their past light cones don?t overlap before they hit the singularity, $a = 0$, so the points appear never to have been in causal contact. The same applies to any two points in the CMB that are separated by more than 1 degree on the sky.}{cmbcausal}\end{mygraphic}
+Now we see the issue, as illustrated in \autoref{fig:cmbcausal}; the CMB\index{CMB} is composed of disconnected regions that yet have the same temperature, $\Delta T / T \sim 10^{-5}$
+\subsection{The Horizon Problem - \emph{Solution}}
+\begin{mygraphic}{cosmo/horizon2}{0.5}{Inflationary solution to the horizon problem. The comoving Hubble sphere shrinks during inflation and expands during the conventional Big Bang evolution (at least until dark energy takes over at $a \sim 0.5$). Conformal time during inflation is negative. The spacelike singularity of the standard Big Bang is replaced by the reheating surface, i.e. rather than marking the beginning of time it now corresponds simply to the transition from inflation to the standard Big Bang evolution. All points in the CMB have overlapping past light cones and therefore originated from a causally connected region of space.}{horizon2}\end{mygraphic}
+The issue is that for ordinary matter, the horizon always grows;
+\begin{equation}
+\frac{\ud}{\ud t}\left(\hamilt^{-1}\right) > 0
+\end{equation}
+We want to make it negative in the very early universe, i.e. we want\footnote{The inequality follows from differentiating the expression for $\hamilt^{-1}$ in \eqref{eq:horizona}}
+\begin{equation}
+\frac{\ud}{\ud t}\left(\hamilt^{-1}\right) < 0 \iff (1 + 3w) < 0
+\end{equation}
+This changes the causal picture entirely, now;
+\begin{equation}
+\tau_i = \frac{2H_0^{-1}}{1 + 3w}a_i^{\tfrac{1+3w}{2}} \Rightarrow \left(a_i \rightarrow 0 \Rightarrow \tau_i \rightarrow -\infty\right)
+\end{equation}
+In other words, there is now an ``infinite amount of conformal time'' for the CMB photons to interact. So how much do we need $\hamilt^{-1}$ to shrink to account for these observations?
+\begin{examplebox}[e-folds of Inflation]
+We need $(a_0H_0)^{-1} < (a_I H_I)^{-1} \iff \mathcal{H}^{-1}_0<\mathcal{H}^{-1}_I$ so that the observable universe today fits within the comoving Hubble radius at the beginning of inflation. Assume that the universe was radiation dominated since the end of inflation ignoring the more recent matter and dark energy epochs. Then since $w = \frac{1}{3}$ for radiation, $H \propto a^{-2}$. Hence,
+\begin{equation}
+\frac{a_0 H_0}{a_E H_E} \sim \frac{a_0}{a_E} \, \left(\frac{a_E}{a_0}\right)^2 = \frac{a_E}{a_0} \sim \frac{T_0}{T_E} \sim 10^{-28}
+\end{equation}
+where $E$ represents the end of inflation. We have made use of the fact that for relativistic particles, $E = pc$, $p \propto \frac{1}{a}$ and $T \simeq E$ to deduce that $a \propto \frac{1}{T}$. Then the numerical estimate uses $T_E \sim 10^{15} \textrm{ GeV}$ and $T_0 = 10^{-3} \textrm{ eV} \sim 2.7 \textrm{ K}$. Then, we deduce that,
+$$(a_IH_I)^{-1} > (a_0H_0)^{-1} \sim 10^{28}(a_EH_E)^{-1}$$
+If we assume that during inflation, $H$ remains approximately constant, it must be that,
+\begin{equation}
+\frac{a_E}{a_I}>10^{28} \Rightarrow \log\left(\frac{a_E}{a_I}\right) > 64
+\end{equation}
+\end{examplebox}
+So we need $\sim 60$ e-folds\index{inflation!e-folds} of inflation\index{inflation} to solve the horizon problem; provided everything we see now was inside the horizon at some point, then we solve the issue. Before we study the physics, it is worth noting the following are all equivalent characterisations of an inflationary paradigm.
+\begin{enumerate}
+\item We see that $\mathcal{H}^{-1} = \frac{1}{\dot{a}}$, hence;
+$$\frac{\textrm{d}}{\textrm{d}t}\left(\mathcal{H}^{-1}\right) = -\frac{\ddot{a}}{\dot{a}^2}$$
+\noindent Thus, we see $\frac{\textrm{d}}{\textrm{d}t}\left(\mathcal{H}^{-1}\right) < 0 \iff \ddot{a} > 0$.
+\item We can write $\mathcal{H} = aH$, then,
+$$\frac{\textrm{d}}{\textrm{d}t}\left(aH\right)^{-1}=-\frac{\dot{a}H + a\dot{H}}{(aH)^2}=-\frac{1}{a}(1-\epsilon)$$
+where $\epsilon = -\frac{\dot{H}}{H^2}$, then, a shrinking Hubble sphere, $\frac{\textrm{d}}{\textrm{d}t}\left(\mathcal{H}^{-1}\right) < 0$ corresponds to $\epsilon < 1$.
+\item Suppose we have perfect inflation, i.e. $\epsilon = 0$, then $H = \textrm{const.}$, so
+$$\frac{\dot{a}}{a} = H = \textrm{const.} \Rightarrow a(t) \propto \exp(Ht)$$
+\item $H^2 = \frac{8\pi G}{3}\rho \Rightarrow 2\dot{H}H = \frac{8\pi G}{3}\dot{\rho} = \frac{8\pi G}{3}\left(-3H(\rho + P)\right)$, so $$\dot{H} = \frac{4\pi G}{3}\left(-3(\rho + P)\right)$$. Then,
+\begin{align*}
+\Rightarrow \dot{H} + H^2 &=\frac{8\pi G}{3}\rho + \frac{4 \pi G}{3}\left(-3(\rho + P)\right) \\
+&= \frac{8\pi G}{3}\rho \left(1 + \frac{1}{2}\left(-3\left(1 + \frac{P}{\rho}\right)\right)\right) \\
+&= H^2\left(1-\frac{3}{2}\left(1+\frac{P}{\rho}\right)\right) \\
+\Rightarrow -\frac{\dot{H}}{H^2}=\epsilon &= \frac{3}{2}\left(1+\frac{P}{\rho}\right)
+\end{align*}
+But $\epsilon < 1$, so $\frac{P}{\rho} = w < -\frac{1}{3}$ as required.
+\item We have from the continuity equation that $\frac{\dot{\rho}}{\rho} = -3H\left(1 + \frac{P}{\rho}\right)$ and $\left(1+\frac{P}{\rho}\right) = \frac{2}{3}\epsilon$ from above, so,
+$$\frac{\dot{\rho}}{\rho}= -3H\cdot \frac{2}{3}\epsilon = -2H \epsilon \Rightarrow \left|\frac{1}{H}\frac{\dot{\rho}}{\rho}\right| = \left|\frac{\textrm{d}\log \rho}{\textrm{d}\log a}\right| = 2\epsilon$$
+\end{enumerate}
+\subsection{The Physics of Inflation}
+There are four key conditions that we require in order that inflation is a successful solution to the various issues presented above;
+\begin{enumerate}
+\item It must \emph{occur}, in other words, there must be some dynamics such that $\hamilt^{-1}$ decreases;
+\begin{equation*}
+\epsilon = -\frac{\dot{H}}{H^2} = \frac{\ud \log \rho}{\ud \log a} < 1
+\end{equation*}
+\item Secondly, it must \emph{last}, we need a sufficient number of e-folds to solve the horizon problem. Thus we require;
+\begin{equation*}
+\eta = \frac{\dot{\epsilon}}{H \epsilon} = \frac{\ud \log \epsilon}{\ud \log a} < 1
+\end{equation*}
+\item It must \emph{end}, so that the Big Bang can take over and lead to nucleosynthesis etc.
+\item It must thermalise into the standard model. If this did not occur, then since the inflaton dilutes spacetime, we would end up with an empty universe. Furthermore, this must occur at a temperature (equivalently an early enough time) $T > 100\,\,\text{GeV}$ for BBN to work.
+\end{enumerate}
+The simplest model for this is \emph{single-field slow roll inflation}. This involves a scalar field interacting via a potential $V(\phi)$ governed by the Lagrangian;
+\begin{equation*}
+\mL = \sqrt{-g}\left(\frac{1}{2}g^{\mu\nu}\del_\mu \phi \del_\nu \phi + V(\phi)\right)
+\end{equation*}
+where $g_{\mu\nu}$ is the FRW metric, i.e. $g_{\mu\nu} = \text{diag}(-1, a^2, a^2, a^2)$. Then, the energy momentum tensor is given by;
+\begin{equation}
+T_{\mu\nu} = \del\mu \phi \del_\nu \phi - g_{\mu\nu}\left(\frac{1}{2}g^{\alpha \beta}\del_\alpha \phi \del_\beta \phi + V(\phi)\right)
+\end{equation}
+For a homogeneous field $\phi(\vec{x}, t) = \phi(t)$, we find that the energy density and pressure are given by;
+\begin{equation}
+\rho_\phi = T_{00} = \frac{1}{2}\dot{\phi}^2 + V(\phi), \quad P_{\phi} = \frac{1}{3}T\indices{^{i}_{i}} = \frac{1}{2}\dot{\phi}^2 - V(\phi)
+\end{equation}
+We are now in a position to use the Friedman equations to derive the dynamics of the field. In what follows we will use the Planck mass\index{Planck mass}, $M_{p} \coloneqq (8\pi G)^{-1/2}$.\footnote{If you forget the definition, remember that at least dimensionally $G \sim m^{-2}$ from Newton's law of gravity, the numerical constants are then just convention.} Rearranging the Friedman equation and the acceleration equation, we find that;
+\begin{equation}
+H^2 = \frac{1}{3M_p^2} \left(\frac{1}{2}\dot{\phi}^2 + V(\phi)\right), \qquad \dot{H} = -\frac{1}{2M_p^2}\dot{\phi}^2
+\end{equation}
+We can get to the Klein-Gordon equation in one of two ways from this point, we can either differentiate the first equation above and substitute into the second, or retrospectively realise that this is simply the continuity equation for the scalar field. Either way we find;
+\begin{equation}
+\ddot{\phi} + 3H \dot{\phi} + V_{,\phi} = 0
+\end{equation}
+\subsubsection{Slow Roll Inflation}
+We now want to investigate the above in the slow roll regime where inflation occurs. Firstly;
+\begin{equation*}
+\epsilon = -\frac{\dot{H}}{H^2} = \frac{1}{M_p^2}\frac{\dot{\phi}^2}{H^2} \ll 1 \Rightarrow \frac{1}{2}\dot{\phi}^2 \ll V(\phi)
+\end{equation*}
+This observation allows us to approximate the first Friedman equation as;
+\begin{equation*}
+H^2 \simeq \frac{V}{3M_p^2}
+\end{equation*}
+Furthermore, define the parameter $\delta \coloneqq -\ddot{\phi}/H\dot{\phi}$, then it can be shown that;
+\begin{equation}
+\eta \equiv \frac{\dot{\epsilon}}{H\epsilon} = 2(\epsilon - \delta)
+\end{equation}
+As such, we see that the slow roll conditions $(\epsilon \ll 1, \eta \ll 1)$ are equivalent to $(\epsilon \ll 1, \delta \ll 1)$. As such, we will have slow roll inflation when $\ddot{\phi} \ll H \dot{\phi}$. This allows us to amend the second Friedman equation to read;
+\begin{equation*}
+3H \dot{\phi} \simeq -V_{, \phi}
+\end{equation*}
+\begin{definitionbox}[Slow Roll Equations]
+Together then we have the following slow roll dynamical equations;
+\begin{equation}
+H^2 = \frac{V}{3M_p^2}, \qquad 3H \dot{\phi} = -V_{, \phi}
+\end{equation}
+\end{definitionbox}
+We can take this analysis further and investigate the slow roll conditions in terms of the potential $V(\phi)$. Combining the equations above and noting that dividing the two gives, for example;
+\begin{equation*}
+\frac{\dot{\phi}}{H} = -M_p^2 \frac{V_{, \phi}}{V}
+\end{equation*}
+we define two new potential slow roll parameters\index{slow roll parameters};
+\begin{equation}
+\epsilon_V \coloneqq \epsilon = \frac{M_p^2}{2}\left(\frac{V_{, \phi}}{V}\right)^2
+\end{equation}
+\begin{equation}
+\eta_V \coloneqq 2\epsilon - \frac{1}{2}\eta = M_p^2 \frac{V_{, \phi\phi}}{V}
+\end{equation}
+which imply that the potential should either be very flat, or very large. An important quantity is of course the number of e-folds produced by a given model. This can be found via;
+\begin{equation*}
+N_{\text{tot}} = \int_{a_i}^{a_f}{\ud \log a} = \int_{t_i}^{t_f}{\upd{t} H} = \int_{\phi_i}^{\phi_f}{\upd{\phi} \frac{H}{\dot{\phi}}} = \int_{\phi_i}^{\phi_f}{\upd{\phi}\frac{1}{M_p\sqrt{2\epsilon_V}}}
+\end{equation*}
+Then for a given model we can see if $N_{\text{tot}} > 60$ as claimed earlier. Note here the dependence on the slow roll parameters; $\epsilon_V$ small ensures that the integrand, and hence $N_{\text{tot}}$ is large. On the other hand, $\eta_{V}$ small means inflation lasts for longer which again leads to an increase in $N_{\text{tot}}$. Now, whilst there are hundreds of inflation models, including those that are not single field of course, we can characterise them in at least one simple way, we have;
+\begin{itemize}
+\item \emph{Small field inflation:} this typically has $\set{V_{, \phi}, V_{, \phi\phi}}$ small and $V_{, \phi\phi} < 0$ so that the potential is very flat and decreasing, for example $V(\phi) = 1 - (\phi/\mu)^n$. In this case, inflation ends when the potential becomes too steep ($V_{, \phi}$ too large). 
+\item \emph{Large field inflation:} this typically has $V$ large with $V_{, \phi\phi} > 0$, for example $V = \exp(\phi/\mu)$. Now inflation ends because the field is travelling too fast ($\tfrac{1}{2}\dot{\phi}^2$ too big), violating the slow roll conditions. 
+\end{itemize}
+The reason for mentioning this distinction is the observational consequences of the two regimes. They can be distinguished between by the \emph{tensor to scalar ratio}, $r$, of gravitational waves produced during inflation. In short, if the potential is large, then fluctuations in $\phi$ will lead to large amplitude gravitational waves, and vice versa. This will be discussed further in later sections of this course as well as in \emph{Advanced Cosmology}. 
+
+\paraskip
+In both situations, we fall into a minimum of the potential so that we can approximate $V(\phi) \simeq \tfrac{1}{2}m^2 \phi^2$, so that the Klein-Gordon equation becomes;
+\begin{equation*}
+\ddot{\phi} + 3H \dot{\phi} = -m^2 \phi
+\end{equation*}
+The slow roll conditions no longer hold, so it is not true that $\ddot{\phi} \ll H \dot{\phi}$, and indeed, we actually look to neglect the middle term since $a(t)$ is not changing rapidly (recall that inflation is a period of massive expansion), so $H$ is no longer large. Thus we are left with $\ddot{\phi} = -m^2 \phi \Rightarrow \phi = \phi \cos mt$. We can then look to calculate;
+\begin{equation*}
+\langle \rho_\phi \rangle = \frac{1}{2}\langle \dot{\phi}^2 + m^2 \phi^2 \rangle \simeq \langle \dot{\phi}^2 \rangle
+\end{equation*}
+where the last equality follows by equipartition of energy for a harmonic oscillator potential, as in statistical mechanics. Furthermore;
+\begin{equation*}
+\langle \dot{\rho}_\phi \rangle = \langle \dot{\phi}\ddot{\phi} + V_{, \phi}\dot{\phi} \rangle = \langle \dot{\phi}(\ddot{\phi} + V_{, \phi})\rangle = -3H \langle \dot{\phi}^2 \rangle
+\end{equation*}
+So we see that;
+\begin{equation*}
+\langle \dot{\rho}_\phi \rangle = -3H \langle \rho_\phi \rangle \Rightarrow \langle \rho_\phi \rangle \sim a^{-3}
+\end{equation*}
+In other words, the inflaton energy density decays like a pressureless matter fluid. 
+\subsection{Reheating\index{reheating}}
+What happens after inflation? We ultimately need to convert the energy from $\phi$ into the Standard model particles. As a first attempt to describe a mechanism for this, consider introducing a coupling to some particle $\chi$ which might be a standard model particle itself or some dark matter intermediary. The Klein-Gordon equation then picks up an extra factor;
+\begin{equation*}
+\ddot{\phi} + (3H + \Gamma)\dot{\phi} = -V_{, \phi}
+\end{equation*}
+where $\Gamma$ is a decay rate characteristic for the transfer. Unfortunately this leads to a temperature $T_{\text{reh}} \sim \sqrt{\Gamma M_p} < 100 \,\,\text{GeV}$, so this is too slow to explain reheating. A better way to treat the phenomenon is to consider $\phi$ as a classically oscillating background to which $\chi$ is coupled, then $\chi$ is a quantum mechanically produced particle. The mode functions satisfy;
+\begin{equation*}
+\ddot{\chi}_k + \left(k^2 + m_X^2 + g^2 A_\phi^2 \sin^2 (m_\phi t)\right)\chi_k = 0
+\end{equation*} 
+With a substitution $z = m_\phi t$, this is the equation of a forced oscillator which leads to a resonance behaviour. This fact allows for very fast transfer of energy. Reheating such as this is often known as \emph{preheating}, and occurs fast with typically only a few oscillations in $\phi$, giving $T_{\text{reh}} > 100\,\,\text{GeV}$. As long as this does happen, there are few observational consequences, the Standard Model just thermalises. This last point leads to a challenge in determining the exact mechanism.\footnote{For more on this, see \href{https://arxiv.org/pdf/1001.2600.pdf}{ArXiV 1001.2600}}
+\subsection{Problems with Inflation}
+There are some issues with inflation as it stands, despite solving the horizon, flatness, relic problems\footnote{We haven't discussed the relic problem, but in short, suppose there were exotic particles present at the start of inflation, the exponential expansion will dilute these particle densities such that they are completely negligible in the context of Big Bang particle physics.} etc:
+\begin{enumerate}
+\item What is the inflaton, $\phi$? In the context of string theory, there are thousands of candidate scalar fields, so perhaps this is not too much of an issue.
+\item How natural is $V(\phi)$? We have seen that we need a very flat and/or very large field.
+\item Are there initial conditions, $\{\phi, \dot{\phi}\}$, that need to be realised? This leads to the \emph{measure problem}\index{measure problem}, how do you assign probabilities to these boundaries?\footnote{See for example \href{https://arxiv.org/pdf/hep-th/0609095.pdf}{this article} by Gibbons et al.}
+\end{enumerate}
+\subsubsection{Perhaps things aren't so bad?}
+So why should we believe inflation at all? It makes one other key prediction;
+\begin{quote}
+\emph{Inflation naturally produces a scale-invariant spectrum of density perturbations with a slight red-shift that is observed to high precision within the Cosmic Microwave Background.}
+\end{quote}
+We will attempt to understand this statement heuristically now, and postpone the exact analysis until later chapters. Firstly, we should understand why there are density fluctuations at all. This originates in the fact that $\phi(t)$ is a quantum field, and so fluctuates up and down the potential $V(\phi)$ in a non-homogeneous fashion. Simply, if $\phi$ fluctuates up the potential $V$, then the slow roll conditions persist for longer in that region of space, inflation lasts longer, and so the local scale factor increases more leading to an under density. The case is the opposite for $\phi$ fluctuating down the potential.
+
+\paraskip
+Next we should understand the scale invariant aspect. In slow roll inflation, since $\ddot{\phi} \sim 0$, we have $\dot{\phi} \sim \, \text{const.}$ so if we split $\phi$ into intervals $\Delta \phi_i$, we see that $\Delta t_i \simeq \Delta t_j$. In other words, we spend the same amount of time in each sector. Now;
+\begin{equation*}
+\Delta t_i = \Delta t_j \Rightarrow \Delta \log a_i = \Delta \log a_j \Rightarrow \Delta \log \lambda_i = \Delta \log \lambda_j
+\end{equation*}
+where $\lambda_i$ is the scale of the perturbation. Furthermore, $V \sim \,\text{const.}$, so the power in quantum perturbations in each interval is approximately the same, leading to equal power in equal $\log$ interval. This is characteristic of a scale invariant spectrum. 
+
+\paraskip
+Finally, $V$ is slowly decreasing, this means that there is slightly less power in later $\equiv$ smaller scales at an order of the slow roll parameters. Now, if we define the power spectrum; 
+\begin{equation*}
+\langle \delta \phi(\vec{k}) \delta \phi(\vec{k}\pr) \rangle = P(k) \delta(\vec{k} + \vec{k}\pr)
+\end{equation*}
+Then;
+\begin{equation*}
+\int{\upd{^3 k}P(k)} = 4\pi \int{k^2 \upd{k}P(k)} = 4\pi \int{\upd{\log k}k^3 P(k)}
+\end{equation*}
+Scale invariance then implies $P(k) \propto k^{-3}$. If we parametrise $P(k) \coloneqq Ak^{n_s - 4}$, then scale invariance is equivalent to $n_2 \equiv 1$. Experimentally we find $n_s = 0.96 \pm 0.02$, in line with our discussion above.
+\newpage
+\section{Cosmological Perturbation Theory}
+This section is the start of a journey that continues in \emph{Advanced Cosmology} to understand what happens when we move beyond the homogeneous, isotropic universe that we have discussed so far. What issues arise when we try to consider perturbations and fluctuations? What equations govern them? When does our initial linear description break down and when does it work well? Much of what follows is dressed in long equations and gauge choices but the following program should be kept in mind to see through this detail;
+\begin{enumerate}
+\item We start by perturbing around the background FRW metric, $\bar{g}_{\mu\nu}$, as $g_{\mu\nu} = \bar{g}_{\mu\nu} + \delta g_{\mu\nu}$, where $\delta g_{\mu\nu}$ is a linear perturbation to the metric. This of course induces perturbations to the Ricci tensor and the Einstein tensor, $G_{\mu\nu} = \bar{G}_{\mu\nu} + \delta G_{\mu\nu}$ at linear order. 
+\item The other component of the Einstein equation is the energy-momentum tensor, $T_{\mu\nu}$. This arises via a perturbation to the $4$-velocity which satisfies the normalisation constraint $g_{\mu\nu}U^{\mu}U^{\nu} = -1$.
+\item After perturbing both sides of $G_{\mu\nu} = 8\pi G T_{\mu\nu}$, it remains to compare either side at zeroth order and linear order. This will give us the background equations that we started from in the first section;
+\begin{equation*}
+\bar{G}_{\mu\nu} = 8\pi G \bar{T}_{\mu\nu}
+\end{equation*}
+As well as the new equations governing the metric and density perturbations, $\delta G_{\mu\nu} = 8\pi G \delta T_{\mu\nu}$. We have one final component that will allow us to solve this series of equations in the conservation of the energy momentum tensor, $\nabla_\mu T\indices{^{\mu}_{\nu}} = 0$. 
+\end{enumerate}
+At this point, it perhaps seems like there is no more work to do except expand on all of the items above and solve the resulting equations in some suitable sense. Unfortunately, general relativity has an inherent redundancy in that it is a covariant theory. In other words, the equations of motion (the Einstein equation) is invariant under a general diffeomorphism/change of co-ordinates. In other settings this does not necessarily pose an issue, however in this case our interest is physically motivated. Specifically we care about physical density perturbations and fluctuations in the spacetime metric. This is a brief explanation of the \emph{gauge problem}. To illustrate the point further, suppose we have a density perturbation. Then we can fix our spatial slices to be either constant density, $\delta \rho = 0$, or flat, $\delta g = 0$. We need to somehow reconcile the two views.\index{gauge problem}
+\subsection{Perturbed Metric}
+The most general perturbation to the FRW metric has $10$ degrees of freedom;
+\begin{equation}
+\ud s^2 = a(\tau)^2 \left(-(1 + 2A)\ud \tau^2 + 2B_i \ud x^i \ud \tau + (\delta_{ij} + h_{ij})\ud x^i \ud x^j\right)
+\end{equation}
+We can organise these degrees of freedom via a scalar-vector-tensor (SVT) decomposition;\index{SVT decomposition}
+\begin{align*}
+A &= A \\
+B_i &= \del_i B + B_i^V \\
+h_{ij} &= 2C\delta_{ij} + 2(\del_i \del_j - \tfrac{1}{3}\delta_{ij}\nabla^2)E + (\del_i E_j^V + \del_j E_i^V) + 2E_{ij}^T
+\end{align*}
+where;
+\begin{equation*}
+\del^i B_i^V = \del^i E_i^V = 0, \quad \del^i E_{ij}^T = \delta^{ij}E_{ij}^T = 0
+\end{equation*}
+which are the divergenceless and tranverse-traceless conditions respectively. If you count the degrees of freedom you will see that there are $3$ in $\set{A, B, C, E}$, $4$ in $\set{B_i^V, E_i^V}$, and $2$ in $E_{ij}^T$ (which represent the two polarisation modes). At this point we choose to simplify the analysis somewhat;
+\begin{itemize}
+\item Firstly, we note that the ``vorticity'' modes, $B_i^V, E_i^V$, decay as $a^{-2}$ which we can safely neglect.
+\item We will also neglect tensor modes for now. Note that this is not a completely trivial point as it is not immediately obvious that an initial tensor perturbation cannot induce a scalar perturbation. If you follow the equations of motion that arise with all perturbations included, you will find that the two do not mix, so this is a safe assumption.
+\end{itemize}
+This leaves us with the metric;
+\begin{dmath}
+\label{eq:metpert}
+\ud s^2 = a(\tau)^2 \left(-(1 + 2A)\ud \tau^2 + 2\del_i B \ud x^i \ud \tau + \left((1 + 2C)\delta_{ij} + 2(\del_i \del_j - \tfrac{1}{3}\delta_{ij}\nabla^2)E\right)\ud x^i \ud x^j\right)
+\end{dmath}
+\subsection{The Gauge Problem}\index{gauge problem}
+We want to consider what happens to the parameters in the metric \eqref{eq:metpert} under a general co-ordinate transformation;
+\begin{equation}
+\tilde{x}^{\mu} = x^{\mu} + \xi^\mu, \quad \tilde{\tau} = \tau + T, \quad \tilde{x}^i = x^i + \del^i L
+\end{equation}
+so that $\xi^0 = T$, $\xi^i = \del^i L$.\footnote{We have considered only scalar perturbations here in line with our discussion above. Note further that we could not have made a tensor perturbation; this is equivalent to the statement that tensor metric perturbations do not suffer from the gauge problem.} Under a general co-ordinate transformation, the invariance of the spacetime interval $\ud s^2$ gives the standard result;
+\begin{equation}
+g_{\mu\nu} = \frac{\del \tilde{x}^\alpha}{\del x^\mu}\frac{\del \tilde{x}^\beta}{\del x^\nu}\tilde{g}_{\alpha \beta}
+\end{equation}
+where $\ud s^2 = \tilde{g}_{\alpha \beta}\ud \tilde{x}^\alpha \ud \tilde{x}^\beta$. The expansion of the relation above is slightly non-trivial, and long. To motivate the calculation, we make a few remarks. Firstly, remember that $a(\tau)$ does change under this co-ordinate transformation; $a^2(\tilde{\tau}) = a^2(\tau)(1 + 2\hamilt T)$ to linear order. Secondly, to streamline the calculation, one should make sure to only keep quantities to at most linear order. We will give a couple of examples of how to complete these calculations below;
+
+\paraskip
+\hrule
+\subsubsection*{Example 1: $\tilde{A} = A - \hamilt T - T\pr$}
+We start from;
+\begin{equation*}
+g_{00} = \frac{\ud \tilde{x}^\alpha}{\ud x^{0}}\frac{\ud \tilde{x}^{\beta}}{\ud x^{0}}\tilde{g}_{\alpha \beta}
+\end{equation*}
+First observe that $\ud \tilde{x}^{i}/\ud x^{0}$ is already linear in perturbations, as is $\tilde{g}_{0i}$. Thus, to leading order, we have simply;
+\begin{equation*}
+g_{00} = \frac{\ud \tilde{x}^0}{\ud x^{0}}\frac{\ud \tilde{x}^{0}}{\ud x^0}\tilde{g}_{00}
+\end{equation*}
+So we find that, keeping terms at linear order in each line;
+\begin{align*}
+a^2(\tau)(1 + 2A) &= (1 + T\pr)^2 a^2(\tau + T)(1 + 2\tilde{A}) \\
+&= (1 + 2T\pr)\left(a^2(\tau) + 2T a\pr(\tau)a(\tau)\right)(1 + 2\tilde{A}) \\
+&= (1 + 2T\pr)a^2(\tau)\left(1 + 2\hamilt T\right)(1 + 2\tilde{A}) \\
+\Rightarrow 1 + 2A &= 1 + 2T\pr + 2\hamilt T + 2\tilde{A} \\
+\Rightarrow \tilde{A} &= A - T\pr - \hamilt T
+\end{align*}
+\subsubsection*{Example 2: $\tilde{B} = B + T - L\pr$}
+Here the relevant relation is;
+\begin{equation*}
+g_{0i} = \frac{\ud \tilde{x}^{\alpha}}{\ud x^{0}}\frac{\ud \tilde{x}^{\beta}}{\ud x^{i}}\tilde{g}_{\alpha\beta}
+\end{equation*}
+We consider the possible values of $(\alpha, \beta)$ separately;
+\begin{itemize}
+\item $\alpha = 0, \beta = 0$, we have;
+\begin{align*}
+\frac{\ud \tilde{x}^{0}}{\ud x^{0}} &= 1 + T\pr, \quad \frac{\ud \tilde{x}^{0}}{\ud x^{i}} = \del_i T, \\
+\tilde{g}_{00} &= -(1 + 2\tilde{A})a^{2}(\tau + T) = -a^{2}(\tau)(1 + 2\hamilt T)(1 + 2\tilde{A})
+\end{align*}
+This leads to a linear contribution of;
+\begin{equation*}
+-a^2(\tau) \del_i T
+\end{equation*}
+\item $\alpha = 0, \beta = j$;
+\begin{align*}
+\frac{\ud \tilde{x}^{0}}{\ud x^{0}} &= 1 + T\pr, \quad \frac{\ud \tilde{x}^{j}}{\ud x^{i}} = \delta\indices{^{i}_{j}} + \del_i \del^j L, \\
+\tilde{g}_{0j} &= a^{2}(\tau)(1 + 2\hamilt T)\del_j \tilde{B}
+\end{align*}
+which gives a linear contribution of;
+\begin{equation*}
+\delta\indices{^{i}_{j}}a^2(\tau)\del_j \tilde{B} = a^{2}(\tau)\del_i \tilde{B}
+\end{equation*}
+\item $\alpha = j, \beta = 0$ gives a second order contribution, so we neglect it.
+\item $\alpha = j, \beta = k$;
+\begin{align*}
+\frac{\ud \tilde{x}^{j}}{\ud x^{0}} &= \del^j L\pr, \quad \frac{\ud \tilde{x}^{k}}{\ud x^{i}} = \delta\indices{^{k}_{i}} + \cdots \\
+\tilde{g}_{jk} &= (\delta_{jk} + \cdots)a^2(\tau)
+\end{align*}
+which gives the leading order contribution;
+\begin{equation*}
+\del^{j}L\pr \delta\indices{^{k}_{i}} \delta_{jk} a^2(\tau) = \del_i L\pr a^2(\tau)
+\end{equation*}
+\end{itemize}
+Combining these results we find that;
+\begin{align*}
+a^2\tau \del_i B &= a^2(\tau)\left(\del_i(\tilde{B} - T + L\pr) + \cdots\right) \\
+\Rightarrow \tilde{B} &= B + T - L\pr
+\end{align*}
+\begin{definitionbox}[Gauge Transformation of Metric Perturbations]
+The other scalar perturbations follow in a similar manner for $g_{ij}$. Collecting the results we find that under a gauge transformation $x^{0} \mapsto x^{0} + T$, $x^{i} \mapsto x^{i} + \del^i L$;
+\begin{align}
+\tilde{A} &= A - T\pr - \hamilt T \\
+\tilde{B} &= B + T - L\pr \\
+\tilde{C} &= C - \hamilt T - \frac{1}{3}\nabla^2 L \\
+\tilde{E} &= E - L
+\end{align}
+\end{definitionbox}
+We're then left with a number of options as to how to proceed with the gauge problem;
+\begin{enumerate}
+\item We could only compute observables
+\item We could follow everything; the metric, matter and identify the gauge modes such as the fictitious density perturbation induced by $\tau \mapsto \tau + T$.
+\item We can \emph{fix a gauge}, which will be the approach taken in the majority of this course. Some popular gauge choices are;
+\begin{itemize}
+\item \textbf{Synchronous Gauge:} $A = B = 0$ which represents the case where we leave the temporal part of the metric unperturbed.
+\item \textbf{Spatially Flat Gauge:} $C = E = 0$ this results in a spatially flat metric.
+\item \textbf{Newtonian Gauge:} $B = E = 0$, in this gauge the metric is diagonal.
+\end{itemize}
+\item Work with gauge invariant quantities, it is easy to show that the \emph{Bardeen potentials};
+\begin{align}
+\psi_B &= A + \hamilt(B - E\pr) + (B - E\pr)\pr \\
+\phi_B &= -C - \hamilt(B - E\pr) + \frac{1}{3}\nabla^2 E
+\end{align}
+are gauge invariant. It will become important shortly that in the Newtonian gauge, these satisfy $\psi_B = A$, $\phi_B = -C$, so that the metric is $\ud s^2 = a^2\left(-(1 + 2\psi)\ud \tau^2 + (1 - 2\phi)\delta_{ij}\ud x^i \ud x^j\right)$. Then, when $\phi = \psi$, the potentials coincide with the Newtonian potential in the weak field limit.
+\end{enumerate}
+\subsection{Perturbed Matter}
+We have dealt with the left hand side of the Einstein equation now and discussed the various subtleties associated with it. We now turn to the right hand side and look at perturbations to the background energy momentum tensor;
+\begin{equation}
+\bar{T}\indices{^{\mu}_{\nu}} = (\bar{\rho} + \bar{P})\bar{U}^\mu \bar{U}_\nu + \bar{P}\delta\indices{^{\mu}_{\nu}}
+\end{equation}
+where $\bar{U}^\mu = a^{-1}(1, \mathbf{0})$. Then, the perturbation to the energy momentum tensor at linear order looks like;
+\begin{equation}
+\delta T\indices{^{\mu}_{\nu}} = (\delta \rho + \delta P)\bar{U}^\mu \bar{U}_\nu + (\bar{\rho} + \bar{P})(\delta U^{\mu}\bar{U}_\nu + \bar{U}^\mu \delta U_\nu) + \delta P \delta\indices{^{\mu}_{\nu}} + \Pi\indices{^{\mu}_{\nu}}
+\end{equation}
+where $\Pi\indices{^{\mu}_{\nu}}$ is the \emph{anisotropic stress}\index{anisotropic stress}. We will spend a brief amount of time thinking about the precise amount of freedom within $\Pi\indices{^{\mu}_{\nu}}$;
+\begin{itemize}
+\item For each $\nu$, in a direction $\bar{U}^\mu$, we can absorb the perturbation $\Pi\indices{^{\mu}_{\nu}}$ into the energy density, $\delta \rho$. So we are free to consider $\Pi\indices{^{\mu}_{\nu}}$ such that;
+\begin{equation}
+\bar{U}_\mu \Pi\indices{^{\mu}_{\nu}} = 0 \Rightarrow \Pi_{0\nu} = 0
+\end{equation}
+\item The first observation leaves us with $\Pi_{ij}$. We now note that we can absorb the trace of this perturbation into $\delta P \delta\indices{^{\mu}_{\nu}}$, so we consider $\Pi_{ij}$ to be traceless. If we are only considering scalar perturbations then, we can write;
+\begin{equation}
+\Pi_{ij} = \left(\del_i \del_j - \frac{1}{3}\nabla^2 \delta_{ij}\right)\Pi
+\end{equation}
+\end{itemize}
+So, having set up the form of the perturbations to $T\indices{^{\mu}_{\nu}}$, it remains to calculate $\delta U^{\mu}$. To do this, we use the canonical normalisation that $\tilde{g}_{\mu\nu} \bar{U}^\mu \bar{U}^\nu = g_{\mu\nu}U^\mu U^\nu = -1$. Writing $U^\mu = \bar{U}^\mu + \delta U^\mu$, we see that;
+\begin{align*}
+\delta g_{\mu\nu}\bar{U}^\mu \bar{U}^\nu + 2\bar{U}_\mu \delta U^\mu &= 0 \\
+\Rightarrow -2A - 2a \delta U^0 &= 0 \\
+\Rightarrow \delta U^0 &= -\frac{1}{a}A
+\end{align*}
+This is the only constraint on the perturbations to the $4$-velocity, so we can make the choice;
+\begin{equation}
+U^\mu = \frac{1}{a}(1 - A, \vec{v})
+\end{equation}
+where $v^i = \del^i v$ for scalar perturbations. This allows us to calculate $U_\mu = g_{\mu\nu}U^\nu$;
+\begin{align*}
+U_0 &= g_{0\nu}U^\nu = g_{00}U^0 + g_{0i}U^i \\
+&= -a^2(1 + 2A)\left(\frac{1}{a}(1 _ A)\right) = -a(1 + A)
+\end{align*}
+where we have neglected the second term since it is second order. Then also;
+\begin{align*}
+U_{i} &= g_{i0}U^0 + g_{ij}U^j \\
+&= a^2 \del_i B \left(\frac{1}{a}\right) + a^2 \delta_{ij}\frac{1}{a}\del^j v \\
+&= a \del_i(B + v)
+\end{align*}
+So we find that;
+\begin{equation}
+U_{\mu} = a\left(-(1 + A), \del_i(B + v)\right)
+\end{equation}
+It is then a relatively simple task to calculate the perturbations $\delta T\indices{^{\mu}_{\nu}}$ in terms of the quantities defined above. We find, for example;
+\begin{align*}
+\delta T\indices{^{0}_{0}} &= (\delta \rho + \delta P)U^0 U_0 + (\bar{\rho} + \bar{P})\delta U^0 U_0 + (\bar{\rho} + \bar{P})U^0 \delta U_0 + \delta P \\
+&= -(\delta \rho + \delta P)(1 - A)(1 + A) + (\bar{\rho} + \bar{P})(-A)\left(-(1 + A)\right) \\
+&\qquad \qquad \qquad+ (\bar{\rho} + \bar{P})(-A)(1 - A) + \delta P \\
+&= -\delta \rho + (-\delta P + \delta P) = -\delta \rho
+\end{align*}
+\begin{definitionbox}[Perturbations to the Energy-Momentum Tensor]
+We can perform an identical calculation for the other components. Collecting these up, we find;
+\begin{align}
+\delta T\indices{^{0}_{0}} &= -\delta \rho \\
+\delta T\indices{^{0}_{i}} &= (\bar{\rho} + \bar{P})\del_i(v + B) \\
+\delta T\indices{^{i}_{0}} &= -(\bar{\rho} + \bar{P})\del^i v \coloneqq - \del^i q \\
+\delta T\indices{^{i}_{j}} &= \delta P \delta\indices{^{i}_{j}} + \left(\del^i \del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\Pi
+\end{align}
+\end{definitionbox}
+where we have introduced the $3$-momentum density $q$, so that for multi-component universes, we can deduce;
+\begin{equation}
+\delta \rho = \sum_{I}{\delta \rho_I}, \quad \delta P = \sum_{I}{\delta P_I}, \quad q = \sum_{I}{q_{I}}, \quad \Pi = \sum_{I}{\Pi_I}
+\end{equation}
+We are now in a position to consider the transformation of the energy momentum tensor under a gauge transformation. Again, we have a standard result that a rank $(1,1)$ tensor transforms as;
+\begin{equation*}
+T\indices{^{\mu}_{\nu}} = \frac{\ud x^\mu}{\ud \tilde{x}^\alpha}\frac{\ud \tilde{x}^\beta}{\ud x^\nu}\tilde{T}\indices{^{\alpha}_{\beta}}
+\end{equation*}
+To proceed note that $T\indices{^{\mu}_{\nu}} = \bar{T}\indices{^{\mu}_{\nu}} + \delta T\indices{^{\mu}_{\nu}}$, and $\bar{T\indices{^{0}_{0}}} = -\bar{\rho}(\tau)$, $\bar{T}\indices{^{0}_{i}} = \bar{T}\indices{^{i}_{0}} = 0$, $\bar{T}\indices{^{i}_{j}} = \bar{P}\delta\indices{^{i}_{j}}$. As before we will do a few examples to illustrate the method;
+
+\paraskip
+\hrule
+\subsubsection*{Example 1: $\tilde{\delta \rho} = \delta \rho - T \bar{\rho}\pr$}
+Note first that only $\alpha = 0, \beta = 0$ gives a linear contribution; the rest are second order or higher, then;
+\begin{align*}
+\frac{\ud x^0}{\ud \tilde{x}^0} &= 1 - T\pr, \quad \frac{\ud \tilde{x}^0}{\ud x^0} = 1 + T\pr, \\
+\tilde{T}\indices{^{0}_{0}} &= -\bar{\rho}(\tau + T) - \tilde{\delta \rho} = -\bar{\rho}(\tau) - T \bar{\rho}\pr - \tilde{\delta \rho} + \cdots
+\end{align*}
+So we see that to first order;
+\begin{align*}
+-\bar{\rho}(\tau) - \delta \rho &= -\bar{\rho}(\tau) - T\bar{\rho}\pr - \tilde{\delta \rho} \\
+\Rightarrow \tilde{\delta \rho} &= \delta \rho - T \bar{\rho}\pr
+\end{align*}
+\subsubsection*{Example 2: $\tilde{\delta P} = \delta P - T\bar{P}\pr$, $\tilde{\Pi} = \Pi$}
+\begin{align*}
+T\indices{^{i}_{j}} &= \bar{P}(\tau) \delta\indices{^{i}_{j}} + \delta P \delta\indices{^{i}_{j}} + \left(\del^i \del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\Pi \\
+\tilde{T}\indices{^{i}_{j}} &= \bar{P}(\tau + T)\delta\indices{^{i}_{j}} + \tilde{\delta P} \delta\indices{^{i}_{j}} + \left(\del^i \del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\tilde{\Pi} \\
+&= \bar{P}(\tau)\delta\indices{^{i}_{j}} + T\bar{P}\pr(\tau)\delta\indices{^{i}_{j}}+ \tilde{\delta P} \delta\indices{^{i}_{j}} + \left(\del^i \del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\tilde{\Pi}
+\end{align*}
+Then we consider the cases separately;
+\begin{itemize}
+\item $\alpha = 0, \beta = 0$ is a second order contribution because;
+\begin{equation*}
+\frac{\ud x^i}{\ud \tilde{x}^0} = -\del_i T, \quad \frac{\ud \tilde{x}^0}{\ud x^j} = \del_j T
+\end{equation*}
+\item $\alpha = m, \beta = n$;
+\begin{equation*}
+\frac{\ud x^i}{\ud \tilde{x}^m} = \delta\indices{^{i}_{m}} - \del_m \del^i L, \quad \frac{\ud \tilde{x}^n}{\ud x^j} = \delta\indices{^{n}_{j}} + \del_j \del^n L
+\end{equation*}
+\item $\alpha = 0, \beta = m$ and $\alpha = m, \beta = 0$ are both second order because $\bar{T}\indices{^{0}_{i}} = \bar{T}\indices{^{i}_{0}} = 0$ and $\ud \tilde{x}^0 / \ud x^i = \del_i T$ etc.
+\end{itemize}
+So putting together the first order contributions, we see that;
+\begin{align*}
+&\bar{P}(\tau)\delta\indices{^{i}_{j}} + \delta P \delta\indices{^{i}_{j}} + \left(\del^i \del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\Pi \\
+&\quad = (\delta\indices{^{i}_{m}} - \del_m \del^i L)(\delta\indices{^{n}_{j}} + \del_j \del^n L)\left(\bar{P}(\tau) \delta \indices{^{m}_{n}} + T\bar{P}\pr \delta\indices{^{m}_{n}} + \tilde{\delta P}\delta\indices{^{m}_{n}} \right.\\
+&\qquad \qquad \qquad \qquad \left. + \left(\del^m \del_n - \frac{1}{3}\nabla^2 \delta\indices{^{m}_{n}}\right)\tilde{\Pi}\right) \\
+&\quad = \bar{P}(\tau)\delta\indices{^{i}_{j}} + T \bar{P}\pr \delta\indices{^{i}_{j}} + \tilde{\delta P}\delta\indices{^{i}_{j}} + \left(\del^i\del_j - \frac{1}{3}\nabla^2 \delta\indices{^{i}_{j}}\right)\tilde{\Pi}
+\end{align*}
+Comparing the tensor structure (by taking the trace for example), we find that;
+\begin{align*}
+\delta P &= T\bar{P}\pr + \tilde{\delta P} \Rightarrow \tilde{\delta P} = \delta P - T\bar{P}\pr \\
+\tilde{\Pi} &= \Pi
+\end{align*}
+\begin{definitionbox}[Gauge Transformation of Matter Perturbations]
+Collecting all the results we find that under a gauge transformation;
+\begin{align}
+\tilde{\delta \rho} &= \delta \rho - T \bar{\rho}\pr \\
+\tilde{\delta P} &= \delta P - T \bar{P}\pr \\
+\tilde{v} &= v + L\pr \\
+\tilde{\Pi} &= \Pi
+\end{align}
+\end{definitionbox}
+Now, since the matter perturbations change under a gauge transformation, we can make a gauge choice to remove them as a degree of freedom. There are two popular gauge matter choices;
+\begin{itemize}
+\item \textbf{Uniform Density Gauge:}\index{gauge!uniform density} $\delta \rho = B = 0$ where spatial slices follow surfaces of constant density.
+\item \textbf{Comoving Gauge:}\index{gauge!comoving} $v = B = 0$ where spatial slices move with the fluid. 
+\end{itemize}
+In a similar way to the metric perturbations we can find a gauge invariant quantity, known as the \emph{comoving density contrast}, $\Delta$\index{comoving density contrast};
+\begin{equation}
+\Delta = \frac{\delta \rho}{\bar{\rho}} + \frac{\bar{\rho}\pr}{\rho}(v + B)
+\end{equation}
+Note that in comoving gauge, we have $\Delta = \delta \rho / \bar{\rho} \equiv \delta$, the density contrast. We are now in a position to plug the results we've found into the Einstein equation to investigate how the perturbed modes evolve. More generally, note that there are $8$ scalar quantities that characterise the perturbations ($A, B, C, E, \delta \rho, \delta P, v, \Pi$). A gauge transformation is parametrised by $2$ scalar functions, $T$ and $L$. With a gauge choice, we can remove any two scalar perturbations, leaving $6$ physical degrees of freedom. We will see this manifest in the next section where we find $4$ equations of motion from the Einstein equation, and two further constraint equations from conservation of the energy momentum tensor, giving $6$ in total.
+\subsection{Linearised Equations}
+As we alluded to earlier, one way to solve the gauge problem is to work in a specific gauge and compute gauge invariant quantities with that choice. We will work in Newtonian gauge where $B = E = 0$, so that the metric is diagonal;
+\begin{equation*}
+g_{\mu\nu} = a^2 \twobytwo{-(1 + 2\psi)}{0}{0}{(1 - 2\phi)\delta_{ij}}, \quad g^{\mu\nu} = \frac{1}{a^2}\twobytwo{-(1 - 2\psi)}{0}{0}{(1 + 2\phi)\delta^{ij}}
+\end{equation*}
+To proceed, we need to find the perturbations to the Christoffel symbols (which are of course induced by the metric perturbations). Using;
+\begin{equation*}
+\Gamma\indices{^{\mu}_{\nu\rho}} = \frac{1}{2}g^{\mu\sigma}(g_{\sigma\rho, \nu} + g_{\sigma\rho, \nu} - g_{\nu\rho, \sigma})
+\end{equation*}
+\begin{definitionbox}[Perturbed Christoffel Symbols]
+After much calculation we will find that;
+\begin{align}
+\Gamma\indices{^{0}_{00}} &= \hamilt + \psi\pr \\
+\Gamma\indices{^{0}_{0i}} &= \del_i \psi \\
+\Gamma\indices{^{0}_{ij}} &= \left(\hamilt - \left(\phi\pr + 2\hamilt(\phi + \psi)\right)\right)\delta_{ij} \\
+\Gamma\indices{^{i}_{00}} &= \del^i \psi \\
+\Gamma\indices{^{i}_{0j}} &= (\hamilt - \phi\pr)\delta\indices{^{i}_{j}} \\
+\Gamma\indices{^{i}_{jk}} &= (\delta_{jk}\del^i - 2\delta\indices{^{i}_{(j}}\del_{k)})\phi = \del^i \phi \delta_{jk} - \del_k \phi \delta\indices{^{i}_{j}} - \del_j \phi \delta\indices{^{i}_{k}}
+\end{align}
+\end{definitionbox}
+\subsubsection{Constraint Equations}
+As mentioned above, we can calculate the constraint equations using $\nabla_\mu T\indices{^{\mu}_{\nu}} = 0$, expanding out the definition we have;
+\begin{equation*}
+\del_\mu T\indices{^{\mu}_{\nu}} + \Gamma\indices{^{\mu}_{\mu \alpha}}T\indices{^{\alpha}_{\nu}} - \Gamma\indices{^{\alpha}_{\mu\nu}}T\indices{^{\mu}_{\alpha}} = 0
+\end{equation*}
+This is a particularly long calculation, but ultimately just involves plugging in the expressions we have found above into the covariant derivative. We can organise the computation into $\nu = 0$ and $\nu = i$. For $\nu = 0$, we find that;
+\begin{multline*}
+-\bar{\rho}\pr - \delta \rho\pr - \nabla^2 q - 3\hamilt \bar{\rho} - 3\hamilt \delta \rho + 3\phi\pr \bar{\rho} - 3\hamilt \bar{P} + 3\bar{p}\phi\pr - 3\hamilt \delta P = 0
+\end{multline*}
+We can then compare the orders of the relevant terms to find two equations;
+\begin{align*}
+\bar{\rho}\pr &= -3\hamilt (\bar{\rho} + \bar{P}) \\
+\delta \rho \pr &= -3\hamilt(\delta \rho + \delta P) + 3\phi\pr(\bar{\rho} + \bar{P}) - \nabla \cdot \vec{q}
+\end{align*}
+where $q^i = \del^i q$. Now, the first of these is just the continuity equation we found previously in the absence of perturbations.. The second has three terms which we can interpret as follows;
+\begin{itemize}
+\item $-3\hamilt(\delta\rho + \delta P)$ represents the dilution of density perturbations due to expansion
+\item $3\phi\pr(\bar{\rho} + \bar{P})$ is a result of the perturbed expansion
+\item $\nabla \cdot \vec{q}$ is the net fluid flow
+\end{itemize}
+We make the following definitions;
+\begin{equation}
+w \coloneqq \frac{\bar{P}}{\bar{\rho}}, \qquad c_s^2 \coloneqq \frac{\delta P}{\delta \rho}
+\end{equation}
+Then, dividing the first order equation through by $\bar{\rho}$;
+\begin{align*}
+\frac{\delta \rho\pr}{\bar{\rho}} &= -3\hamilt\left(\frac{\delta \rho}{\bar{\rho}} + \frac{\delta P}{\bar{\rho}}\right) + 3\phi\pr\left(1 + \frac{\bar{P}}{\bar{\rho}}\right) - \frac{1}{\bar{\rho}}\nabla\cdot\vec{q} \\
+&= - \frac{3\hamilt \delta \rho}{\bar{\rho}}\left(1 + \frac{\delta P}{\delta \rho}\right) + 3\phi\pr\left(1 + \frac{\bar{P}}{\bar{\rho}}\right) - \frac{1}{\bar{\rho}}\nabla\cdot \vec{q} \\
+&= - 3\hamilt \delta (1 + c_s^2) + 3\phi\pr(1 + w) - \frac{1}{\bar{\rho}}\nabla\cdot\vec{q}
+\end{align*}
+At this point, note that;
+\begin{align*}
+\nabla\cdot\vec{q} &= \nabla \cdot\left((\bar{\rho} + \bar{P})\vec{v}\right) = (\bar{\rho} + \bar{P})\nabla\cdot\vec{v} \\
+\Rightarrow \frac{1}{\bar{\rho}}\nabla\cdot\vec{q} &= (1 + w)\nabla\cdot\vec{v}
+\end{align*}
+So we find;
+\begin{equation*}
+\frac{\delta \rho\pr}{\bar{\rho}} = -3\hamilt \delta (1 + c_s^2) + 3\phi\pr(1 + w)- (1 + w)\nabla\cdot\vec{v}
+\end{equation*}
+Finally;
+\begin{align*}
+\delta\pr &= \frac{\delta \rho\pr}{\bar{\rho}} - \frac{\bar{\rho}\pr \delta \rho}{\bar{\rho}^2} \\
+\Rightarrow \frac{\delta \rho\pr}{\bar{\rho}} = \delta\pr + \frac{\bar{\rho}\pr \delta \rho}{\bar{\rho}^2} \\
+&= \delta\pr + \delta \frac{\bar{\rho}\pr}{\bar{\rho}} \\
+&= \delta\pr - 3\hamilt(1+ w) \delta 
+\end{align*}
+Putting this together then we see;
+\begin{equation*}
+\delta\pr = 3\hamilt(1 + w)\delta - 3\hamilt \delta(1 + c_s^2) + (1 + w)(3\phi\pr - \nabla\cdot\vec{v})
+\end{equation*}
+Thus we have the constraint equation;
+\begin{equation}
+\delta\pr + (1 + w)(\nabla\cdot\vec{v} - 3\phi\pr) + 3\hamilt(c_s^2 - w)\delta = 0
+\end{equation}
+We can do the same for $\nu = i$. Here there is no zeroth order term, and we find;
+\begin{equation*}
+\vec{v}\pr = -\hamilt \vec{v} + 3\hamilt \frac{\bar{P}\pr}{\bar{\rho}\pr}\vec{v} - \frac{\nabla \delta P}{\bar{\rho} + \bar{P}} - \nabla \psi
+\end{equation*}
+Now we interpret the $4$ terms as follows;
+\begin{itemize}
+\item $\hamilt \vec{v}$ is the redshift due to expansion
+\item $3\hamilt \bar{P}\pr \vec{v}/\bar{\rho}\pr$ is the relativistic correction to the redshift
+\item $\nabla \delta P / (\bar{\rho} + \bar{P})$ describes the effect of pressure gradients
+\item $\nabla \psi$ is the gravitational potential
+\end{itemize}
+Again, noting that;
+\begin{equation*}
+\frac{\nabla \delta P}{\bar{\rho} + \bar{P}} = \frac{\nabla(c_s^2 \delta \rho)}{\bar{\rho} + \bar{P}} = \frac{\bar{\rho}c_s^2 \nabla \delta}{\bar{\rho} + \bar{P}} = \frac{c_s^2 \nabla \delta}{1 + w}
+\end{equation*}
+So we can rearrange the expression above to give;
+\begin{equation}
+\vec{v}\pr + \hamilt\left(1 - 3\frac{\bar{P}\pr}{\bar{\rho}\pr}\right)\vec{v} = -\frac{c_s^2}{1 + w}\nabla \delta - \nabla \psi
+\end{equation}
+\begin{definitionbox}[Constraint Equations]
+Before moving on to the Einstein equation, we will just bring together the relevant expressions from this section;
+\begin{align}
+\bar{\rho}\pr &= -3\hamilt (\bar{\rho} + \bar{P}) \\
+\delta \rho\pr &= -3\hamilt(\delta \rho + \delta P) + 3\phi\pr(\bar{\rho} + \bar{P}) - \nabla\cdot\vec{q}
+\end{align}
+which together imply that;
+\begin{equation}
+\delta\pr + (1 + w)(\nabla\cdot \vec{v} - 3\phi\pr) + 3\hamilt(c_s^2 - w)\delta = 0
+\end{equation}
+We also found the relativistic form of the Euler equation for a perfect fluid;
+\begin{equation}
+\vec{v}\pr + \hamilt\left(1 - 3\frac{\bar{P}\pr}{\bar{\rho}\pr}\right)\vec{v} = -\frac{c_s^2}{1 + w}\nabla \delta - \nabla \psi
+\end{equation}
+\end{definitionbox}
+\subsubsection{The Einstein Equation}
+We now want to compute the linear equations that arise from $\bar{G}_{\mu\nu} + \delta G_{\mu\nu} = 8\pi G(\bar{T}_{\mu\nu} + \delta T_{\mu\nu})$. To do this we need the Ricci tensor, $R_{\mu\nu}$ and the Ricci scalar $R = g^{\mu\nu}R_{\mu\nu}$.
+\subsubsection*{The Ricci Tensor}
+This is another extensive calculation, which involves simply making use of the perturbed Christoffel symbols and the relation;
+\begin{equation}
+R_{\mu\nu} = \del_\lambda \Gamma\indices{^{\lambda}_{\mu\nu}} - \del_\nu \Gamma\indices{^{\lambda}_{\mu\lambda}} + \Gamma\indices{^{\lambda}_{\lambda\rho}}\Gamma\indices{^{\rho}_{\mu\nu}} - \Gamma\indices{^{\rho}_{\mu\lambda}}\Gamma\indices{^{\lambda}_{\nu\rho}}
+\end{equation}
+We will just give the final results of this calculation here as an intermediate stage to get to the full Einstein tensor;
+\begin{align*}
+R_{00} &= -3\hamilt\pr + \nabla^2 \psi + 3\phi^{\prime\prime} + 3\hamilt(\phi\pr + \psi\pr) \\
+R_{0i} &= 2\del_i \phi\pr + 2\hamilt \del_i \psi \\
+R_{ij} &= \left(\hamilt\pr + 2\hamilt^2 - \phi^{\prime\prime} + \nabla^2 \phi - 2(\hamilt\pr + 2\hamilt^2)(\phi + \psi) - \hamilt\psi\pr - 5\hamilt \phi\pr\right) \delta_{ij} \\
+& \qquad \qquad \qquad \qquad \qquad \qquad + \del_i \del_j (\phi - \psi)
+\end{align*}
+\subsubsection*{The Ricci Scalar}
+From here it is relatively easy to calculate the Ricci scalar, $R$, although there are about $20$ terms to deal with. At the end of the day, we find that to first order, we have;
+\begin{multline*}
+a^2 R = 6\hamilt\pr - 12\hamilt\pr \psi - 2\nabla^2 \psi - 18 \hamilt \phi\pr - 6\hamilt \psi\pr - 6\phi^{\prime\prime} + 6\hamilt^2 \\ + 4\nabla^2 \phi - 12\hamilt^2 \psi
+\end{multline*}
+\subsubsection*{The Einstein Tensor}
+It then remains just to sum up the two contributions above in the Einstein tensor;
+\begin{equation*}
+G_{\mu \nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R
+\end{equation*}
+Again, after neglecting second order contributions, and simplifying lots of terms, we find the results;
+\begin{align*}
+G_{00} &= 3\hamilt^2 + 2\nabla^2 \phi - 6\hamilt \phi\pr \\
+G_{0i} &= 2\del_i(\phi\pr + \hamilt \psi) \\
+G_{ij} &= -(2\hamilt\pr + \hamilt^2)\delta_{ij} + \del_i \del_j (\phi - \psi) \\
+&\quad \qquad+ \left(\nabla^2(\psi - \phi) + 2\phi^{\prime\prime} + 2(2\hamilt\pr + \hamilt^2)(\phi + \psi) + 2\hamilt \psi\pr + 4\hamilt \phi\pr\right)\delta_{ij}
+\end{align*}
+\subsubsection*{Effect of Anisotropic Stress}
+We can now work with $G_{\mu\nu} = 8\pi G T_{\mu\nu}$. We first turn our attention to the non-isotropic (i.e. the terms not proportional to $\delta_{ij}$) part of $G_{ij} = 8\pi G T_{ij}$. We find that;
+\begin{equation}
+\left(\del_i \del_j - \frac{1}{3}\delta_{ij}\nabla^2\right)(\phi - \psi - \Pi) = 0
+\end{equation}
+Thus, in the absence of anisotropic stress, $\Pi = 0$, we have;
+\begin{equation}
+\phi = \psi
+\end{equation}
+From now on we will assume this to be the case and work with the single potential $\phi$.
+\subsubsection*{The Linearised Equations}
+The other components of the Einstein equation give;
+\begin{itemize}
+\item $G_{00} = 8\pi G T_{00}$ leads to;
+\begin{align*}
+3\hamilt^2 + 2\nabla^2 \phi - 6\hamilt \phi\pr &= 8\pi G g_{0\mu} T\indices{^{\mu}_{0}} \\
+&= 8\pi G g_{00} T\indices{^{0}_{0}} \\
+&= 8\pi Ga^2 (1 + 2\phi)(\bar{\rho} + \delta \rho)\\
+&= 8\pi Ga^2(\bar{\rho} + 2\phi \bar{\rho} + \delta \rho)
+\end{align*}
+From which we can read off the zeroth order equation;
+\begin{equation*}
+3\hamilt^2 = 8\pi G a^2 \bar{\rho}
+\end{equation*}
+which is just the Friedmann equation we found earlier written in conformal time, and the linear order correction;
+\begin{align*}
+2\nabla^2 \phi - 6\hamilt \phi\pr &= 16\pi G a^2 \phi \bar{\rho} + 8\pi Ga^2 \delta \rho \\
+\Rightarrow \nabla^2 \phi &= 4\pi G a^2 \bar{\rho} \delta + 3\hamilt(\phi\pr + \hamilt \phi)
+\end{align*}
+where we have used the zeroth order equation to simplify the second term.
+\item $G_{0i} = 8\pi G T_{0i}$ gives;
+\begin{align*}
+2\del_i(\phi\pr + \hamilt \phi) &= 8\pi G g_{i\mu}T\indices{^{\mu}_{0}} = 8\pi G g_{ij}T\indices{^{j}_{0}} \\
+&= 8\pi G a^2 (1 - 2\phi)(-\del^j q)\delta_{ij} = -8\pi G a^2 (1 - 2\phi) \del_i q \\
+\Rightarrow \del_i(\phi\pr + \hamilt \phi) &= -4\pi Ga^2 q_i = -4\pi Ga^2 (\bar{\rho} + \bar{P})\del_i v \\
+\Rightarrow \phi\pr + \hamilt \phi &= -4\pi G a^2 (\bar{\rho} + \bar{P})v
+\end{align*}
+\item The trace part of $G_{ij} = 8\pi GT_{ij}$ gives;
+\begin{align*}
+&G\indices{^{i}_{i}} = 8\pi G T\indices{^{i}_{i}} = 3\cdot8\pi G(\bar{P} + \delta P) \\
+&\Rightarrow 3a^{-2}\left(-(2\hamilt\pr + \hamilt^2) - 2\left(\phi^{\prime\prime} + 3\hamilt \phi\pr + (2\hamilt\pr + \hamilt^2)\phi\right)\right) \\
+&\qquad \qquad \qquad \qquad \qquad= 3\cdot8\pi G(\bar{P} + \delta P)
+\end{align*}
+which again, we can read off two equations. The zeroth order equation is just the acceleration equation in conformal time;
+\begin{equation*}
+2\hamilt\pr + \hamilt^2 = -8\pi Ga^2 \bar{P} \\
+\end{equation*}
+Then the leading order correction is;
+\begin{equation*}
+\phi^{\prime\prime} + 3\hamilt \phi\pr + (2\hamilt\pr + \hamilt^2)\phi = 4\pi Ga^2 \delta P
+\end{equation*}
+\end{itemize}
+Now, in a similar way to the constraint equations, we can combine these equations together. First use the fact that $\phi\pr + \hamilt\phi = -4\pi Ga^2 (\bar{\rho} + \bar{P})v$ to see that;
+\begin{align*}
+\nabla^2 \phi &= 4\pi Ga^2 \bar{\rho} \delta + 3\hamilt\left(-4\pi Ga^2 (\bar{\rho} + \bar{P})v\right) \\
+&= 4\pi G a^2\left(\bar{\rho}\delta - 3\hamilt (\bar{\rho} + \bar{P})v\right)
+\end{align*}
+Now recall the definition of the comoving density constrast, $\Delta$. We are working in Newtonian gauge so that $B = 0$, then;
+\begin{align*}
+\Delta &= \frac{\delta \rho}{\bar{\rho}} + \frac{\bar{\rho}\pr}{\bar{\rho}}v \\
+\Rightarrow \bar{\rho}\Delta &= \delta \rho - 3\hamilt(\bar{\rho} + \bar{P})v \\
+&= \bar{\rho}\delta - 3\hamilt(\bar{\rho} + \bar{P})v
+\end{align*}
+Substituting into the equation above, we find the Poisson equation;
+\begin{equation*}
+\nabla^2 \phi = 4\pi Ga^2 \bar{\rho} \Delta
+\end{equation*}
+\begin{definitionbox}[Perturbed Einstein Equations]
+As we have done in previous sections, we now summarise the results of the calculations above. Firstly, the trace-free part of $G_{ij} = 8\pi G T_{ij}$ set $\phi = \psi$ for $\Pi = 0$ via;
+\begin{equation}
+\left(\del_i \del_j - \frac{1}{3}\nabla^2 \delta_{ij}\right)(\phi - \psi - \Pi) = 0
+\end{equation}
+Then, the $G_{00} = 8\pi G T_{00}$ equation gave a zeroth order part, the Friedmann equation, and a first order relation;
+\begin{align}
+3\hamilt^2 &= 8\pi Ga^2 \bar{\rho} \\
+\nabla^2 \phi &= 4\pi G a^2 \bar{\rho}\delta + 3\hamilt(\phi\pr + \hamilt \phi)
+\end{align}
+The $G_{0i} = 8\pi GT_{0i}$ was first order to begin with so gives only one relation;
+\begin{equation}
+\phi\pr + \hamilt \phi = -4\pi G a^2 q
+\end{equation}
+Finally, the trace-part of $G_{ij} = 8\pi GT_{ij}$ gives two more equations. The zeroth order equation is just the acceleration equation, with a first order correction.
+\begin{align}
+2\hamilt\pr + \hamilt^2 &= -8\pi G a^2 \bar{P} \\
+\phi^{\prime\prime} + 3\hamilt \phi\pr + (2\hamilt\pr + \hamilt^2)\phi &= 4\pi Ga^2 \delta P
+\end{align}
+These can then be combined to give the Poisson equation;
+\begin{equation}
+\nabla^2 \phi = 4\pi G a^2 \bar{\rho} \Delta = \frac{3}{2}\hamilt^2 \Delta
+\end{equation}
+\end{definitionbox}
+\subsection{Adiabatic Perturbations}
+We mentioned at the end of the chapter on Inflation that since $\phi\pr \simeq 0$, we can equate $\delta \phi \simeq \delta \tau$. In other words we can view $\phi$ as a primordial clock that governs, \emph{locally}, when inflation stops. This induces a perturbation in the density and pressure of all fluids via;
+\begin{equation}
+\delta X = \bar{X}(\tau + \delta \tau) - \bar{X} = \bar{X}\pr\delta \tau
+\end{equation}
+These are known as \emph{adiabatic} or \emph{curvature} perturbations. From this we can read off that;
+\begin{equation}
+\delta \tau = \frac{\delta \rho_I}{\bar{\rho}_{I}\pr} = \frac{\delta P_{I}}{\bar{P}_I\pr}
+\end{equation}
+which holds for all species $I$. From this relationship, we first note that;\footnote{This is the origin of the term adiabatic perturbations. The first law gives $\ud \rho = T \ud S - p \ud V$. For adiabatic variations $\ud S = 0$.}
+\begin{equation}
+c_s^2 = \frac{\delta P}{\delta \rho} = \frac{\bar{P}\pr}{\bar{\rho}\pr} = \frac{\ud \bar{P}}{\ud \bar{\rho}} \Rightarrow P = P(\rho)
+\end{equation}
+Notice that for constant $c_s^2$ this implies that $c_s^2 = w$. We can also use the continuity equation $\bar{\rho}_I\pr \propto (1 + w_I)\bar{\rho}_I$, which holds for \emph{each} component, to see that;
+\begin{equation}
+\frac{\delta_I}{1 + w_I} = \frac{\delta_J}{1 + w_J}
+\end{equation}
+This gives us the non-trivial conclusion that the density contrasts of all fluids are of a similar magnitude and follow the same spatial profile, with for example;
+\begin{equation}
+\delta_r = \frac{4}{3}\delta_m
+\end{equation}
+This in turn means that $\delta \rho = \sum_{I}{\bar{\rho}_I \delta_I}$ is dominated by whatever dominates the background energy density $\bar{\rho} = \sum_{I}{\bar{\rho}_I}$. On a final note, that will become important momentarily, note that since $\delta_I \propto \delta$, if we change gauge to the \emph{constant density gauge} where $\delta = 0$, the perturbations vanish for all fluids. We are then left simply with spatial perturbations which we will characterised by the induced Ricci scalar $^{(3)}R$. 
+\subsection{Curvature Perturbations}
+We discussed the motivation for the character of these perturbations at the end of the last section. The question is really, how best to measure the fluctuations $\delta \phi \sim \delta \tau = \delta \rho/\bar{\rho}\pr$? In the constant density gauge, $\delta \rho = B = 0$, and hence $\delta \tau = 0$. This is equivalent to saying that we are considering a spatial slicing such that inflation ends at one global conformal time, but a slicing that has a non-trivial curvature. Hopefully this motivates the choice of gauge as being somewhat natural. With such a choice, we can show that the $3$-curvature of the induced metric;
+\begin{equation*}
+\gamma_{ij} = a^2 \left((1 + 2C)\delta_{ij} + 2E_{ij}\right), \qquad E_{ij} = \del_{[i}\del_{j]}E
+\end{equation*}
+One can go ahead and calculate the Christoffel symbols, $\Gamma\indices{^{i}_{jk}}$ associated to this embedded spatial metric, and then calculate the $3$-curvature, $^{(3)}R$ via;
+\begin{equation}
+^{(3)}R = \gamma^{ik}\del_l \Gamma\indices{^{l}_{ik}} - \gamma^{ik}\del_k  \Gamma\indices{^{l}_{il}} + \underbrace{\gamma^{ik}  \Gamma\indices{^{l}_{ik}}  \Gamma\indices{^{m}_{lm}} - \gamma^{ik}\Gamma\indices{^{m}_{il}} \Gamma\indices{^{l}_{km}}}_{\mO(2)}
+\end{equation}
+where 
+\begin{equation*}
+\Gamma\indices{^{i}_{jk}} = 2\delta\indices{^{i}_{(j}}\del_{k)}C - \delta^{il}\delta_{jk}\del_l C + 2\del_{(j}E\indices{^{i}_{k)}}- \delta^{il}\del_l E_{jk}
+\end{equation*}
+After running through the computations, we eventually find that;
+\begin{equation}
+\left.a^2\right. ^{(3)}R = 4 \nabla^2\left(-C + \frac{1}{3}\nabla^2 E\right)
+\end{equation}
+This motivates the definition of the \emph{curvature perturbation}, $\zeta$;
+\begin{equation}
+\zeta = \left.\left(- C + \frac{1}{3}\nabla^2 E\right)\right|_{\delta \rho = B = 0}
+\end{equation}
+This isn't gauge invariant as it stands, as under a gauge transformation; $\tilde{\zeta} = \zeta + \hamilt T$. The following expression \emph{is} gauge invariant however, and reduces to the expression above in the constant density gauge;
+\begin{equation}
+\zeta = -C + \frac{1}{3}\nabla^2 E + \hamilt\frac{\delta \rho}{\bar{\rho}\pr}
+\end{equation}
+Since this is now gauge invariant, we can think about it's interpretation in other gauges. In the spatially flat gauge, $C = E = 0$, we have moved all the curvature into density perturbations and indeed we find;
+\begin{equation*}
+\zeta = \hamilt \frac{\delta \rho}{\bar{\rho}\pr} = \hamilt \delta \tau
+\end{equation*}
+We could also define another gauge invariant quantity, the \emph{comoving curvature perturbation}, $\mathcal{R}$;\index{curvature perturbation!comoving}\index{curvature perturbation}
+\begin{equation}
+\mathcal{R} = - C + \frac{1}{3}\nabla^2 E - \hamilt(B + v)
+\end{equation}
+which reduces to $\left.\zeta\right|_{\delta\rho = B = 0}$ in comoving gauge $B = v = 0$. We might ask what the difference between the two is;
+\begin{align*}
+\zeta - \mathcal{R} &= \hamilt\left(\frac{\delta \rho}{\bar{\rho}\pr} + B + v\right) = \hamilt\frac{\bar{\rho}}{\bar{\rho}\pr}\left(\frac{\delta \rho}{\bar{\rho}} + \frac{\bar{\rho}\pr}{\bar{\rho}}(v + B)\right) \\
+&= \hamilt\frac{\bar{\rho}}{\bar{\rho}\pr}\Delta = -\frac{1}{3(1 + w)}\Delta
+\end{align*}
+At this point, we need to consider the relation $\zeta - \mathcal{R} = -\Delta/3(1 + w)$ in Fourier space. The Poisson equation tells us that;
+\begin{equation*}
+k^2 \phi_{\vec{k}} = \frac{3}{2}\hamilt^2 \Delta_{\vec{k}} \Rightarrow \Delta_{\vec{k}} = \frac{2}{3}\left(\frac{k}{\hamilt}\right)^2 \phi_{\vec{k}}
+\end{equation*}
+So we see that;
+\begin{equation}
+\zeta_{\vec{k}} = \mathcal{R}_{\vec{k}} + \frac{2}{3}\left(\frac{k}{\hamilt}\right)^2 \phi_{\vec{k}}
+\end{equation}
+We see then immediately that for $k \ll \hamilt$, $\zeta \simeq \mathcal{R}$.
+\subsubsection{Superhorizon and Subhorizon Modes}\index{superhorizon}\index{subhorizon}
+The last statement above used the fact that $k \ll \hamilt$ ensured that the two definitions of curvature agreed. We need to understand what $k \ll \hamilt$ and $k \gg \hamilt$ means. The way to express this is in terms of the horizon $\hamilt^{-1}$. On \emph{superhorizon} scales, $k^{-1} \gg \hamilt^{-1} \iff k \ll \hamilt$. This says that the length scale of the perturbation is much larger than the Hubble radius. For anything within the Hubble radius, this mode just acts as a background mode. Indeed, the \emph{subhorizon} modes $k^{-1} \ll \hamilt^{-1}$ evolve as one would expect. Superhorizon modes on the other hand do not evolve as such since they have wavelengths larger than the distance light can travel in one Hubble time. As such they are somewhat ``out of causal contact with themselves''. Instead of evolving dynamically, they modify the background;
+\begin{equation*}
+\bar{X}_{\text{loc}} = \bar{X}_{\text{global}} + \delta X_{\text{super}}
+\end{equation*}
+\subsection{Curvature Perturbations on Superhorizon Scales}
+There is one more, key property of the curvature perturbations $\zeta$, that allows us to develop the tools in this chapter to describe structure formation. 
+\begin{quote}
+$\zeta$ \emph{is conserved} ($\zeta\pr = 0$) \emph{on superhorizon scales. Hence, during inflation, as successively shorter modes exit the horizon, a spectrum of curvature perturbations are set up that remain unchanged through the subhorizon effects of the Inflation-Big Bang transition. The modes then re-enter the horizon at some time later in a purely classical sense and evolve in a deterministic manner that we can follow.} 
+\end{quote}
+To show this fact explicitly, we work in Newtonian gauge ($B = E = 0$), where $A = -C = \phi$. Note that we could have worked in any gauge to show this, however, we expanded the Einstein equation in Newtonian gauge, and all our equations reflect that. In Newtonian gauge;
+\begin{equation*}
+\zeta = \phi - \frac{1}{3}\frac{\delta \rho}{\bar{\rho} + \bar{P}}
+\end{equation*}
+where we have used the continuity equation for $\bar{\rho}\pr$. Multiplying through by $3(\bar{\rho} + \bar{P})$ and taking the derivative with respect to conformal time, we see that;
+\begin{align*}
+3(\bar{\rho}\pr + \bar{P}\pr)\zeta + 3(\bar{\rho} + \bar{P})\zeta\pr &= 3(\bar{\rho}\pr + \bar{P}\pr)\phi + 3(\bar{\rho} + \bar{P})\phi\pr - \delta \rho\pr \\
+\Rightarrow 3(\bar{\rho} + \bar{P})\zeta\pr &= 3(\bar{\rho}\pr + \bar{P}\pr)(\phi - \zeta) + 3(\bar{\rho} + \bar{P})\phi\pr - \delta \rho\pr
+\end{align*}
+We then make use of the following facts;
+\begin{itemize}
+\item The linear correction to the continuity equation;
+\begin{equation*}
+\delta \rho\pr = -3\hamilt(\delta \rho + \delta P) + 3\phi\pr (\bar{\rho} + \bar{P}) - \nabla\cdot \vec{q}
+\end{equation*}
+\item The rearrangement;
+\begin{equation*}
+3(\bar{\rho} + \bar{P}(\phi - \zeta) = 3\left(1 + \frac{\bar{P}\pr}{\bar{\rho}\pr}\right)\bar{\rho}\pr (\phi - \zeta) = -3\hamilt\left(1 + \frac{\bar{P}\pr}{\bar{\rho}\pr}\right)3(\bar{\rho} + \bar{P})(\phi - \zeta)
+\end{equation*}
+\item The fact that from the definition of $\zeta$, $3(\bar{\rho} + \bar{P})(\phi - \zeta) = \delta \rho$
+\end{itemize}
+to deduce that;
+\begin{align*}
+3(\bar{\rho} + \bar{P})\zeta\pr &= -3\hamilt\left(1 + \frac{\bar{P}\pr}{\bar{\rho}\pr}\right)\delta \rho + 3\hamilt(\delta \rho + \delta P) + \nabla\cdot\vec{q} \\
+&= 3\hamilt\left(\delta P - \frac{\bar{P}\pr}{\bar{\rho}\pr}\delta \rho\right) + \nabla\cdot\vec{q} \\
+\Rightarrow \zeta\pr &= \hamilt\left(\frac{\delta P_{\text{nad}}}{\bar{\rho} + \bar{P}}\right) + \frac{1}{3}\nabla\cdot\vec{v}
+\end{align*}
+where we have defined the deviation from an adiabatic fluid. As discussed we expect $\delta P_{\text{nad}} = 0$ for inflationary perturbations, so;
+\begin{equation*}
+\zeta\pr = \frac{1}{3}\nabla^2 v
+\end{equation*}
+It remains to show that on superhorizon scales, $k \ll \hamilt$, that the right hand side vanishes. The $0i$ Einstein equation has;
+\begin{equation*}
+\phi\pr + \hamilt \phi = -4\pi G a^2 q = -\frac{3}{2}\hamilt^2 \frac{1}{\bar{\rho}}\left(\bar{\rho} + \bar{P}\right)v = -\frac{3}{2}\hamilt^2(1 + w)v
+\end{equation*}
+This in turn implies that $v_{\vec{k}} \propto \hamilt^{-2}$ and hence that 
+\begin{equation*}
+\nabla^2 v_{\vec{k}} \propto k^2 v_{\vec{k}} \propto \left(\frac{k}{\hamilt}\right)^2 \rightarrow 0
+\end{equation*} 
+on superhorizon scales. So we see that on superhorizon scales $\zeta\pr \simeq 0$ as desired.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

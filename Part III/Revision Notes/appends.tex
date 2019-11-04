@@ -1,0 +1,448 @@
+\label{appends}
+\setcounter{footnote}{0}
+\begin{appendices}
+\section{Functional Integrals}
+The path integrals that were presented in \emph{Statistical Field Theory}, \emph{Theoretical Physics of Soft Condensed Matter}, and \emph{Advanced Quantum Field Theory} are always an issue to define precisely. To elaborate on one of these, we take the Gaussian integral that arises from the free energy;
+\begin{equation*}
+F[\phi(\vec{x})] = \int{\upd{^d x}\left(\gamma(\nabla \phi)^2 + \mu^2 \phi^2\right)}
+\end{equation*}
+In Fourier space this becomes;
+\begin{equation*}
+F[\set{\phi_{\vec{k}}}] = \int{\frac{\ud^d k}{(2\pi)^d}(\gamma k^2 + \mu^2)\phi_{\vec{k}}\phi_{-\vec{k}}}
+\end{equation*}
+Now, consider discretising the field $\phi(\vec{x})$ by evaluating it at a set of discrete points on a $d$-dimensional lattice at points $\vec{x}_{i_1 \cdots i_d}$. Then let $y_{i_1\cdots i_d} \coloneqq \phi\left(\vec{x}_{i_1 \cdots i_d}\right)$. This allows us to discretise the path integral as;
+\begin{equation*}
+\int{\mD \phi(\vec{x})\,\,J[\phi(\vec{x})]} = \prod_{i_1 = 1}^{n}{\cdots \prod_{i_d = 1}^{n}{\int{\upd{y_{i_1 \cdots i_d}} \tilde{J}[\vec{y}] }}} \coloneqq \prod_{\vec{x}}\int{\upd{y_{\vec{x}}}\tilde{J}[\vec{y}]}
+\end{equation*}
+where $\tilde{J}$ is a suitably coarse-grained free energy functional of the full functional $J[\phi(\vec{x})]$. Now for a general complex field $\phi(\vec{x})$, in going from real space to Fourier space, we should consider $\phi_{\vec{k}}$ and $\phi^{\star}_{\vec{k}}$ as independent variables, i.e.
+\begin{equation*}
+\mD \phi(\vec{x}) \rightarrow \mD \set{\phi_{\vec{k}}} \mD \set{\phi^{\star}_{\vec{k}}}
+\end{equation*}
+So we have;
+\begin{equation*}
+\int{\mD \set{\phi_{\vec{k}}} \mD \set{\phi^{\star}_{\vec{k}}}} \mapsto \prod_{\vec{k}}{\int{\ud \phi_{\vec{k}}\ud \phi_{\vec{k}}^{\star}}}
+\end{equation*}
+But, $\phi(\vec{x})$ is a real field which implies $\phi_{\vec{k}} = \phi^{\star}_{-\vec{k}}$. As such the full product above contains some redundancy that we should remove. In general, it is sufficient to consider $\vec{k}$ lying on one side of a hyperplane through the origin in $d$-dimensional Fourier space. Then for any given $\vec{k}$, $\ud \phi_{\vec{k}}$ will appear in the product, but $\ud \phi_{-\vec{k}}^{\star}$ will not. So we see;
+\begin{equation*}
+Z = \prod_{\vec{k}, k_1 \geq 0}{\int{\ud \phi_{\vec{k}}\upd{\phi_{\vec{k}}^{\star}}\exp\left(-\frac{\beta}{2}\int{\frac{\ud^d k}{(2\pi)^d}(\gamma k^2 + \mu^2)\abs{\phi_{\vec{k}}}^2}\right)}}
+\end{equation*}
+Now, for each $\vec{k}$, up to a \emph{constant} Jacobian factor (which will not affect any physical predictions from the partition function), we find;
+\begin{align*}
+Z &= \prod_{\vec{k}, k_1 \geq 0}{\int{\ud \text{Re}\phi_{\vec{k}}\upd{\text{Im}\phi_{\vec{k}}}\exp\left(-\frac{\beta}{2}\int{\frac{\ud^d k}{(2\pi)^d}(\gamma k^2 + \mu^2)\abs{\phi_{\vec{k}}}^2}\right)}} \\
+&=  \prod_{\vec{k}, k_1 \geq 0}{\int{\ud \text{Re}\phi_{\vec{k}}\upd{\text{Im}\phi_{\vec{k}}}\exp\left(-\frac{\beta}{2}\int{\frac{\ud^d k}{(2\pi)^d}(\gamma k^2 + \mu^2)(\text{Re}\phi_{\vec{k}}^2 + \text{Im}\phi_{\vec{k}}^2)}\right)}} \\
+&= \prod_{\vec{k}, k_1 \geq 0}{\left(\int_{-\infty}^{\infty}{\upd{x}\exp\left(-\frac{\beta}{2}(\gamma k^2 + \mu^2)x^2\right)}\right)^2} \\
+&= \prod_{\vec{k}, k_1 \geq 0}{\left(\frac{2\pi T}{\gamma k^2 + \mu^2}\right)} \\
+&= \prod_{\vec{k}}{\sqrt{\frac{2\pi T}{\gamma k^2 + \mu^2}}}
+\end{align*}
+\section{Motivating Quantum Field Theory}
+Why do we need quantum field theory? Ultimately it arises as a need to unite special relativity and quantum mechanics. Indeed as a result of the energy relation $E = mc^2$, when particles move relativistically, their kinetic energy is comparable to their mass, $E_{\text{kin}} \sim m$ which is only a factor of $2$ away from pair production energies. Thus, there is no regime in which relativistic considerations $v \sim c$ are important, but the effect from producing particles is not. Thus any self-consistent treatment of relativistic quantum mechanics must necessarily account for this. Early attempts such as the relativistic Schr{\"o}dinger equation;
+\begin{equation*}
+-\hbar^2 \frac{\del^2 \psi}{\del t^2} + (\hbar c)^2 \nabla^2 \psi = (mc^2)^2 \psi
+\end{equation*}
+which arose as an operator form of the on-shell relation $E^2 - p^2 c^2 = m^2 c^4$ must fail therefore. In fact these admit negative probability solutions so indeed the theory breaks as it must given it is a theory of single particles.
+\subsection{Quantisation}
+There are in general two common ways to quantise a field theory;\footnote{\citet[Chap. ~2]{schwartz}}
+\begin{enumerate}
+\item \emph{Canonical Quantisation:} the approach taken historically within Quantum Field Theory, and
+\item \emph{Feynman Path Integral:} the more concise but perhaps less physically motivated approach
+\end{enumerate}
+It is important to understand firstly that these are different approaches, and secondly that they are relevant in different scenarios. For example, non-perturbative features such as those found in QCD often require the path integral approach whilst scattering amplitudes are more amenable to canonical quantisation.
+\subsubsection{Connecting the Harmonic Oscillator and Special Relativity}
+Following the standard treatment of the harmonic oscillator in quantum mechanics, we reuse the results that;
+\begin{equation*}
+H = \omega \left(a\dagg a + \frac{1}{2}\right), \quad [a, a\dagg] = 1
+\end{equation*}
+along with the Heisenberg equation of motion to deduce that;
+\begin{equation*}
+i\frac{\ud}{\ud t}a = [a, H] = \left[a, \omega\left(a\dagg a + \frac{1}{2}\right)\right] = \omega a
+\end{equation*}
+This equation implies that;
+\begin{equation*}
+a(t) = e^{-i\omega t}a(0)
+\end{equation*}
+With this in mind, we turn our attention to special relativity. The simplest Lorentz-invariant equation of motion that a \emph{real} field can satisfy is simply $\Box \phi = (\del^2_t - \nabla^2)\phi = 0$, this has the general Fourier mode solution;
+\begin{equation}
+\phi(\vec{x}, t) = \int{\frac{\ud^3 p}{(2\pi)^3}\left(a_p(t)e^{i\vec{p}\cdot \vec{x}} + a^{\star}_p(t)e^{-i\vec{p}\cdot\vec{x}}\right)}
+\end{equation}
+Noting that $(\del_t^2 + \abs{\vec{p}}^2)a_p(t) = 0$, we see that we can write $a_p(t) = e^{-i\abs{\vec{p}}t}a_p(0)$, so that;
+\begin{equation*}
+\phi(\vec{x}, t) = \int{\frac{\ud^3 p}{(2\pi)^3}\left(a_p(0)e^{-ip\cdot x} + a_p^{\star}e^{ip\cdot x}\right)}
+\end{equation*}
+where $a_p$ is now just a number. Upon canonical quantisation, in the Heisenberg picture this draws the exact analogy with the harmonic oscillator for each momentum mode $\vec{p}$.
+\subsection{To what extent should we believe Quantum Field Theory?}
+As you may gather, this appendix is a somewhat random train of thought about some of the deeper aspects of the subject, speckled with useful technical details. This is certainly in the former category. It arose as an unsettling feeling during the first Quantum Field Theory course whilst talking about particles: electrons, photons, quarks etc, all described by their respective quantum fields. In a classic tour through QFT, you will no doubt come across ideas such as Fock spaces and one-particle states as excitations of the vacuum. This leaves a number of unanswered questions in my mind (that may well have very suitable answers). Most of these centre around the fact that, whilst as a theoretical physicist I am content, and required, to relinquish ground on the purely physical views that motivate the more classical theories such as Newtonian gravity, there is some limit. For instance, we claim to be doing physics and describing the real world, and yet our best interpretation of a \emph{particle} is as an abstract element of a vector space generated by some operators that lie in some even more abstract algebra.
+
+\paraskip
+Perhaps the answer that many will give is that the point of QFT, or more generally mathematical physics, is not to have a physical realisation, but to simply provide a framework to describe the real world. The phrase ``Mathematics is the language of nature'' comes to mind at this point, and whilst it has felt satisfactory for the vast majority of my education, it now seems like a hollow promise. Can we truly say we have understood the nature of reality if in essence we have created a wonderfully precise analogy? This clearly represents a great trial of human thought, but there seems to be a logically distinct gap between mathematics and reality that is shadowed by terminology such as ``particles'' and ``spacetime'' describing nothing other than ``vectors'' and ``manifolds'' in a truly abstract sense.
+
+\paraskip
+I have no good answers to these feelings, and they do not necessarily detract from the excitement of the subject. In contrast, the opportunity to ask these questions is fascinating in itself, and has made me question what it means to study physics. I once held the view that one day physics would describe everything; I am glad I no longer hold this opinion and instead have explored possibilities beyond its reach, as well as what it means to describe something at all.
+
+\paraskip
+It seems to me that the doubts expounded above rest on the seemingly incompatible nature of mathematical abstraction and true physical reality. A resolution of this conflict might be the inherent ``naturalness'' of a concept in terms of the physical. An example that seems most amenable to this idea is \emph{geometry}. Whilst I am certainly no expert in this area, the idea of geometrical forms (in the Platonic sense) as being abstractions of their physical manifestations appears to connect with the philosophy of mathematical description. This analogy deserves a much deeper analysis, but we will at least consider an example. In later sections, we have spent some time discussing the formulation of classical mechanics as a theory of geometrical structures on tangent bundles and symplectic manifolds. Similar approaches such as geometrical quantisation are applied to quantum mechanical systems, or the machinery of principal bundles and connections for field theories on manifolds. This puts modern physics on a highly geometrical footing, although this is not the only approach, and one that makes contact with the forms of Plato. Perhaps then, with the assumption that \emph{geometry is natural in the physical world}, the two approaches are one and the same. It is left as an exercise to the reader to convince oneself of this assumption. 
+
+
+\section{Symmetry, Groups, and Field Theory}
+\subsection{Symmetry}
+It is a difficult task to define ``symmetry'' despite its ubiquity in modern physics, often depending very much on the exact scenario. One might define it as a mapping on the physical states of the system that leaves the dynamics invariant, but again exactly what we mean by physical states depends on the system. In general however, symmetry is a fundamental tool that allows us to make analytical predictions that are out of reach computationally. We now turn to a key example that is no doubt familiar;
+\subsubsection{Continuous parameters and local one-parameter groups}
+The basic object of these symmetries is an infinitesimal transformation that can often be exponentiated (in a non-technical sense) to \emph{generate} a symmetry. Such infinitesimal symmetries are known as generators and lead to the concept of an \emph{algebra}, which inherits a compositional structure from the global group. To illustrate this consider Lagrangian mechanics and a mapping;
+\begin{equation*}
+h_s : q \mapsto h_s(q)
+\end{equation*}
+where $s$ is a small parameter. This of course induces a mapping on the velocity co-ordinate;
+\begin{equation*}
+\hat{h}_s : \dot{q} \mapsto \hat{h}_s(\dot{q}) = \frac{\del h_s(q)}{\del q}\dot{q}
+\end{equation*}
+Then we can assign our usual definitions of invariance such that the Lagrangian changes only up to a total derivative. Noether's theorem is of course the guiding light in the realm of symmetry transformations, taking perhaps a slightly different viewpoint to usual, consider a map;
+\begin{equation*}
+\phi : t \mapsto q = \phi(t)
+\end{equation*}
+which defines a path in position space. Then the symmetry transformation $h_s$ maps this to a new path $\phi_s = h_s \circ \phi$. The invariance implies that this path is minimal with respect to the action for any $s$ and so satisfies the equation of motion. Defining $\Phi(s, t) \coloneqq h_s \circ \phi(t)$ and noting that under this transformation;
+\begin{equation*}
+L\left(\Phi(s, t), \dot{\Phi}(s, t)\right) = L(q, \dot{q}) + \frac{\ud}{\ud t}F_s
+\end{equation*}
+We deduce that;
+\begin{equation*}
+\frac{\del}{\del s}\left(L\left(\Phi, \dot{\Phi}\right) - \frac{\ud}{\ud t}F_s\right) = \frac{\del L}{\del q} \frac{\del \Phi}{\del s} + \frac{\del L}{\del \dot{q}}\frac{\del^2 \Phi}{\del t \del s} - \frac{\ud}{\ud t}\frac{\del F_s}{\del s}= 0
+\end{equation*}
+Using the equation of motion we see that;
+\begin{equation*}
+0 = \left(\frac{\ud}{\ud t}\frac{\del L}{\del \dot{q}}\right)\frac{\del \Phi}{\del s} + \frac{\del L}{\del \dot{q}} \frac{\del^2 \Phi}{\del t \del s} - \frac{\ud}{\ud t}\frac{\del F_s}{\del s} = \frac{\ud}{\ud t}\left(\frac{\del L}{\del \dot{q}}\frac{\del \Phi}{\del s} - \frac{\del F_s}{\del s}\right)
+\end{equation*}
+And so we find that the conserved Noether charge of the symmetry is;
+\begin{equation}
+Q \coloneqq \frac{\del L}{\del \dot{q}}\frac{\del \Phi}{\del s} - \frac{\del F_s}{\del s}
+\end{equation}
+There are a few observations to be made in that firstly this statement only holds \emph{on-shell} where the equations of motion are satisfied, not for a general path. This isn't surprising; ultimately the dynamics of a system should respect the symmetry and select a path or set of paths as a result, so it is incongruous for \emph{any} path to have an associated conserved quantity. Secondly, the symmetry should be differentiable, as such the argument does not extend to discrete symmetries.
+
+\paraskip
+As a slight extension of these ideas and their relation to groups, it was hinted at above that these one-parameter transformations are the infinitesimal form of a global symmetry \emph{group}. This is not strictly true however, it is possible that some symmetries can not be exponentiated (now in the technical sense) to group elements. In such a scenario, the symmetries can only be described by the algebra which lead to additional conservation laws that are not described by a global group transformation on the system. Motivating examples of this are constructions such as supersymmetry\index{supersymmetry} and $2$D conformal symmetry.
+\subsubsection{Symmetries from the classical Hamiltonian}
+As a starting point, recall that Hamilton's equations\index{equation!Hamilton} are;
+\begin{equation*}
+\frac{\ud p}{\ud t} = - \frac{\del H}{\del q}, \quad \frac{\ud q}{\ud t} = \frac{\del H}{\del p}
+\end{equation*}
+Moreover defining the Poisson bracket (for more details see the section on Symplectic Manifolds\index{symplectic manifold});
+\begin{equation*}
+\set{f, g} \coloneqq \frac{\del f}{\del q}\frac{\del g}{\del p} - \frac{\del f}{\del p}\frac{\del g}{\del q}
+\end{equation*}
+it is simply an extension of the definition to see that for any function $f\left(q(t), p(t)\right)$ on some trajectory in phase space that is a solution to the equation of motion satisfies;
+\begin{equation}
+\label{eq:invo}
+\frac{\ud}{\ud t}f\left(q(t), p(t)\right) = \set{H, f}
+\end{equation}
+Then, the functions that are \emph{in involution}\index{involution} with the Hamiltonian; $\set{H, f} = 0$, are necessarily conserved quantities. The Jacobi identity further implies that if $f$, $g$ are two conserved quantities, then so is $\set{f, g}$. In other words, identifying the Poisson bracket as a \emph{Lie bracket}, the conserved quantities form an \emph{algebra}. To stress this fact, the Jacobi identity, which appears as a seemingly arbitrary definition in the construction of a Lie algebra is the key tool that ensures this works due to the structures on phase space.
+\subsubsection{Quantum Mechanics}
+How do these ideas translate to Quantum Mechanics? It's easiest to see the correspondence in the Heisenberg picture where the elements of the Hilbert space $\mathfrak{H}$ are independent of time. Then the canonical quantisation procedure is the mapping;
+\begin{equation}
+\set{\,\,\cdot\,\,,\,\, \cdot\,\,} \mapsto \frac{i}{\hbar}[\,\,\cdot\,\,,\,\,\cdot\,\,]
+\end{equation}
+The quantum analog of \eqref{eq:invo} is then just the familiar Heisenberg equation of motion;
+\begin{equation*}
+\frac{\ud}{\ud t}A(t) = \frac{i}{\hbar}[H, A]
+\end{equation*}
+As a consequence, in quantum mechanics, observables $A$ that commute with the Hamiltonian are the relevant conserved quantities. Again, from the Jacobi identity, these observables form a subalgebra\index{subalgebra}. In quantum mechanics, the non-commutative structure of observables replaces the abelian commutative algebra of functions in classical physics.
+\subsubsection*{An interlude on anti-unitary operators}
+It is instructive to define and investigate anti-linear and anti-unitary operators. An \emph{anti-linear} operator on some complex vector space, $\mathcal{V}$, is some $\Theta$ such that for all $\xi_1, \xi_2 \in \CC$, $v_1, v_2 \in \mathcal{V}$;
+\begin{equation*}
+\Theta\left(\xi_1 v_1 + \xi_2 v_2\right) = \xi_1^{\star}\Theta v_1 + \xi_2^{\star} \Theta v_2
+\end{equation*}
+An \emph{anti-unitary} operator is then an anti-linear operator that obeys;
+\begin{equation*}
+(\Theta v_1, \Theta v_2) = (v_1, v_2)^{\star} = (v_2, v_2)
+\end{equation*}
+The physical interpretation of this then is that under the action of an anti-unitary operator, ``in-states'' and ``out-states'' are interchanged. In this context, it becomes very natural that anti-unitary operators should be associated with \emph{time reversal} symmetries.
+\subsection{Switching from Particles to Fields}\label{sec:parttofield}
+Suppose we start with a classical system with generalised co-ordinates $\set{q_a(t)}$, then it is well-established (and unambiguous) that the Euler-Lagrange equations that arise from the Lagrangian $\mL(q_a, \dot{q}_a)$ are;
+\begin{equation}
+\label{eq:elapp}
+\frac{\del \mL}{\del q_a} - \frac{\ud}{\ud t}\frac{\del \mL}{\del \dot{q}_a} = 0
+\end{equation}
+Now, we want to move towards a field theory, where the relevant degrees of freedom are now infinite in number and enumerated by the field values $\phi[\vec{x}](t) \coloneqq \phi(\vec{x}, t)$ at each point in space as a function of time. Then the object of interest is the Lagrangian;
+\begin{equation}
+L = \int{\upd{^3 x}\mL\left(\phi_a(\vec{x}), \del_\mu \phi_a(\vec{x})\right)}
+\end{equation} 
+where $\mL$ is the Lagrangian density. The goal of this section is to derive the field equations;
+\begin{equation}
+\label{eq:feapp}
+\frac{\del \mL}{\del \phi_a} - \del_\mu \frac{\del \mL}{\del (\del_\mu \phi_a)} 
+\end{equation}
+We will take a different approach from the variation of the action presented in the lectures. Instead, we consider the very natural mapping;
+\begin{equation*}
+\frac{\del}{\del q_a} \mapsto \frac{\delta}{\delta \phi(x)}
+\end{equation*}
+Then we claim that the analog of the Euler-Lagrange equation in \eqref{eq:elapp} with this minimal coupling mapping implies the field equations in \eqref{eq:feapp}. To see this note that (working with just one field now, although it is easy to put the indices in);
+\begin{align*}
+\frac{\delta L}{\delta \phi(x)} &= \int{\upd{^3 y}\frac{\delta \mL(y)}{\delta \phi(x)}} = \int{\upd{^3 y}\left(\frac{\delta \phi(y)}{\delta \phi(x)}\frac{\del \mL}{\del \phi} + \frac{\delta \del_i \phi}{\delta \phi(x)}\frac{\del \mL(y)}{\del(\del_i \phi)}\right)} \\
+&= \int{\upd{^3 y}\delta^{(3)}(x - y)\left(\frac{\del \mL(y)}{\del \phi} - \del_i \frac{\del \mL(y)}{\del(\del_i \phi)}\right)} \\
+&= \frac{\del \mL(x)}{\del \phi} - \del_i\left(\frac{\del \mL}{\del(\del_i \phi)}\right)
+\end{align*}
+where in going from the first to second line, we have used that;
+\begin{equation*}
+\frac{\delta \phi(y)}{\delta \phi(x)} = \delta^{(3)}(x - y), \quad \frac{\delta (\del_i \phi)}{\delta \phi(x)} = \del_i \delta^{(3)}(x - y)
+\end{equation*}
+and integrated by parts on the second term. Similarly we find that;
+\begin{equation*}
+\frac{\delta L}{\delta \dot{\phi}(x)} = \int{\upd{^3 y}\frac{\delta \mL(y)}{\delta \dot{\phi}(x)}} = \int{\upd{^3 y}\frac{\delta \dot{\phi}(y)}{\delta \dot{\phi}(x)}\frac{\del \mL(y)}{\del \dot{\phi}}} = \frac{\del \mL(x)}{\del \dot{\phi}}
+\end{equation*}
+Putting the pieces together we see that;
+\begin{equation*}
+\frac{\delta L}{\delta \phi(x)} - \frac{\ud}{\ud t}\frac{\delta L}{\delta \dot{\phi}(x)} = \frac{\del \mL(x)}{\del \phi} - \del_\mu\left(\frac{\del \mL(x)}{\del(\del_\mu \phi)}\right) = 0
+\end{equation*}
+as claimed.
+\subsection{Finite Dimensional Lagrangian Systems}
+The configuration space\index{configuration space} in a Lagrangian system is a smooth manifold, $\mM$, with dimension $D$. Now, the goal of the section is to understand the construction of the Lagrangian function, $\mL$, and the resulting dynamics in terms of structures on the manifold. Suppose we have (local) co-ordinates on the manifold $q^i(t)$, then consider trying to ``couple'' the velocity $\dot{\vec{q}}(t)$, lying in the tangent space, to other objects to form a co-ordinate invariant result. In the absence of other structure, this is not possible. To compensate for this, we introduce three new structures on the manifold (of which we need at least one);\footnote{\citet[Chap. ~2]{manton}}
+\begin{itemize}
+\item A scalar function $V(\vec{q})$ on $\mM$,
+\item A Riemannian metric on $\mM$ given locally by the rank $(0, 2)$ tensor field $g_{ij}(\vec{q})$,
+\item An Abelian gauge potential with local components $a_i(\vec{q})$.
+\end{itemize}
+Given these, we can now consistently define a diffeomorphism invariant ($\equiv$ co-ordinate independent) Lagrangian function;
+\begin{equation}
+L = \frac{1}{2}g_{ij}(\vec{q}) \dot{q}^i \dot{q}^j - a_i(\vec{q})\dot{q}^i - V(\vec{q})
+\end{equation}
+Variation of this Lagrangian in a standard action-minimising way gives the Euler-Lagrange equation;
+\begin{equation}
+g_{ij}(\ddot{q}^j + \Gamma\indices{^{j}_{kl}}\dot{q}^k \dot{q}^l) + f_{ij}\dot{q}^j + \del_i V = 0
+\end{equation}
+where $f_{ij} = \del_i a_j - \del_j a_i$ is the gauge field strength, and the $\Gamma\indices{^{i}_{jk}}$ is the Levi-Civita connection on $\mM$. Note further that this form makes the gauge invariance of the equation of motion manifest since $f_{ij}$ is gauge invariant under $a_i \mapsto a_i + \del_i \alpha$ where $\alpha$ is a scalar field. We expand on this in the section on gauge fields. Taking this a step further, multiplying through by $\dot{q}^i$ and using the antisymmetry of $f_{ij}$ we see that conservation of energy in this system is encoded as;
+\begin{equation}
+\frac{1}{2}g_{ij}\dot{q}^i \dot{q}^j + V = E
+\end{equation}
+\subsection{The Poincaré Group}
+The \emph{Poincaré symmetry} combines translations and Lorentz transformations. The Poincaré group is a ten-dimensional Lie group (think geometrically: 3 rotations, 3 boosts, and 4 translations). The Poincaré symmetry explains the mass, spin, and particle-antiparticle dichotomy of particles. When Poincaré symmetry is broken, particles lose definite values for mass and spin. Gravity bends spacetime, changing the Minkowski metric. \emph{Thus we expect breaking of the Poincaré symmetry when gravity becomes significant.}
+\section{How do we study Cosmology?}
+Cosmology has evolved as a science in the last $30$ years; it has matured into a highly data driven science that can make precise, quantitative predictions on the nature of the observable Universe. That being said, the predictions are themselves statistical in nature, mainly due to the quantum nature of fluctuations in the early universe. This has to be reconciled with the fact that ultimately we only have \emph{one} universe. This feature is the phenomena of cosmic variance; we have a sample size of one universe, and aren't about to get another lab any time soon. Another challenge related to this is what scale we are working on. In developing much of the machinery, a linear approach was taken which is fine on scales $\geq 40 \,\,\text{Mpc}$. Importantly, Cosmology is not built to discuss concepts such as planetary formation or molecular cooling.
+
+\paraskip
+Cosmology also draws on a rich array of fields and techniques; Quantum Field Theory for the inflationary paradigm, General Relativity for the large scale dynamics, Fluid Dynamics in Large Scale Structure, Equilibrium and Non-Equilibrium Statistical Physics in the CMB, Particle Physics etc. As such it provides a theoretical challenge to coherently present a theory. Another challenge rests on the fact that many of the predictions are based on some fundamental assumptions that may well turn out to be false. For example, if it turns out that structure in the universe was not in fact sourced by inflationary fluctuations, much of the analysis must be redone in a new paradigm. Thus, in doing Cosmology, it remains paramount to follow not just the flow of the calculations, but also their motivation, in foresight of the foundations being reset.
+
+\paraskip
+This leaves out the perhaps more pressing question for some as to \emph{why} we study Cosmology? There is clearly a desire to understand our origins and push the boundaries of knowledge, but is this enough? From a personal perspective, I am on the fence regarding this point, but I would lean towards the conclusion that in itself it is not. The reasoning for this is pragmatic in nature. Firstly, it has often felt indulgent to study purely for the sake of knowledge. Secondly, and more pertinently, this isolationist viewpoint neglects the practicality that with an open mindset, links can be made between Cosmology and other scientific endeavours. These might include;
+\begin{itemize}
+\item Utilising the universe as a particle physics laboratory: the LHC endeavours to create environments of higher and higher energy to explore rare and exotic processes, but these conditions were realised in the early universe. Direct detection is not the goal in this case, but the fields of relics and beyond Standard Model physics has a place in Cosmology.
+\item Perhaps a more tenuous link can be made between, for example, condensed matter and Cosmology. In a paper discussing the duality between \href{https://www.nature.com/articles/natrevmats201717.pdf}{material systems and defects in the early universe} this idea is made manifest. This is not a mature field, and perhaps the duality is somewhat forced, but the point is illustrated nonetheless.
+\end{itemize}
+\section{Algebras}
+\subsection{Algebras and Ideals}\index{algebra}\index{ideal}
+\begin{definitionbox}
+An \emph{algebra} consists of a vector space $\mA$ over a field $\mathbb{K}$ along with a composition law $\mA \times \mA \rightarrow \mA$;
+\begin{equation*}
+(A, B) \mapsto AB \in \mA \qquad A, B \in \mA
+\end{equation*}
+which satisfies the distributive properties;
+\begin{equation*}
+A(aB + bC) = aAB + bAC, \qquad (aA + bB)C = aAC + bBC
+\end{equation*}
+for scalars $a, b \in \mathbb{K}$, $A, B, C \in \mA$. Note that this implies that since $0 \cdot A = \mO$ for all $A \in \mA$, where $\mO$ is the zero vector in $\mA$, it must be that $\mO \mA = \mO = \mA \mO$. In summary, an algebra is a vector space endowed with a distributive product.
+\end{definitionbox}
+In general, this multiplicative operation is abstract in nature, but may become more explicit in the context, for example; $A \times B$, $A \otimes B$, $A \wedge B$, $[A, B]$ etc. As an example, consider the set of all linear operators on a vector space $V$, $L(V, V)$. This is an associative algebra where $AB$ is defined by;
+\begin{equation*}
+(AB)u = A(Bu)
+\end{equation*}
+The distributive law follows trivially and the associative law holds for all linear transformations. With this is mind, viewing the set of all $n \times n$ matrices as linear maps in $L(\RR^n, \RR^n)$ we see that they form an associative algebra. 
+
+\paraskip
+Now, since $\mA$ is a vector space, it has some basis $\set{E_i}$. The products of these basis vectors in the algebra are well-defined and lie in $\mA$. Hence the must be expressible as a linear combination of the other basis vectors i.e.
+\begin{equation}
+E_i E_j = C\indices{^{k}_{ij}}E_k
+\end{equation}
+for some $C\indices{^{k}_{ij}} \in \mathbb{K}$. These are the \emph{structure constants}\index{structure constant} of the algebra and indeed define the product for the whole algebra if they are defined for a particular choice of basis.\footnotemark
+\footnotetext{
+Interestingly, this gives us enough to define the complex numbers $\CC$ as a two-dimensional commutative and associative algebra over the real numbers with basis $\set{E_1, E_2} \coloneqq \set{1, i}$ with structure constants defined by the relations;
+\begin{equation*}
+1^2 = 11 = 1, \quad i1 = 1i = i, \qquad i^2 = ii = -1
+\end{equation*}
+}
+\begin{definitionbox}
+Let $\mA$ and $\mathcal{B}$ be any pair of algebras, then a linear map $\phi : \mA \rightarrow \mathcal{B}$ is an \emph{algebra homomorphism}\index{homomorphism!algebra} if it preserves the structure of the algebra $\mA$;
+\begin{equation*}
+\phi(AB) = \phi(A)\phi(B)
+\end{equation*}
+A \emph{subalgebra}\index{subalgebra} $\mathcal{B}$ of $\mA$ is a vector subspace that is closed under composition $A, B \in \mathcal{B} \Rightarrow AB \in \mathcal{B}$. Indeed if $\phi$ is an algebra homomorphism, then the image set $\phi(A)$ is a subalgebra of $\mathcal{B}$. As usual, a homomorphism $\phi$, is an algebra isomorphism if it is bijective from $\mA$ to $\mathcal{B}$.
+\end{definitionbox}
+\subsection{Ideals and Factor Algebras}
+A vector subspace $\mL$ of $\mA$ is called a \emph{left ideal} if $L \in \mL, A \in \mA \Rightarrow AL \in \mL$. This is commonly written $\mA \mL \subset \mL$. Similarly a \emph{right ideal}, $\mathcal{R}$, is a subspace such that $\mathcal{R}\mA \subset \mathcal{R}$. A vector subspace $\mathcal{I}$ that is both a left and a right ideal is known just as an \emph{ideal}. By construction, an ideal is always a subalgebra.
+\begin{thm}
+The kernel of an algebra homohomorphism $\phi : \mA \rightarrow \mathcal{B}$ is an ideal of $\mA$. Conversely, if $\mathcal{I}$ is an ideal of $\mA$, there is a natural algebra structure on the \emph{factor space}, $\mA/\mathcal{I}$, where the map $\phi : \mA \rightarrow \mA/\mathcal{I}$ taking $A \mapsto [A] = A + \mathcal{I}$ is a homomorphism with kernel $\mathcal{I}$.
+\end{thm}
+We start by showing that $\ker \phi$ is a left ideal of $\mA$; if $B \in \ker \phi$ and $A \in \mA$, then;
+\begin{equation*}
+\phi(AB) = \phi(A) \phi(B) = \phi(A) \mO\pr = \mO\pr
+\end{equation*}
+where $\mO\pr$ is the zero vector in $\mathcal{B}$. So $A \in \ker \phi$, so $\ker \phi$ is a left ideal. Similarly, $\ker \phi$ is a right ideal, so it is an ideal.
+
+\paraskip
+Now, suppose $\mathcal{I}$ is an ideal of $\mA$, and denote the elements of the factor space $\mA/\mathcal{I}$ as the coset $[A] = A + \mathcal{I}$. Then a natural product on the factor space is;
+\begin{equation*}
+[A][B] = [AB]
+\end{equation*}
+which is well-defined because it is independent of the choice of representative; suppose $[A\pr] = [A]$ and $[B\pr] = [B]$, then $A\pr \in A + \mathcal{I}$ and $B\pr \in B + \mathcal{I}$. So;
+\begin{equation*}
+A\pr B\pr \in (A + \mathcal{I})(B + \mathcal{I}) = AB + A\mathcal{I} + \mathcal{I}B + \mathcal{I}\mathcal{I} = AB + \mathcal{I}
+\end{equation*}
+where we have used the fact that $\mathcal{I}$ is a left and right ideal. Hence $[A\pr][B\pr] = [A\pr B\pr] = [AB] = [A][B]$. Then the map $\phi(A) = [A]$ is clearly a homomorphism almost by definition, with kernel $\phi^{-1}([\mO]) = \mathcal{I}$, using the fact that $\mathcal{I}$ is a vector subspace.
+\subsection{Complexification of a real vector space}
+We can define the \emph{complexification}\index{complexification} $V^C$ of a real vector space $V$ as the set of all ordered pairs $w = (u, v) \in V \times V$ with vector addition and scalar product by complex numbers defined by;
+\begin{align}
+(u, v) + (u\pr, v\pr) &= (u + u\pr, v + v\pr) \\
+(a + ib)(u, v) &= (au - bv, bu + av)
+\end{align}
+for all $u, u\pr, v, v\pr \in V$ and $a, b \in \RR$. With this definition in place, there is no ambiguity in using the notation $w = u + iv = (u, v)$ since the products are natural over $\CC$. Furthermore, if $\set{e_i}$ is a basis for $V$, then they also form a basis of $V^C$ over $\CC$. Now, in an arbitrary complex vector space, complex conjugation is not well defined as the natural definition $u = u^j e_j \Rightarrow \bar{u} = \bar{u}^j e_j$ gives different answers if we switch to the basis $\set{i e_j}$. On the other hand, the complexification of a real space the complex conjugate is unambiguously defined by;
+\begin{equation*}
+\bar{w} = \bar{u + iv} = u - iv
+\end{equation*}
+The complexification of a real space has the required extra structure/knowledge of the real part of $V^C$. In contrast, there is no natural way to reverse the complexification procedure to produce a real vector space of the same dimension from any given complex vector space. 
+\subsection{Complex Structure on a vector space}
+Suppose we have a real vector space $V$ (so $e_1$ and $ie_1$ are linearly independent vectors), and an operator $J: V \rightarrow V$ such that $J^2 = -\text{id}_V$. Then $J$ is called a \emph{complex structure}\index{complex structure} on $V$. For example, $Jv = iv$ satisfies this property. Then $J$ can be used to convert $V$ into a complex vector space $V_J$ by defining the scalar multiplication of vectors by complex numbers via;
+\begin{equation}
+(a + ib)v \equiv av + bJv
+\end{equation} 
+It can be shown that this does indeed satisfy the axioms of a vector space over $\CC$, including for example;
+\begin{equation*}
+(a + ib)\left((c + id)v\right) = \left((a + ib)(c + id)\right)v
+\end{equation*}
+Note further that a complex structure is always invertible since $J^4 = \text{id}_V$ so $J^{-1} = J^3$. Moreover, if $\dim V = n$, then in a basis $\set{e_i}$, we can define the matrix $\vec{J}\indices{^{i}_{j}}$ by its action on the basis vectors. Then the definition of $J$ ensures that;
+\begin{equation*}
+\vec{J}^2 = -\vec{I} \Rightarrow (\det \vec{J})^2 = (-1)^n
+\end{equation*}
+This can only be the case if $n = 2m$ i.e. the dimension of the space is even-dimensional. Given this complex vector space $V_J$ we can then find the realification\index{realification} by extending to a linearly independent basis with respect to the reals;
+\begin{equation*}
+e_1, \cdots e_m, ie_1, \cdots ie_m
+\end{equation*}
+\subsection{Clifford Algebras}\index{Clifford algebra}
+Let $V$ be a real vector space with an inner product $u\cdot v$ and $e_1, \cdots, e_n$ and orthonormal basis so that;
+\begin{equation*}
+g_{ij} = e_i \cdot e_j = \begin{cases}\pm 1 & \text{if}\,\, i = j \\ 0 & \text{if} \,\, i \neq j\end{cases}
+\end{equation*}
+Then the \emph{Clifford algebra} associated with this inner product space, $\mC_g$, is the associative algebra generated by $1, e_1, e_2, \cdots, e_n$ such that the product is;
+\begin{equation}
+e_i e_j + e_j e_i = 2g_{ij}1, \qquad 1 e_i = e_i 1 = e_i
+\end{equation} 
+We observe that $\mC_g$ is spanned by successive products of higher orders $e_i e_j$, $e_i e_j e_k$ etc. Note that for any pair $e_i e_j = - e_j e_i$ for $i \neq j$, so up to at most one change of sign, we can re-order any product as $e_{i_1}\cdots e_{i_k}$ with $i_1 \leq \cdots \leq i_k$. Also, any pair $e_i e_i$ can be replaced with $g_{ii} = \pm 1$ (no summation), so there is no loss in generality in assuming $i_1 < \cdots < i_k$. Thus, the whole algebra is generated by;
+\begin{multline*}
+1, \set{e_i | i = 1, \ldots, n}, \set{e_i e_j | i < j}, \ldots, \\ \set{e_{i_1} e_{i_2} \cdots e_{i_r} | i_1 < i_2 < \cdots < i_r}, \ldots, e_1 \cdots e_n
+\end{multline*}
+The most familiar example of this is of course the Dirac matrices in the relativistic theory of spin $\tfrac{1}{2}$ particles, where the requirement that the Dirac equation;
+\begin{equation*}
+\gamma^\mu \del_\mu \psi = -m_e \psi
+\end{equation*}
+implies the relativistic Klein-Gordon equation, $\eta^{\mu\nu}\del_\mu \del_\nu \psi = -m_e^2 \psi$ leads to the relation;
+\begin{equation*}
+\gamma^{\mu} \gamma^{\nu} + \gamma^{\nu}\gamma^{\mu} = 2\eta^{\mu\nu}
+\end{equation*}
+Thus we see that $\gamma^{\mu}$ lie in the Clifford algebra with $n = 4$. Representing this algebra by a set of matrices can only be done for $4 \times 4$ matrices or larger. This leads to the concept of a $4$-component spinor lying in the representation space.
+\subsection{Grassman Algebras}\index{Grassman algebra}
+Grassman's construction of an algebra was independent of an inner product, and hence does not have the same basis dependence that the Clifford algebra had. To begin, consider a vector space $V$, then for any two vectors $u, v \in V$, we define an abstract product $u \wedge v$ such that for all $u, v, w \in V$ and $a, b \in \RR$ we have;
+\begin{align*}
+(au + bv) \wedge w &= au \wedge w + bv \wedge w \\
+u \wedge v &= - v \wedge u
+\end{align*}
+The quantity $u \wedge v$ is known as a \emph{bivector}\index{bivector}, and it can be useful to think of it as described an oriented area element governed by the two vectors $u$ and $v$. The vector space of all simple 2-vectors is denoted $\Lambda^2(V)$, then every element $A \in \Lambda^2(V)$ can be written as a linear combination;
+\begin{equation}
+A = \sum_{i = 1}^{r}{a_i u_i \wedge v_i}
+\end{equation}
+Now, suppose that $V$ has dimension $n$ and a basis $\set{e_1, \ldots, e_n}$, then clearly;
+\begin{equation*}
+u \wedge v = u^i v^j e_i \wedge e_j = -v^j u^i e_j \wedge e_i
+\end{equation*}
+If we set $e_{ij} \coloneqq e_i \wedge e_j$, then we can write $A = A^{ij}e_{ij}$ where without loss of generality $A^{ij}$ is an antisymmetric matrix. This follows since $e_{ij} = -e_{ji}$. Then the space $\Lambda^2(V)$ is spanned by the vectors $\set{e_{ij}}$. By construction we see that a linearly independent set is $\set{e_{ij} | 1 \leq i < j \leq n}$, so we deduce that;\footnote{We could also consider the number of degrees of freedom in $A^{ij}$ to make the same deduction.}
+\begin{equation*}
+\dim\left(\Lambda^2(V)\right) = \colvec{2}{n}{2} = \frac{n(n - 1)}{2}
+\end{equation*}
+We can define the space of $r$-vectors similarly as generic linear combinations of $e_{i_1} \wedge \cdots \wedge e_{i_r}$. Note that just by definition, we have linearity in each of the arguments, and if any two vectors appear twice, the total product must vanish just by permutations. As above, any general element of $\Lambda^r(V)$ can be written;
+\begin{equation}
+A = A^{i_1\cdots i_r}e_{i_1 \cdots i_{r}}
+\end{equation}
+where $A^{i_1 \cdots i_{r}}$ is now totally skew-symmetric in all indices. 
+\subsubsection{The Exterior Product}\index{exterior product}
+If we set the original vector space $V \coloneqq \Lambda^1(V)$ and denote the field of scalars $\Lambda^0(V) \equiv \mathbb{F}$. Then define the vector space;
+\begin{equation*}
+\Lambda(V) = \Lambda^0(V) \oplus \Lambda^1(V) \oplus \Lambda^2(V) \oplus \cdots \oplus \Lambda^n(V)
+\end{equation*}
+Then the elements of $\Lambda(V)$ are known as \emph{multivectors}, $A = A_0 + \cdots + A_n$ where $A_r \in \Lambda^r(V)$. The dimension of $\Lambda(V)$ follows easily as;
+\begin{equation*}
+\dim\left(\Lambda(V)\right) = \sum_{r = 0}^{n}{\colvec{2}{n}{r}} = 2^n
+\end{equation*}
+We can then define a composition law for two multivectors known as the \emph{exterior product}, $A \wedge B$, which satisfies;
+\begin{enumerate}
+\item If $a \in \Lambda^0(V)$ and $B \in \Lambda^r(V)$, then the exterior product $a \wedge B$ is just scalar multiplication; $a \wedge B = B \wedge a = aB$
+\item If $A = u_1 \wedge \cdots \wedge u_r$ is a simple $r$-vector and $B = v_1 \wedge \cdots \wedge v_s$ is a simple $s$-vector, then the exterior product is the simple $(r + s)$-vector;
+\begin{equation*}
+A \wedge B = u_1 \wedge \cdots \wedge u_r \wedge v_1 \wedge \cdots \wedge v_s
+\end{equation*}
+\item The exterior product is linear in both arguments;
+\begin{equation*}
+(aA + bB) \wedge C = aA\wedge C + bB \wedge C, \quad A \wedge (bB + cC) = bA \wedge B + c A \wedge C
+\end{equation*}
+\end{enumerate}
+The last property makes $\Lambda(V)$ into an \emph{algebra} with respect to the exterior product. It is known as the Grassman algebra, or exterior algebra over $V$. Furthermore, the fact that the exterior product of an $r$-vector and an $s$-vector gives an $(r + s)$-vector is characteristic of it also being a \emph{graded algebra}\index{graded algebra}. Note that the definition of the exterior product and the anti-commutation relations for the wedge product ensure that;
+\begin{equation}
+A \wedge B = (-1)^{rs}B \wedge A
+\end{equation}
+\begin{thm}
+Vectors $u_1, u_2, \cdots u_r$ are linearly dependent if and only if their wedge product vanishes;
+\begin{equation*}
+u_1 \wedge u_2 \wedge \cdots \wedge u_r = 0
+\end{equation*}
+\end{thm}
+To prove this, first note that if the vectors are linearly dependent, then without loss of generality we may assume that $u_1$ is a linear combination of the rest;
+\begin{equation*}
+u_1 = a^2 u_2 + \cdots + a^r u_r
+\end{equation*}
+Then;
+\begin{align*}
+u_1 \wedge \cdots \wedge u_r &= \sum_{i = 2}^{r}{a^i u_i \wedge u_2 \wedge \cdots \wedge u_r} \\
+&= \sum_{i = 2}^{r}{ \pm a^i u_2 \wedge \cdots \wedge u_i \wedge u_i \wedge \cdots \wedge u_r} \\
+&= 0
+\end{align*}
+Conversely, suppose they are linearly independent, then there exists a basis of $V$ such that $e_1 = u_1$, $e_2 = u_2$ etc. But then;
+\begin{equation*}
+e_1 \wedge \cdots \wedge e_r = u_1 \wedge \cdots \wedge u_r
+\end{equation*}
+is a basis vector of $\Lambda^r(V)$ and so cannot vanish.
+\subsection{Exterior Algebra}\index{algebra!exterior}
+\subsubsection{$r$-Vectors and $r$-Forms}
+A tensor of type $(r, 0)$ is said to be antisymmetric if, as a multilinear map, it changes sign under any interchange of it's arguments, i.e. for $\alpha^i \in V^{\star}$;
+\begin{equation*}
+A(\alpha^1, \cdots, \alpha^i, \cdots, \alpha^j, \cdots, \alpha^r) = -A(\alpha^1, \cdots, \alpha^j, \cdots, \alpha^i, \cdots, \alpha^r)
+\end{equation*}
+If we take $\set{e_i}$ to be a basis of $V$, with $\set{\epsilon^i}$ the dual basis of $V^{\star}$, then we can write this in components as;
+\begin{equation}
+A^{i_{\pi(1)}\cdots i_{\pi(r)}} = (-1)^{\pi}A^{i_1 \cdots i_r}
+\end{equation}
+where $\pi$ is the sign of the permutation. Antisymmetric tensors of type $(r, 0)$ are called $r$-Vectors, and form a vector space. Note that in general, a vector space is a disjoint union of those tensors that are symmetric and those that are antisymmetric, so this really is a natural operation to consider. A similar treatment of $(0, r)$ tensors leads to the concept of $r$-forms which act on sets of vectors. Now, let $T$ be any tensor of type $(r, 0)$, then its \emph{antisymmetric part} is define to be;
+\begin{equation}
+\mathcal{A}T(\omega^1, \cdots, \omega^r) = \frac{1}{r!}\sum_{\sigma}{(-1)^{\sigma}T(\omega^{\sigma(1)}, \cdots, \omega^{\sigma(r)})}
+\end{equation}
+for any covectors, $\omega^{j}$. If we considered $\sigma\pr = \pi \sigma$ and noted that $(-1)^{\sigma\pr} = (-1)^{\pi}(-1)^{\sigma}$, this definition confirms that $\mathcal{A}T$ really is antisymmetric in the sense of the definition above. 
+
+\paraskip
+An important feature of the antisymmetrisation operators $\mathcal{A} : V^{(r, 0)} \rightarrow \Lambda^{r}(V) \subset V^{(r, 0)}$ is that it is \emph{idempotent}\index{idempotent}, i.e. $\mathcal{A}^2 = \mathcal{A}$. This allows us to deduce the following useful theorem;
+\begin{thm}
+If $T$ is a tensor of type $(r, 0)$ and $S$ is a tensor of type $(s, 0)$, then;
+\begin{equation}
+\mathcal{A}(\mathcal{A}T \otimes S) = \mathcal{A}(T \otimes S) = \mathcal{A}(T \otimes \mathcal{A}S)
+\end{equation}
+\end{thm}
+To prove this, let $\omega^1, \cdots, \omega^{r + s}$ be any covectors, then by definition;
+\begin{multline*}
+\mathcal{A}T \otimes S (\omega^1, \cdots, \omega^{(r + s)}) \\ = \frac{1}{r!}\sum_{\sigma}{(-1)^{\sigma}T(\omega^{\sigma(1)}, \cdots, \omega^{\sigma(r)})S(\omega^{(r + 1)}, \cdots, \omega^{(r + s)})}
+\end{multline*}
+
+
+
+\section{Can we do anything without knowing everything?}
+\subsection{Universality}
+A natural starting point for this discussion is condensed matter systems. Recently there has been a revolution towards the formulation of problems within the confines of universality, drawing on many deep ideas in Quantum Field Theory. To put this in context, we can imagine trying to describe all types of quantum matter in terms of their microscopic dynamics by writing down a big Hamiltonian that governs all the intermolecular interactions. We could put the theory onto a huge computer, run simulations and see what happens. You might argue that this somewhat misses the point, and isn't a satisfactory approach, failing to make use of e.g. the symmetry in the problem, or not \emph{really} solving it. This is more a semantic point however, there is a deeper issue in that even these detailed microscopic dynamics are on a potentially unstable footing. Why should we not go one level deeper and talking about, say, the quark-gluon mess inside the hadrons making up the atoms in your sample? There is a serious question as to what level of description is detailed enough, or whether without a grand overarching theory, no simplification is suitable. Experience tells us this is not the case; we can build bridges, manufacture medicines, and fly to the moon without worrying about or dealing with the minute details that would otherwise make the problem intractable.
+
+\paraskip
+This is fortunate, but it leaves unanswered the question as to exactly why this should work? At least a partial answer lies in effective field theory and the renormalisation flow. On a concrete footing, the renormalisation group flow of a theory takes our high energy description of a process and dilutes the irrelevant influences until we are left with only a critical number of relevant effects that we must deal with. Sometimes this may not work; our theory might become out of control and leave us with no option but to work with the high energy counterpart. An example of the latter might be Yang-Mills theory in the low energy limit; in this case we must find suitable tactics to control our description.
+
+\paraskip
+This is all framed in a very field theoretic fashion, but this principle is more general. Consider Newtonian gravity as a weak-field limit of General Relativity as another example. In this case, the ``flow'' to the low energy theory is less manifest, however it opens up the interpretation as to exactly what it means to make an approximation. In the context of universality, it says that the perturbation theory that lead us to the result is just a rescaling of the problem to a point where we forget where we started. 
+
+
+
+\end{appendices}

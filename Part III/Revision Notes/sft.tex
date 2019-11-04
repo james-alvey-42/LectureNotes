@@ -1,0 +1,320 @@
+\label{sft}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Statistical Field Theory}
+\vspace{-30pt}
+\centering\normalsize\textit{Michaelmas Term 2017 - Professor D. Tong}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{From Spins to Fields}
+\subsection{The Ising Model}
+In the Ising model\index{Ising model}, the energy of a configuration of spins, $\left\{ s_{i} \right\}$ is;
+\begin{equation}
+E = -B \sum_{i}{s_i} - J \sum_{\langle ij \rangle}{s_i s_j}
+\end{equation}
+There are two cases to consider of which we consider one;
+\begin{itemize}
+\item $J > 0$ is a ferromagnet, the spins want to align, we will assume this to be the case from now on.
+\item $J < 0$ is an antiferromagnet, looking forward we would have to introduce a different order parameter to deal with this, where for example we introduce an alternating sign convention on the lattice that multiplies the spin values.
+\end{itemize}
+We want to investigate the physics as we change $B$ and $T$;
+\begin{itemize}
+\item If $B > 0$, the spins prefer $\uparrow$, and vice versa
+\item At a finite temperature, $T$, the spins want to randomise in order to increase the entropy
+\end{itemize}
+All the physics in the canonical ensemble is contained in the partition function;
+\begin{equation}
+Z(T, J, B) = \sum_{\left\{ s_i \right\}}{e^{-\beta E\left[ s_i \right]}}
+\end{equation}
+from which we derive quantities like the thermodynamic free energy\index{free energy};
+\begin{equation}
+F_{\textrm{thermo}} = \langle E \rangle - TS = -T \log Z
+\end{equation}
+or the magnetisation;
+\begin{equation}
+m = \frac{1}{N} \sum_{i}{\langle s_i \rangle} = \frac{1}{N \beta} \, \frac{\partial \log Z}{\partial B} \in \left[ -1, 1 \right]
+\end{equation}
+\subsubsection{The Effective Free Energy}
+Rewrite the partition function as follows;
+\begin{equation}
+Z = \sum_{m}{ \sum_{\left\{ s_i \right\} | m}{e^{-\beta E\left[ s_i \right]}} } \coloneqq \sum_{m}{e^{-\beta F(m)}}
+\end{equation}
+which becomes an integral in the thermodynamic limit since $m$ is essentially continuous;
+\begin{equation}
+Z = \int_{-1}^{+1} {\upd{m} e^{-\beta F(m)}}
+\end{equation}
+then $F(m)$ is known as the effective free energy\index{free energy!effective}. If we define $f(m) \coloneqq \tfrac{F(m)}{N}$ then the integral becomes;
+\begin{equation*}
+Z = \int_{-1}^{+1} {\upd{m} e^{-\beta N f(m)}}
+\end{equation*}
+which is dominated by the minimum of $f(m)$. Then $Z \sim \exp\left( -\beta N f\left(m_{\textrm{min}}\right) \right)$ which in turn implies $F_{\textrm{thermo}} \sim F\left(m_{\textrm{min}}\right)$. In general it is not possible to compute $f(m)$ exactly. However, we start by employing the mean field (MF) approximation where we set $\langle s_i \rangle = m$ in the energy so that;
+\begin{equation}
+\label{eq:energy}
+E = -B N m - \tfrac{1}{2} N J q m^2
+\end{equation}
+where $q$ is the number of nearest neighbour pairs (e.g. $q = 2$ in $d = 1$). Now all that remains is to count the number of configurations with average magnetisation $m$. If there are $N_{\uparrow}$ spins up, then:
+\begin{equation}
+\Omega = \frac{N!}{N_{\uparrow}!\left( N - N_{\uparrow} \right)!}
+\end{equation}
+We can then use Stirling's formula\index{Stirling's formula} to find;
+\begin{dmath}
+\tfrac{\log \Omega}{N} \sim \log 2 - \tfrac{1}{2}\left( 1 + m \right) \log \left( 1 + m \right) - \tfrac{1}{2}\left( 1 - m \right) \log \left( 1 - m \right)
+\end{dmath}
+Then using $e^{-\beta N f(m)} = \sum_{\left\{ s_i \right\} | m}{e^{-\beta E \left[ s_i \right]}} \sim \Omega(m) e^{-\beta E(m)}$ where we find $E(m)$ from \eqref{eq:energy}.
+\begin{examplebox}
+Thus we can conclude that;
+\begin{dmath}
+f(m) \sim - B m - \tfrac{1}{2} J q m^2 - T \left[ \log 2 - \tfrac{1}{2}\left( 1 + m \right) \log \left( 1 + m \right) - \tfrac{1}{2}\left( 1 - m \right) \log \left( 1 - m \right) \right]
+\end{dmath}
+which allows us to deduce the equilibrium magnetisation from $\tfrac{\partial f}{\partial m} = 0$;
+\begin{equation}
+m = \tanh \left( \beta B + \beta J q m \right)
+\end{equation}
+\end{examplebox}
+
+\subsection{Landau Theory of Phase Transitions}
+\begin{definitionbox}
+A phase transition\index{phase transition} occurs when some quantity changes discontinuously. In the example of the Ising model, this is $m$.
+\end{definitionbox}
+The idea of Landau theory is to expand the free energy about small values of the order parameter and investigate the minima. In this case;
+\begin{equation}
+f(m) \sim -T \log 2 - B m + \tfrac{1}{2}\left( T - J q \right) m^2 + \tfrac{1}{12} T m^4
+\end{equation}
+Dropping the overall constant which does not affect the minimum, we deal with $B=0$ first;
+\begin{equation}
+f(m) \sim \tfrac{1}{2} \left( T - T_c \right) m^2 + \tfrac{1}{12} T m^4
+\end{equation}
+where $T_c = J q$. This exhibits different behaviour depending on the sign of $\left( T - T_c \right)$ as is shown in Figure \ref{fig:quarticbzero}.
+\begin{mygraphic}{sft/quarticfenergy}{0.8}{The free energy when $T > T_c$ (left) and $T < T_c$ (right). Note in the latter case that there are two non zero minima at $m = \pm m_0 = \pm \sqrt{ \tfrac{3(T_c - T)}{T} }$.}{quarticbzero}\end{mygraphic}
+We characterise this as follows;
+\begin{enumerate}
+\item $m$ is continuous, so this is called a continuous phase transition\index{phase transition!continuous}
+\item $m = 0$ is the disordered phase, $m \neq 0$ is the ordered phase
+\item $m$ is the order parameter in the context of Landau theory
+\item The free energy is invariant under a $\mathbb{Z}_2$ symmetry, $m \rightarrow -m$. For $T < T_c$, the system has to pick one of the two states, $m = \pm m_0$. We say the $\mathbb{Z}_2$ symmetry is spontaneously broken\index{symmetry breaking}.
+\end{enumerate}
+A final quantity of interest might be the heat capacity,
+\begin{equation*}
+C = \frac{\partial \langle E \rangle}{\partial T} = \beta^2 \frac{\partial^2}{\partial \beta^2} \log Z
+\end{equation*}
+where we compute $\log Z$ by evaluating the free energy at it's minimum. We find that;
+\begin{equation}
+c = \frac{C}{N} \rightarrow 
+\begin{cases}
+   0, & \text{if } T \rightarrow T_{c}^{+} \\
+   \tfrac{3}{2}, & \text{if } T \rightarrow T_{c}^{-}
+\end{cases}
+\end{equation}
+If $B \neq 0$ we can perform a very similar analysis. We find that;
+\begin{dmath}
+f(m) \sim -B m + \tfrac{1}{2} (T - T_c) m^2 + \tfrac{1}{12} T m^4
+\end{dmath}
+Now the linear term shifts the minimum and we find the following, illustrated in Figure \ref{fig:bnonzero};
+\begin{itemize}
+\item The magnetisation varies smoothly and $m \rightarrow \tfrac{B}{T}$ as $T \rightarrow \infty$
+\item There is no phase transition as we vary the temperature
+\end{itemize}
+\begin{mygraphic}{sft/bnonzero}{0.8}{The free energy for $B \neq 0$, we see that the system always sits in a ground state with $\sgn(m) = \sgn(B)$; there is no phase transition. Also note the appearance of a metastable state for low values of $T$.}{bnonzero}\end{mygraphic}
+On the other hand, let us fix $T < T_c$ and vary $B$. Then there is a phase transition as the minimum jumps discontinuously from $m = m_0$ to $m = -m_0$ as illustrated in Figure \ref{fig:btrans}. This is a first order phases transition\index{phase transition!first order} since the order parameter itself changes discontinuously.
+\begin{mygraphic}{sft/btrans}{0.8}{The free energy as we vary $B$ from negative to positive with $T < T_c$.}{btrans}\end{mygraphic}
+So what are we left with? We can draw a phase diagram\index{phase diagram!ising} in the $(B, T)$ plane that exhibits the following properties;
+\begin{enumerate}
+\item There is a line of first order phase transitions below $T = T_c$
+\item There is a critical point\index{critical!point} at $T = T_c$ where there is a second order phase transition.
+\end{enumerate}
+\begin{mygraphic}{sft/phaseising}{0.5}{The phase diagram for the Ising model in the $(B, T)$ plane.}{phaseising}\end{mygraphic}
+\begin{examplebox}
+More importantly, near this critical point;
+\begin{itemize}
+\item At $T = T_c$, $f(m) \sim -B m + \tfrac{1}{12} T m^4$ so differentiating and equating to zero, we find that $m \sim \left| B \right|^{\tfrac{1}{3}}$
+\item We define the magnetic susceptibility;
+\begin{equation}
+\chi = \left. \frac{\partial m}{\partial B} \right|_T
+\end{equation}
+Then $m \sim \tfrac{B}{T - T_c} \Rightarrow \chi \sim (T - T_c)^{-1}$ which diverges at $T = T_c$
+\end{itemize}
+\end{examplebox}
+\subsubsection{Critical Exponents\index{critical!exponents}}
+We have found the following behaviour using mean field theory (MFT);
+\begin{enumerate}
+\item $c \sim c_{\pm}\left| T- T_c \right|^{-\alpha}$ with $\alpha = 0$
+\item $m \sim (T_c - T)^{\beta}$ with $\beta = \tfrac{1}{2}$
+\item $\chi \sim \left| T - T_c \right|^{\gamma}$ with $\gamma = 1$
+\item $m \sim B^{\tfrac{1}{\delta}}$ with $\delta = 3$
+\end{enumerate}
+where $\alpha$, $\beta$, $\gamma$, and $\delta$ are the critical exponents. 
+It is this that MFT gets wrong, along with the characteristic phase transition in $d = 1$ (there is no phase transition in $d = 1$). They are actually given by;
+\begin{center}
+\begin{mytable}{c c c l}
+		& \textbf{MFT}		& $\mathbf{d = 2}$	& $\mathbf{d = 2}$ 	\\ \midrule
+$\alpha$    	& $0$ (disc)		& $0$ (log)		& $0.1101$		\\
+$\beta$	& $\tfrac{1}{2}$	& $\tfrac{1}{8}$	& $0.3264$		\\
+$\gamma$ 	& $1$			& $\tfrac{7}{4}$	& $1.2371$		\\
+$\delta$	& $3$			& $15$			& $4.7898$
+\end{mytable}
+\captionof{table}{Critical exponents from MFT compared to the actual numerical values}
+\end{center}
+\subsubsection{Universality}
+There is more to this characterisation, consider now the liquid-gas transition\index{liquid-gas transition}. Define the volume per particle $v = \tfrac{V}{N}$ and the compressibility, $k = -\tfrac{1}{v} \, \left. \tfrac{\partial v}{\partial p} \right|_T$ where $p$ is the pressure. Then we find in experiments that;
+\begin{enumerate}
+\item $c_v \sim c_{\pm} \left| T - T_c \right|^{-\alpha}$
+\item $v_{\textrm{gas}} - v_{\textrm{liquid}} \sim (T_c - T)^{\beta}$
+\item $k \sim (T - T_c)^{-\gamma}$
+\item $v_{\textrm{gas}} - v_{\textrm{liquid}} \sim (p - p_c)^{\tfrac{1}{\delta}}$
+\end{enumerate}
+with $\alpha$, $\beta$, $\gamma$, $\delta$ given by the same exponents as the $d = 3$ Ising model. Indeed this is the case for \emph{all} liquid-gas transitions.
+\begin{mygraphic}{sft/phaselg}{0.5}{The phase diagram for the liquid-gas transition in the $(p, T)$ plane.}{phaselg}\end{mygraphic}
+\subsection{Landau-Ginzburg Theory}
+We want to extend the ideas above. We let $m$ vary in space, $m \rightarrow m(\vec x)$; it is now a \emph{field}\index{field}. This is achieved by course-graining\index{coarse-graining}, where we divide our lattice into boxes each containing $N^{\prime}$ sites such that $1 \ll N^{\prime} \ll N$. For each box define $m(\vec x) = \tfrac{1}{N} \sum_{i}{s_i}$ where $\vec x$ labels the centre of the box. There are a couple of key takeaways;
+\begin{enumerate}
+\item We should pick $N^{\prime}$ large enough so that $m \in \left[-1, +1\right]$ is essentially continuous
+\item The boxes should have a scale $a$ $\ll$ any scale we care about physically
+\end{enumerate}
+The last point deserves more attention. At some point we will need to remember that it makes no sense for $m(\vec x)$ to vary on very short distance scales - shorter than the separation between boxes. Further, we've not been particularly careful about defining $m(\vec x)$. You might, reasonably ask: does the physics depend on the details of how we coarse grain? The answer is no. This is the beauty of universality. We'll see this more clearly as we proceed. Now we can rewrite the partition function
+\begin{equation}
+Z = \sum_{m(\vec x)}{ \sum_{\left\{s_i | m(\vec x)\right\}}{e^{-\beta E[s]}} } \coloneqq \sum_{m(\vec x)}{e^{-\beta F[m(\vec x)]}}
+\end{equation}
+This can be written as a path integral\index{path integral};
+\begin{equation}
+Z = \int{ \mathcal{D}m(\vec x) \,\, e^{-\beta F[m(\vec x)]} }
+\end{equation}
+\begin{definitionbox}
+We can interpret the integrand as follows: it represents the probability, $p[m(\vec x)]$, for a field configuration to be $m(\vec x)$;
+\begin{equation}
+p[m(\vec x)] = \frac{e^{-\beta F[m(\vec x)]}}{Z}
+\end{equation}
+\end{definitionbox}
+We need to constrain $F[m(\vec x)]$, we invoke the following:
+\begin{enumerate}
+\item \emph{Locality} - the analogue of spins only affecting their neighbour is the following
+$$F[m(\vec x)] = \int{\upd{^{d}x} f\left\{m(\vec x)\right\}}$$
+where $f\left\{m(\vec x)\right\}$ can depends on $m(\vec x)$, $\nabla m(\vec x)$ etc.
+\item \emph{Translational and Rotational Symmetry}
+\item $\mathbb{Z}_2$ \emph{symmetry when} $B = 0$ - free energy invariant under $m(\vec x) \rightarrow -m(\vec x)$.
+\item \emph{Analyticity} - We will assume that $f\left\{m(\vec x)\right\}$ has a Taylor expansion when $m$ is small. Further, we care about situations where $m(\vec x)$ varies slowly, so $\nabla m$ is more important than $a \cdot \nabla^2 m$ (the $a$ is included for dimensions, since it's the only scale in the problem). 
+\end{enumerate}
+\begin{thm}
+With these constraints we can write down the most general free energy when $B = 0$;
+\begin{dmath}
+\label{eq:free_energy}
+F[m(\vec x)] = \int{\upd{^d x} \alpha_2 (T) m^2 + \alpha_4 (T) m^4 + \gamma(T) \left( \nabla m \right)^2 + \cdots}
+\end{dmath}
+Note that if $B \neq 0$, then we could have terms proportional to $m$, $m^3$ etc. The coefficients $\left\{\alpha_2(T), \alpha_4(T), \gamma(T), \ldots \right\}$ are hard to compute from first principles, we will assume that $\alpha_2(T) \sim (T - T_c)$ i.e. changes sign at $T = T_c$ and $\alpha_4(T), \gamma(T) > 0$.
+\end{thm}
+\subsubsection{The Saddle Point}
+We look for the functional derivative of the free energy in \eqref{eq:free_energy}, this is given by;
+\begin{equation}
+\frac{\delta F}{\delta m(\vec x)} = 2\alpha_2 m(\vec x) + 4\alpha_4 m^3(\vec x) - 2\gamma \nabla^2 m(\vec x)
+\end{equation}
+So the minimum gives us the partial differential equation;
+\begin{equation}
+\gamma \nabla^2 m = \alpha_2 m + 2\alpha_4 m^3
+\end{equation}
+The simplest of these solutions $m(\vec x) = m = \textrm{const.}$ just reproduces the Landau theory. In other words, our `mean field approximation' was just the saddle point approximation of the extended theory;
+\begin{itemize}
+\item $T > T_c \Rightarrow \alpha_2 > 0 \Rightarrow m = 0$
+\item $T < T_c \Rightarrow \alpha_2 < 0 \Rightarrow m = \pm m_0 = \pm \sqrt{-\tfrac{\alpha_2}{2\alpha_4}}$
+\end{itemize}
+But the Landau-Ginzburg theory gives us more. Consider the case $T < T_c$ with a configuration such that $m \rightarrow \pm m_0$ as $x \rightarrow \pm \infty$, then writing $m(\vec x) = m(x)$, 
+\begin{equation}
+\label{eq:wallprofile}
+\gamma \frac{\ud^2 m}{\ud x^2} = \alpha_2 m + \alpha_4 m^3 \Rightarrow m = m_0 \tanh \left(\frac{x - X}{W}\right)
+\end{equation}
+where $W = \sqrt{-\tfrac{2\gamma}{\alpha_2}}$ is the width of the wall. The free energy cost of this wall is;
+\begin{equation}
+\label{eq:wallenergy}
+F_{\textrm{wall}} \sim L^{d - 1} \sqrt{-\frac{\gamma \alpha_2^3}{\alpha_4}}
+\end{equation}
+where $L$ is the linear size of the system, i.e. it scales as the area of the wall. These are the reason there are no phase transitions in $d = 1$, the walls destroy any attempt to sit in the ordered phase. 
+\begin{examplebox}[Domain Walls in $1$ dimension]
+Take $\alpha_2(T) < 0$, and a 1-d interval of length $L$. Then fix $m = +m_0$ at $x = -\tfrac{L}{2}$, we want to know the probability that $m = +m_0$ at $x = \tfrac{L}{2}$. We know that,
+\begin{equation*}
+p\left[\textrm{wall at } x = X\right] = \frac{e^{-\beta F_{\textrm{wall}}}}{Z} \Rightarrow p\left[\textrm{wall anywhere}\right] = \frac{e^{-\beta F_{\textrm{wall}}}}{Z} \cdot \frac{L}{W}
+\end{equation*}
+But we could have many domain walls. Then,
+\begin{dmath}
+\label{eq:pwalls}
+p[n \textrm{ walls}] = \frac{e^{-\beta n F_{\textrm{wall}}}}{Z} \cdot \frac{1}{W^n}\int_{-\tfrac{L}{2}}^{\tfrac{L}{2}}{ \upd{x_1} \int_{x_1}^{\tfrac{L}{2}}{ \upd{x_2} \cdots \int_{x_{n-1}}^{\tfrac{L}{2}}{\upd{x_n}} } } = \frac{1}{Z n!}\left(\frac{Le^{-\beta F_{\textrm{wall}}}}{W}\right)^n 
+\end{dmath}
+where the limits in \eqref{eq:pwalls} come from the fact that the $n^{\textrm{th}}$ wall must be to the right of the $(n-1)^{\textrm{th}}$. Then,
+\begin{itemize}
+\item $p[m_0 \rightarrow m_0] = \tfrac{1}{Z}\sum_{n \textrm{ even}}{\tfrac{1}{n!} \left(\tfrac{Le^{-\beta F_{\textrm{wall}}}}{W}\right)^n} = \frac{1}{Z} \cosh\left(\tfrac{Le^{-\beta F_{\textrm{wall}}}}{W}\right)$
+\item $p[m_0 \rightarrow -m_0] = \tfrac{1}{Z}\sum_{n \textrm{ odd}}{\tfrac{1}{n!} \left(\tfrac{Le^{-\beta F_{\textrm{wall}}}}{W}\right)^n} = \frac{1}{Z} \sinh\left(\tfrac{Le^{-\beta F_{\textrm{wall}}}}{W}\right)$
+\end{itemize}
+So as $L \rightarrow \infty$, we have $p[m_0 \rightarrow m_0] = p[m_0 \rightarrow -m_0]$; there is no long range order and no spontaneous symmetry breaking\index{symmetry breaking} in $d = 1$. $d = 1$ is said to be the \emph{lower critical dimension}\index{lower critical dimension}.
+\end{examplebox}
+To see where the expression for $F_{\text{wall}}$ comes from, we follow the program:
+\begin{enumerate}
+\item Start from;
+\begin{equation*}
+F[\phi] = \int{\upd{^d x}\mathbb{F}(\phi)} = \int{\upd{^d x}\alpha_2 \phi^2 + \alpha_4 \phi^4 + \gamma (\nabla \phi)^2}
+\end{equation*}
+and take the saddle point approximation $\delta F/\delta \phi(\vec{x}) = 0$ as above.
+\item Assume that $\phi(\vec{x}) = \phi(x)$ and $\phi = \pm \phi_0 = \pm \sqrt{-\alpha_2/2\alpha_4}$ at $x = \pm \infty$, and solve the saddle point equation to find;
+\begin{equation*}
+\phi(x) = \phi_0 \tanh \left(\frac{x - x_0}{W}\right), \qquad W = \sqrt{-\frac{2\gamma}{\alpha_2}}
+\end{equation*}
+\item As part of the calculation, we will relate;
+\begin{equation*}
+2\alpha_2 \phi^2 - \alpha_4 \phi^4 + \gamma (\phi\pr)^2 = \phi_0^2
+\end{equation*}
+\item Then we wish to compute;
+\begin{equation*}
+F_{\text{wall}} = \int{\upd{^d x}\mathbb{F}(\phi(x)) - \mathbb{F}(\phi_0)}
+\end{equation*}
+which calculates the excess free energy that arises due to the presence of the wall.
+\item Finally, show that;
+\begin{equation*}
+\mathbb{F}(\phi(x)) - \mathbb{F}(\phi_0) = -\frac{\alpha_2}{2}(\phi\pr)^2
+\end{equation*}
+which we can then integrate using;
+\begin{equation*}
+\int_{-\infty}^{\infty}{\upd{x}\left[\cosh\left(\frac{x - x_0}{W}\right)\right]^{-4}} = \frac{4}{3}W
+\end{equation*}
+to find the result.
+\end{enumerate}
+
+\newpage
+\section{My First Path Integral}
+We change notation slightly taking $m(\vec x) \rightarrow \phi(\vec x)$. Now there are some facts about the path integral\index{path integral};
+\begin{equation}
+Z = \int{\mathcal{D}\phi(\vec x) \, \exp\left(-\beta F[\phi(\vec x)]\right)}
+\end{equation}
+that should be noted;
+\begin{itemize}
+\item They are `easy' in the Gaussian case, where $F[\phi]$ is quadratic in $\phi$.
+\item Possible if higher order terms are small
+\item Very difficult otherwise
+\end{itemize}
+Now start with the free energy;
+\begin{equation}
+\label{eq:phife}
+F[\phi(\vec x)] = \int{ \upd{^d x} \left\{ \alpha_2(T)\phi^2 + \alpha_4(T) \phi^4 + \gamma(T) \left(\nabla \phi \right)^2 \right\} }
+\end{equation}
+If $T > T_c$ we have $\alpha_2(T) > 0$ and neglecting higher order terms,
+\begin{equation}
+\label{eq:mufe}
+F[\phi(\vec x)] = \int{ \upd{^d x} \left\{ \mu^2 \phi^2 + \gamma(T) \left(\nabla \phi \right)^2 + \cdots \right\} }
+\end{equation}
+with $\mu^2 > 0$. For $T < T_c$, the saddle point is at $\langle \phi \rangle = \pm m_0 = \pm \sqrt{-\tfrac{\alpha_2}{2\alpha_4}}$. We can write $\tilde{\phi} = \phi - \langle \phi \rangle$, then plugging into \eqref{eq:phife}, the free energy is now,
+\begin{dmath}
+F[\tilde{\phi}(\vec x)] = \int{\upd{^d x} \alpha_2 \left(\tilde{\phi} + m_0\right)^2 +  \alpha_4 \left(\tilde{\phi} + m_0\right)^4 + \gamma(T) \left(\nabla \tilde{\phi} \right)^2 + \cdots}
+\end{dmath}
+Using the exact expression for $m_0$ you can easily show that the linear terms vanish and the resulting coefficient of the $\tilde{\phi}^2$ term is $\alpha_2^{\prime}(T) = \alpha_2(T) + 6 m_0^2 \alpha_4(T) = -2 \alpha_2(T) > 0$. So, dropping higher order terms $\tilde{\phi}^3, \ldots$ we find:
+\begin{equation}
+F[\tilde{\phi}(\vec x)] = F[m_0] + \int{ \upd{^d x} \left\{ \alpha_2^{\prime} \tilde{\phi}^2 + \gamma(T) \left(\nabla \tilde{\phi} \right)^2 + \cdots \right\} }
+\end{equation}
+so it's sufficient just to consider the form in \eqref{eq:mufe}.
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

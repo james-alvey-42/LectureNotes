@@ -1,0 +1,354 @@
+\label{qft}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Quantum Field Theory}
+\vspace{-30pt}
+\centering\normalsize\textit{Michaelmas Term 2017 - Professor B. Allanach}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Classical Field Theory}
+\begin{definitionbox}
+A field is a physical quantity defined at every point of spacetime $(\vec x, t)$. In field\index{field} theory we have a set of fields $\phi_a (\vec x, t)$, where both $\vec x$ and $a$ are labels, so there are an infinite number of degrees of freedom.
+\end{definitionbox}
+The dynamics of fields are governed by a Lagrangian\index{Lagrangian},
+\begin{equation}
+L = \int{\upd{^3 x} \mathcal{L}(\phi_a, \partial_\mu \phi_a)}
+\end{equation}
+where $\mathcal{L}$ is the Lagrangian density. Then the action is;
+\begin{equation}
+\mathcal{S} = \int_{t_0}^{t}{\upd{t} L} = \int{\upd{^4 x} \mathcal{L}(\phi_a, \partial_\mu \phi_a)}
+\end{equation}
+\subsection{Units}
+We work in units where $c = \hbar = 1$ which implies that $\left[L\right] = \left[T\right] = \left[M\right]^{-1}$, so length and time are measured in units of inverse mass, or equivalently, energy. There are two things to note;
+\begin{enumerate}
+\item If a quantity $X$ has mass dimension $d$, then we say $X$ has dimension $d$
+\item The action, $\mathcal{S}$ is dimensionless $\Rightarrow \left[\ud^4 x\right] = -4, \left[\mathcal{L}\right] = 4$
+\end{enumerate}
+\subsection{Dynamical Principles of Classical Field Theory}
+Classical Field theory is built on the principle of stationary action; the fields evolve such that $\mathcal{S}$ is stationary with respect to variations in the fields;
+\begin{dmath}
+\delta \mathcal{S} = \sum_{a}{\int{\upd{^4 x} \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a +\frac{\partial \mathcal{L}}{\partial\left(\partial_\mu \phi_a \right)} \delta \left( \partial_\mu \phi_a \right)\right)}} = \sum_{a}{\int{\upd{^4 x} \left( \frac{\partial \mathcal{L}}{\partial \phi_a} \delta \phi_a - \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial\left(\partial_\mu \phi_a \right)}\right) \delta  \phi_a \right) + \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial\left(\partial_\mu \phi_a \right)} \delta \phi_a \right)}}
+\end{dmath}
+The last term vanishes for any Lagrangian that decays at spatial infinite and has $\delta \phi_a (\vec x, t_i) = \delta \phi_a (\vec x, t_f) = 0$. Thus $\delta \mathcal{S} = 0$ for all $\delta \phi_a$ gives us the Euler-Lagrange equations\index{equation!Euler-Lagrange} for the field:\footnote{For more on this, refer to Appendix \ref{sec:parttofield}.} \boxed{\textbf{I.i}}
+\begin{equation}
+\label{eq:EL}
+\partial_\mu \left(\frac{\partial \mathcal{L}}{\del\left(\del_\mu \phi_a\right)}\right) - \frac{\partial \mathcal{L}}{\partial \phi_a} = 0
+\end{equation}
+As an example of this consider the Klein-Gordon field;
+\begin{examplebox}[The Klein-Gordon Equation\index{equation!Klein-Gordon}]	
+Consider the Lagrangian;
+\begin{equation*}
+\mathcal{L} = \tfrac{1}{2}\etamn{^}\del_\mu \phi \del_\nu \phi - \tfrac{1}{2} m^2 \phi^2 = \tfrac{1}{2} \dot{\phi}^2 - \tfrac{1}{2}(\nabla \phi)^2 - \tfrac{1}{2} m^2 \phi^2
+\end{equation*}
+Then using \eqref{eq:EL} we find the Klein-Gordon equation;
+\begin{equation}
+\del_\mu \del^\mu \phi + m^2 \phi = 0
+\end{equation}
+\end{examplebox}
+The realm of Quantum Field Theory are relativistic energies where quantum effects are important. The mass energy equivalence at these high energies mean that the quantum states are multi-particle ones, and the particle number is \emph{not fixed}. This is fundamentally different to normal quantum mechanics. The Schr{\"o}dinger equation is for a single particle, there is no mechanism to create more. Furthermore, interactions arise due to locality and symmetry, they do not arise from arbitrary potentials in the Lagrangian. Indeed, this is made explicit in \emph{Advanced Quantum Field Theory}, where symmetries of the path integral measure and the classical action remain manifest in the full quantum theory. This ensures that the interactions generated respect this symmetry. A special QFT is the free theory\index{free theory} where there are particles, but no interactions. This is a relativistic theory with an infinite number of quantised harmonic oscillators\index{harmonic oscillator}, at least one at each point in space. The interacting theory is then built perturbatively on top of this.
+\subsubsection{Lorentz Invariance\index{Lorentz!invariance}}
+The Lorentz matrices\footnotemark satisfy the relation; \boxed{\textbf{I.ii}}
+\footnotetext{
+Note that this expression implies the Lorentz invariance of quantities such as $p^\mu p_\mu$. Under a Lorentz transformation $p^{\mu} \rightarrow \Lambda\indices{^{\mu}_{\nu}}p^{\nu}$ so; 
+\begin{equation*}
+p^\mu p_\mu = \eta_{\mu\nu}p^\mu p^\nu \rightarrow \eta_{\mu\nu} \Lambda\indices{^{\mu}_{\rho}}\Lambda\indices{^{\nu}_{\sigma}}\eta_{\rho\sigma}p^\rho p^\sigma = \eta_{\rho \sigma}p^{\rho} p^{\sigma}
+\end{equation*}
+}
+\begin{equation}
+\label{eq:LT}
+\Lambda\indices{^\mu_\sigma}\eta\indices{^{\sigma \tau}}\Lambda\indices{_\tau ^\nu} = \etamn{^}
+\end{equation}
+Consider the Lorentz transformation\index{Lorentz!transformation} of a field, $\phi$ under the transformation;\footnotemark
+\footnotetext{
+This is really the statement that Lorentz transformations are isometries of the Minkowski metric, in other words, we can define the group in a co-ordinate free way via;
+\begin{equation*}
+\mO(3, 1) \coloneqq \set{M \in \text{GL}(\RR^{3, 1}) : \eta(M \vec{x}, M \vec{y}) = \eta(\vec{x}, \vec{y})}
+\end{equation*}
+}
+\begin{equation*}
+\Lambda : \phi \rightarrow \phi^{\prime}, \quad \phi^{\prime}(x^\mu) = \phi(x^{\prime \, \mu}), \quad x^{\prime \, \mu} = \left(\Lambda^{-1}\right)\indices{^\mu_\nu} x^\nu
+\end{equation*}
+This is an active transformation of the field, pulling the field value at $\Lambda^{-1} x$ to $x$. We say the Lorentz transformations have a \emph{representation} on the fields. For a scalar field\index{field!scalar}, this is just $\phi(x) \rightarrow \phi^{\prime}(x) = \phi(\Lambda^{-1} x)$. But we could equally have used a passive transformation where we relabel spacetime points, $\phi(x) \rightarrow \phi(\Lambda x)$. Since we work with Lorentz invariant theories it doesn't matter what we choose.
+
+\paraskip
+A Lorentz invariant theory is one where the action is invariant under a Lorentz transformation, e.g.
+\begin{equation*}
+\mathcal{S} = \int{\upd{^4 x} \tfrac{1}{2}\del_\mu \phi \del^\mu \phi - U(\phi)}
+\end{equation*}
+Under a Lorentz transformation;
+\begin{itemize}
+\item $U \rightarrow U\left(\phi(x^{\prime})\right) = U(x^{\prime})$
+\item $\left(\del_\mu \phi\right)^{\prime} = \left(\Lambda^{-1}\right)\indices{^\sigma_\mu} \del^{\prime}_\sigma \phi(x^{\prime})$ (This is how a vector field transforms). But plugging this into the kinetic term, and using the relation in \eqref{eq:LT}, we see that the Lagrangian simply transforms as a scalar field.
+\end{itemize}
+So,
+$$\mathcal{S}^{\prime} = \int{\upd{^4 x} \mathcal{L}(x^{\prime})}$$
+The final step is to note that Lorentz transformations have determinants with modulus $1$. So,
+\begin{equation}
+\mathcal{S}^{\prime} = \int{\upd{^4 x^{\prime}} \mathcal{L}(x^{\prime})} = \mathcal{S}
+\end{equation}
+\subsection{Noether's Theorem\index{Noether's theorem} \& Symmetries}
+\begin{thm}{Noether's Theorem}
+Every continuous symmetry of the Lagrangian gives rise to a conserved current, $j^\mu (x)$ such that $\del_\mu j^\mu (x) = 0$. Furthermore, each conserved current has an associated conserved charge,
+\begin{equation}
+Q = \int_{\mathbb{R}^3}{\upd{^3 x} j^0 (x^{\mu})}
+\end{equation}
+which follows from the divergence theorem and the continuity equation as well as the assumption that $j$ decays sufficiently rapidly. Note that the current is only conserved \emph{on-shell}\index{on-shell} where the equations of motion hold. Furthermore, Noether's theorem holds for global symmetries \emph{as well as gauge symmetries} where $\alpha = \alpha(x)$. Indeed, the global symmetry is a special case of this.
+\end{thm}
+A transformation which induces a variation in the field, $\phi(x) \rightarrow \phi(x) + \alpha \Delta \phi(x)$, is a symmetry if it leaves the action invariant $\iff$ the Lagrangian is invariant up to a total derivative; 
+\begin{equation}
+\label{eq:var}
+\mathcal{L} \rightarrow \mathcal{L} + \alpha \del_\mu X^\mu (x)
+\end{equation} 
+In detail,
+\begin{dmath}
+\mathcal{L}(x) \rightarrow \mathcal{L}(x) + \alpha \frac{\del \mathcal{L}}{\del \phi}\Delta \phi + \alpha \frac{\del \mathcal{L}}{\del \left(\del_\mu \phi\right)}\del_\mu \left(\Delta \phi\right) = \mathcal{L}(x) + \alpha\del_\mu \left(\frac{\del \mathcal{L}}{\del\left(\del_\mu \phi\right)} \Delta \phi \right)
+\end{dmath}
+where we have used the Euler Lagrange equations in the second line. So comparing to \eqref{eq:var}, we find the current, \boxed{\textbf{I.iii}}
+\begin{equation}
+\label{eq:current}
+j^{\mu} = \frac{\del \mathcal{L}}{\del \left(\del_\mu \phi\right)} \Delta \phi - X^\mu, \quad \del_\mu j^\mu = 0
+\end{equation}
+We consider the example of a complex scalar\index{field!complex scalar} field to illustrate this,
+\begin{examplebox}
+We write the theory using $\psi$, $\psi^{\star}$ with Lagrangian;
+\begin{equation}
+\mathcal{L} = \del_\mu \psi^{\star} \del^\mu \psi - V\left( \left| \psi \right|^2 \right), \quad \textrm{e.g. } V\left( \left| \psi \right|^2 \right) = m^2 \psi^{\star} \psi - \tfrac{\lambda}{2}\left( \psi^{\star} \psi \right)^2
+\end{equation}
+The symmetry is a phase rotation $\psi \rightarrow e^{i \beta} \psi \rightarrow \Delta \psi = i \psi, \Delta \psi^{\star} = - i \psi^{\star}$. Lagrangian clearly invariant, so $X^{\mu} = 0$. Then we use \eqref{eq:current} to find,
+\begin{equation}
+j_\mu = i \left(\psi \del_\mu \psi^{\star} - \psi^{\star} \del_\mu \psi \right)
+\end{equation}
+and the conserved charge is the electric charge\index{electric charge}/particle number. 
+\end{examplebox}
+Perhaps a more important example is that of translations, which leads to the energy-momentum tensor\index{tensor!energy-momentum};
+\begin{examplebox}[The Energy-Momentum Tensor]
+We consider the translation $x^\mu \rightarrow x^\mu - \xi^\mu$, so $\phi(x) \rightarrow \phi(x) + \xi^\mu \del_\mu \phi(x)$, where we use the fact that $\phi$ transforms under the inverse map. If $\mathcal{L}$ doesn't depend explicitly on time, then it transforms as a scalar field, then;
+\begin{equation}
+\mathcal{L}(x) \rightarrow \mathcal{L}(x) + \xi^\mu \del_\mu \mathcal{L} (x) = \mathcal{L}(x) + \xi^\nu \del_\mu \left( \delta\indices{^\mu_\nu}\mathcal{L}\right)
+\end{equation}
+We have one conserved current for each component of $\xi^\nu$, so identifying $\Delta \phi = \del_\mu \phi$, $X^\mu = \delta\indices{^\mu_\nu}\mathcal{L}$, we find;
+\begin{equation}
+j\indices{^\mu_\nu} \coloneqq T\indices{^\mu_\nu} = \frac{\del \mathcal{L}}{\del \left( \del_\mu \phi \right)}\del_\nu \phi - \delta\indices{^\mu_\nu}\mathcal{L}, \quad \del_\mu T\indices{^\mu_\nu} = 0
+\end{equation}
+This gives us the conserved charges;
+\begin{itemize}
+\item Total field energy, $E = \int{\upd{^3 x}} T^{00}$
+\item Total field momentum, $P^{i} = \int{\upd{^3 x}} T^{0i}$
+\end{itemize}
+\end{examplebox}
+\newpage
+\section{Canonical Quantisation}
+We can also use the Hamiltonian\index{Hamiltonian} formalism in field theories; the conjugate momentum\index{conjugate momentum} is defined by;
+\begin{equation}
+\pi_a (x) = \frac{\del \mL}{\del \dot{\phi}_a} \Rightarrow \hamilt = \sum_{a}{\pi_a (x) \dot{\phi}_a} - \mL(x)
+\end{equation}
+where $\hamilt$ is the Hamiltonian density\index{Hamiltonian!density}. For example, consider $\mL = \tfrac{1}{2} \dot{\phi}^2 - \tfrac{1}{2} \left(\nabla \phi \right)^2 - V(\phi) \Rightarrow \pi(x) = \dot{\phi}(x) \Rightarrow \hamilt = \tfrac{1}{2} \pi^2 + \tfrac{1}{2} \left(\nabla \phi \right)^2 + V(\phi)$. Hamilton's equations\index{equation!Hamilton's};
+\begin{equation}
+\dot{\phi} = \frac{\del \hamilt}{\del \pi}, \quad \dot{\pi} = - \frac{\del \hamilt}{\del \phi}
+\end{equation}
+In general it is not obvious that the Hamiltonian is manifestly Lorentz invariant, but the physics is unchanged, so it must be. Now, in quantum mechanics, the process of quantisation\index{canonical quantisation} takes co-ordinates $q_a$ and momenta $p_a$ and promotes them to operators, replacing the Poisson bracket\index{Poisson bracket} with commutators. We'll do the same here;
+\begin{definitionbox}
+A \emph{quantum field}\index{field!quantum} is an operator valued function of space obeying the commutation relations;
+\begin{align}
+\left[\phi_a(\vec x), \pi^b(\vec y)\right] &= i\delta\indices{^{a}_{b}}\delta^{(3)}(\vec x - \vec y) \\
+\left[\phi_a(\vec x), \phi_b(\vec y)\right] &= 0 = \left[\pi^{a}(\vec x), \pi^{b}(\vec y)\right] 
+\end{align}
+where we are in the Schr{\"o}dinger picture, so there is no time dependence in the fields.
+\end{definitionbox}
+It is usually not possible to know the spectrum of $\hamilt$ as there are an infinite number of degrees of freedom. In certain theories, the co-ordinates evolve independently, these are \emph{free theories}\index{free theory} where $\mL$ is quadratic in the fields, giving linear equations of motion. For example, the free theory of a scalar field leads to the Klein-Gordon equation\index{equation!Klein-Gordon} for the field $\phi(\vec, t)$;
+\begin{equation}
+\del_\mu \del^\mu + m^2 \phi = 0
+\end{equation}
+Taking the Fourier transform\index{Fourier transform};
+\begin{equation}
+\phi(\vec x, t) = \int{\frac{\ud^3 p}{(2\pi)^3} e^{i \vec p \cdot \vec x} \phi(\vec p, t)} \Rightarrow \left(\del^2_t + ( \vec{p}^2 + m^2 )\right) \phi(\vec p, t) = 0
+\end{equation}
+But this is just a harmonic oscillator with frequency $\omega_{p} = \sqrt{\vec{p}^2 + m^2}$. Then $\phi(\vec x, t)$ is just a superposition of an infinite number of harmonic oscillators that we need to quantise.
+\subsection{Review of the Simple Harmonic Oscillator\index{harmonic oscillator}}
+The main details of the harmonic oscillator can be found elsewhere, here we focus only on the concept of \emph{normal ordering}\index{normal ordering}. Often we are only interested in energy differences between states. So we set the zero point energy $\tfrac{1}{2} \omega \ket{n}$ to zero. This is not so drastic in the case of a single oscillator, it just results from fixing the Hamiltonian to be $\text{H} = \omega a\dagg a$. In the free theory of a full quantum field however, this zero point energy is infinite and thus in this context normal ordering represents a far more subtle process. 
+\subsection{Free Field Theory}
+We take guidance from the simple harmonic oscillator where we write the position and momentum operators in terms of the ladder operators;
+\begin{equation}
+\label{eq:sho}
+\phi = \tfrac{1}{\sqrt{2\omega}}\left(a + a\dagg\right), \quad \pi = -i \sqrt{\tfrac{\omega}{2}} \left(a - a\dagg\right)
+\end{equation}
+Then we can find the spectrum of the Klein-Gordon Hamiltonian using the same form, but now each Fourier mode of the field is treated as an independent oscillator with it's own $a$, $a\dagg$. So in analogy with \eqref{eq:sho}, we write;\footnote{Note that the second term in the expression for $\phi(\vec x)$ ensures that $\phi$ is a real field.}
+\begin{definitionbox}[The Klein-Gordon Scalar Field]
+\vspace{-10pt}
+\begin{align}
+\label{eq:kgfield}
+\phi(\vec x) &= \int{\frac{\ud^3 p}{(2\pi)^3}\frac{1}{\sqrt{2\omega_p}} \left(a_{\vec p}\, e^{i\vec{p} 
+\cdot \vec{x}} + a_{\vec p}\dagg \,e^{-i\vec{p}\cdot\vec{x}}\right)} \\
+\pi(\vec x) &= \int{\frac{\ud^3 p}{(2\pi)^3}(-i)\sqrt{\frac{\omega_p}{2}} \left(a_{\vec p}\, e^{i\vec{p} 
+\cdot \vec{x}} - a_{\vec p}\dagg\, e^{-i\vec{p}\cdot\vec{x}}\right)}
+\end{align}
+\end{definitionbox}
+Importantly we can use this definition along with the identity;
+\begin{equation}
+\int{\frac{\ud^3 p}{(2\pi)^3}e^{i \vec{p} \cdot \vec{x}}} = \delta^{(3)}(\vec x)
+\end{equation}
+to show that;\footnote{It is the commutation relations in \eqref{eq:comm} that really motivate the definition in \eqref{eq:kgfield}. It is this algebraic structure that is the hallmark of the quantisation process, not the analogy with the simple harmonic oscillator}
+\begin{multline}
+\label{eq:comm}
+\left[\phi(\vec x), \pi(\vec y)\right] = i\delta^{(3)}(\vec x - \vec y), \left[\phi(\vec x), \phi(\vec y)\right] = 0 = \left[\pi(\vec x), \pi(\vec y)\right] \\ \iff \left[a_{\vec p}, a_{\vec q}\right] = 0 = \left[a_{\vec p}\dagg, a_{\vec q}\dagg\right], \left[a_{\vec p}, a_{\vec q}\dagg\right] = (2\pi)^3 \delta^{(3)}(\vec p - \vec q)
+\end{multline}
+So, given these definitions, can we calculate the Hamiltonian in terms of the ladder operators? It is a lengthy, but relatively straightforward calculation to find that;
+\begin{align}
+\text{H} &= \frac{1}{2} \int{\upd{^3 x} \pi^2 + \left(\nabla \phi\right)^2 + m^2 \phi^2} \nonumber \\
+&= \frac{1}{4} \int{\frac{\ud^3 p}{(2\pi)^3 \omega_p}\left(-\omega_p^2 + \vec{p}^2 + m^2\right)\left(a_{\vec p} a_{-\vec p} + a_{\vec p}\dagg a_{-\vec p}\dagg\right)} \nonumber \\ 
+&\qquad\qquad\qquad+ \left(\omega_p^2 + \vec{p}^2 + m^2\right)\left(a_{\vec p} a_{\vec p}\dagg + a_{\vec p}\dagg a_{\vec p}\right)
+\end{align}
+But now we can use the fact that $\omega_p = \sqrt{\vec{p}^2 + m^2}$ to see that the first term vanishes and we are left with;
+\begin{equation}
+\text{H} = \int{\frac{\ud^3 p}{(2\pi)^3} \omega_p \left(a_{\vec p}\dagg a_{\vec p} + \frac{1}{2}\left[a_{\vec p}, a_{\vec p}\dagg\right]\right)}
+\end{equation}
+\subsubsection{The Vacuum}
+We define the \emph{vacuum}\index{vacuum} of the theory, $\ket{0}$ by the condition that $a_{\vec p} \ket{0} = 0$ for all momenta $\vec p$. The energy is then given by $\text{H}\ket{0}$;
+\begin{equation}
+\text{H}\ket{0} = \frac{1}{2}\int{\frac{\ud^3 p}{(2\pi)^3} \omega_p (2\pi)^3 \delta^{(3)}(0) \ket{0}}
+\end{equation}
+but this is divergent (an \emph{ultra-violet divergence}\index{UV divergence}). To rectify this we apply the concept of normal ordering\index{normal ordering}. We are only interested in energy differences, so we redefine the normal ordered Hamiltonian to be;\footnotemark
+\footnotetext{
+There are actually two infinities here. The first is because space is infinitely large. If instead we put the system in a box of side length $L$, then;
+\begin{equation*}
+(2\pi)^3 \delta^{(3)}(0) = \lim_{L \rightarrow \infty}\int_{-L/2}^{L/2}{\upd{^3 x}\left.e^{i \vec{p}\cdot\vec{x}}\right|_{\vec{p} = 0}} = \lim_{L \rightarrow \infty}\int_{-L/2}^{L/2}{\upd{^3 x}} = V
+\end{equation*}
+This we can resolve then by simply considering the energy density $E/V \coloneqq \epsilon_0$. This still leaves;
+\begin{equation*}8
+\int{\frac{\ud^3 p}{(2\pi)^2}\frac{1}{2}\omega_{\vec{p}}} \rightarrow \infty
+\end{equation*}
+since $\omega_{\vec{p}}$ diverges. This is the UV divergence mentioned above.
+}
+\begin{equation}
+\normord{\text{H}} = \int{\frac{\ud^3 p}{(2\pi)^3}\omega_p a_{\vec p}\dagg a_{\vec p}}
+\end{equation}
+\begin{definitionbox}[Normal Ordering]
+In general, we define a normal ordering\index{normal ordering} string of operators $\phi_1(x_1)\cdots\phi_n(x_n)$ to be $\normord{\phi_1(x_1)\cdots\phi_n(x_n)}$ which is simply the normal product with all annihilation operators moved to the right of each term.
+\end{definitionbox}
+\subsubsection{Particles}
+With this definition of normal ordering, we now have $\normord{\text{H}}\ket{0} = 0$. We can also verify that,
+\begin{equation}
+\left[\text{H}, a_{\vec p}\dagg\right] = \omega_p a_{\vec p}\dagg, \quad \left[\text{H}, a_{\vec p}\right] = -\omega_p a_{\vec p}
+\end{equation}
+So $a_{\vec p}\dagg$ increases the energy by $\omega_{\vec p}$. Let $\ket{\vec{p}\pr} = a_{\vec{p}\pr}\dagg \ket{0}$ then we may show that; 
+\begin{equation}
+\text{H}\ket{\vec{p}\pr} = \omega_{\vec{p}\pr} a_{\vec{p}\pr}\dagg \ket{0} = \omega_{\vec{p}\pr}\ket{\vec{p}\pr}
+\end{equation}
+i.e. the energy is just $\omega_{\vec{p}\pr} = \sqrt{\vec{p}^{\prime^2} + m^2}$ which is the dispersions relation \index{dispersion relation} for a relativistic particle of mass $m$ and momentum $\vec{p}\pr$. We write $\omega_{\vec{p}} = E_{\vec{p}}$ from now on. We can also show that the total momentum and angular momentum operators;
+\begin{align}
+\vec P &= -\int{\upd{^3 x} \pi(\vec x) \nabla \phi(\vec x)} = \int{\frac{\ud^3 p}{(2\pi)^3} \vec p a_{\vec p}\dagg a_{\vec p}} \\
+J_i &= -\frac{i}{2}\epsilon_{ijk}\int{\frac{\ud^3 p}{(2\pi)^3} a_{\vec p}\dagg\left(p_j \frac{\del}{\del p_k} - p_k \frac{\del}{\del p_j}\right)a_{\vec p}}
+\end{align} 
+satisfy $\vec P \ket{\vec p} = \vec p \ket{\vec p}$ and $J_i \ket{\vec p = \vec 0} = 0$. This second equality tells us that the single particle states of the scalar field have spin $0$. 
+
+\paraskip
+Now consider the more general multi-particle states, $\ket{\vec{p}_1, \ldots, \vec{p}_n} = a_{\vec{p}_1}\dagg \cdots a_{\vec{p}_n}\dagg\ket{0}$. The $a\dagg$ commute, so this is symmetric under interchange implying that the particles of the scalar field are also \emph{bosons}\index{boson}. The full Hilbert space\index{Hilbert space}, know as the \emph{Fock space}\index{Fock space} is spanned by 
+\begin{equation}
+\set{\ket{0}, a_{\vec{p}_1}\dagg\ket{0}, a_{\vec{p}_1}\dagg a_{\vec{p}_2}\dagg\ket{0}, \ldots}
+\end{equation}
+The number operator\index{number operator} counts the number of particles;
+\begin{equation}
+N = \int{\frac{\ud^3 p}{(2\pi)^3} a_{\vec{p}}\dagg a_{\vec p}}, \quad N \ket{\vec{p}_1, \ldots, \vec{p}_n} = n\ket{\vec{p}_1, \ldots, \vec{p}_n} 
+\end{equation}
+In the free theory, $\left[N, \text{H}\right] = 0$ so the particle number is actually conserved. This is certainly not true in the interacting theory\index{interacting theory} however. 
+
+\paraskip
+Note that these momentum states are not localised in space, and even after taking a Fourier transform;
+\begin{equation*}
+\ket{\vec{x}} = \int{\frac{\ud^3 p}{(2\pi)^3}e^{i\vec{p}\cdot\vec{x}}\ket{\vec{p}}}
+\end{equation*}
+the localised states are still not normalisable; $\braket{\vec{x}}{\vec{x}} = \infty$. This is really the statement that $a_{\vec{p}}$ and $\phi(\vec{x})$ are not good operators on the Hilbert space. To construct well defined operators, we should consider a wave packet;
+\begin{equation}
+\ket{\varphi} = \int{\frac{\ud^3 p}{(2\pi)^3}e^{-i\vec{p}\cdot\vec{x}}\varphi(\vec{p})\ket{\vec{p}}} = \int{\frac{\ud^3 p}{(2\pi)^3}e^{-i\vec{p}\cdot\vec{x}}\varphi(\vec{p})a_{\vec{p}}\dagg \ket{0}}
+\end{equation}
+which we can show satisfies;
+\begin{equation*}
+\braket{\varphi}{\varphi} = \int{\upd{^3 p}\abs{\varphi(\vec{p})}^2}
+\end{equation*}
+So we deduce that states such that $\varphi(\vec{p})$ has a finite $L^2$ norm are good operators on the Hilbert space.
+\subsection{Relativistic Normalisation}
+We define the vacuum to be normalised; $\braket{0}{0} = 1$, then $\braket{\vec p}{\vec q} = \expval{a_{\vec p} a_{\vec q}\dagg}{0} = \expval{\left[a_{\vec p}, a_{\vec q}\dagg\right]}{0} = (2\pi)^3 \delta^{(3)}(\vec p - \vec q)$. We want to know if this is Lorentz invariant. Clearly the vacuum normalisation is since it is just a scalar but, a priori, the general one-particle state is not, and indeed it will need some modification. Consider a boost in the $3$-direction; then $p_3\pr = \gamma(p_3 + \beta E), E\pr = \gamma(E + \beta p_3)$. We can use a delta function identity;
+\begin{equation}
+\label{eq:deltaident}
+\delta\left(f(x) - f(x_0)\right) = \frac{1}{\abs{f\pr(x_0)}} \delta(x - x_0)
+\end{equation}
+to deduce that;\footnote{Note that $E = \sqrt{p_i p^i + m^2} \Rightarrow \del_{p_3}E = \tfrac{p_3}{E}$ as claimed.}
+\begin{align}
+\delta^{(3)}(\vec p - \vec q) &= \delta(p_1 - q_1)\delta(p_2 - q_2)\delta(p_3 - q_3) \nonumber \\
+&= \delta^{(3)}(\vec{p}\pr - \vec{q}\pr) \cdot \frac{\ud p_3\pr}{\ud p_3} = \delta^{(3)}(\vec{p}\pr - \vec{q}\pr) \gamma\left(1 + \beta \frac{\ud E}{\ud p_3}\right) \nonumber \\
+&= \delta^{(3)}(\vec{p}\pr - \vec{q}\pr) \frac{\gamma}{E}(E + \beta p_3) = \delta^{(3)}(\vec{p}\pr - \vec{q}\pr)\frac{E\pr}{E}
+\end{align}
+We see then that whilst $\delta^{(3)}(\vec{p}- \vec{q})$ is not Lorentz invariant, $E_{\vec p}\delta^{(3)}(\vec{p} - \vec{q})$ is. Hence we define the normalised one particle states;
+\begin{equation}
+\ket{p} = \sqrt{2E_{\vec p}}a\dagg_{\vec p}\ket{0} \Rightarrow \braket{p}{q} = (2\pi)^3 \cdot 2\sqrt{E_{\vec p}E_{\vec q}} \delta^{(3)}(\vec p - \vec q)
+\end{equation}
+Because of this redefinition, we need to include factors of $\sqrt{2E_{\vec p}}$ elsewhere, for example. the identity on one particle states is now;
+\begin{equation}
+\left(\II\right)_{\text{one particle states}} = \int{\frac{\ud^3 p}{2 E_{\vec p}}\frac{1}{(2\pi)^3}\ket{p}\bra{p}}
+\end{equation}
+As a final point in this regard, note that, using \eqref{eq:deltaident};
+\begin{equation}
+\int{\upd{^4 p} \left.\delta(p_0^2 - \vec{p}^2 - m^2)\right|_{p_0 > 0}} = \int{\left.\frac{\ud^3 p}{2p_0}\right|_{p_0 = E_{\vec p}}}
+\end{equation}
+which justifies the fact that the integration measure $\left(\ud^3 p / 2E_{\vec p}\right)$ is Lorentz Invariant since the LHS is.\footnote{$\ud^4 p$ certainly is because $\det \text{M} = 1$ for $\text{M} \in \Orth{3,1}$, and the delta function is only dependent on Lorentz invariant quantities.}
+\subsection{Complex Scalar Field\index{field!complex scalar}}
+Consider now the Lagrangian;\footnote{If we write the complex field $\psi = \tfrac{1}{\sqrt{2}}(\phi_1 + i \phi_2)$, then expanding the Lagrangian gives the sum of the usual Lagrangian for two real scalar fields $\mL_i = \tfrac{1}{2}(\del \phi_i)^2 - \tfrac{1}{2}m^2 \phi_i^2$. Furthermore, this explains the presence of \emph{two} types of creation/annihilation operators, one for the real component of $\psi$ and one for the imaginary part.}
+\begin{equation}
+\mL = \del_\mu \psi^{\star} \del^\mu \psi - \mu^2 \psi^{\star} \psi
+\end{equation}
+which leads to the Euler-Lagrange equations\index{equation!Euler-Lagrange};
+\begin{equation}
+\del_\mu \del^\mu \psi + \mu^2 \psi = 0, \quad \del_\mu \del^\mu \psi^{\star} + \mu^2 \psi^{\star} = 0
+\end{equation}
+This allows us to expand;
+\begin{align}
+\psi &= \int{\frac{\ud^3 p}{(2\pi)^3}\frac{1}{\sqrt{2E_p}}\left(b_{\vec p}e^{i\vec{p}\cdot \vec{x}} + c\dagg_{\vec p}e^{-i \vec{p}\cdot \vec{x}}\right)} \\
+\pi &=i \int{\frac{\ud^3 p}{(2\pi)^3}\sqrt{\frac{E_p}{2}}\left(b_{\vec p}\dagg e^{-i\vec{p}\cdot \vec{x}} + c_{\vec p}e^{i \vec{p}\cdot \vec{x}}\right)}
+\end{align}
+Then the commutation relations are $\left[\psi(\vec x), \pi(\vec y)\right] = i\delta^{(3)}(\vec x - \vec y)$ and $[\psi(\vec x), \pi\dagg(\vec y)] = 0$ etc. In terms of the creation and annihilation operators, $\left[b_{\vec p}, b\dagg_{\vec q}\right] = (2\pi)^3\delta^{(3)}(\vec p - \vec q) = \left[c_{\vec p}, c\dagg_{\vec q}\right]$ with all other commutators vanishing. The two Klein-Gordon equations\index{equation!Klein-Gordon} ensure that we have two types of creation operator, $b_{\vec p}\dagg, c_{\vec q}\dagg$, which we interpret as creating two types of particle with mass $\mu$; a particle and its anti-particle\index{anti-particle}. The conserved charge, after normal ordering is;
+\begin{align}
+Q &= i\int{\upd{^3 x} \dot{\psi}^{\star}\psi - \psi^{\star} \dot{\psi}} = i\int{\upd{^3 x}\pi\psi - \psi^{\star}\pi^{\star}} \nonumber \\
+&= \int{\frac{\ud^3 p}{(2\pi)^3}\left(c_{\vec p}\dagg c_{\vec p} - b_{\vec p}\dagg b_{\vec p}\right)} \coloneqq N_c - N_b
+\end{align}
+We can also calculate the Hamiltonian;
+\begin{equation}
+\text{H} = \int{\frac{\ud^3 p}{(2\pi)^3} E_p \left(b\dagg_{\vec p} b_{\vec p} + c_{\vec p}\dagg c_{\vec p}\right)}
+\end{equation}
+from which we may deduce\footnotemark that $\left[\hamilt, Q\right] = 0$. In the free theory, it is true that $N_{c}$ and $N_{b}$ are conserved separately, however in the interacting theory (with the requisite symmetry), the total charge $Q$ still is.
+\footnotetext{Define $B_{\vec p} \coloneqq b_{\vec p}\dagg b_{\vec p}$ and $C_{\vec p} \coloneqq c_{\vec p}\dagg c_{\vec p}$, then;
+\begin{align*}
+\left[\hamilt, Q\right] &= \int{\frac{\ud^3 p \ud^3 q}{(2\pi)^6}E_{p}\left[B_{\vec p} + C_{\vec p}, C_{\vec q} - B_{\vec q}\right]} \\
+&= \int{\frac{\ud^3 p \ud^3 q}{(2\pi)^6}E_{p}\left(\left[C_{\vec p}, C_{\vec q}\right] - \left[B_{\vec p}, B_{\vec q}\right]\right)}
+\end{align*}
+Now, $\left[B_{\vec p}, B_{\vec q}\right] = b_{\vec p}\dagg b_{\vec p}b_{\vec q}\dagg b_{\vec q} - b_{\vec q}\dagg b_{\vec q}b_{\vec p}\dagg b_{\vec p} = b_{\vec p}\dagg \left[b_{\vec p}, b_{\vec q}\dagg\right] b_{\vec q} - b_{\vec q}\dagg \left[b_{\vec q}, b_{\vec p}\dagg\right] b_{\vec p}$, so;
+\begin{equation*}
+\left[\hamilt, Q\right] = \int{\frac{\ud^3 p \ud^3 q}{(2\pi)^3}E_p \delta^{(3)}(\vec p - \vec q)\left(c_{\vec p}\dagg c_{\vec q} - c_{\vec q}\dagg c_{\vec p} - b_{\vec p}\dagg b_{\vec q} + b_{\vec q}\dagg b_{\vec p}\right)}
+\end{equation*}
+which vanishes on integrating $\ud^3 p \ud^3 q$.
+}
+\subsection{The Heisenberg Picture\index{picture!Heisenberg}}
+So far in the Schr{\"o}dinger picture\index{picture!Schr{\"o}dinger}, $\phi(\vec x)$ does not depend on time. In the Heisenberg picture all the time dependence is assigned to the operators;
+\begin{equation}
+\mO_{\hamilt}(t) = e^{iHt} \mO_{\mathcal{S}} e^{-iHt} \Rightarrow \frac{\ud \mO_{\hamilt}(t)}{\ud t} = i\left[\hamilt, \mO_{\hamilt}\right]
+\end{equation}
+Then the Heisenberg fields now satisfy equal time commutation relations;
+\begin{equation}
+\left[\phi(\vec x, t), \phi(\vec y, t)\right] = \left[\pi(\vec x, t), \pi(\vec y, t)\right] = 0
+\end{equation}
+\begin{equation}
+\left[\phi(\vec x, t), \pi(\vec y, t)\right] = i\delta^{(3)}(\vec x - \vec y)
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

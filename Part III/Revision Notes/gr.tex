@@ -1,0 +1,439 @@
+\label{gr}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{General Relativity}
+\vspace{-30pt}
+\centering\normalsize\textit{Michaelmas Term 2017 - Dr M. Dunajski \& Dr H. Reall}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Manifolds}
+\begin{definitionbox}
+A smooth, $n$-dimensional manifold\index{manifold} is a set $\mathcal{M}$ together with a collection of open sets, $\mathcal{O}_{\alpha}$ where $\alpha$ labels the open sets, such that;
+\begin{enumerate}
+\item $\left\{\mathcal{O}_{\alpha}\right\}$ cover $\mathcal{M}$ i.e. every point in $\mathcal{M}$ is in at least one $\mathcal{O}_\alpha$
+\item There exist $1$:$1$ maps $\phi_\alpha : \mathcal{O}_\alpha \rightarrow \mathcal{U}_\alpha \subset \mathbb{R}^n$, know as local charts \index{chart} or co-ordinate systems. The collection $\left\{\phi_\alpha\right\}$ is known as an atlas\index{atlas}
+\item If $\mathcal{O}_\alpha$ and $\mathcal{O}_\beta$ overlap then $\phi_\beta \circ \phi_\alpha^{-1}$ maps from $\phi_\alpha(\mathcal{O}_{\alpha} \cap \mathcal{O}_\beta) \subset \mathcal{U}_\alpha \subset \mathbb{R}^n$ to $\phi_\beta(\mathcal{O}_\alpha \cap \mathcal{O}_\beta) \subset \mathcal{U}_\beta \subset \mathbb{R}^n$. This is illustrated in Figure \ref{fig:charts}.
+\end{enumerate}
+\end{definitionbox}
+\begin{mygraphic}{gr/charts}{0.5}{Map between the overlap of two open sets in $\mathcal{M}$ and the relevant subsets in $\mathbb{R}^n$}{charts}\end{mygraphic}
+So, a manifold is a topological space\index{topological space} with additional structure regarding the consistency of co-ordinate systems\index{co-ordinate system}. For another definition of a manifold see Theorem \ref{thm:manifold} in Chapter \ref{chap:sfp} on page \pageref{thm:manifold}. A trivial example of a manifold is $\mathbb{R}^n$ whilst a slightly less simple one is that of the $n$-sphere;
+\begin{equation*}
+\mathcal{S}^n = \left\{ \vec r \in \mathbb{R}^{n+1} : |\vec r| = 1 \right\}
+\end{equation*}
+which can be covered by two open sets $\mathcal{O}_1 = \mathcal{S}^n / \left\{(0,0,\ldots,1)\right\}$ and $\mathcal{O}_1 = \mathcal{S}^n / \left\{(0, 0, \ldots, -1)\right\}$. The maps $\phi_\alpha$ are then defined by the stereographic projections from the North and South poles.
+\begin{align}
+\phi_1 (\vec r) &= \left(\frac{r_1}{1- r_{n+1}}, \ldots, \frac{r_n}{1 - r_{n+1}}\right) \coloneqq (x_1, \ldots, x_n) \\
+\phi_2 (\vec r) &= \left(\frac{r_1}{1+ r_{n+1}}, \ldots, \frac{r_n}{1 + r_{n+1}}\right) \coloneqq (\tilde{x}_1, \ldots, \tilde{x}_n)
+\end{align}
+From which we deduce that the map $\phi_2 \circ \phi_1^{-1}$ is given by;
+\begin{equation}
+\phi_2 \circ \phi_1^{-1} (x_1, \ldots, x_n) = (\tilde{x}_1, \ldots, \tilde{x}_n) = \left(\frac{x_1}{x_1^2 + \cdots x_n^2}, \ldots, \frac{x_n}{x_1^2 + \cdots + x_n^2}\right)
+\end{equation}
+which is a smooth map from $\mathcal{U}_1 \rightarrow \mathcal{U}_2$ (since $(x_1, \ldots, x_n) = (0, \ldots, 0) \notin \mathcal{U}_1$). 
+\begin{itemize}
+\item A map between two manifolds, $f : \mathcal{M} \rightarrow \tilde{\mathcal{M}}$ is said to be smooth if $\tilde{\phi}_\beta \circ \phi_\alpha^{-1}$ are smooth functions from $\mathbb{R}^n$ to $\mathbb{R}^{\tilde{n}}$ where $n, \tilde{n}$ are the dimensions of $\mathcal{M}$ and $\tilde{\mathcal{M}}$ respectively. 
+\item A map on a manifold is a smooth map $f : \mathcal{M} \rightarrow \mathbb{R}$, in GR/field theories, this is known as a scalar field\index{field!scalar}.
+\end{itemize}
+\subsection{Curves and Vector Fields\index{field!vector}}
+We can't directly compare two vectors in different tangent spaces, so we need additional structure.
+\begin{definitionbox}[Curves and Tangent Vectors]
+A smooth \emph{curve}\index{curve} $\gamma$ is a map from $[0, 1]$ to $U \subset \mathcal{M}$. So, if we have co-ordinates $(x^1, \ldots, x^n)$ on $U$ then;
+\begin{equation}
+\gamma : \epsilon \rightarrow \left(x^1(\epsilon), \ldots, x^n(\epsilon)\right)
+\end{equation}
+Then, a \emph{tangent vector}\index{tangent vector} at a point $p = \gamma(0)$ to $\gamma$ is;
+\begin{equation}
+X_p = \left.\frac{\ud \gamma}{\ud \epsilon}\right|_{\epsilon = 0} \in \mathcal{T}_p (\mathcal{M})
+\end{equation}
+A vector field is the just an assignment of a vector to any point in $\mathcal{M}$. The set of all tangent spaces, $\mathcal{T}\mathcal{M} = \bigcup_{p}\mathcal{T}_p (\mathcal{M})$ is the \emph{tangent bundle}\index{tangent bundle}.
+\end{definitionbox}
+Now, consider a function $f : \mathcal{M} \rightarrow \mathbb{R}$ along a curve $\gamma$;
+\begin{equation*}
+\frac{\ud f}{\ud \epsilon} = \sum_{\mu =1}^{n}{\frac{\del f}{\del x^\mu} \dot{x}^\mu} = \sum_{\mu = 1}^{n}{\frac{\del f}{\del x^\mu} X^\mu(x^\nu)} = \left(\sum_{\mu = 1}^{n}{X^\mu(x^\nu) \frac{\del}{\del x^\mu}}\right)f
+\end{equation*}
+From this we see that identifying the vector field;
+\begin{equation}
+X = \left(\sum_{\mu = 1}^{n}{X^\mu (x^\nu) \frac{\del}{\del x^\mu}}\right)
+\end{equation}
+entails that vector fields are just differential operators. The $X^\mu$ are components of $X$ with respect to a co-ordinate basis\index{co-ordinate basis} $\left\{\tfrac{\del}{\del x^1}, \ldots, \tfrac{\del}{\del x^n}\right\}$ which span $\mathcal{T}_p (\mathcal{M})$ when they are restricted to the point $p$.
+\begin{definitionbox}[Integral Curves]
+An integral curve\index{integral curve} of a vector field, $X$ is a curve such that,
+\begin{equation}
+\frac{\ud \gamma}{\ud \epsilon} = \left.X\right|_{\gamma(\epsilon)}, \quad \dot{\gamma}^\mu = X^\mu (x^\nu)
+\end{equation}
+$X$ is said to be the \emph{generator of the flow} $\gamma$. An \emph{invariant}\index{invariant} of a vector field $X$ is a function $f : \mathcal{M} \rightarrow \mathbb{R}$ which is constant along all integral curves of $X$. These satisfy $X(f) = 0$. 
+\end{definitionbox}
+Now suppose we are given two co-ordinate systems/open sets, $U$, $\tilde{U}$ and a vector field, $X$ defined on both sets. So $X = X^\mu \del_\mu$ on $U$, and $X = \tilde{X}^\mu \tilde{\del}_\mu$ on $\tilde{U}$. Then by the chain rule;
+\begin{align}
+X^\mu &= \tilde{X}^\mu \frac{\del}{\del x^\mu} = \tilde{X}^\mu \frac{\del x^\nu}{\del \tilde{x}^\mu} \frac{\del}{\del x^\nu} \nonumber \\
+&= \tilde{X}^\nu \frac{\del x^\mu}{\del \tilde{x}^\nu} \frac{\del}{\del x^\mu} \nonumber \\
+\Rightarrow X^\mu &= \tilde{X}^{\nu} \frac{\del x^\mu}{\del \tilde{x}^\nu} \text{ on } U \cup \tilde{U} \label{eq:vcomps}
+\end{align}
+A Lie Bracket\index{Lie bracket} of two vector fields $X$, $Y$ on $\mathcal{M}$ is a vector field $\left[X, Y\right]$ defined by;
+\begin{equation}
+\left[X, Y\right](f) = X\left(Y(f)\right) - Y\left(X(f)\right)
+\end{equation}
+for all $f :\mathcal{M} \rightarrow \mathbb{R}$. It satisifes;
+\begin{enumerate}
+\item Antisymmetry - $\left[X, Y\right] = - \left[Y, X\right]$
+\item Jacobi identity\index{identity!Jacobi} - $\left[X, \left[Y, Z\right]\right] + \left[Y, \left[Z, X\right]\right] + \left[Z, \left[X, Y\right]\right] = 0$
+\end{enumerate}
+Elements of a co-ordinate basis, $\del_\mu$, satisfy $\left[\del_\mu, \del_\nu\right] = 0$. This does not hold in a general, non-co-ordinate basis $\left\{e_\mu \right\}$
+\begin{thm}[Frobenius Theorem]
+\label{thm:frobenius}
+Let $X_1, \ldots, X_m$ be vector fields on an $n$-dimensional manifold, $\mathcal{M}$, such that $n \geq m$ and $X_1, \ldots, X_m$ are linearly independent at $p \in \mathcal{M}$ and $\left[X_i, X_j\right] = 0$. Then there exists an open set $U \in \mathcal{M}$ with $p \in U$ and a chart $\phi : U \rightarrow \mathbb{R}^n$ such that there exist co-ordinates $(x^1, \ldots, x^n)$ on $\phi(U)$ with $X_1 = \tfrac{\del}{\del x^1}, \ldots, X_m = \tfrac{\del}{\del x^m}$.
+\end{thm}
+A Lie algebra\index{Lie algebra}, $\alge$, is a vector space with an antisymmetric bilinear operation $\left[ \,\,\, , \,\, \right] : \alge \times \alge \rightarrow \alge$ such that the Jacobi identity holds. If $\alge$ is finite dimensional and $\left\{X_1, \ldots, X_{\dim \alge}\right\}$ is a basis, then the Lie algebra structure is entirely determined by the structure constants\index{structure constant}, $f\indices{^\gamma_{\alpha \beta}}$ such that;
+\begin{equation}
+\left[X_\alpha, X_\beta\right] = f\indices{^\gamma_{\alpha \beta}}X_\gamma
+\end{equation}
+Looking further forward, Killing vector fields on a (pseudo)-Riemannian manifold form a Lie algebra. 
+
+\paraskip
+A \emph{group action}\index{group action} on a manifold is a map, $\rho : \group \times \mathcal{M} \rightarrow \mathcal{M}$ where $\group$ is a group, such that,
+\begin{itemize}
+\item $\rho(e, m) = m \forall m \in \mathcal{M}$
+\item $\rho\left(g_2, \rho(g_1, m)\right) = \rho(g_2 \circ g_1, m) \forall g_1, g_2 \in \group$
+\end{itemize}
+An example of this might be the Euclidean group $\mathcal{E}(2)$ acting on $\mathcal{M} = \mathbb{R}^2$ generating the 3-parameter transformation,
+\begin{equation*}
+\colvec{2}{\tilde{x}}{\tilde{y}} = \twobytwo{\cos\theta}{\sin\theta}{-\sin\theta}{\cos\theta} \colvec{2}{x}{y} + \colvec{2}{a}{b}
+\end{equation*}
+Each is generated by a flow, $X_\theta, X_a, X_b$ which together form a Lie algebra. 
+\subsection{Covectors (Differential Forms)}
+If $\mathcal{E}$ is a real vector space with basis $\left\{e_1, \ldots, e_n\right\}$ then the dual space\index{dual space} $\mathcal{E}^{\star}$ is the space of linear maps on $\mathcal{E}$, $f : \mathcal{E} \rightarrow \mathbb{R}$. The basis of $\mathcal{E}^{\star}$, $\left\{f^1, \ldots, f^n\right\}$ is defined by $f^\mu(e_\nu) = \delta\indices{^\mu_\nu}$. In finite dimensions $\dim \mathcal{E} = \dim \mathcal{E}^{\star}$ but there is no natural isomorphism. There is a natural isomorphism $\phi : \mathcal{E} \rightarrow \left(\mathcal{E}^{\star}\right)^{\star}$ however given by;\footnotemark
+\begin{equation}
+\label{eq:iso}
+\phi\big(X\big)(\omega) = \omega(X)
+\end{equation}
+\footnotetext{We can define a $\colvec{2}{1}{1}$ tensor, $T : \mathcal{T}_p(\mathcal{M}) \times \mathcal{T}^{\star}_p(\mathcal{M}) \rightarrow \mathbb{R}$ via a linear map $\tilde{T} : \mathcal{T}_p(\mathcal{M}) \rightarrow \mathcal{T}_p(\mathcal{M})$ such that $T : (X, \omega) \rightarrow \omega\left(\tilde{T}(X)\right)$. Then we see that the identity map $\tilde{T} = \mathbb{I}$ corresponds to the isomorphism in \eqref{eq:iso} with components given by $\delta\indices{^\mu_\nu}$.}
+
+\vspace{-10pt}
+A \emph{covector}\index{covector} is an element of the dual space $\TpMs$, whilst a covector field is a function on the covector bundle\index{covector bundle}, $\mathcal{T}^{\star}\mathcal{M}$ which assigns a covector to each point $p \in \mathcal{M}$. Furthermore, suppose we have a co-ordinate basis of $\TpM$, $\left\{\tfrac{\del}{\del x^1}, \ldots\right\}$, then the dual basis of $\TpMs$ is $\left\{\ud x^1, \ldots\right\}$. In a similar way to \eqref{eq:vcomps} we want to see how the components of a covector change under a co-ordinate transformation. Writing $\omega = \omega_\mu \ud x^\mu = \tilde{\omega}_\mu \ud \tilde{x}^\mu$, and using $\ud \tilde{x}^\mu = \tfrac{\del \tilde{x}^\mu}{\del x^\nu} \ud x^\nu$ we see;
+\begin{equation}
+\omega_\nu = \tilde{\omega}_\mu \frac{\del \tilde{x}^\mu}{\del x^\nu}
+\end{equation}
+\subsection{Tensors}
+We need a concept of abstract indices to proceed\index{abstract indices};
+\begin{itemize}
+\item Greek indices are basis components with respect to a co-ordinate basis. Equations written in greek indices only hold in a given basis.
+\item Latin indices represent objects, so $X^a, X^b, X^c$ are all the same vector etc. Equations written in latin indices hold in all bases. The quantity $T\indices{^{a\cdots b}_{c\cdots d}}$ would represent the tensor, \emph{not} the components in a particular basis.
+\end{itemize}
+\begin{definitionbox}
+A \emph{tensor}\index{tensor} of type $(r,s)$ at $p \in \mathcal{M}$ is a multilinear map;
+\begin{equation}
+T : \underbrace{\TpMs \times \cdots \TpMs}_{r \text{ times}} \times \underbrace{\TpM \times \cdots \TpM}_{s \text{ times}} \longrightarrow \mathbb{R}
+\end{equation}
+If we have the bases, $\left\{ e_\mu \right\}$, $\left\{f^\nu\right\}$ of $\TpM$, $\TpMs$ respectively, then the components of $T$ with respect to these bases are;
+\begin{equation}
+T\indices{^{\mu_1\cdots\mu_r}_{\nu_1\cdots\nu_s}} = T\left(f^{\mu_1}, \ldots, f^{\mu_r}, e_{\nu_1}, \ldots, e_{\nu_s}\right)
+\end{equation}
+\end{definitionbox}
+We don't have enough structure to raise and lower indices of a tensor, but we can perform the following operations;
+\begin{enumerate}
+\item \emph{Contraction} - takes an $(r, s)$ tensor to an $(r - 1, s-1)$ tensor;
+\begin{equation}
+S\indices{^{\mu_1 \cdots \mu_{k_r - 1} \mu_{k_r + 1} \cdots \mu_r}_{\nu_1 \cdots \nu_{k_s -1} \nu_{k_s + 1} \cdots \nu_s}} \coloneqq T\indices{^{\mu_1\cdots k \cdots \mu_r}_{\nu_1\cdots k \cdots \nu_s}}
+\end{equation}
+\item \emph{Tensor Product}\index{tensor!product} - given a $(r, s)$ tensor, $T$, and a $(p, q)$ tensor, $S$, we can produce a $(r + p, q + s)$ tensor, $S \otimes T$;
+\begin{multline}
+S \otimes T(\omega_1, \ldots, \omega_p, \eta_1, \ldots, \eta_r, X_1, \ldots, X_q, Y_1, \ldots, Y_s) \\ \coloneqq S(\omega_1, \ldots, \omega_p, X_1, \ldots, X_q) T(\eta_1, \ldots, \eta_r, Y_1, \ldots, Y_s)
+\end{multline}
+\item \emph{Symmetrisation}\index{tensor!(anti)symmetrisation} - the symmetrisation of a $(0, n)$ tensor over all it's indices is,
+\begin{equation}
+T_{(a_1 \ldots a_n)} = \frac{1}{n!} \sum_{\sigma \in \text{S}_n}{T_{\sigma(a_1) \cdots \sigma(a_n)}}
+\end{equation}
+\item \emph{Anti-symmetrisation} - in a similar way, the anti-symmetrisation of a $(0, n)$ tensor over all it's indices is;
+\begin{equation}
+T_{(a_1 \ldots a_n)} = \frac{1}{n!} \sum_{\sigma \in \text{S}_n}{(-1)^{\sgn(\sigma)}T_{\sigma(a_1) \cdots \sigma(a_n)}}
+\end{equation}
+\end{enumerate}
+\begin{examplebox}[Extending the idea of a covector]
+We can extend the idea of a $1$-form to more general, $r$-forms. Start by considering the gradient, $\ud f$ which is the \emph{exterior derivative}\index{exterior derivative} of a $0$-form (a function). It is defined by;
+\begin{equation}
+(\ud f)_p (X) = \left.X(f)\right|_p \quad \forall p \in \mathcal{M}, \forall X \in \TpM
+\end{equation}
+We can write a general $1$-form as $\Omega = \Omega_\mu \ud x^\mu$. Then the \emph{wedge product}\index{wedge product} of two $1$-forms, $\omega, \eta$ is defined by;
+\begin{equation}
+\omega \wedge \eta = \tfrac{1}{2}\left( \omega \otimes \eta - \eta \otimes \omega \right)
+\end{equation}
+This is an anti-symmetric $(0, 2)$ tensor. In general, an $r$-form is a totally antisymmetric $(0, r)$ tensor which may be written;
+\begin{equation}
+\Omega = \Omega_{\mu_1 \cdots \mu_r} \ud x^{\mu_1} \wedge \cdots \wedge \ud x^{\mu_r}
+\end{equation}
+Denoting the space of all $r$-forms is denoted $\Lambda^r (\mathcal{M})$, we can define the exterior derivative as a map $d : \Lambda^{r} (\mathcal{M}) \rightarrow \Lambda^{r + 1} (\mathcal{M})$ such that;
+\begin{equation}
+\label{eq:extderiv}
+\text{for } \Omega \in \Lambda^{r} (\mathcal{M}), \quad \ud \Omega = \frac{r + 1}{r!} \frac{\del \Omega_{\mu_1 \cdots \mu_r}}{\del x^{\mu_{r + 1}}} \ud x^{\mu_{r + 1}} \wedge \ud x^{\mu_1} \wedge \cdots \wedge \ud x^{\mu_r}
+\end{equation}
+\end{examplebox}
+For a $1$-form $\Omega \in \Lambda^1 (\mathcal{M})$, it can be shown that;\footnotemark
+\begin{equation}
+\label{eq:extoneform}
+\ud \Omega (X, Y) = X\left(\Omega(Y)\right) - Y\left(\Omega(X)\right) - \Omega\left(\left[X, Y\right]\right)
+\end{equation}
+\footnotetext{This just follows from the definitions; let $\Omega = \Omega_{\mu} \ud x^{\mu}$ so using \eqref{eq:extderiv} we have;
+\begin{align*}
+\ud \Omega &= 2\tfrac{\del \Omega_\mu}{\del x^\nu} \ud x^\nu \wedge \ud x^\mu = \tfrac{\del \Omega_\mu}{\del x^\nu} \left(\ud x^\nu \otimes \ud x^\mu - \ud x^\mu \otimes \ud x^\nu \right) \\
+&= \left(\tfrac{\del \Omega_\nu}{\del x^\mu} - \tfrac{\del \Omega_\mu}{\del x^\nu}\right) \ud x^\mu \otimes \ud x^\nu \Rightarrow \left(\ud \Omega\right)_{\mu \nu} = \left(\tfrac{\del \Omega_\nu}{\del x^\mu} - \tfrac{\del \Omega_\mu}{\del x^\nu}\right) \\
+\Rightarrow \ud \Omega (X, Y) &= \left(\tfrac{\del \Omega_\nu}{\del x^\mu} - \tfrac{\del \Omega_\mu}{\del x^\nu}\right) X^\mu Y^\nu
+\end{align*}
+Then evaluating;
+\begin{equation*}
+X\left(\Omega(Y)\right) - Y\left(\Omega(X)\right) - \Omega\left([X, Y]\right) = \left(\del_\mu \Omega_\nu - \del_\nu \Omega_\mu\right) X^\mu Y^\nu
+\end{equation*}
+we find the result as in \eqref{eq:extoneform}.
+}
+We also have;
+\begin{thm}[The Poincaré Lemma]
+All closed forms are locally exact on a simply connected domain i.e. if $\ud \omega = 0$, then $\omega = \ud f$ for some $f$ at least locally.
+\end{thm}
+\subsection{Metrics}
+We must generalise the concept of the scalar product in $\mathbb{R}^3$. This is done via the \emph{metric tensor}\index{tensor!metric}, $g : \TpM \times \TpM \rightarrow \mathbb{R}$;
+\begin{definitionbox}[The Metric Tensor]
+A \emph{metric tensor} at a point $p \in \mathcal{M}$ is a $(0,2)$ tensor, $g$ that is;
+\begin{enumerate}
+\item Symmetric - $g(X, Y) = g(Y, X) \quad \forall X, Y \in \TpM$
+\item Non-degenerate\index{non-degenerate} - if $g(X, Y) = 0 \forall Y \in \TpM \Rightarrow X = 0$
+\end{enumerate}
+\end{definitionbox}
+If $\dim \mathcal{M} = n$, then $g$ is an $n \times n$ symmetric matrix which can therefore always be diagonalised. Then, the \emph{signature}\index{signature} of $g$ is the number of positive and negative eigenvalues. If we assume $g$ is continuous, then at least on an open set, the signature is constant by Theorem \ref{thm:cts} on page \pageref{thm:cts}. A Riemannian manifold has all positive eigenvalues, whilst a Lorentzian manifold has one negative eigenvalue.
+\begin{definitionbox}[Riemannian (Lorentzian) Manifold]
+A Riemannian (Lorentzian) manifold\index{manifold!Riemannian}\index{manifold!pseudo-Riemannian}\index{manifold!Lorentzian} is a pair $\left(\mathcal{M}, g\right)$ where $\mathcal{M}$ is a manifold and $g$ is a Riemannian (Lorentzian) metric on $\TpM \forall p \in \mathcal{M}$.
+
+\paraskip
+A \emph{spacetime}\index{spacetime} in General Relativity is assumed to be a $4$-dimensional Lorentzian manifold
+\end{definitionbox}
+The inverse metric is a symmetric $(2, 0)$ tensor $g^{ab}$ that satisfies $g^{ab}g_{bc} = \delta\indices{^a_c}$ which exists by the non-degeneracy of $g_{ab}$. This gives rise to a natural isomorphism $\TpM \simeq \TpMs$,
+\begin{equation}
+X^a \mapsto X_a = g_{ab}X^b, \quad X_a \mapsto X^a = g^{ab}X_b 
+\end{equation}
+An \emph{orthonormal basis}\index{basis!orthonormal} of $\TpM$, $\left\{e_\mu\right\}$ satisfies $g(e_\mu, e_\nu) = \etamn{_}$. Now, suppose we have a Lorentzian manifold, $(\mathcal{M}, g)$, then $X \in \TpM$ (or similarly a curve if the following holds along its length) is;
+\begin{itemize}
+\item Timelike\index{vector!timelike} if $g(X, X) < 0$
+\item Lightlike/Null\index{vector!null}\index{vector!lightlike} if $g(X, X) = 0$
+\item Spacelike\index{vector!spacelike} if $g(X, X) > 0$
+\end{itemize}
+Now, let $\gamma(u)$ be a timelike curve, then the proper time\index{proper time}, $\tau$, along $\gamma$ is;
+\begin{equation}
+\tau = \int_0^1{\upd{u} \sqrt{-g_{\mu \nu} \left.\frac{\ud x^\mu}{\ud u} \frac{\ud x^\nu}{\ud u}\right|_{\gamma(u)} }} \iff \ud \tau^2 = -g_{\mu \nu} \ud x^\mu \ud x^\nu
+\end{equation}
+\subsubsection{Extremising Proper Time}
+We consider $\tau$ as a functional on the space of timelike curves;
+\begin{equation}
+\tau = \int_0^1{\upd{u} \sqrt{-g_{\mu\nu}\left(x(u)\right)\dot{x}^\mu \dot{x}^\nu}} \coloneqq \int_0^1{\upd{u} G(x, \dot{x})}
+\end{equation}
+Then the Euler-Lagrange equations\index{equation!Euler-Lagrange} are;
+\begin{equation*}
+\frac{\ud}{\ud u}\left(- \frac{1}{G} g_{\mu \nu} \dot{x}^\nu\right) - \left(-\frac{1}{2G}g_{\nu\rho , \mu}\dot{x}^\nu \dot{x}^\rho\right) = 0
+\end{equation*}
+But $\ud \tau / \ud u= G$, so $\dot{x}^\mu = G \cdot \ud x^\mu/\ud \tau$, giving us the geodesic equation\footnotemark\index{equation!geodesic};
+\footnotetext{The same geodesic equations arise from the Lagrangian $\mathcal{L} = G^2 = -g_{\mu \nu}\dot{x}^\mu \dot{x}^\nu$ and give rise to the same Christoffel symbols.}
+\begin{definitionbox}[The Geodesic Equation]
+\begin{equation}
+\frac{\ud^2 x^\mu}{\ud \tau^2} + \Gamma\indices{^\mu_{\nu \rho}}\frac{\ud x^\nu}{\ud \tau}\frac{\ud x^\rho}{\ud \tau} = 0
+\end{equation}
+where, 
+\begin{equation}
+\label{eq:chris}
+\Gamma\indices{^\mu_{\nu \rho}} = \tfrac{1}{2}g^{\mu \sigma}\left(g_{\sigma\nu , \rho} + g_{\rho \sigma , \nu}- g_{\nu \rho , \sigma}\right)
+\end{equation}
+are the Christoffel symbols\index{Christoffel symbols}.
+\end{definitionbox}
+This allows us to form the second postulate of General Relativity; massive bodies follow curves of extremal proper time. Also, since $\mathcal{L}$ does not depend explicitly on $x^\mu$, we have that $g_{\mu \nu} \dot{x}^\mu \dot{x}^\nu$ is conserved, so we can fix;
+\begin{equation}
+g_{\mu \nu} \dot{x}^\mu \dot{x}^\nu \begin{cases} -1,& \text{timelike} \\ 0,& \text{null} \\ +1,& \text{spacelike}\end{cases}
+\end{equation}
+\subsection{Covariant Derivatives and the Levi-Civita Connection\index{covariant derivative}\index{connection}\index{connection!Levi-Civita}}
+\begin{definitionbox}[Covariant Derivative]
+A \emph{connection} (covariant derivative) is a map $\nabla : (X, Y) \in \left(\mathcal{T}\mathcal{M} \times \mathcal{T}\mathcal{M} \right) \mapsto \nabla_{X}Y \in \mathcal{T}\mathcal{M}$ such that;
+\begin{enumerate}
+\label{cov_derivative}
+\item $\nabla_{fX + gY}Z = f\nabla_{X}Z + g\nabla_{Y}Z$
+\item $\nabla_{X}(Y + Z) = \nabla_{X}Y + \nabla_{X}Z$
+\item $\nabla_{X}(fY) = f\nabla_{X}Y + \left(\nabla_{X}f\right)Y = f\nabla_{X}Y + X(f)Y$
+\end{enumerate}
+\end{definitionbox}
+The covariant derivative of a vector field is a $(1, 1)$ tensor, $\left(\nabla Y\right)$, given by
+\begin{equation}
+(\nabla Y)\indices{^{a}_{b}} = \nabla_b Y^a \coloneqq Y\indices{^{a}_{;b}}
+\end{equation}
+where $\nabla_b Y^a$ is defined by $(\nabla_X Y)^a = X^b \nabla_b Y^a \, \forall X$. Now, suppose we have basis $\set{e_\mu}$ of $\TpM$ then it must be the case, for some coefficients $\Lambda\indices{^{\mu}_{\nu \rho}}$;
+\begin{equation}
+\nabla_{e_\rho}e_\nu = \Gamma\indices{^{\mu}_{\nu\rho}}e_\mu
+\end{equation}
+Then, for any vector fields, $X, Y$, it follows that;\footnote{Just expand $X = X^\mu e_\mu$ and use the linearity of the connection $\nabla$}
+\begin{equation}
+\left(\nabla_X Y\right)^\mu = X^\nu e_\nu\left(Y^\mu\right) + \Gamma\indices{^{\mu}_{\rho\nu}}X^\nu Y^\rho
+\end{equation}
+We can generalise this to take an $(r, s)$ tensor $T \mapsto \nabla T$, an $(r, s+1)$ tensor such that, in a co-ordinate basis;
+\begin{dmath}
+\label{eq:covderiv}
+T\indices{^{\mu_1\cdots\mu_r}_{\nu_1\cdots\nu_s;\rho}} = \del_\rho T\indices{^{\mu_1\cdots\mu_r}_{\nu_1\cdots\nu_s}} + \Gamma\indices{^{\mu_1}_{\sigma\rho}}T\indices{^{\sigma\mu_2\cdots\mu_r}_{\nu_1\cdots\nu_s}} + \cdots + \Gamma\indices{^{\mu_r}_{\sigma\rho}}T\indices{^{\mu_1\cdots\mu_{r - 1}\sigma}_{\nu_1\cdots\nu_s}} - \Gamma\indices{^{\sigma}_{\nu_1\rho}}T\indices{^{\mu_1\cdots\mu_r}_{\sigma\nu_2\cdots\nu_s}} - \cdots - \Gamma\indices{^{\sigma}_{\nu_s\rho}}T\indices{^{\mu_1\cdots\mu_r}_{\nu_1\cdots\nu_{s - 1}\sigma}}
+\end{dmath}
+Applying \eqref{eq:covderiv} with $T = \eta = \ud f$, then we see that;
+\begin{equation}
+f_{;\left[\mu\nu\right]} = -\Gamma\indices{^{\rho}_{\left[\mu\nu\right]}}f_{,\rho}
+\end{equation}
+Then, we say that $\nabla$ is a \emph{torsion free}\index{torsion free} connection if $\left(\nabla_a \nabla_b - \nabla_b \nabla_a\right)f = 0$ for all $f : \mathcal{M} \rightarrow \RR$. Equivalently, $\Gamma\indices{^{\rho}_{[\mu\nu]}} = 0$ in any co-ordinate basis.
+\begin{thm}
+As a corollary of the above\footnotemark, if $X, Y$ are vector fields and $\nabla$ is a torsion free connection, then;
+\begin{equation}
+\nabla_X Y - \nabla_Y X = \left[X, Y\right]
+\end{equation}
+\end{thm}
+\footnotetext{
+This follows simply from the definitions;
+\begin{equation*}
+X^\nu Y\indices{^{\mu}_{;\nu}} - Y^\nu X\indices{^{\mu}_{;\nu}} = X^\nu Y\indices{^{\mu}_{,\nu}} - Y^\nu X\indices{^{\mu}_{,\nu}} + 2\Gamma\indices{^{\mu}_{[\rho\nu]}}X^\nu Y^\rho = X^\nu Y\indices{^{\mu}_{,\nu}} - Y^\nu X\indices{^{\mu}_{,\nu}}
+\end{equation*}
+}
+\subsubsection{Fundamental Theorem of Riemannian Geometry}
+\begin{thm}
+Given a (pseudo)-Riemannian manifold, $(\mathcal{M}, g)$ then $\exists$ a unique torsion free connection $\nabla$ such that $\nabla g = 0$. This is the Levi-Civita connection\index{connection!Levi-Civita}.\footnotemark
+\end{thm}
+\footnotetext{
+To prove this note that it is sufficient to determine $g\left(\nabla_X Y, Z\right)$ uniquely for all $X, Y, Z \in \TpM$ since $g$ is invertible and thus this expression will provide an unambiguous definition of $\nabla_X Y$. Now, $g(Y, Z)$ is a function so;
+\begin{equation*}
+X\left(g(Y, Z)\right) = \nabla_X \left(g(Y, Z)\right) = g\left(\nabla_X Y, Z\right) + g\left(Y, \nabla_X Z\right) + \nabla_X g(Y, Z)
+\end{equation*}
+But the last term vanishes by assumption, then computing similarly $Y\left(g(X, Z)\right)$ and $Z\left(g(X, Y\right)$ and adding and subtracting the terms respectively we find;
+\begin{multline*}
+X\left(g(Y, Z)\right) + Y\left(g(Z, X)\right) - Z\left(g(X, Y)\right) = g\left(\nabla_X Y + \nabla_Y X, Z\right) + g\left(Y, \nabla_X Z - \nabla_Z Y\right) \\ \qquad\qquad+ g\left(\nabla_Y Z - \nabla_Z Y, X\right)  \\ = g\left(2\nabla_X Y - [X, Y]\right) - g\left([Z, X], Y\right) + g\left([Y, Z], X\right)
+\end{multline*}
+But rearranging this gives us an explicit expression for $g\left(\nabla_X Y, Z\right)$ as required.
+}
+Evaluating $g\left(\nabla_X Y, Z\right)$ in a co-ordinate basis, we find;
+\begin{equation}
+g_{\mu \nu}\Gamma\indices{^{\mu}_{\rho \kappa}}X^\kappa Y^\rho Z^\nu = \tfrac{1}{2}\left(g_{\rho \nu, \kappa} + g_{\kappa \nu, \rho} - g_{\kappa \rho, \nu}\right)X^\kappa Y^\rho Z^\nu
+\end{equation}
+which leads to the same expression as in \eqref{eq:chris}. Then we see that the Euler-Lagrange equations\index{equation!Euler-Lagrange} become;
+\begin{equation}
+X^\nu \left(X\indices{^{\mu}_{,\nu}} + \Gamma\indices{^{\mu}_{\nu\rho}}X^\rho\right) = 0 \iff \nabla_X X = 0
+\end{equation}
+This allows us to define a \emph{geodesic}\index{geodesic};
+\begin{definitionbox}[Geodesics]
+A \emph{geodesic} in a direction of $X \in \mT\mM$ is a curve such that $\nabla_X X = fX$ for some $f:\mathcal{M} \rightarrow \RR$. An \emph{affinely parametrised} geodesic\index{affine parameter} is one such that $f = 0$.
+\end{definitionbox}
+\begin{thm}
+Now, at any point $p \in (\mM, \nabla)$ there exist local co-ordinates, \emph{normal co-ordinates}\index{normal co-ordinates} $\set{x^\mu}$ such that $\Gamma\indices{^{\mu}_{(\nu \rho)}} = 0$. Hence if $\nabla$ is Levi-Civita\index{connection!Levi-Civita}, then at $p$, $\Gamma\indices{^{\mu}_{\nu\rho}} = 0$ and hence $\del_\rho g_{\mu \nu} = 0$. Hence, we can choose $g_{\mu \nu} = \etamn{_}$. So there exists an inertial frame at $p$.\footnotemark
+\end{thm}
+\footnotetext{We can prove this by considering the exponential map;
+\begin{equation*}
+e : \TpM \rightarrow \mM, \qquad X_p \mapsto q
+\end{equation*}
+where $q$ is a unit affine parameter distance along the geodesic through $p$ with tangent vector $X_p$. Then in a neighbourhood of $p$, the affinely parametrised geodesic is given by $\mC : [0,1] \rightarrow \mM, \lambda \mapsto x^\mu(\lambda) = \lambda X^\mu_p$;
+\begin{equation*}
+\frac{\ud^2 x^\mu}{\ud \lambda^2} + \Gamma\indices{^{\mu}_{\nu \rho}} \frac{\ud x^\nu}{\ud \lambda} \frac{\ud x^\rho}{\ud \lambda} = \Gamma\indices{^{\mu}_{\nu \rho}}X^\nu_p X^\rho_p = 0 \Rightarrow \Gamma\indices{^{\mu}_{(\nu \rho)}} = 0
+\end{equation*}
+}
+\subsection{Parallel Transport}\index{parallel transport}\index{equation!parallel transport}
+\begin{definitionbox}[Parallel Transport Equation]
+A tensor, $T$ is parallel transported along a curve $\gamma$ with $\dot{\gamma} = X$ if $\nabla_X T = 0$ along $\gamma$. This is a system of ODEs that in general has a unique solution given an initial condition $T\indices{^{\mu_1 \cdots \mu_r}_{\nu_1 \cdots \nu_s}}\left(x^\rho(0)\right)$.
+\end{definitionbox}
+\subsection{The Riemann Tensor}\index{tensor!Riemann}
+The \emph{Riemann curvature tensor} of a connection $\nabla$ (not necessarily Levi-Civita) is a map;
+\begin{equation}
+R : \mT\mM \times \mT\mM \times \mT\mM \rightarrow \mT\mM
+\end{equation}
+\begin{equation}
+R(X, Y)(Z) = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X, Y]}Z
+\end{equation}
+This defines a $(1,3)$ tensor $R\indices{^{a}_{bcd}}$ such that;
+\begin{equation}
+R\indices{^{a}_{bcd}}Z^b X^c Y^d = \left(R(X, Y)\right)^a
+\end{equation}
+We can show that this is linear in $\set{X, Y, Z}$ by showing it for $X$ and $Z$ since it is skew-symmetric in $(X, Y)$. Using the definitions on page \pageref{cov_derivative} and noting that $\left[fX, Y\right](g) = f[X, Y](g) - Y(f)X(g)$ we can deduce that;
+\begin{equation}
+R\left(fX, Y\right)(Z) = fR\left(X, Y\right)(Z), \quad R\left(X, Y\right)(fZ) = fR\left(X, Y\right)(Z)
+\end{equation}
+Acting on the co-ordinate basis $\set{\tfrac{\del}{\del x^\mu}}$;
+\begin{align}
+R(e_\rho, e_\sigma)e_\nu &= \nabla_\rho \nabla_\sigma e_\nu - \nabla_\sigma \nabla_\rho e_\nu \nonumber \\
+&= \nabla_\rho\left(\Gamma\indices{^{\tau}_{\nu\sigma}}e_\tau\right) - \nabla_\sigma\left(\Gamma\indices{^{\tau}_{\nu\rho}}e_\tau\right)\nonumber \\
+&=e_\mu \left(\del_\rho \Gamma\indices{^{\mu}_{\nu\sigma}} - \del_\sigma\Gamma\indices{^{\mu}_{\nu\rho}} + \Gamma\indices{^{\tau}_{\nu\sigma}}\Gamma\indices{^{\mu}_{\tau\rho}} - \Gamma\indices{^{\tau}_{\nu\rho}}\Gamma\indices{^{\mu}_{\tau\sigma}}\right) \nonumber \\
+\Rightarrow R\indices{^{\mu}_{\nu\rho\sigma}} &= \del_\rho \Gamma\indices{^{\mu}_{\nu\sigma}} - \del_\sigma\Gamma\indices{^{\mu}_{\nu\rho}} + \Gamma\indices{^{\tau}_{\nu\sigma}}\Gamma\indices{^{\mu}_{\tau\rho}} - \Gamma\indices{^{\tau}_{\nu\rho}}\Gamma\indices{^{\mu}_{\tau\sigma}}
+\end{align}
+We say that a metric/connection is \emph{flat}\index{flatness} if it's Riemann tensor vanishes. An equivalent definition of $R\indices{^{a}_{bcd}}$ is given by;\footnote{To be precise here, when we do the calculation, we should write do it in a co-ordinate basis (i.e. use Greek indices) to obtain a tensor equation which then holds in general. It is about a page of working, but just requires plugging the definitions in and expanding the covariant derivatives, remembering that $\nabla_\gamma \left(\nabla_\delta Z^\alpha\right)$ is the covariant derivative of a $(1,1)$ tensor and hence has three terms. Also note that this only holds if $\nabla$ is torsion free.}
+\begin{equation}
+\left[\nabla_c, \nabla_d\right]Z^a = R\indices{^{a}_{bcd}}Z^b
+\end{equation}
+\begin{definitionbox}[The Ricci Tensor]
+The \emph{Ricci tensor}\index{tensor!Ricci} of a connection $\nabla$ is a $(0, 2)$ tensor defined by;
+\begin{equation}
+R_{ab} = R\indices{^{c}_{acb}}
+\end{equation}
+\end{definitionbox}
+\subsubsection{Curvature and Parallel Transport\index{parallel transport!and curvature}}
+Suppose we have $X, Y \in \TpM$ such that $[X, Y] = 0$, then the Frobenius theorem on page \pageref{thm:frobenius} implies that there exist co-ordinates $(s, t, \ldots)$ such that $X = \tfrac{\del}{\del s}$ and $Y = \tfrac{\del}{\del t}$.
+\begin{mygraphic}{gr/parallel_transport}{0.8}{Let $p \in \mM$ be the point such that $p = (0, 0, \ldots)$ and let $q, r, u$ be the points with co-ordinates $(\delta s, 0, \ldots), (\delta s, \delta t, 0, \ldots), (0, \delta t, 0, \ldots)$ respectively. Then we can connect $p$ and $q$ with a curve along which only $s$ varies with tangent $X$. Similarly $q$ and $r$ can be connected by a curve with tangent $Y$. Then $p$ and $u$ are connected by a curve with tangent $Y$ and finally $u$ and $r$ by a curve with tangent $X$.}{parallel_transport}\end{mygraphic}
+Let $Z \in \TpM$ and consider parallel transporting it along the paths $\overset{\rightarrow}{pur}$ and $\overset{\rightarrow}{pqr}$ to obtain two vectors $Z\pr, Z^{\prime \prime} \in \mT_r \left(\mM\right)$. We choose normal co-ordinates at $p$ so that $\left.\Gamma\indices{^{\mu}_{\nu\rho}}\right|_p = 0$. We refer to this chart using $\set{\mu, \nu, \ldots}$. Then use $s, t$ as global co-ordinates that label positions along integral curves of $X$ and $Y$. Now consider the path $\overset{\rightarrow}{pqr}$;
+\begin{equation}
+Z_q^\mu = Z^\mu (\delta s, 0, \ldots) = Z^\mu_p \left.\frac{\ud Z^\mu}{\ud s}\right|_p \delta s + \frac{1}{2}\left.\frac{\ud^2 Z^\mu}{\ud s^2}\right|_p \delta s^2 + \mathcal{O}(\delta^3)
+\end{equation}
+Now use $\nabla_X Z = 0$ along $\overset{\rightarrow}{pq}$,
+\begin{equation}
+\Rightarrow \begin{cases}\frac{\ud Z^\mu}{\ud s} = -\Gamma\indices{^{\mu}_{\vu\rho}}Z^\nu X^\rho \Rightarrow \left.\frac{\ud Z^\mu}{\ud s}\right|_p = 0 \\ \left.\frac{\ud^2 Z^\mu}{\ud s^2}\right|_p = \left.- \Gamma\indices{^{\mu}_{\nu\rho,\sigma}}Z^\nu X^\rho X^\sigma\right|_p\end{cases}
+\end{equation}
+\begin{equation}
+\Rightarrow Z^\mu_q = Z^\mu_p - \left.\tfrac{1}{2}\Gamma\indices{^{\mu}_{\nu\rho,\sigma}}Z^\nu X^\rho X^\sigma \right|_p \delta s^2 + \mathcal{O}(\delta^3)
+\end{equation}
+Similarly, we have,
+\begin{align}
+Z^\mu_r &= Z_q^\mu + \left.\frac{\ud Z^\mu}{\ud t}\right|_q \delta t + \frac{1}{2}\left.\frac{\ud^2 Z^\mu}{\ud t^2}\right|_q \delta t^2 + \mathcal{O}(\delta^3) \nonumber \\
+&= Z_q^\mu - \left.\Gamma\indices{^{\mu}_{\nu\rho}}Z^\nu Y^\rho\right|_q \delta t - \tfrac{1}{2}\left.\left(\Gamma\indices{^{\mu}_{\nu\rho}}Z^\nu Y^\rho\right)_{,\sigma} Y^\sigma\right|_q \delta t^2 + \mathcal{O}(\delta^3) \nonumber \\
+&= Z^\mu_q - \set{\left.\Gamma\indices{^{\mu}_{\nu\rho,\sigma}}Z^\nu Y^\rho X^\sigma\right|_p \delta s + \mathcal{O}(\delta s^2)} \delta t \nonumber \\
+&\qquad\qquad - \tfrac{1}{2}\set{\left.\Gamma\indices{^{\mu}_{\nu\rho,\sigma}}Z^\nu Y^\rho Y^\sigma\right|_p + \mathcal{O}(\delta s)}\delta t^2 + \mathcal{O}(\delta^3) \nonumber \\
+&= Z_p^\mu - \tfrac{1}{2}\left.\Gamma\indices{^{\mu}_{\nu\rho,\sigma}}\right|_p \left.\set{Z^\nu \left(X^\rho X^\sigma \delta s^2 + Y^\rho Y^\sigma \delta t^2 + 2Y^\rho X^\sigma \delta s \delta t\right)}\right|_p \nonumber \\ 
+&\hspace{3in}+ \mathcal{O}(\delta^3)
+\end{align}
+Interchanging $X \leftrightarrow Y$ and $s \leftrightarrow t$ and identifying $\left.\left(\Gamma\indices{^{\mu}_{\nu\sigma,\rho}} - \Gamma\indices{^{\mu}_{\nu\rho,\sigma}}\right)\right|_p = \left.R\indices{^{\mu}_{\nu\rho\sigma}}\right|_p = \left.R\indices{^{\mu}_{\nu\rho\sigma}}\right|_r$ we find;
+\begin{equation}
+\left(\Delta Z\right)^\mu \coloneqq \left(Z^{\prime \prime}\right)^\mu - \left(Z\pr\right)^\mu = R\indices{^{\mu}_{\nu\rho\sigma}}Z^\nu X^\rho Y^\sigma \delta s \delta t + \mathcal{O}\left(\delta^3\right)
+\end{equation}
+but this is a tensor equation so we can write;
+\begin{equation}
+\lim_{\delta s, \delta t \rightarrow 0}\frac{\Delta Z^a}{\delta s \delta t} = R\indices{^{a}_{bcd}}Z^b X^c Y^d
+\end{equation}
+which we interpret as illustrating the fact that curvature is an obstacle to the commutativity of parallel transport. In other words, in a curved spacetime, parallel transporting a vector around an arbitrarily small closed curve leads to a change in the vector characterised by the curvature tensor\index{tensor!curvature}.
+\subsubsection{Symmetries of the Riemann Tensor\index{tensor!Riemann!symmetries}}
+\begin{definitionbox}[Symmetries of $R\indices{^{a}_{bcd}}$]
+There are three key symmetries of the Riemann tensor which are proved either by definition or using normal co-ordinates\index{normal co-ordinates};
+\begin{enumerate}
+\item $R\indices{^{a}_{b(cd)}} = R\indices{^{a}_{bcd}} + R\indices{^{a}_{bdc}} = 0$ \hfill \inlineeqno
+\item $R\indices{^{a}_{\left[bcd\right]}} = R\indices{^{a}_{bcd}} + R\indices{^{a}_{cdb}} + R\indices{^{a}_{dbc}} = 0$ \hfill \inlineeqno
+\item $R\indices{^{a}_{b[cd;e]}} = 0$ \hfill \inlineeqno
+\end{enumerate}
+\end{definitionbox}
+The second and third are proved as follows; the identities are tensorial so they must hold in any co-ordinates, in particular they must hold in normal co-ordinates. For a torsion free connection\index{connection!torsion free}, we have $\left.\Gamma\indices{^{\mu}_{\nu\rho}}\right|_p = 0$, then;
+\begin{itemize}
+\item Skew-symmetrising over the following gives the result;
+\begin{equation*}
+\left.R\indices{^{\mu}_{\nu\rho\sigma}}\right|_p = \left.\left(\del_\rho \Gamma\indices{^{\mu}_{\nu\sigma}} - \del_\sigma\Gamma\indices{^{\mu}_{\nu\rho}}\right)\right|_p
+\end{equation*}
+\item Schematically, $R_p = \left.\del \Gamma + \Gamma^2\right|_p \mapsto \del \Gamma$ so $\left.\del R\right|_p \mapsto \del \del \Gamma$ and $\nabla R = \del R - \Gamma R \mapsto \del R$. Hence;
+\begin{equation*}
+\left.R\indices{^{\mu}_{\nu\rho\sigma;\tau}}\right|_p = \left.\del_\tau R\indices{^{\mu}_{\nu\rho\sigma}}\right|_p = \left.\left(\del_\tau \del_\rho\Gamma\indices{^{\mu}_{\nu\sigma}} - \del_\tau \del_\sigma \Gamma\indices{^{\mu}_{\nu\rho}}\right)\right|_p
+\end{equation*}
+Again, skew-symmetrising gives the result.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\end{multicols*}

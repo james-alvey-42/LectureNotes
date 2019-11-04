@@ -1,0 +1,2031 @@
+\label{advcosmo}
+\begin{chapterbox}
+\vspace{-60pt}
+\chapter{Advanced Cosmology}
+\vspace{-30pt}
+\centering\normalsize\textit{Lent Term 2018 - Dr T. Baldauf, Dr A. Challinor}
+\end{chapterbox}
+\vspace{20pt}
+%\begin{multicols*}{2}
+\minitoc
+\newpage
+\section{Statistics of Cosmological Fluctuations}
+No model of inflation, due to its quantum mechanical nature, can produce a deterministic output signature. We could have observed many different histories that are nonetheless statistically equivalent. As such we have to deal with initial conditions that are stochastic in nature. To reconcile this statistical approach with theory and experiment there are a few key underlying concepts;
+\begin{enumerate}
+\item Statistical Isotropy\index{isotropy}: statistics should be invariant under rotations
+\item Statistical Homogeneity\index{homogeneity}: statistics should be invariant under translations
+\end{enumerate}
+\subsection{Random Fields and Statistics in 3D}
+Firstly, we will only consider mean zero fields, $f$, such that $\langle f \rangle = 0$.\footnote{To be more precise, $\langle f \rangle$ is really a quantum mechanical expectation, but we will interpret it simply as an ensemble average.} These include for example;
+\begin{itemize}
+\item The temperature perturbation in the CMB\index{CMB}: $\theta = \tfrac{T(\vec n)}{\bar{T}}$
+\item Overdensity: $\delta = \tfrac{\rho(\vec x)}{\bar{\rho}} - 1$
+\end{itemize}
+\subsubsection{Power Spectrum}
+The power spectrum\index{power spectrum}, $P(k)$\footnote{$P(k)$ measures the power per $\ud^3 k/(2\pi)^3$}, is defined by;
+\begin{equation}
+\langle \delta(\vec k) \delta(\vec k\pr) \rangle = (2\pi)^3 \delta(\vec k - \vec k\pr)P(k)
+\end{equation}
+where statistical homogeneity explains the presence of the delta function and isotropy means $P$ depends only on the magnitude of $\vec k$. More generally, we will consider real fields, so $\delta(\vec x) = \delta^{\star}(\vec x) \Rightarrow \delta(\vec k) = \delta^{\star}(- \vec k)$, then;
+\begin{equation}
+\langle \delta(\vec k) \delta^{\star}(\vec k\pr) \rangle = (2\pi)^3 \delta(\vec k - \vec k\pr)P(k)
+\end{equation}
+\begin{definitionbox}
+We also often make the definition;
+\begin{equation}
+\Delta^2 (k) = \frac{k^3 P(k)}{2\pi^2}
+\end{equation}
+This follows by performing the angular integration in $\ud^3 k$ (excluding the integrals);
+\begin{equation}
+P(k)\frac{\ud^3 k}{(2\pi)^3} = \frac{k^2 \ud \log k}{(2\pi)^2}P(k) = \Delta^2(k) \ud \log k
+\end{equation}
+So the dimensionless power spectrum\index{power spectrum!dimensionless}, $\Delta^2(k)$, measures the power per scalar logarithmic interval.
+\end{definitionbox}
+\subsubsection{Correlation Functions}
+We define the two-point correlation function\index{correlation function} by;\footnotemark
+\footnotetext{
+We can interpret this as the excess over the random probability of finding particle pairs; let the number density be $\bar{n} = \tfrac{n}{V}$, then the probability of finding a particle in a volume $\delta V_1$ is $p_1 = \bar{n}\delta V_1$. Now the uncorrelated probability of finding two particles in $\delta V_1$ and $\delta V_2$ is; $p_2 = \bar{n}^2 \delta V_1 \delta V_2$. On the other hand, for a correlated field, $p_2 = \bar{n}^2\left(1 + \xi(\abs{\vec{x}_1 - \vec{x}_2})\right)\delta V_1 \delta V_2$
+}
+\begin{equation}
+\langle \delta(\vec x)\delta(\vec x + \vec r) \rangle = \xi(r)
+\end{equation}
+We can also define the moments of the field/one-point functions. For example;
+\begin{itemize}
+\item $\langle \delta^2 (\vec k) \rangle = \sigma^2$, which follows since the mean is zero, and is used in the measure $\sigma_8 \sim 0.8$ for instance; the variance here is taken over spheres of radius $8 \,\, \text{h}^{-1}\text{Mpc}$
+\end{itemize}
+\subsubsection{Higher Order Correlators for $n$-spectra}
+We can define higher order correlators including;
+\begin{enumerate}
+\item The 3-point correlators, giving us the \emph{bispectrum}\index{bispectrum}, $B(k_1, k_2, k_3)$;
+\begin{equation}
+\langle \delta(\vec{k}_1) \delta(\vec{k}_2) \delta(\vec{k}_3) \rangle = (2\pi)^3 \delta(\vec{k}_1 + \vec{k}_2 + \vec{k}_3)B(k_1, k_2, k_3)
+\end{equation}
+The three vectors, $\set{\vec{k}_1, \vec{k}_2, \vec{k}_3}$, form a closed triangle. The dependence on the vectors in $B$ can be noted by observing that from our isotropic and homogeneous assumptions, we can rotate and translate the triangle into any configuration. Thus we need only describe the triangle with $3$ lengths (or $2$ lengths and an angle etc.).
+\item This naturally extends to the\emph{trispectrum}\index{trispectrum}. This depends on $6$ variables needed to describe a quadrilateral. In this case we use the lengths of $4$ sides and the two diagonals;
+\begin{multline}
+\langle \delta(\vec{k}_1)\delta(\vec{k}_2)\delta(\vec{k}_3)\delta(\vec{k}_4) \rangle = (2\pi)^3 \delta(\vec{k}_1 + \vec{k}_2 + \vec{k}_3 + \vec{k}_4) \\ \times T\left(k_1, k_2, k_3, k_4, \abs{\vec{k}_1 + \vec{k}_2}, \abs{\vec{k}_3 + \vec{k}_4}\right)
+\end{multline}
+\end{enumerate}
+\subsection{Fourier Conventions}
+We take our Fourier transforms to be;
+\begin{align}
+\delta(\vec r) &= \int{\frac{\ud^3 k}{(2\pi)^3} \exp(-i\vec{k}\cdot\vec{r})\delta(\vec k)} \\
+\delta(\vec k) &= \int{\upd{^3 r} \exp(i\vec{k}\cdot\vec{r})\delta(\vec r)}
+\end{align}
+Fourier transforms satisfy the convolution property such that;
+\begin{equation}
+f(\vec r) = h(\vec r) \star g(\vec r) = \int{\upd{^3 \vec{r}\pr} h(\vec{r}\pr)g(\vec{r} - \vec{r}\pr)} \Rightarrow f(\vec k) = h(\vec k)g(\vec k)
+\end{equation}
+Often we smooth our fields to eliminate variations on scales below which we aren't interested. Suppose we use the standard filter; $W_R(\abs{\vec r}) = \theta\left(R - \abs{\vec r}\right)$, the \emph{spherical top hat filter}\index{filter!spherical top hat}. Then;\footnote{Note that this also makes it easier to compute the unfiltered field, we simply have to divide by $W_R(k)$}
+\begin{equation*}
+f_R(\vec r) = \int{\upd{^3 y} W_R(\abs{\vec y})f(\vec r - \vec y)} \Rightarrow f_R(\vec k) = f(\vec k) W_R(k)
+\end{equation*}
+\begin{equation*}
+W_R(k) = 3 \frac{\sin(kR) - kR \cos(kR)}{(kR)^3}
+\end{equation*}
+Furthermore using these conventions we find;
+\begin{align*}
+\xi(r) &= \langle \delta(\vec x) \delta(\vec x + \vec r) \rangle \\
+&= \int{\frac{\ud^3 k \ud^3 k\pr}{(2\pi)^6}e^{-i\vec{k}\cdot\vec{x}}e^{-i\vec{k}\pr \cdot (\vec x + \vec r)}\langle \delta(\vec k)\delta(\vec{k}\pr) \rangle} \\
+&= \int{\frac{\ud^3 k}{(2\pi)^3}e^{-i\vec{k}\cdot\vec{r}}P(k)} \\
+&=\frac{2\pi}{8\pi^3}\int{k^2\ud k \upd{\cos \theta} e^{-ikr\cos \theta} P(k)} \\
+&=\frac{1}{2\pi^2}\int{k^2 \upd{k} j_0(kr) P(k)} \\
+\Rightarrow \xi(r) &= \int{\upd{\log k} \frac{k^3 P(k)}{2\pi^2}j_0(kr)} = \int{\upd{\log k} \Delta^2(k) j_0(kr)}
+\end{align*}
+Performing a very similar calculation we can also find an expression for $\sigma_R^2 = \langle \delta_R(\vec x)^2 \rangle$;
+\begin{align*}
+\langle \delta_R(\vec x)^2 \rangle &= \int{\frac{\ud^3 k \ud^3 k\pr}{(2\pi)^6}e^{-i\vec{k}\cdot\vec{x}}e^{-i\vec{k}\pr\cdot\vec{x}}\langle \delta(\vec{k})\delta(\vec{k}\pr) \rangle W_R(k) W_R(k\pr)} \\
+&= \frac{1}{2\pi^2}\int{k^2 \upd{k} W^2_R(k)P(k)}
+\end{align*}
+\subsection{Shape of the Power Spectrum}
+We know that $P_{\xi \xi}(k) = k^{n_s - 4}$, and that $(n_s - 1) \propto \, \text{slow roll parameters}\, \sim 0$. Planck finds $n_s \sim 0.967$. Defining the transfer function $T(k)$ via;
+\begin{equation}
+P_{\delta \delta}(k) = T^2(k)k^4 P_{\xi \xi}(k) = Ak^{n_s}T^2(k)
+\end{equation}
+we have found previously that;
+\begin{equation}
+T(k) = \begin{cases}\qquad\qquad\qquad1 & k < k_{\text{eq}}\\ \left(\frac{k_{\text{eq}}}{k}\right)^4\left(1 + \log\left(\frac{k}{k_{\text{eq}}}\right)\right)^2 & k > k_{\text{eq}}\end{cases}
+\end{equation}
+where $k_{\text{eq}}$ refers to the scale that enters the horizon at matter-radiation equality.
+\subsection{Gaussian Random Field\index{field!Gaussian random}} \label{sec:grf}
+\begin{definitionbox}
+A vector $\vec f = (f_1, f_2, \ldots, f_n)$ of random variables is Gaussian if the joint probability density function is a multivariate Gaussian;
+\begin{equation}
+\mathbb{P}(\vec f) = \frac{1}{\sqrt{(2\pi)^n\abs{C}}}\exp\left(-\tfrac{1}{2}f_{i}C^{-1}_{ij}f_j\right)
+\end{equation}
+where $C$ is the covariance matrix\index{covariance matrix}. Then, a random field $f : \RR^3 \rightarrow \RR$ is a \emph{Gaussian random field} (GRF) if for arbitrary collections of positions $(\vec{x}_1, \ldots, \vec{x}_n)$ the variables $\set{f(\vec{x}_1), \ldots, f(\vec{x}_n)}$ are joint Gaussian variables. Note that since $f(\vec k)$ are linear in $f(\vec x)$ it follows that if $f(\vec x)$ is a GRF, so is $f(\vec k)$.
+\end{definitionbox}
+We can show by diagonalising $C = O D^{-1} O^{-1}$ where $D^{-1} = \text{diag}(\lambda^j)$, that;
+\begin{equation}
+\int{\upd{^n f}\mathbb{P}(\vec f)} = \prod_{i = 1}^n {\int{\upd{Y_i}\frac{1}{\sqrt{2\pi \lambda^i}}\exp\left(-\frac{Y_i^2}{2(\lambda^i)^2}\right)}} = 1
+\end{equation}
+where $Y = O^{-1}f$. Furthermore define the \emph{characteristic function}\index{characteristic function};
+\begin{align}
+\left< \exp(\vec{J}\cdot \vec{f}) \right> &= \int{\upd{^n f}\frac{1}{\sqrt{(2\pi)^n \abs{C}}}\exp\left(-\tfrac{1}{2}\vec{f}^{\,\text{T}}C \vec{f} + \vec{J}\cdot \vec{f}\right)} \nonumber \\
+&= \exp(-\tfrac{1}{2}\vec{J}^{\,\text{T}}C\vec{J})
+\end{align}
+We can differentiate the right hand side of this expression to see that;
+\begin{align*}
+\left.(-1)^k\frac{\del}{\del J_{i_1}}\cdots\frac{\del}{\del J_{i_k}}\left< \exp(\vec{J}\cdot \vec{f}) \right>\right|_{\vec J = 0} & \\
+= \int{\upd{^n f}\frac{1}{\sqrt{(2\pi)^n \abs{C}}}f_{i_1}\cdots f_{i_n}}&\exp\left(-\tfrac{1}{2}\vec{f}^{\,\text{T}}C \vec{f} + \vec{J}\cdot \vec{f}\right) = \left< f_{i_1}\cdots f_{i_n} \right>
+\end{align*}
+So for example with $k = 2$, we find that $\left< f_i f_j \right> = C_{ij}$ as claimed above.
+\subsubsection{Wick's Theorem\index{theorem!Wick's}}
+For a mean zero GRF, we have;
+\begin{enumerate}
+\item $\left< f_{i_1}\cdots f_{i_{2p + 1}} \right> = 0$ i.e. vanishes for $k$ odd
+\item Expressible in terms of products of $2$-point functions for $k$ even;
+\begin{equation}
+\left< f_{i_1}\cdots f_{i_{2k}} \right> = \sum_{\sigma}{\prod_{\text{pairs}}{C_{ij}}} = \frac{1}{2^N N!}\underbrace{\left(C_{i_1 i_2}\cdots C_{i_{2k - 1}i_{2k}} + \cdots\right)}_{(2N)! \,\,\text{terms}}
+\end{equation}
+\end{enumerate}
+\subsubsection{Weakly non-Gaussian Fields}
+If we work in one variable, $f = \delta$, we introduce the \emph{moment generating function}\index{moment generating function}, $\mM(J)$;
+\begin{equation}
+\mM(J) = \sum_{p}{\frac{\left< \delta^p \right>}{p!}J^p} = \left< \exp \delta J \right> = \int{\upd{\delta} \mathbb{P}(\delta)\exp J\delta}
+\end{equation}
+For a GRF we can plug in $\mathbb{P}(\delta)$ to find $\mM(J) = \exp\left(\tfrac{1}{2}J^2 \sigma^2\right)$, then taking an inverse Laplace transform\index{Laplace transform!inverse};
+\begin{equation}
+\mathbb{P}(\delta) = \int_{-i\infty}^{i\infty}{\frac{\ud J}{2\pi i} \exp(-\delta J)\mM(J)}
+\end{equation}
+Suppose we have a weak non-Gaussian character to the field; $\left< \delta^3 \right> = S_3 \sigma^2, S_3 \ll 1$. Then we can derive the leading order expression to the \emph{Edgeworth expansion}\index{Edgeworth expansion};
+\begin{align}
+\mM(J) &\sim \exp(\tfrac{1}{2}J^2 \sigma^2)\left(1 + \frac{\sigma^2 S_3}{3!}J^3\right) \\
+\Rightarrow \mathbb{P}(\delta) &\sim \frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\tfrac{1}{2}\sigma^2 J^2\right)\left(1 + \frac{S_3 (\delta^3 - 3\delta \sigma^2)}{3!\sigma^4}\right)
+\end{align}
+\subsection{Estimators\index{estimator} and Cosmic Variance}
+Our universe is only one realisation of an ensemble of different possibilities. Since we only have the one sample, we need estimators to learn about the statistics of the fields involved. Consider a fixed volume, $V$ with $V = L^3$. Then the lowest scale that is manifest is $k_f = 2\pi / L \Rightarrow V_f = (2\pi)^3 / V$. Then any wavevector, $\vec k = k_f \vec i$ where $\vec i$ is an integer vector. As a result of this discreteness we can combine this with our expression for the power spectrum\index{power spectrum};
+\begin{align*}
+\delta(\vec{k}_i - \vec{k}_j) &= \frac{V}{(2\pi)^3}\delta_{\vec{k}_i, \vec{k}_j} \\
+\Rightarrow V \delta _{\vec{k}, -\vec{k}\pr}P\left(\abs{\vec k}\right) &= \left< \delta(\vec k) \delta (\vec{k}\pr) \right>
+\end{align*}
+\begin{mygraphic}{advcosmo/kbin}{0.5}{Discrete Fourier grid and modes (red points) contributing to a wavenumber bin (gray shaded region) centered around $k$.}{kbin}\end{mygraphic}
+Say we want to estimate the power spectrum at a fixed magnitude, $\abs{\vec k}$. We consider a shell in Fourier space shown in \autoref{fig:kbin}, and sum over all the lattice points, dividing by the number of $k$-modes, $N_k$, to get the average, so;
+\begin{equation}
+\hat{P}(k) = \frac{1}{VN_{k}}\sum_{\vec{k}_i : k_i \in [k_L, k_U]}{\delta(\vec{k}_i)\delta(-\vec{k}_i)}
+\end{equation}
+We can show this is unbiased;
+\begin{equation}
+\left< \hat{P} \right> = \frac{1}{VN_k}\sum_{\vec{k}_i}{\left< \delta(\vec{k}_i)\delta(-\vec{k}_i) \right>} = \frac{V}{VN_k}\sum_{\vec{k}_i}{P(k)} = P(k)
+\end{equation}
+where in the last step we have assumed that because $\vec{k}_i$ lies in the shell in Fourier space, $k_i = k$. We can also calculate the variance of the estimator;
+\begin{align}
+\left< \hat{P}^2 \right> - \left< \hat{P} \right>^2 &= \frac{1}{N_k^2 V^2}\sum_{\vec{k}_1}{\sum_{\vec{k}_2}{\left< \delta(\vec{k}_1)\delta(-\vec{k}_1)\delta(\vec{k}_2)\delta(-\vec{k}_2) \right>}} - P^2(k) \nonumber \\
+&= \frac{1}{N_k^2}\sum_{\vec{k}_i, \vec{k}_j}{P(k_i)P(k_j)} + \frac{2}{N_k^2}\sum_{\vec{k}_1}{P^2(k_i)} - P^2(k)\nonumber \\
+&= \frac{2}{N_k}P^2(k)
+\end{align}
+where going from the first line we have assumed the field is Gaussian and therefore used Wick's Theorem. From the second to the third line, it is the first and the last term that cancel leaving just the middle term. Since $N_k = V_s/V_f = 4\pi k^2 \ud k/V_f$, we see that $N_k$ is lower for lower $k$ as expected. This then explains the higher variance at low $k$ in the plot of the CMB power spectrum for example.
+\subsection{Random Fields on the Sphere}
+The basis for square integrable functions on the sphere are the spherical harmonics\index{spherical harmonics} $Y_{lm}(\theta, \phi) \coloneqq Y_{lm}(\hat{\bm{n}})$\footnotemark, then for any (suitably smooth) function $f : S^2 \rightarrow \RR$, we can write;
+\footnotetext{
+In the position space representation, we have $\hat{L}^2 = -\nabla^2, \hat{L}_z = -i\del_\phi$, then the spherical harmonics are simultaneous eigenfunctions of the two operators; $\hat{L}^2 Y_{lm} = l(l + 1)Y_{lm}, \hat{L}_z Y_{lm} = m Y_{lm}$, with $-l \leq m \leq l, m \in \ZZ$. Furthermore, under parity,
+\begin{equation*}
+Y_{lm}(-\nhat) = (-1)^l Y_{lm}(\nhat)
+\end{equation*}
+}
+\begin{equation}
+f(\nhat) = \sum_{lm}{f_{lm}Y_{lm}(\nhat)}
+\end{equation}
+To be more explicit about the $Y_{lm}$, we have;
+\begin{equation}
+\label{eq:ylmexplicit}
+Y_{lm}(\theta, \phi) = \sqrt{\frac{(2l + 1)(l - m)}{4\pi(l + m)!}}P_l^m(\cos \theta)\exp(im \phi)
+\end{equation}
+which implies that $Y_{lm}^{\star} = (-1)^m Y_{l, -m}$. The $P_{l}^m$ are the associated Legendre polynomials\index{associated Legendre polynomials}, and satisfy $P_l^0(x) = P_l(x)$. The orthogonality relation\index{spherical harmonics!orthogonality relation} is;
+\begin{equation}
+\label{eq:ylmorthog}
+\int{\upd{^2 \Omega}Y_{lm}(\nhat)Y^{\star}_{l\pr m\pr}(\nhat)} = \delta_{l l\pr}\delta_{m m\pr}
+\end{equation}
+\begin{equation}
+\Rightarrow f_{lm} = \int{\upd{^2 \Omega} f(\nhat) Y_{lm}^\star(\nhat)}
+\end{equation}
+\begin{definitionbox}[The Angular Power Spectrum]
+The only relevant symmetries on the sphere are rotations. Employing statistical isotropy and homogeneity, we deduce that the angular power spectrum $\left< f(\nhat) f(\nhat\pr) \right>$ can only depend on the opening angle of $\nhat, \nhat\pr$ i.e on a single angular variable $\theta$, thus we write;
+\begin{equation}
+C(\theta) = \left< f(\nhat)f(\nhat\pr) \right> = \sum_{l}{\frac{2l + 1}{4}C_l P_l(\cos \theta)}
+\end{equation}
+This is now in a suitable form to use the addition formula\index{spherical harmonics!addition formula};
+\begin{equation}
+P_l(\nhat \cdot \nhat\pr) = P_l(\cos \theta) = \frac{4}{2l + 1}\sum_{m}{Y_{lm}(\nhat) Y_{lm}^{\star}(\nhat\pr)}
+\end{equation}
+To deduce that;
+\begin{equation*}
+C(\theta) = \left< f(\nhat)f^{\star}(\nhat\pr) \right> = \sum_{lm}{C_l Y_{lm}(\nhat) Y^{\star}_{lm}(\nhat\pr)}
+\end{equation*}
+On the other hand though, 
+\begin{equation*}
+\left< f(\nhat)f^{\star}(\nhat\pr) \right> = \sum_{lm, l\pr m\pr}{\left< f_{lm}f^{\star}_{l\pr m\pr} \right> Y_{lm}(\nhat)Y^{\star}_{l\pr m\pr}(\nhat\pr)}
+\end{equation*}
+Matching up the two gives;
+\begin{equation}
+\left< f_{lm} f^{\star}_{l\pr m\pr} \right>
+\end{equation}
+\end{definitionbox}
+\subsubsection{Rotations}
+Let $\hat{D}(\alpha, \beta, \gamma)$ denote the operator the generates rotation, where $\alpha, \beta, \gamma$ are the three Euler angles\footnote{We first rotate by $\gamma$ about $\hat{\bm{z}}$, then by $\beta$ about $\hat{\bm{y}}$, and finally by $\alpha$ around $\hat{\bm{z}}$}. Then clearly $\hat{D}^{-1}(\alpha, \beta, \gamma) = \hat{D}(-\gamma, -\beta, -\alpha)$. Furthermore, we can view rotation either as an active, or a passive transformation\index{transformation!active}\index{transformation!passive}. Thus;
+\begin{equation}
+\hat{D}f(\nhat) = f(\hat{D}^{-1}\nhat)
+\end{equation}
+We have that;
+\begin{align*}
+\hat{D}(0, 0, \gamma)Y_{lm}(\nhat) &= Y_{lm}(\theta, \phi - \gamma) = \exp(-im\gamma)Y_{lm}(\theta, \phi) \\
+&= \exp\left[-i\hat{L}_z \gamma\right]Y_{lm}(\theta, \phi) \\
+\Rightarrow \hat{D}(\alpha, \beta, \gamma) &= \exp\left(-i\alpha \hat{L}_z\right) \exp\left(- i\beta \hat{L}_y\right) \exp\left(- i \gamma\hat{L}_{z}\right)
+\end{align*}
+Now $\left[\hat{L}^2, \hat{L}_i\right] = 0 \Rightarrow \hat{L^2}\hat{D}Y_{lm} = l(l + 1)\hat{D}Y_{lm}$. So the $\hat{D}Y_{lm}$ are still eigenvectors of $\hat{L}^2$. This means it must be the case that;
+\begin{equation}
+\hat{D}Y_{lm} = \sum_{n}{D\indices{^{l}_{nm}}}Y_{ln}
+\end{equation}
+i.e. we just project onto the $m$-space. The $D\indices{^{l}_{nm}}$ are known as the \emph{Wigner} $D$-\emph{matrices}\index{Wigner matrices}. The set $\set{D\indices{^{l}_{mn}}}$ form a $(2l + 1)$-dimensional representation\index{representation} of the rotation group for fixed $l$. 
+\begin{examplebox}[Action of Rotation on $f_{lm}$] 
+Now consider the action on the field $f(\nhat)$;
+\begin{equation*}
+\hat{D}f(\nhat) = \sum_{lm}{f_{lm}\hat{D}Y_{lm}} = \sum_{ln}{\sum_{m}{f_{lm} D\indices{^{l}_{nm}}Y_{ln}}}
+\end{equation*}
+So if we identify $\tilde{f}_{ln} = \sum_{m}{f_{lm}D\indices{^{l}_{nm}}}$, then we see that;
+\begin{equation}
+\hat{D}f(\nhat) = \sum_{lm}{\tilde{f}_{lm}Y_{lm}}, \qquad \tilde{f}_{lm} = \sum_{n}{D\indices{^{l}_{mn}}f_{ln}}
+\end{equation}
+\end{examplebox}
+We can use the orthogonality relation in \eqref{eq:ylmorthog} with $\nhat \mapsto \hat{\bm{s}}$ for some $\hat{\bm{s}}$. Then;
+\begin{align*}
+\delta_{m m\pr} &= \int{\upd{\Omega_s} Y_{lm}(\hat{D}^{-1}\hat{\bm{s}}) Y^{\star}_{l m\pr}(\hat{D}^{-1}\hat{\bm{s}})} \\
+&= \int{\upd{\Omega_s} \hat{D}Y_{lm}(\hat{\bm{s}})\left[\hat{D}Y_{l m\pr}(\hat{\bm{s}})\right]^{\star}} \\
+&= \int{\upd{\Omega_s}\sum_{n, n\pr}{D\indices{^{l}_{nm}}Y_{ln}(\hat{\bm{s}})D\indices{^{\star l}_{n\pr m\pr}}Y^{\star}_{l n\pr}(\hat{\bm{s}})}} \\
+&= \sum_{n}{D\indices{^{l}_{nm}}D\indices{^{\star l}_{n m\pr}}} \\
+\Rightarrow \delta_{m m\pr} &= \sum_{n}{D\indices{^{l}_{nm}}D\indices{^{\star l}_{n m\pr}}} = \sum_{n}{D\indices{^{\star l}_{mn}}D\indices{^{l}_{m\pr n}}}
+\end{align*}
+where the second equality follows by performing an active transformation, $\nhat = \hat{D}\hat{\bm{s}}$, instead of a passive one. Now consider a vector $\nhat$ with polar angle $\theta$ and azimuthal angle $\phi$, then $\nhat = \hat{D}(\phi, \theta, 0)\hat{\bm{z}}$, so;
+\begin{equation*}
+Y_{lm}(\nhat) = Y_{lm}\left(\hat{D}(\phi, \theta, 0)\hat{\bm{z}}\right) = \sum_{n\pr}{D\indices{^{\star l}_{m n\pr}}Y_{l n\pr}(\hat{\bm{z}})}
+\end{equation*}
+But using the explicit form of $Y_{lm}$ with $\theta = 0$, and using the fact that $P^{m}_{l}(1) = \delta_{m 0}$, we can set $m = 0$ in \eqref{eq:ylmexplicit}, then $Y_{lm}(\hat{\bm{z}}) = \sqrt{\tfrac{2l + 1}{4\pi}}\delta_{m 0}$. Then we see;
+\begin{equation}
+Y_{lm}(\nhat) = \sqrt{\frac{2l + 1}{4\pi}}D\indices{^{\star l}_{m 0}}(\phi, \theta, 0)
+\end{equation}
+\begin{examplebox}[The Power Spectrum under Rotation]
+We can use these relations to consider the power spectrum under rotations;
+\begin{equation*}
+\left< \tilde{f}_{lm}\tilde{f}^{\star}_{l\pr m\pr} \right> = \sum_{n n\pr}{D\indices{^{l}_{mn}}D\indices{^{l\pr}_{m\pr n\pr}}\left< f_{ln} f_{l\pr n\pr}^{\star} \right>}
+\end{equation*}
+But $\left< f_{lm}f_{l\pr m\pr}^{\star} \right> = C_l \delta_{l l\pr}\delta_{m m\pr}$, so;
+\begin{align}
+\left< f_{lm}f_{l\pr m\pr}^{\star} \right> &= C_l \sum_{n}{D\indices{^{l}_{mn}}D\indices{^{\star l}_{m\pr n}} \delta_{l l\pr}} \\
+&= C_l \delta_{m m\pr} \delta_{l l\pr}
+\end{align}
+So the power spectrum is invariant under rotation. 
+\end{examplebox}
+\subsubsection{Projections of $3$D Fields}
+Suppose we have a field $f(\vec r)$, we want to consider this field at some fixed distance $r$, say. This is the case when we observe the CMB\index{CMB} for example. Then we have the projected field;
+\begin{equation}
+f(\nhat) = \int{\frac{\ud^3 k}{(2\pi)^3}f(\vec k)\exp(-i\hat{\bm{k}}\cdot \nhat kr)}
+\end{equation}
+\begin{definitionbox}[The Rayleigh Expansion\index{Raleigh Expansion}]
+\begin{equation}
+\exp(- i \vec k \cdot \vec r) = 4\pi \sum_{lm}{(-i)^l j_{l}(kr)Y_{lm}^{\star}(\hat{\bm{k}})Y_{lm}(\hat{\bm{r}})}
+\end{equation}
+\end{definitionbox}
+Now using the defintion of the $f_{lm}$ from above, we can put in the Rayleigh expansion to find;
+\begin{align*}
+f_{lm} &= 4\pi\int{\frac{\ud^3 k}{(2\pi)^3}f(\vec k)\sum_{l\pr m\pr}{(-i)^l j_{l}(kr)Y^{\star}_{l\pr m\pr}\int{\upd{\Omega} Y_{l\pr m\pr}(\nhat)Y^{\star}_{lm}(\nhat)}}} \\
+&= 4\pi \int{\frac{\ud^3 k}{(2\pi)^3}f(\vec k)(-i)^{l}j_{l}(kr)Y_{lm}(\hat{\bm{k}})}
+\end{align*}
+So we have recovered the spherical harmonic modes $f_{lm}$ for a projected field $f(\vec r)$. Finally we can calculate;
+\begin{align*}
+\left< f_{lm}f_{l\pr m\pr} \right> &= (4\pi)^2 \int{\frac{\ud^3 k \ud^3 k\pr}{(2\pi)^6}\left< f(\vec k) f(\vec k\pr) \right> Y_{lm}(\hat{\bm{k}})Y_{l\pr m\pr}(\hat{\bm{k}}\pr) j_l (kr) j_{l\pr}(k\pr r)}(-i)^l i^{l\pr} \\
+&= 4\pi \int{\frac{k^2 \ud k}{2\pi^2}P(k)j_l(kr)j_{l\pr}(kr)(-i)^l i^{l\pr}\int{\upd{\Omega_k}Y_{lm}(\hat{\bm{k}})Y_{l\pr m\pr}(\hat{\bm{k}})}} \\
+&= 4\pi\delta_{l l\pr}\delta_{m m\pr}\int{\frac{k^2 \ud k}{2\pi^2}j_l^2(kr)P(k)}
+\end{align*}
+So we see that the angular power spectrum is given by;
+\begin{equation}
+C_l = 4\pi \int{\frac{k^2 \ud k}{2\pi^2}j_l^2(kr)P(k)} = 4\pi \int{\upd{\log k}\Delta^2(k)j_l^2(kr)}
+\end{equation}
+\newpage
+\section{Physics of the Cosmic Microwave Background}
+In terms of the structure of fluctuations\footnote{Why can we use linear perturbation theory to deal with the CMB? At $\sim 400,000\text{yr}$, non-linear structure had not had time to form, so our analysis works well.} in the CMB\index{CMB} we have the following hierarchy;
+\begin{enumerate}
+\item $2.73\text{K}$ isotropic radiation
+\item $3\text{mK}$ dipole due to the peculiar motion of the Earth
+\item Temperature anisotropies\index{anistropy} with an r.m.s. of $10\mu\text{K}$
+\end{enumerate}
+\subsection{Relativistic Kinetic Theory\index{kinetic theory} and the Boltzmann equation\index{equation!Boltzmann}}
+We need a relativistic kinetic theory\footnote{Since we are working on cosmological scales} for the CMB to first order in perturbations about a spatially flat FLRW\index{FLRW universe} universe. As such we take the same conventions as the Cosmology course;\footnote{Note that we can raise and lower latin indices with $\delta_{ij}$ i.e. $B^i = \delta^{ij}B_j$}
+\begin{equation}
+\label{eq:flrwvar}
+\ud s^2 = a^2 (\eta)\set{-(1 + 2A)\ud \eta^2 + 2 B_i \ud x^i \ud \eta  + \left((1 + 2C)\delta_{ij} + 2E_{ij}\right)\ud x^i \ud x^j}
+\end{equation}
+\subsubsection{Distribution Function}
+CMB photons can be described by a one-particle \emph{distribution function}\index{distribution function}, $f(x^{\mu}, p^{\mu})$. We usually parametrise the $4$-momentum in terms of components relative to an \emph{orthonormal tetrad}\index{orthonormal tetrad}, $\set{E_0, E_i}$.
+\begin{examplebox}[Orthonormal Tetrad]
+We will take $E_0$ to be the $4$-velocity of an observer at rest with respect to the coordinates as defined in \eqref{eq:flrwvar}. We found in Cosmology that this was given by;
+\begin{equation}
+E_{0}^{\mu} = a^{-1}(1 + A)\delta\indices{^{\mu}_{0}}
+\end{equation}
+which satisfies $g_{\mu\nu}E_0^{\mu}E_0^{\nu} = -1$. Then the $E_i$ will span the rest frame of the observer. A suitable choice is;
+\begin{equation}
+E_i^{\mu} = a^{-1}\set{B_i \delta\indices{^{\mu}_{0}} + (1-C)\delta\indices{^{\mu}_{i}} - E\indices{_{i}^{j}}\delta\indices{^{\mu}_{j}}}
+\end{equation}
+which satisfy $g_{\mu\nu}E_0^{\mu}E_i^{\nu} = 0$, $g_{\mu\nu}E_i^{\mu}E_j^{\nu} = \delta_{ij}$.\footnote{Note that in the absence of perturbations these just point along the co-ordinate directions} Then we write;
+\begin{equation}
+p^{\mu} = E(E_0)^{\mu} + \vec{p}^i(E_i)^{\mu}
+\end{equation}
+Here $E$/$\vec p^{i}$ is the energy/$3$-momentum as measured by an observer at rest in these coordinates. We will write $\vec p$ for the $3$-momentum. Note that since $p^{\mu}$ is null\index{null} we have the relation $E = \abs{p}$.
+\end{examplebox}
+We can now define the distribution function; sit at a local point in spacetime and measure the phase space density of photons. Then the number of photons in a phase space volume is $f \ud^3 \vec p \ud^3 \vec x$ is the distribution function. It satisfies;
+\begin{enumerate}
+\item $f$ is Lorentz invariant
+\item $f$ is conserved along the photon path in phase space in the absence of scattering (a consequence of Liouville's theorem\index{theorem!Liouville})
+\end{enumerate}
+\subsubsection*{Lorentz Invariance of the Distribution Function}
+We consider the massive case and take the limit as $m \rightarrow 0$. Suppose one observer measures a proper $3$-volume $\ud^3 \vec x$ and $3$-momentum $\ud^3 \vec p$, then another observer will see the same particles occupying a phase space volume $\ud^3 \vec{x}\pr \ud^3 \vec{p}\pr$. In QFT we showed that\footnotemark the combination $\ud^3 \vec{p}/E(\vec{p})$ is Lorentz invariant. To show that the full phase space volume is Lorentz invariant, start in a frame where the particles are at rest. Now transform to two frames $S, S\pr$ with Lorentz factors\index{Lorentz factor} $\gamma, \gamma\pr$. Hence in $S$, $V_0 \rightarrow V_0/\gamma$, whilst in $S\pr$ we have $V_0 \rightarrow V_0/\gamma\pr$. In the rest frame $E_0 = m$, so in $S$, $E = \gamma m$ and in $S\pr$, $E\pr = \gamma\pr m$. So we can deduce that;
+\footnotetext{
+For example by considering the Jacobian\index{Jacobian} of the transformations $E\pr = \gamma(E - \beta p_x)$, $p_x\pr = \gamma\left(p_x - \beta E(\vec{p})\right)$, $p_y\pr = p_y$, $p_z\pr = p_z$
+}
+\begin{equation}
+\gamma\ud^3 \vec{x}\pr = \gamma\pr \ud^3 \vec x \Rightarrow E(\vec p)\ud^3 \vec{x} = E(\vec{p}\pr)\ud^3 \vec{x}\pr
+\end{equation}
+So $E(\vec p)\ud^3 \vec x$ is Lorentz invariant. Finally we use the fact that $E(\vec p)^{-1}\ud^3 \vec p$ is also Lorentz invariant to deduce that the product
+\begin{equation*}
+E(\vec p)^{-1}\ud^3 \vec{p} E(\vec p)\ud^3 \vec x = \ud^3 \vec{p}\ud^3 \vec x
+\end{equation*}
+is Lorentz invariant, as claimed.
+\subsubsection*{Liouville's Theorem\index{theorem!Liouville}}
+We want to show the phase space volume $\ud^3 x\ud^3 p$ is conserved along the photon path. If this is the case, then for a fixed number of photons in a region of phase space, it must also be the case that the distribution function\index{distribution function} is conserved. In this case it is sufficient to show that the system can be described with a suitable Hamiltonian. If we foliate the spacetime with constant time surfaces threaded by timelike worldlines\index{worldline}, then the photon is characterised by its spatial co-ordinates in some chart $x^i(t)$ and its $3$-momentum $p_i(t)$. The $0^{\text{th}}$ component of the $4$-momentum is then governed by the nullity of $p_\mu$;
+\begin{equation}
+g^{00}p_0^2 + 2g^{0i}p_0 p_i + g^{ij}p_i p_j = 0
+\end{equation}
+It can then be shown that the geodesic equation\index{equation!geodesic} is equivalent to the dynamics;
+\begin{equation}
+\frac{\ud x^i}{\ud t} = \frac{\del \hamilt}{\del p_i}, \quad \frac{\ud p_i}{\ud t} = -\frac{\del\hamilt}{\del x^i} , \quad \hamilt = -p_0
+\end{equation}
+\subsubsection{The CMB Dipole\index{CMB!dipole}}
+Suppose the CMB was isotropic and blackbody\index{isotropic}\index{blackbody} in form with some temperature $\bar{T}_{\text{CMB}}$ in some frame. Now consider moving at speed $\vec v$ with respect to the frame. If we detect a photon with energy $E$ and direction $\vec e$ it must be the case that in the CMB frame, by the relativistic Doppler effect\index{Doppler effect};
+\begin{equation}
+E_{\text{CMB}} = \gamma E(1 + \vec{e} \cdot \vec{v})
+\end{equation}
+In the CMB frame, we have a blackbody distribution function;
+\begin{equation}
+f(p) \propto \left(\exp\left(\frac{E_{\text{CMB}}(p)}{k\bar{T}_{\text{CMB}}}\right) - 1\right)^{-1}
+\end{equation}
+This is Lorentz invariant so we must also be able to write;
+\begin{equation}
+f(p) \propto \left(\exp\left(\frac{\gamma E(1 + \vec{e}\cdot \vec{v})}{k\bar{T}_{\text{CMB}}}\right) - 1\right)^{-1}
+\end{equation}
+This is still a blackbody spectrum, but now it has a direction dependent temperature given by;\footnotemark
+\begin{equation}
+T(\vec e) = \frac{\bar{T}_{\text{CMB}}}{\gamma(1 + \vec{e}\cdot \vec{v})} \sim \bar{T}_{\text{CMB}}(1 - \vec{e}\cdot\vec{v})
+\end{equation}
+\footnotetext{
+Calculations show that $\abs{\vec{v}} \sim 3 \times 10^{5}\,\,\index{ms}^{-1}$ relative to the ``rest frame'' of the universe. After subtracting this \emph{kinematic dipole}\index{kinematic dipole}, we are left with the true cosmological anisotropies.
+}
+\subsubsection{The Boltzmann Equation\index{equation!Boltzmann}}
+The \emph{Boltzmann equation} describes the evolution of the distribution function in phase space in the presence of scattering.\footnote{The relevant scattering mechanism here is Thomson scattering\index{scattering!Thomson} which is the non-relativistic limit of Compton scattering\index{scattering!Compton}. This is because, at early times, when electrons were relativistic, Compton scattering was extremely efficient. The CMB is tightly coupled to matter and is nearly isotropic. Only through \emph{recombination}\index{recombination} when the number of free charges drops and the photons have a non-negligible mean free path does this scattering have a significant effect. However, at this stage, $E_{\gamma} \sim 1 \text{eV} \ll 0.5\text{MeV} = m_e$, so we are firmly in the non-relativistic regime.}
+It is convenient to write the energy and $3$-momentum components in the null tetrad as;\footnote{Note that the dependence on $\epsilon$ in $p^i$ follows from the nullity of $p_{\mu}$}
+\begin{equation*}
+E = \frac{\epsilon}{a}, \qquad p^i = \frac{\epsilon}{a}e^{i}
+\end{equation*}
+where $\vec e$ is a unit vector. $\epsilon$ is known as the \emph{comoving energy}\index{comoving energy}, and is introduced to remove the effect of expansion. Indeed, in the absence of perturbations, $\epsilon$ and $\vec e$ are constants. So to first order;
+\begin{equation}
+p^{\mu} = E(E_0)^{\mu} + p^{i}(E_i)^{\mu} = \epsilon a^{-2}\left(1 - a + e^{i}B_i, (1-C)e^{i} - e^{j}E\indices{^{i}_{j}}\right)
+\end{equation}
+The photon path is defined by some worldline $x^{\mu}(\lambda)$ then $p^{\mu} = \ud x^\mu / \ud \lambda$. So that;
+\begin{equation}
+\frac{p^{i}}{p^{0}} = \frac{\ud x^i}{\ud \eta} = e^{i} + \mO(1)
+\end{equation}
+Now we can consider differentiating our distribution function, $f(\eta, \vec x, \epsilon, \vec e)$;
+\begin{equation}
+\frac{\ud f}{\ud \eta} = \frac{\del f}{\del \vec e}\cdot\frac{\ud \vec e}{\ud \eta} + \frac{\del f}{\del \epsilon} \frac{\del \epsilon}{\del \eta} + \frac{\del f}{\del \vec x}\cdot\frac{\ud \vec x}{\ud \epsilon} = \left.\frac{\ud f}{\ud \eta}\right|_{\text{scat}}
+\end{equation}
+Importantly, we only want to work at linear order, so we make the following observations;
+\begin{itemize}
+\item In an isotropic universe, $\vec e$ is constant and $f$ doesn't depend on direction, so in a perturbed universe, $\del f/\del \vec{e}$ and $\ud \vec{e} / \ud \eta$ are both $\mO(1)$ so we can neglect the second term in the Boltzmann equation.
+\item Also, $\del f / \del \vec{x}$ is $\mO(1)$ so we need only take $\ud \vec{x} / \ud \eta = \vec{e} + \mO(1)$.
+\item $\ud \epsilon / \ud \eta = \mO(1)$ so it is sufficient to consider only the background value of $f$ i.e. $\del \bar{f} / \del \epsilon$
+\item We will later argue that $\left.\ud f / \ud \eta \right|_{\text{scat}}$ is also $\mO(1)$
+\end{itemize}
+\begin{definitionbox}
+Then the Boltzmann equation becomes;
+\begin{equation}
+\frac{\del f}{\del \eta} + \frac{\del \bar{f}}{\del \log \epsilon}\frac{\ud \log \epsilon}{\ud \eta} + \frac{\del f}{\del \vec{x}} \cdot \vec{e} = \left.\frac{\ud f}{\ud \eta}\right|_{\text{scat}}
+\end{equation}
+At this point, note that at zeroth order we find $\del_\eta \bar{f} = 0$. In general, for an isotropic\index{isotropic}, homogeneous\index{homogeneous} universe we would expect $f = f(\eta, \epsilon)$. The Boltzmann equation gives us more however, it says that $f = f(\epsilon)$.
+\end{definitionbox}
+If the distribution function is isotropic and homogeneous it is of the form;\index{Maxwell-Boltzmann distribution}
+\begin{equation}
+\bar{f} \propto \left(\exp\left(\frac{E}{k\bar{T}_{\text{CMB}}(\eta)}\right) - 1\right)^{-1} = \left(\exp\left(\frac{\epsilon}{k a(\eta)\bar{T}_{\text{CMB}}(\eta)}\right) - 1\right)^{-1}
+\end{equation}
+So $\del_\eta \bar{f} = 0$ implies;
+\begin{equation}
+a\bar{T}_{\text{CMB}} = \,\,\text{const.} \Rightarrow \bar{T}_{\text{CMB}} \propto a^{-1}
+\end{equation}
+In a fixed isotropic, homogeneous background, the form of $\bar{f}(\epsilon)$ is fixed, so the term $\del \bar{f} / \del \log \epsilon$ is essentially constant. This determines the energy dependence of the full distribution function $f(\eta, \vec x, \epsilon, \vec e)$ in the separable form;
+\begin{equation}
+\label{eq:distrform}
+f(\eta, \vec x, \epsilon, \vec e) = \bar{f}(\epsilon) - \frac{\ud \bar{f}}{\ud \log \epsilon}\Theta(\eta, \vec x, \vec e) = \bar{f}(\epsilon)\set{1 - \frac{\ud \log \bar{f}}{\ud \log \epsilon}\Theta}
+\end{equation}
+where we interpret $\Theta$ as the \emph{fractional temperature fluctuation} in the CMB.\footnotemark
+\footnotetext{
+We can see this in the case of blackbody radiation where we write $T(\vec e) = \bar{T}_{\text{CMB}}(1 + \Theta)$, then for small $\Theta$;
+\begin{align*}
+f &\propto \left(\exp\left(\frac{\epsilon/a}{k\bar{T}_{\text{CMB}}(1 + \Theta)}\right) - 1\right)^{-1} \\
+\Rightarrow f &\propto \left(\exp\left(\frac{\epsilon(1 - \Theta)}{a k\bar{T}_{\text{CMB}}}\right) - 1\right)^{-1} \\
+\Rightarrow f &= \bar{f}(\epsilon) - \theta \epsilon \frac{\ud \bar{f}}{\ud \epsilon} + \cdots
+\end{align*}
+which corresponds to the expression in \eqref{eq:distrform}.
+}
+Substituting this into the Boltzmann equation gives;
+\begin{equation}
+-\frac{\ud \bar{f}}{\ud \log \epsilon}\set{\frac{\del \Theta}{\del \eta} + \vec{e}\cdot\nabla\Theta - \frac{\ud \log \epsilon}{\ud \eta}} = \left.\frac{\ud f}{\ud \eta}\right|_{\text{scat.}}
+\end{equation}
+\subsubsection*{Collision Term for Thomson Scattering\index{scattering!Thomson}}
+We have to make a few assumptions regarding the scattering of the CMB;
+\begin{enumerate}
+\item We will ignore the non-zero electron temperature i.e. ignore the random thermal motion. This ensures there exists a frame in which all the electrons are at rest.\footnote{As it happens, this only affects calculations to order $10^{-5}$ in $kT/ m_e c^2$, so this is okay. This isn't always the case however, for example in the Sunyaev-Zel'dovich\index{Sunyaev-Zel'dovich effect} where the CMB scatters off electrons in galaxies. There the temperature can be much higher.}
+\item We will ignore linear polarisation\index{polarisation} in the CMB (for now)
+\end{enumerate}
+\begin{mygraphic}{advcosmo/compton_scat}{0.5}{In the limit of non-relativistic Thomson scattering, there is no energy change so $\lambda = \lambda\pr$, but there is a change in direction.}{compton_scat}\end{mygraphic}
+To evaluate the right hand side of the Boltzmann equation, we need the differential cross-section\footnote{The rate of photons scattered per solid angle per incident flux}\index{cross-section}\index{cross-section!differential}. For Thomson scattering, this is;
+\begin{equation}
+\frac{\ud \sigma}{\ud \Omega} = \frac{3\sigma_T}{16\pi}(1 + \cos^2 \theta), \quad \sigma_T = \frac{8\pi}{3}\left(\frac{e^2}{4\pi \epsilon_0 m_e c^2}\right)^2
+\end{equation}
+Now suppose that the electrons are at rest (i.e. working in their rest frame), then the following relation holds;
+\begin{equation*}
+\left.\frac{\ud f(\epsilon, \vec e)}{\ud \tau}\right|_{\text{scat.}} = n_e \int{\upd{\vec{e}\pr}\frac{\ud \sigma}{\ud \Omega}\left(f(\epsilon, \vec{e}\pr) - f(\epsilon, \vec{e})\right)}
+\end{equation*}
+We break this down as follows;
+\begin{itemize}
+\item The proper time $\tau$ is in the rest frame of the electrons - we will want to relate this to the proper time $\eta$
+\item $n_e$ is the proper number density of electrons
+\item $\ud \sigma / \ud \Omega \propto 1 + (\vec{e}\cdot\vec{e}\pr)^2$ measures the rate of scattering between directions $\vec{e}$ and $\vec{e}\pr$
+\item $f(\epsilon, \vec{e}\pr)$ counts the number of photons scattering from a direction $\vec{e}\pr$ into a direction $\vec{e}$
+\item $-f(\epsilon, \vec{e})$ counts the number of photons scattering from a direction $\vec{e}$ to a direction $\vec{e}\pr$
+\item It vanishes for a distribution function that is isotropic in the rest frame, explaining our claim that the scattering term is $\mO(1)$. This has the further effect that we can take everything else to zeroth order i.e.
+\begin{equation*}
+\ud \tau \mapsto a \ud \eta, \qquad n_e \mapsto \bar{n}_e
+\end{equation*}
+\end{itemize}
+We can take out the second term in the integral, use the fact that $\int{\upd{\vec{e}\pr}\ud\sigma/\ud \Omega} = \sigma_T$, and transform to the CMB frame, to write;
+\begin{multline*}
+\left.\frac{\ud f(\epsilon, \vec{e})}{\ud \tau}\right|_{\text{scat.}} = \frac{3a\bar{n}_e \sigma_T}{16\pi}\int{\upd{\vec{e}\pr} f(\epsilon, \vec{e}\pr)\left(1 + (\vec{e}\cdot\vec{e}\pr)^2\right)} \\ -a\bar{n}_e \sigma_T f(\epsilon, \vec{e}) -a\bar{n}_e \sigma_T \vec{e}\cdot\vec{v}_b \frac{\ud f}{\ud \log \epsilon}
+\end{multline*}
+where $\vec{v}_b$ is the bulk velocity\index{bulk velocity} of the electrons. Finally then the Boltzmann equation becomes;
+\begin{multline}
+\frac{\del \Theta}{\del \eta} + \vec{e}\cdot\nabla\Theta - \frac{\ud \log \epsilon}{\ud \eta} = \frac{3}{16\pi}a\bar{n}_e\sigma_T \int{\upd{\vec{e}\pr}\Theta(\vec{e}\pr)\left(1 + (\vec{e}\cdot\vec{e}\pr)^2\right)} \\ -a\bar{n}_e \sigma_T \Theta + a\bar{n}_e \sigma_T \vec{e}\cdot\vec{v}_b
+\end{multline}
+\subsubsection{Line of Sight Solution}
+Consider the convective derivative\index{convective derivative} operator along the background spacetime path of photons;
+\begin{equation}
+\frac{\del}{\del \eta} - \vec{e}\cdot\nabla \coloneqq \frac{\ud}{\ud \eta}
+\end{equation}
+In conformal time, this path is defined by $\vec{x}(\eta) = \vec{x}_0 - (\eta_0 - \eta)\vec{e}$. Then the Boltzmann equation becomes;
+\begin{equation*}
+\frac{\ud \Theta}{\ud \eta} = -a\bar{n}_e \sigma_T \Theta + \frac{\ud \log \epsilon}{\ud \eta} + \cdots
+\end{equation*} 
+Now introduce the zeroth order \emph{optical depth}\index{optical depth}, $\tau$ where;
+\begin{equation}
+\tau(\eta) = \int_\eta^{\eta_0}{a\bar{n}_e\sigma_T \ud \eta\pr} \Rightarrow \frac{\ud \tau}{\ud \eta} = -a\bar{n}_e \sigma_T
+\end{equation}
+This acts as an integrating factor and we see that;
+\begin{equation*}
+\frac{\ud}{\ud \eta}\left(e^{-\tau}\Theta\right) = \mathcal{S}
+\end{equation*}
+where;
+\begin{equation*}
+\mathcal{S} = e^{-\tau}\frac{\ud \log \epsilon}{\ud \eta} + e^{-\tau}a\bar{n}_e \sigma_T \vec{e}\cdot\vec{v}_b + \frac{3e^{-\tau}a\bar{n}_e\sigma_T}{16\pi}\int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)}
+\end{equation*}
+Then we could formally integrate this equation along the path described above with $\tau(\eta_0) = 0, \tau(0) = \infty \Rightarrow e^{-\tau(0)} = 0$. Then;
+\begin{equation}
+\Theta(\eta_0, \vec{x}_0, \vec{e}) = \int_0^{\eta_0}{\upd{\eta\pr}\mathcal{S}\left(\eta\pr, \vec{x}_0 - (\eta_0 - \eta)\vec{e}\right)}
+\end{equation}
+\hrule
+\subsubsection*{An aside: the optical depth\index{optical depth} and the visibility function\index{visibility function}}
+Consider a box of cross-sectional area, $A$, width $\ud x$ with electron number density $n_e$. Each electron provides an effective scattering area of $\sigma_T$, so the fraction of area covered by interaction area is;
+\begin{equation*}
+\frac{n_e A \sigma_T \ud x }{A} = n_e \sigma_T \ud x
+\end{equation*}
+The \emph{comoving mean free path}\index{mean free path}\index{mean free path!comoving} is defined as the distance $\ud x$ at which this ratio is unity;
+\begin{equation}
+l_p = \frac{1}{a\bar{n}_e\sigma_T}
+\end{equation}
+Now consider a time interval $\Delta \eta \ll \mathcal{H}^{-1}$ so we consider $a(\eta)$ as a constant. Dividing the interval into $N$ equal steps, $\Delta \eta/N$, there is a probability of scattering $\Delta \eta / N l_p$, since a photon travels $\Delta \eta/N$ in units where $c = 1$. So we find;
+\begin{align*}
+&\mathbb{P}(\text{no scattering in}\,\, \Delta \eta) = \lim_{N \rightarrow \infty}\left(1 - \frac{\Delta \eta}{Nl_p}\right) = \exp\left(-\frac{\Delta \eta}{l_p}\right) \\
+\Rightarrow \,\,\,&\mathbb{P}(\text{no scattering between}\,\,\eta\,\,\text{and}\,\,\eta_0) = \exp\left(-\int_{\eta_0}^{\eta}{\frac{\ud \eta\pr}{l_p(\eta\pr)}}\right)
+\end{align*}
+but $l_p^{-1}(\eta) = a(\eta)\bar{n}_e\sigma_T$ this probability is just $e^{-\tau}$. So we interpret the optical depth as a measure of the probability that we see an un-scattered CMB. Clearly for earlier times, the CMB photons have passed through a much greater number of electrons than those originating at later times. The optical depth is very small until recombination\index{recombination} at which point it rises sharply.
+
+\paraskip
+The \emph{visibility function}, $g(\eta)$ is the probability density function that a photon last-scattered at time $\eta$. It is given by $g(\eta) = -\del_\eta(\tau)e^{-\tau}$. The visibility function is sharply peaked around the time of recombination, and as such we can define the time of \emph{last-scattering}\index{last-scattering}, $\eta_{\star}$ to be the location of this maximum. These are determined by the parameters in the $\Lambda$CDM model e.g. baryon density which determine the ionisation\index{ionisation} history
+\vspace{10pt}\hrule\vspace{10pt}
+So what does the optical depth look like as a function of $\eta$. Ignoring reionisation\index{reionisation} we have the following picture;
+\begin{mygraphic}{advcosmo/tau}{0.6}{The conformal time $\eta_{\star}$ represents the period of recombination where we have defined $\eta_\star$ such that $\tau(\eta_\star) = 1$. After this point the probability that a photon is not scattered from a time $\eta > \eta_\star$ is $e^{-\tau}$ which is large for $\tau < 1$. Similarly, as $\eta \rightarrow 0$ there is a probability $e^{-\tau}\rightarrow 0$ that the photon is not scattered at any point.}{tau}\end{mygraphic}
+The visibility function is the probability density that a photon last scattered at a time $\eta$. If we integrate the visibility function from a time $\eta$ to $\eta_0$ we find the total probability that a photon last scatters between $\eta$ and $\eta_0$, clearly;
+\begin{equation*}
+\int_\eta^{\eta_0}{\upd{\eta\pr}g(\eta\pr)} = 1 - e^{-\tau(\eta)} \rightarrow 1 \,\,\text{as}\,\,\eta \rightarrow 0
+\end{equation*}
+From the plots in \autoref{fig:tau} and \autoref{fig:vis}, note that terms in the Boltzmann equation proportional to $a\bar{n}_e \sigma_T e^{-\tau} = g(\eta)$ only contribute in the region around the time of recombination $\eta_\star$ whilst the redshift due to the expansion $e^{-\tau}\ud \log\epsilon / \ud \eta$ is suppressed before recombination $e^{-\tau} \ll 1$ but contributes thereafter.
+\begin{mygraphic}{advcosmo/vis}{0.7}{The visibility function\index{visibility function} plotted along with the free electron density, $X_e$. We see that $g(\eta)$ is highly peaked around recombination, $\eta_\star$, with a width of $\sim 20\text{Mpc} \ll 14000\text{Mpc}$, the distance to last scattering.}{vis}\end{mygraphic}
+\subsubsection{Stress-Energy Tensor\index{tensor!stress-energy}}
+In terms of the distribution function, the stress-energy tensor $T^{\mu\nu}$ is given by;
+\begin{equation}
+\label{eq:tmn}
+T^{\mu\nu} = \int{\frac{\ud^3 p}{E(p)}fp^{\mu}p^{\nu}}
+\end{equation}
+In tetrad components we have the following;
+\begin{itemize}
+\item $T^{00}$ represents the energy density;
+\begin{equation*}
+T^{00} = \bar{\rho}(\eta)\left(1 + \delta(\eta, \vec x)\right)
+\end{equation*}
+where $\delta$ is the fractional overdensity\index{fractional overdensity}.
+\item $T^{0i}$ is the momentum density;
+\begin{equation*}
+T^{0i} = q^{i} = \left(\bar{\rho}(\eta) + \bar{P}(\eta)\right)v^{i}
+\end{equation*}
+where $v^{i}$ is the bulk velocity of the CMB relative to the tetrad.
+\item $T^{ij}$ is the flux of momentum density in the $i^{\text{th}}$ direction along the $j^{\text{th}}$ axis;
+\begin{equation*}
+T^{ij} = \left(\bar{P}(\eta) + \delta P(\eta, \vec x)\right)\delta^{ij} - \Pi^{ij}
+\end{equation*}
+where $\Pi^{ij}$ is the anisotropic stress\index{anisotropic stress}.
+\end{itemize}
+We want to show this really does agree with the expression in \eqref{eq:tmn}. With respect to the tetrad $p^{\mu} = E(E_0)^{\mu} + p^{i}(E_i)^{\mu}$ we see that;
+\begin{equation*}
+T^{00} = \int{\upd{^3 p}Ef}, \quad T^{0i} = \int{\upd{^3 p}f p^{i}}, \quad T^{ij} = \int{\upd{^3 p} \frac{\ud^3 p}{E}fp^{j}p^{i}}
+\end{equation*}
+but $f\ud^3 p$ is the number density of photons and $v^{j} = p^{j}/E$ so this really does represent the same quantities. So we know that;
+\begin{align*}
+\bar{\rho}(1 + \delta) &= \int{\upd{^3 p} fE} \\
+&= \int{a^{-3}\epsilon^2 \ud \epsilon \upd{\vec e} f \frac{\epsilon}{a}} \\
+&= a^{-4}\int{\ud\vec e\upd{\epsilon}f\epsilon^3} \\
+\Rightarrow \bar{\rho}(1 + \delta) &= a^{-4}\int{\ud \vec e\upd{\epsilon} \epsilon^3 \left(\bar{f}(\epsilon) - \frac{\ud \bar{f}}{\ud \log \epsilon}\Theta\right)}
+\end{align*}
+This allows us to read off $\bar{\rho}$;
+\begin{equation}
+\bar{\rho} = 4\pi a^{-4}\int{\upd{\epsilon}\epsilon^3\bar{f}(\epsilon)} \Rightarrow \bar{\rho} \propto a^{-4}
+\end{equation}
+Using $\ud \bar{f}/ \ud \log \epsilon = \epsilon \ud \bar{f}/ \ud \epsilon$, the perturbation is then
+\begin{equation*}
+\bar{\rho}\delta = -a^{-4}\int_0^{\infty}{\upd{\epsilon}\epsilon^4 \frac{\ud \bar{f}}{\ud \epsilon}\int{\upd{\vec e}\Theta}}
+\end{equation*}
+Integrating the first integral by parts we see that;
+\begin{align*}
+\int_0^{\infty}{\upd{\epsilon}\epsilon^4 \frac{\ud \bar{f}}{\ud \epsilon}} &= -4\int_0^{\infty}{\upd{\epsilon}\epsilon^3 \bar{f}(\epsilon)} \\
+\Rightarrow \bar{\rho}\delta &= 4\pi a^{-4}\left(4\int_0^{\infty}{\upd{\epsilon}\epsilon^3 \bar{f}(\epsilon)}\right)\int{\upd{\vec e}\frac{\Theta}{4\pi}} \\
+&= 4\bar{\rho}\int{\upd{\vec e}\frac{\Theta}{4\pi}} \\
+\Rightarrow \delta &= 4\int{\frac{\ud \vec e}{4\pi}\Theta} \coloneqq 4 \Theta_0
+\end{align*}
+where we interpret $\Theta_0$ as the monopole component of $\Theta$.\footnote{Also, the $4$ ultimately comes from the fact that $\Theta$ is a temperature anisotropy and $\rho \propto T^{4}$}. We can perform similar calculations to find that;
+\begin{align*}
+\left(\bar{P} + \delta P\right)\delta^{ij} - \Pi^{ij} &= T^{ij} = \int{\frac{\ud^3 p}{E}fp^{i}p^{j}} \\
+&= a^{-3}\int{\ud \vec e \upd{\epsilon}f\epsilon^3 e^{i}e^{j}} \\
+&= a^{-3}\int{\ud \vec{e}\upd{\epsilon}f\epsilon^3\left(\left(e^{i}e^{j} - \tfrac{1}{3}\delta^{ij}\right) + \tfrac{1}{3}\delta^{ij}\right)}
+\end{align*}
+We can split this into a trace-free part and an isotropic part. For the isotropic component;
+\begin{equation*}
+\left(\bar{P} + \delta P\right) = \frac{1}{3}a^{-3}\int{\ud\vec e\upd{\epsilon}f\epsilon^3}
+\end{equation*}
+From the discussion above this immediately implies;
+\begin{equation}
+\bar{P} = \frac{1}{3}\bar{\rho}, \qquad \delta P = \frac{1}{3}\bar{\rho}\delta = \bar{P}\delta
+\end{equation}
+Now the anisotropic part gives;
+\begin{equation*}
+\Pi^{ij} = -a^{-3}\int{\ud \vec e\upd{\epsilon}f\epsilon^3 \left(e^{i}e^{j} - \tfrac{1}{3}\delta^{ij}\right)}
+\end{equation*}
+The zeroth order part of this expression involves $\int{\upd{\vec e}(e^{i}e^{j} - \tfrac{1}{3}\delta^{ij})}$ which vanishes for any $i, j$. If $i \neq j$, then one of the integrals is odd, whilst for $i = j$, the three possibilities $i, j = 1, 2, 3$ must give equal contributions under a rotation. Also $(e^{1})^2 + (e^{2})^2 + (e^{3})^2 = 1$, so each integral $\int{\upd{\vec e}(e^{i})^2} = \tfrac{1}{3}$. So the integral vanishes. Then we find by performing the same integration by parts as above that;
+\begin{equation}
+\Pi^{ij} = -4\bar{\rho}\int{\frac{\ud \vec e}{4\pi}\Theta\left(e^{i}e^{j} - \frac{1}{3}\delta^{ij}\right)}
+\end{equation}
+which we interpret as the quadrupole moment of $\Theta$. Finally;
+\begin{equation*}
+T^{0i} = a^{-3}\int{\ud \vec e \upd{\epsilon}f e^{i}} = \frac{4}{3}\bar{\rho}v^{i}
+\end{equation*}
+But $\int{\upd{\vec e}e^{i}} = 0$ so the zeroth order bit vanishes and we have;
+\begin{equation}
+\frac{4}{3}\bar{\rho}v^{i} = 4\bar{\rho}\int{\frac{\ud \vec e}{4\pi}\Theta e^{i}} \Rightarrow \vec v = 3\int{\frac{\ud \vec e}{4\pi}\Theta \vec e}
+\end{equation}
+which is the dipole contribution of $\Theta$.
+\subsection{Temperature anistropies from scalar perturbations}
+A scalar perturbation\index{perturbation!scalar} is characterised by the fact that all perturbed tensors are spatial derivatives of some scalar quantities. We want to work in the \emph{conformal Newtonian gauge}\index{gauge!conformal Newtonian} where;
+\begin{equation}
+\ud s^2 = a^{2}(\eta)\set{-(1 + 2\psi)\ud \eta^2 + (1 - 2\phi)\delta_{ij}\ud x^{i}\ud x^{j}}
+\end{equation}
+This is useful because it forces the spatial part of the metric to be isotropic. The tetrad vectors then take the form;
+\begin{equation}
+(E_0)^{\mu} = a^{-1}(1 - \psi)\delta\indices{^{\mu}_{0}}, \quad (E_i)^{\mu} = a^{-1}(1 + \phi)\delta\indices{^{\mu}_{i}}
+\end{equation}
+so that the $4$-momentum takes the form;
+\begin{equation}
+p^{\mu} = a^{-2}\epsilon\left(1 - \psi, (1 + \phi)\vec{e}\right)
+\end{equation}
+\subsubsection{$\ud \log \epsilon/\ud \eta$ for scalar perturbations}
+Between collisions, photons propagate along geodesics of the perturbed spacetime;
+\begin{equation*}
+\frac{\ud p^{\mu}}{\ud \lambda} + \Gamma\indices{^{\mu}_{\nu\rho}}p^{\nu}p^{\rho} = 0, \quad p^{\mu} = \frac{\ud x^{\mu}}{\ud \lambda}
+\end{equation*}
+Using the fact that $p^{\mu} = \ud x^{\mu}/ \ud \lambda$ we can deduce that;
+\begin{equation*}
+\frac{\ud \eta}{\ud \lambda} = \frac{\epsilon}{a^2}(1 - \psi), \quad \frac{\ud x^i}{\ud \lambda} = \frac{\epsilon}{a^2}(1 + \phi)e^{i}
+\end{equation*}
+Hence, to first order we have;
+\begin{equation*}
+\frac{\ud x^i}{\ud \eta} = (1 + \phi + \psi)e^{i}
+\end{equation*}
+Thus the geodesic equation in conformal time is;
+\begin{equation*}
+(1 - \psi)\frac{\epsilon}{a^2}\frac{\ud p^{\mu}}{\ud \eta} + \Gamma\indices{^{\mu}_{\nu \rho}}p^{\nu}p^{\rho} = 0
+\end{equation*}
+The $0$ component of this equation is then;
+\begin{multline*}
+\frac{\epsilon}{a^2}(1 - \psi)\frac{\ud}{\ud \eta}\left(\frac{\epsilon}{a^2}(1 - \psi)\right) + \frac{\epsilon^2}{a^4}\left(\Gamma\indices{^{0}_{00}}(1 - 2\psi) \right. \\ \left.+ 2\Gamma\indices{^{0}_{0i}}e^{i} + \Gamma\indices{^{0}_{ij}}(1 + 2\phi)e^{i}e^{j}\right) = 0
+\end{multline*}
+where we have taken $p^{\mu}p^{\nu}$ to first order (although note that $\Gamma\indices{^{0}_{0i}}$ is already first order in the perturbations, so we consider $p^{0}p^{i}$ only to zeroth order). We can then simply substitute in the connection coefficients, which we derived in the Cosmology course, to find that;
+\begin{equation}
+\frac{\ud \log \epsilon}{\ud \eta} = -\frac{\ud \psi}{\ud \eta} + (\dot{\phi} + \dot{\psi})
+\end{equation}
+where $\ud/\ud \eta = \del_\eta + \vec{e}\cdot \nabla$ and $\dot{\psi} = \del_\eta \psi$. Now we make the following observations;
+\begin{enumerate}
+\item $\epsilon$ is indeed constant in an unperturbed universe
+\item $(\dot{\phi} + \dot{\psi})$ only contributes when the potentials evolve in time. This is usually the case only for late times as through matter domination we saw that $\phi, \psi \sim \text{const.}$.
+\item $\ud \psi / \ud \eta$ contributes even when $\dot{\psi} = 0$. It encodes the redshift due to spatially varying potential.
+\end{enumerate}
+We could do an analogous calculation to find an equation that describes \emph{gravitational lensing}\index{gravitational lensing} where the photon direction is disturbed by the gradient of the potential $\phi + \psi$ perpendicular to the line of sight.
+\begin{equation}
+\frac{\ud \vec{e}}{\ud \eta} = -\left(\nabla - \vec{e}(\vec{e}\cdot\nabla)\right)(\phi + \psi)
+\end{equation}
+\subsubsection{Temperature Anisotropies}
+We can use the expressions above to rewrite the Boltzmann equation as;
+\begin{align*}
+\frac{\ud}{\ud \eta}\left(e^{-\tau}\Theta\right) &= e^{-\tau}\frac{\ud \log \epsilon}{\ud \eta} + \,\,(\text{doppler/scattering terms.}) \\
+&= e^{-\tau}\frac{\ud \psi}{\ud \eta} + e^{-\tau}(\dot{\psi} + \dot{\phi}) + \,\,\text{scat.} \\
+&= -\frac{\ud}{\ud \eta}\left(e^{-\tau}\psi\right) - \dot{\tau}e^{-\tau}\psi + e^{-\tau}(\dot{\phi} + \dot{\psi}) + \,\,\text{scat.} \\
+\Rightarrow \frac{\ud}{\ud \eta}\left(e^{-\tau}(\Theta + \psi)\right) &= \underbrace{g(\eta)\psi + e^{-\tau}(\dot{\phi} + \dot{\psi}) + \,\,\text{scat.}}_{\mathcal{S}_{\text{scat.}}}
+\end{align*}
+Then we have the formal integral solution;
+\begin{equation*}
+\Theta(\eta_0, \vec{x}_0, \vec{e}) + \psi(\eta_0) = \int_0^{\eta_0}{\upd{\eta\pr}\mathcal{S}_{\text{scat.}}\left(\eta\pr, \vec{x}_0 - (\eta_0 - \eta)\vec{e}, \vec{e}\right)}
+\end{equation*}
+On large scales we can make the following assumptions to make progress;
+\begin{itemize}
+\item Last scattering\index{last scattering} is sharp: $g(\eta) \sim \delta(\eta - \eta_\star)$
+\item We ignore the effect of reionisation\index{reionisation}, so that there is no scattering after $\eta_\star$ i.e. $\tau = 0$ after $\eta = \eta_\star$
+\item We will ignore the quadrupole\index{quadrupole} moment of $\Theta$ at last scattering. This is a good approximation; there simply wasn't time for the quadrupole to form during recombination.
+\end{itemize}
+We now consider the scattering part of $\mathcal{S}_{\text{scat}}$ given by;
+\begin{equation*}
+\frac{3}{16\pi}g\int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)} + g\vec{e}\cdot \vec{v}_b
+\end{equation*}
+We see that $1 + (\vec{e}\cdot\vec{m})^2 = \tfrac{4}{3} + \tfrac{2}{3}P_2(\vec{e}\cdot\vec{m})$, then we can use the addition theorem for spherical harmonics to see;
+\begin{equation*}
+1 + (\vec{e}\cdot\vec{m})^2 = \frac{4}{3} + \frac{8}{9\pi} \sum_{m = -2}^{2}{Y_{2m}^{\star}(\vec{m})Y_{2m}(\vec{e})}
+\end{equation*}
+On integration, the first term extracts the monopole contribution to $\Theta$ while $Y^{\star}_{2m}$ extracts the $l = 2$ moment. So with out assumption that we neglect the quadrupole, we find that the scattering term is just $g\Theta_0 + g\vec{e}\cdot\vec{v}_b$. Then doing the integration, our solution with assumptions as above is;
+\begin{dmath}
+\label{eq:SW}
+\Theta(\eta_0, \vec{x}_0, \vec{e}) + \psi(\eta_0, \vec{x}_0) = \Theta_0\left(\eta_\star, \vec{x}_0 - (\eta_0 - \eta_\star)\vec{e}\right) + \vec{e}\cdot\vec{v}_b\left(\eta_\star, \vec{x}_0 - (\eta_0 - \eta_\star)\vec{e}\right) + \psi\left(\eta_\star, \vec{x}_0 - (\eta_0 - \eta_\star)\vec{e}\right) + \int_{\eta_\star}^{\eta_0}{\upd{\eta\pr}(\dot{\phi} + \dot{\psi})}
+\end{dmath}
+Note that we have assumed that before recombination $e^{-\tau}$ suppresses any contributions. We can then interpret the terms in this expression.
+\begin{itemize}
+\item $\Theta_0$ measures the intrinsic monopole fluctuations at the time of last scattering
+\item $\psi(\eta_0) - \psi(\eta_\star)$ is the gravitational redshift; if the photons are in a deep gravitational well, they need to climb out of the potential $\Rightarrow$ redshift
+\item $\vec{e}\cdot\vec{v}_b$ is the doppler shift due to scattering off moving electrons.
+\end{itemize}
+The relative size of this contributions is illustrated in \autoref{fig:SW}.
+\begin{mygraphic}{advcosmo/SW}{0.6}{Contributions from the various terms in \eqref{eq:SW} to the angular power spectrum\index{power spectrum!angular} of the CMB temperature anisotropies. At high $l$, the contributions are (from top to bottom): total power (black); $\Theta_0 + \psi$ (magenta, denoted SW for Sachs-Wolfe\index{Sachs-Wolfe}); Doppler contribution from $\vec{v}_b$; and integrated Sachs-Wolfe\index{Sachs-Wolfe!integrated} (ISW) effect from evolution of the gravitational potentials (green).}{SW}\end{mygraphic}
+\subsubsection{Evolution of Plasma Fluctuations}
+We see that to evaluate the fluctuations, we need to know $\Theta_0, \psi$ and $\vec{v}_b$ at last scattering\index{last scattering}. In terms of the components of the universe, we have neutrinos $\nu$, CDM, Baryons (protons, electrons) and photons $\gamma$. They all interact with the metric perturbations and the electrons and protons are tightly coupled by Coulomb scattering\index{scattering!Coulomb}. However, the baryons and photons are also coupled via Compton scattering. 
+\subsubsection*{The Tight-Coupling Limit}
+For a given Fourier mode, $\vec{k}$, there are three relevant length and time scales;
+\begin{enumerate}
+\item The photon mean-free path\index{mean-free path}, $l_p = -\dot{\tau}^{-1} = 1/a n_e \sigma_T$
+\item The expansion time/Hubble radius $\mathcal{H}^{-1}$
+\item The wavelength, $k^{-1}$
+\end{enumerate}
+The \emph{tight-coupling limit}\index{tight-coupling limit} is when $l_p \ll \mathcal{H}^{-1}, k^{-1}$ which leads to very efficient scattering between the baryons and the photons. This leads to the baryon-photon mixture behaving like a single ideal fluid.\footnote{Note that this approximation will definitely not hold after recombination where the mean free path becomes incredibly large. However, we only want the information up until last scattering for our solution, so this isn't an issue necessarily.} Now consider the Boltzmann equation to understand the physics of this limit, we have indicated the approximate order of the terms; (recall that $\dot{\tau} \propto l_{p}^{-1}$ which is large in the tight-coupling limit)
+\begin{multline*}
+\underbrace{\frac{\ud}{\ud \eta}(\Theta + \psi) + \dot{\phi} + \dot{\psi}}_{\text{max}(k, \hamilt)\Theta} = \dot{\tau}\underbrace{\left(\Theta - \frac{3}{16\pi}\int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)}\right) - \vec{e}\cdot\vec{v}_b}_{\text{max}\left(k, \hamilt\right)\dot{\tau}^{-1}\Theta \ll \Theta \text{ if } \dot{\tau} \text{ is large}}
+\end{multline*}
+So deep in the tight coupling limit, the term in brackets on the right hand side must approximately vanish, i.e.;
+\begin{equation*}
+\Theta(\vec{e}) - \vec{e}\cdot\vec{v}_b - \underbrace{\frac{3}{16\pi}\int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)}}_{\text{Recall this is } \Theta_0 + \text{ quadrupole part with co-efficient not unity}} \sim 0
+\end{equation*}
+So thinking about the multipole structure of $\Theta$ we see that the only consistent way for this to vanish is if $\Theta$ has no quadrupole and;
+\begin{equation*}
+\Theta(\vec{e}) \sim \Theta_0 + \vec{e}\cdot\vec{v}_b
+\end{equation*}
+Thus we also deduce that the bulk velocity of the CMB is $\vec{v}_\gamma = \vec{v}_b$ and hence the CMB is isotropic in the rest frame of the baryons. In the Cosmology course we derived;
+\begin{equation}
+\dot{\delta} - \left(1 + \frac{\bar{P}}{\bar{\rho}}\right)(\nabla \cdot \vec{v} - 3\dot{\phi}) + \underbrace{3\hamilt\left(\frac{\delta P}{\bar{\rho}} - \frac{\bar{P}}{\bar{\rho}}\delta\right)}_{\text{\tiny vanishes for adiabatic fluctuations}} = 0
+\end{equation}
+The Euler equation\index{equation!Euler} tells us how the bulk velocity (or more usefully, the momentum $\vec{q} = (\bar{\rho} + \bar{P})\vec{v}$ which we can add) evolves;\footnote{We've assumed the anisotropic stress vanishes, so in actuality $\phi = \psi$}
+\begin{equation}
+\dot{\vec{q}} + 4\hamilt\vec{q} + \nabla \delta P + (\bar{\rho} + \bar{P})\nabla \psi = 0
+\end{equation}
+Now adding the different contributions to the momentum;
+\begin{align*}
+\vec{q} &= \left(\bar{\rho}_\gamma + \bar{P}_{\gamma}\right)\vec{v}_{\gamma} + \bar{\rho}_b \vec{v}_b \\
+&= \frac{4}{3}\bar{\rho}_\gamma \left(1 + R\right) \vec{v}_{\gamma}
+\end{align*}
+where we have defined the ratio of baryon to photon energy density;\footnote{Note that the baryons have zero pressure}
+\begin{equation}
+R = \frac{\bar{\rho}_b}{\bar{\rho}_\gamma + \bar{P}_\gamma}
+\end{equation}
+Note further that $\bar{\rho}_b \propto a^{-3}$ and $\bar{\rho}_\gamma \propto a^{-4}$ so $R \propto a$ and scales with the expansion. Then plugging this form into the Euler equation and noting that $\delta P = \tfrac{1}{3}\bar{\rho}_\gamma \delta_\gamma$ and $\dot{R} = \hamilt R, \dot{\bar{\rho}}_\gamma = -4\hamilt \bar{\rho}_\gamma$;
+\begin{equation}
+\dot{\vec{v}}_{\gamma} + \frac{\hamilt R}{1 + R} \vec{v}_{\gamma} + \frac{1}{4(1 + R)}\nabla \delta_{\gamma} + \nabla \psi = 0
+\end{equation}
+The second term in this equation describes the ``drag force'' due to expansion: the baryons try to lose bulk velocity during expansion which is compensated for by the Thomson scattering with the photons. The third term measures the photon pressure gradient scaled by the ratio of photons to baryons. The final term just measures gravitational infall.
+
+\paraskip
+We now want to write the continuity equation for the photons. Using the fact that they are adiabatic, we have;\footnote{This is actually the $l = 0$ part of the Boltzmann equation}
+\begin{equation}
+\dot{\delta}_\gamma + \frac{4}{3}\nabla \cdot \vec{v}_\gamma - 4\dot{\phi} = 0
+\end{equation}
+Taking a time derivative and combining the Euler and continuity equations, we find;
+\begin{equation}
+\ddot{\delta}_\gamma + \frac{\hamilt R}{1 + R}\dot{\delta}_\gamma - \frac{1}{3(1 + R)}\nabla^2 \delta_\gamma = 4\ddot{\phi} = \frac{4\hamilt R}{1 + R}\dot{\phi} + \frac{4}{3}\nabla^2 \psi
+\end{equation}
+Note that in Fourier space we simply take $\nabla^2 \mapsto -k^2$. Interpreting this equation, we see that in an isotropic background we have a sound speed;
+\begin{equation*}
+c_s^{2} = \frac{1}{3(1 + R)}
+\end{equation*}
+which varies in time. Overall, in Fourier space we see this is a damped wave equation with a gravitational driving force.
+\subsubsection*{Acoustic Oscillations\index{acoustic oscillations}}
+Suppose we have a lightly damped oscillator $k c_s \gg \hamilt$, then ignoring the driving terms, the free oscillator is;
+\begin{equation*}
+\ddot{\delta}_\gamma + \frac{k^2}{3\left(1 + R(\eta)\right)}\delta_{\gamma} \sim 0
+\end{equation*}
+Then, via something like the WKB approximation\index{WKB approximation} we can find;
+\begin{equation}
+\delta_\gamma \propto \cos\left(k r_s(\eta)\right), \quad \sin\left(k r_s(\eta)\right)
+\end{equation}
+where we have defined the \emph{sound horizon}\index{sound horizon};
+\begin{equation}
+r_s(\eta) = \int_0^{\eta}{\upd{\eta\pr}c_s(\eta\pr)}
+\end{equation}
+Furthermore, the trace part of the Einstein equation gives;
+\begin{equation}
+\ddot{\phi} + \frac{1}{3}\nabla^2 (\psi - \phi) + (2 \dot{\hamilt} + \hamilt^2)\psi + \hamilt \dot{\psi} + 2\hamilt \dot{\phi} = 4\pi Ga^2 \delta P
+\end{equation}
+In matter domination we can ignore anisotropic stress and $\delta P$ is negligible, so $\phi = \psi$ and $a \propto \eta^2$. Then the equation with $\hamilt = 2/\eta$ becomes;
+\begin{equation*}
+\ddot{\phi} + 3\hamilt \dot{\phi} = 0 \Rightarrow \phi \sim \,\,\text{const.}, \qquad \phi\sim \eta^{-5}
+\end{equation*}
+We can neglect the decaying term so that the driving term in the equation for $\delta_\gamma$ is then simply $-\tfrac{4}{3}k^2 \psi$. This just shifts the midpoint of the oscillations to $\bar{\delta}_\gamma = -4(1 + R)\psi$
+\subsubsection*{Initial Conditions}
+Ultimately we need to deal with the continuity equation during radiation domination. We make the following approximations/assumptions;
+\begin{enumerate}
+\item Ignore the anisotropic effect of free streaming neutrinos, so set $\psi = \phi$
+\item Assume we have adiabatic fluctuations so that;
+\begin{equation*}
+\delta_b = \delta_c = \frac{3}{4}\delta_\gamma = \frac{3}{4}\delta_\nu
+\end{equation*}
+Thus in radiation domination we can simply take $\delta = \delta_\gamma$
+\end{enumerate}
+We can then treat the radiation as a fluid with $\delta P_\gamma = \tfrac{1}{3}\delta \rho_\gamma$. The $00$-EFE in the conformal Newtonian gauge is;
+\begin{equation}
+\nabla^2 \phi = 3\hamilt (\dot{\phi} + \hamilt \psi) + 4\pi G a^2 \bar{\rho}\delta
+\end{equation}
+and the trace equation is;
+\begin{equation}
+\ddot{\phi} + \left(2\dot{\hamilt} + \hamilt^2\right)\phi + 2\hamilt \dot{\phi} = 4\pi Ga^2 \delta P = \frac{4}{3}\pi Ga^2 \bar{\rho}\delta
+\end{equation}
+In radiation domination, we have $a \propto \eta \Rightarrow \hamilt = 1/\eta$ so using $3\hamilt^2 = 8\pi G a^2 \bar{\rho}$ and $\phi = \psi$ in the absence of anisotropic stress, we have;
+\begin{equation*}
+\ddot{\phi} + \frac{4}{\eta}\dot{\phi} + \frac{1}{3}k^2 \phi = 0
+\end{equation*}
+The solutions to this are linear combinations of spherical Bessel functions\index{spherical Bessel function};
+\begin{equation}
+\phi(\eta, \vec{k}) = A(\vec{k})\frac{j_1(k\eta / \sqrt{3})}{k\eta / \sqrt{3}} + B(\vec{k})\frac{n_1(k\eta / \sqrt{3})}{k\eta / \sqrt{3}} 
+\end{equation}
+For small arguments $j_1(x) \sim \tfrac{1}{3}x + \mO(x^3), n_1(x) \sim x^{-2} + \mO(1)$ so $n_1(x)$ decays and $j_1(x)$ dominates the dynamics in the RD era. Recall that the \emph{comoving gauge curvature perturbation}\index{comoving gauge curvature perturbation} is given by;\footnote{As an aside, physically, the curvature perturbation measures the intrinsic $3$-curvature on hypersurfaces orthogonal to the worldines of constant position and momentum density.}
+\begin{equation}
+\label{eq:cgcp}
+\mathcal{R}(\eta, \vec{x}) = -\phi - \frac{\hamilt (\dot{\phi} + \hamilt \phi)}{4\pi G a^2 (\bar{\rho} + \bar{P})}
+\end{equation}
+We saw in the Cosmology course that this is conserved on super-Hubble\index{super-Hubble} scales. Now, during radiation domination, $k \ll \hamilt \iff k\eta \ll 1$ so $j_1(k\eta/\sqrt{3})/k\eta/\sqrt{3} \sim \text{const.}$ and hence $\phi \sim \text{const.}$. Plugging $\phi = \text{const.}$ into \eqref{eq:cgcp} we see that;
+\begin{equation*}
+\mathcal{R} \sim -\frac{3}{2}\phi(\eta, \vec{k}) , \qquad k \eta \ll 1
+\end{equation*}
+Comparing this to the solution for $\phi(\eta, \vec{k})$, we see that this fixes $A(\vec{k})$. From now on, $\mR(\vec{k})$ is defined to be the value of $\mR$ at the end of inflation for a given mode $\vec{k}$. Then we find that;
+\begin{equation}
+\phi(\eta, \vec{k}) = - 2 \mR(\vec{k})\frac{j_1(k\eta / \sqrt{3})}{k\eta / \sqrt{3}}
+\end{equation}
+which we can easily plot as in \autoref{fig:phird};
+\begin{mygraphic}{advcosmo/phird}{0.6}{Plotting the ratio of the gravitational potential $\phi$ and the curvature perturbation $\mR$ as a function of $k\eta$. We can interpret this in a number of ways, either by fixing $k$ and exploring it's evolution, or fixing $\eta$ and investigating the spectrum of $k$.}{phird}\end{mygraphic}
+Furthermore, asymptotically, we have $j_l(x) \sim \tfrac{1}{x}\sin(x - l\pi/2)$ so that;
+\begin{equation}
+\phi(\eta, \vec{k}) \sim 6\mR \frac{\cos(k\eta/\sqrt{3})}{(k\eta)^2}, \qquad k \gg \hamilt
+\end{equation}
+Now, let $\eta_{\text{eq}}$ be the conformal time where matter and radiation have equal energy density, then;
+\begin{enumerate}
+\item If $k \ll \eta_{\text{eq}}^{-1}$, the mode will have hardly oscillated
+\item If $k \gg \eta_{\text{eq}}^{-1}$, the mode will have oscillated and have an amplitude that has been suppressed by $\mO\left((k\eta_{\text{eq}})^{-2}\right)$
+\end{enumerate}
+We are now in a position to work out the density contrast $\delta_\gamma$ during radiation domination. Using the Poisson equation in Fourier space along with the Friedman equation etc., we have;
+\begin{equation*}
+\delta_\gamma = -\frac{2}{3}(k\eta)^2 \phi - 2\eta \dot{\phi} - 2\phi
+\end{equation*}
+So we can deduce the following behaviour;
+\begin{enumerate}
+\item On large scales $k\eta \ll 1$ we have $\phi \sim \text{const.}$, so the $-2\phi$ term dominates and;
+\begin{equation}
+\delta_{\gamma}(\eta, \vec{k}) \sim -2\phi(\eta, \vec{k}) = \frac{4}{3}\mR(\vec{k}), \quad k \ll \hamilt
+\end{equation}
+\item On small scales, $k\eta \gg 1$ and the first term dominates, so we find that;
+\begin{equation}
+\delta_{\gamma}(\eta, \vec{k}) \sim -\frac{2}{3}(k\eta)^2 \phi \sim -4\mR(\vec{k})\cos\left(\frac{k\eta}{\sqrt{3}}\right)
+\end{equation}
+\end{enumerate}
+We interpret this, in the case of fixed $k$ as follows; we start in a potential well, generated by the energy density $\rho_\gamma$. This begins to accrete photons leading to an increase in $\delta_\gamma$ as it becomes overdense. Then, pressure support kicks in and the accretion bounces back leading to oscillations. This characterises the resonance between $\phi$ and $\delta$ leading to an amplitude increase. These extrema due to the cosine also explain the acoustic peaks in the CMB spectrum. If a mode with a given $k$ reaches recombination at $\eta_{\star}$ at a minima, there will be a subsequent power loss at this wavelength and vice versa.
+\subsubsection*{Back to Matter Domination}
+We now have the initial conditions for the density perturbations during the matter domination era. Since the baryon density is now non-negligible with respect to the photon energy density, we need to put $R$ back in, although we will treat it as a constant in time.\footnote{Since $\hamilt R = \dot{R}$ this is equivalent to ignoring the damping term in the equation for $\ddot{\delta_\gamma}$} As we showed earlier, the gravitational potentials are all constant during matter domination, so;
+\begin{equation*}
+\ddot{\delta}_\gamma + kc_s^{2}(\eta)\delta_\gamma \sim -\frac{4}{3}k^2 \psi
+\end{equation*}
+We don't actually need to use WKB here now as $c_s^{2}$ is constant, then;
+\begin{equation*}
+\delta_\gamma(\eta, \vec{k}) = C(\vec{k})\cos(kr_s) + D(\vec{k})\sin(kr_s) - 4(1 + R)\psi
+\end{equation*}
+where $r_s = c_s \eta$ now that $R$ is constant. Then we work in the two regimes;
+\begin{enumerate}
+\item We want to match up $\delta_\gamma(\eta, \vec{k}) = \tfrac{4}{3}\mR(\vec{k})$ with the solution above, but we need to take into account the fact that $\phi$ decays through the RD-MD transition; $\phi_{\text{RD}} = \tfrac{9}{10}\phi_{\text{RD}}$ which occurs due to the presence of the equation of state in the curvature perturbation. But, we also have from the continuity equation that;
+\begin{equation*}
+\dot{\delta}_\gamma + \frac{4}{3}\nabla \cdot \vec{v}_\gamma - 4\dot{\phi} = 0
+\end{equation*}
+On super horizon scales, $\nabla \cdot\vec{v}_\gamma = -\vec{k}\cdot\vec{v}_\gamma$ is negligible and we simply find;
+\begin{equation*}
+\dot{\delta} - 4\dot{\phi} = 0 \Rightarrow \delta_\gamma - 4\phi = \text{const.}
+\end{equation*}
+So using $\delta_\gamma = \tfrac{4}{3}\mR(\vec{k})$ and $\phi(\eta, \vec{k}) = -\tfrac{2}{3}\mR(\vec{k})$ for large scales during RD, we see that the constant must be $4\mR(\vec{k})$. Finally then, for $\eta > \eta_{\text{eq}}$, after the potential has decayed, on large scales we must have $\dot{\delta}_\gamma = 0$ and;
+\begin{equation}
+\delta_\gamma(\eta, \vec{k}) = 4\mR(\vec{k}) + 4 \left(- \frac{3}{5}\mR(\vec{k})\right) = \frac{8}{5}\mR(\vec{k})
+\end{equation}
+Hence we find that $C(\vec{k}) = -4\mR(\vec k)(1 + 3R)/5$ and $D(\vec k) = 0$;
+\begin{equation}
+\Rightarrow \delta_\gamma(\eta, \vec{k}) = -\frac{4}{5}\mR(\vec{k})\left((1 + 3R)\cos kr_s - 3(1 + R)\right)
+\end{equation}
+which describes an oscillation with frequency $kc_s$ with a midpoint shifted by gravity. Now, consider the SW effect $\Theta_0 + \psi$. We know that $\Theta_0 = \delta_\gamma / 4$ so;
+\begin{equation}
+\label{eq:sw}
+\Theta_(\eta, \vec{k}) + \psi(\eta, \vec{k}) = -\frac{1}{5}\mR(\vec{k})\left((1 + 3R)\cos kr_s - 3R\right)
+\end{equation}
+which takes values in $\left[-\mR(\vec{k})/5, (1 + 6R)\mR(\vec{k}) / 5\right]$. For $kr_s \ll 1$, even though $\delta_\gamma > 0$ we still have that $\Theta_0 + \psi < 0$. This occurs since, even though the photons are overdense, the gravitational redshift leads to a cold spot in the CMB. As the modes enter the sound horizon, the photons are maximally compressed leading to an overdensity with $\Theta_0 + \psi$ maximally positive. Then pressure support reverses the process and there in maximum rarefaction. 
+\item For small scales $k \gg k_{\text{eq}}$ we can use the fact that $\phi$ decays rapidly in RD and match the solutions;
+\begin{align*}
+\delta_\gamma &= C(\vec{k})\cos kr_s + D(\vec{k})\sin kr_s - 4(1 + R)\psi \qquad &(\text{MD})\\
+\delta_\gamma &= -4\mR(\vec{k})\cos kr_s &(\text{RD})
+\end{align*}
+So we find that;
+\begin{equation}
+\delta_\gamma(\eta, \vec{k}) = -4\mR(\vec{k})\cos kr_s
+\end{equation}
+\end{enumerate}
+\subsubsection*{Photon Bulk Velocity}
+For scalar perturbations, we can write;
+\begin{equation*}
+\vec{v}_\gamma(\eta, \vec{k}) = \int{\frac{\ud^3 k}{(2\pi)^{3/2}}i\vec{k}v_\gamma(\eta, \vec{k})e^{i\vec{k}\cdot\vec{x}}}
+\end{equation*}
+In MD, $\dot{\phi} = 0$ so the continuity equation is $v_\gamma = 3\dot{\delta}_\gamma / 4k$ so that;
+\begin{equation}
+v_\gamma(\eta, \vec{k}) = \begin{cases}\frac{3}{5}\mR(\vec{k})(1 + 3R)c_s\sin kr_s&(k \ll k_{\text{eq}})\\3\mR(\vec{k})c_s\sin kr_s&(k\gg k_{\text{eq}})\end{cases}
+\end{equation}
+\subsubsection{Large-scale Temperature Anisotropies}
+On large scales we can simply use \eqref{eq:sw} to determine the SW effect at last scattering. If $kr_s(\eta_{\star}) \ll 1$, then the modes haven't had a chance to oscillate and the velocity is suppressed by a factor of $kr_s$ so we can neglect the Doppler term. Ignoring the ISW effect, we have;
+\begin{equation*}
+\Theta_0(\eta_0, \vec{x}_0, \vec{e}) + \psi(\eta_0, \vec{x}_0) \sim -\frac{1}{5}\mR(\vec{x}_0 - \chi_{\star}, \vec{e})
+\end{equation*}
+So the temperature is just a spherical projection of the primordial curvature perturbation. So the power spectra in terms of the primordial power spectra is;
+\begin{equation}
+C_l = \frac{4\pi}{25}\int{\upd{\log k}\mathcal{P}_{\mR}(k)j_l^2(k\chi_{\star})}
+\end{equation}
+We see then that if $\mathcal{P}_{\mR}$ is a constant, i.e. a scale invariant power spectrum and integrating the Bessel function that;
+\begin{equation}
+\frac{l(l + 1)C_l}{2\pi} \sim \frac{1}{25}A_s
+\end{equation}
+i.e. if primordial spectrum is scale-invariant, we expect a plateau for small $k$ in $l(l + 1)C_l$. 
+\subsubsection{Intermediate-scale Temperature Anisotropies}
+We need some way to interpolate between;
+\begin{equation*}
+\left(\Theta_0 + \psi\right)(\eta_\star, \vec{k}) = \begin{cases}-\frac{1}{5}\mR(\vec{k})\left((1 + 3R)\cos kr_s(\eta_\star) - 3R\right)&(k \ll k_{\text{eq}}) \\ -\mR(\vec{k})\cos kr_s(\eta_\star)&(k \gg k_{\text{eq}})\end{cases}
+\end{equation*}
+We neglect the effect of diffusion damping\index{diffusion damping} and plot this numerically in \autoref{fig:swnum};
+\begin{mygraphic}{advcosmo/swnum}{0.6}{SW term evaluated at last scattering with the effects of diffusion damping removed (by enforcing the tight-coupling limit). The black curve shows the modulation of the peak heights due to the baryon offset, whilst subtracting off reveals the monotonic increase.}{swnum}\end{mygraphic}
+Now, $\Theta_0 + \psi$ has maximum power at last scattering for modes where $kr_s(\eta_\star) = n\pi$;
+\begin{equation}
+\Rightarrow l \sim \frac{n\pi\chi_\star}{r_s(\eta_\star)}
+\end{equation}
+This gives the first peak at approximately $l \sim 220$. Furthermore, oscillations are offset by an amount proportional to $R$ so there is a baryon dependent alternation in peak heights. If we neglect ISW and project $\Theta_0 + \psi$ and $\vec{e}\cdot \vec{v}_b$ we find that;
+\begin{equation}
+C_l \sim 4\pi \int{\upd{\log k}\mathcal{P}_{\mR}(k)\set{\frac{(\Theta_0 + \psi)}{\mR(\vec{k})}j_l(k\chi_\star) - \frac{v_\gamma(\eta_\star, \vec{k})}{\mR(\vec{k})}j_l\pr(k\chi_\star)}^2}
+\end{equation}
+The bracketed term is an example of a \emph{transfer function}\index{transfer function}. We find that the Doppler term actually tends to add incoherently so that;
+\begin{equation}
+\frac{l(l + 1)}{2\pi}C_l \sim \mathcal{P}_{\mR}(k)\left(\frac{(\Theta_0 + \psi)}{\mR(\vec{k})}\right)^2 
+\end{equation}
+so that $\mathcal{P}_{\mR}$ is contained in the multipole structure of the CMB, modulated by acoustic processing.
+\subsection{Scalar Perturbations on Small Scales}
+We've previously used tight-coupling limits, however on small scales, this ceases to be valid. This leads to the phenomenon of diffusion damping\index{diffusion damping} encoded in the damping tail of the CMB. We also need to account for the fact that the visibility function\index{visibility function} is not infinitely sharp.
+\subsubsection{Machinery for Accurate Calculation} 
+Starting from the Boltzmann equation;
+\begin{dmath*}
+\frac{\del}{\del \eta}\Theta + \vec{e}\cdot\nabla \Theta = \dot{\phi} + \vec{e}\cdot \nabla\psi + \dot{\tau} (\Theta - \Theta_0) - \dot{\tau}\vec{e}\cdot \vec{v}_b - \frac{3}{16\pi}\dot{\tau}\int{\upd{\vec{m}}\Theta(\vec{m})\frac{2}{3}P_2(\vec{e}\cdot\vec{m})}
+\end{dmath*}
+Taking the Fourier transform of $\Theta(\eta, \vec{x}, \vec{e})$ we can write $\Theta(\eta, \vec{k}, \vec{e})$ in an axisymmetric fashion;
+\begin{equation*}
+\Theta(\eta, \vec{k}, \vec{e}) = \sum_{l \geq 0}{(-i)^{l}\Theta_l(\eta, \vec{k})P_l(\vec{k}\cdot\vec{e})}
+\end{equation*}
+Using the addition formula, this becomes;
+\begin{align*}
+\Theta(\eta, \vec{k}, \vec{e}) &= \sum_{l \geq 0}{(-i)^{l}\sum_{m}{\frac{4\pi}{2l + 1}\Theta_l(\eta, \vec{k})Y_{lm}^{\star}(\vec{k})Y_{lm}(\vec{e})}} \\
+\Rightarrow \Theta_{lm}(\eta, \vec{k}) &= (-i)^{l}\frac{4\pi}{2l + 1}\Theta_l(\eta, \vec{k})Y_{lm}^{\star}(\vec{k})
+\end{align*}
+\subsubsection{Boltzmann Hierarchy\index{Boltzmann hierarchy}}
+We have that;
+\begin{equation*}
+\vec{e}\cdot\nabla \Theta \mapsto i\hat{\vec{k}}\cdot\vec{e}k\sum_{l}{(-i)^{l}\Theta_l(\eta, \vec{k})P_l(\vec{k}\cdot\vec{e})}
+\end{equation*}
+We can the use $(2l + 1)P_l(\mu) \mu = (l + 1)P_{l + 1}(\mu) + lP_{l - 1}(\mu)$ to find that;
+\begin{dmath}
+\dot{\Theta}_l + k\left(\frac{l + 1}{2l + 3}\Theta_{l + 1} - \frac{l}{2l - 1}\Theta_{l - 1}\right) = -\dot{\tau}\left((\delta_{l0} - 1)\Theta_0 - \delta_{l1}v_b + \frac{1}{10}\delta_{l2}\Theta_2 + \delta_{l0 \dot{\phi} + \delta_{l1}k\psi}\right)
+\end{dmath}
+If we consider each multipole separately;
+\begin{itemize}
+\item $l = 0$: $\dot{\Theta}_0 + \frac{1}{3}k\Theta_1 = \dot{\phi}$, but $\Theta_0 = \delta_\gamma / 4$ so;
+\begin{equation*}
+\dot{\delta}_\gamma - \frac{4}{3}kv_\gamma - 4\dot{\phi} = 0
+\end{equation*}
+But this is just the continuity equation for $\delta_\gamma, v_\gamma$. Note that we have used the fact that for scalar perturbations;
+\begin{equation*}
+\vec{v}_\gamma(\eta, \vec{k}) = 3\int{\frac{\ud \vec{e}}{4\pi}\vec{e}\Theta(\eta, \vec{k}, \vec{e})} \Rightarrow v_\gamma = -\Theta_1
+\end{equation*}
+\item $l = 1$: $\dot{\Theta_1} + k\left(\frac{2}{5}\Theta_2 - \Theta_0\right) = -\dot{\tau}(- \Theta_1 - v_b) + k\psi$
+\begin{equation*}
+\Rightarrow \dot{v}_\gamma + \frac{k}{4}\delta_\gamma + k\psi - \frac{2}{3}k\Theta_2 = \dot{\tau}(v_\gamma - v_b)
+\end{equation*}
+\end{itemize}
+\subsection{CMB Anistropies from Gravitational Waves}
+In synchronous\index{gauge!synchronous} gauge we have;
+\begin{equation*}
+\ud s^2 = a^{2}(\eta) \set{\ud \eta^2 + (\delta_{ij} + h_{ij})\ud x^{i}\ud x^{j}}
+\end{equation*}
+where $h_{ij}$ is trace and divergence free, $\del_i h^{ij} = 0$. The shear $\dot{h}_{ij}$ changes the relative separation of freely falling comoving observers compared to the background expansion. Also, $h_{ij}$ has two polarisation states $h^{\pm}$ so that we can write;
+\begin{equation}
+h_{ij}(\eta, \vec{x}) = \sum_{\pm}\int{\frac{\ud^3 k}{(2\pi)^{3/2}}h_{ij}^{\pm}(\eta, \vec{k})e^{i\vec{k}\cdot\vec{x}}}
+\end{equation}
+where now;
+\begin{equation*}
+h_{ij}^{\pm}(\eta, \vec{k}) = \frac{1}{\sqrt{2}}m_{ij}^{\pm}(\vec{k})h^{\pm}(\eta, \vec{k})
+\end{equation*}
+and $m_{ij}^{\pm}(k\hat{\bm{z}}) = \tfrac{1}{2}(\hat{x} + i\hat{y})\otimes(\hat{x} + i\hat{y})$.\footnote{We can actively rotate coordinates to find $m_{ij}$ for any $\vec{k}$} Assuming there is equal power in the helicity states;\index{helicity state}
+\begin{equation}
+\left< h^{p}(\eta, \vec{k})h^{\tilde{p}}(\tilde{\eta}, \tilde{\vec{k}}) \right> = \frac{2\pi^2}{k^3}\mathcal{P}_h(k;\eta, \tilde{\eta})\delta(\vec{k} - \tilde{\vec{k}})\delta^{p\tilde{p}}
+\end{equation}
+This the implies that;
+\begin{equation}
+\left< h_{ij}(\eta, \vec{x})h^{ij}(\tilde{\eta}, \vec{x}) \right> = \int{\upd{\log k}\mathcal{P}_h(k; \eta, \tilde{\eta})}
+\end{equation}
+\subsubsection{Gravitational Waves from Inflation}
+The action for the metric perturbations is given by considering the Einstein-Hilbert\index{action!Einstein-Hilbert} and generic matter perturbations to second order;
+\begin{equation}
+S^{(2)} = \frac{M^2_{\text{pl}}}{8}\int{\ud \eta \upd{^3 x}a^2\left(\dot{h}_{ij}\dot{h}^{ij} - \del_i h_{jk}\del^{i}h^{jk}\right)}
+\end{equation}
+which after expanding in Fourier modes gives;
+\begin{equation*}
+S^{(2)} = \sum_{p}{\frac{M^2_{\text{pl}}}{8}\frac{1}{2}\int{\ud \eta \upd{^3 k}a^2 \left((\dot{h}^{p})^2 + k^2 (h^{p})^2\right)}}
+\end{equation*}
+Comparing this to the action of a free, massless, scalar field we see that each polarisation mode behaves like an independent scalar field with $\delta \phi^{p} = M_{\text{pl}}h^{p}/8$. Thus each mode develops independent quantum fluctutations that freeze out on super Hubble scales with primordial power spectra;
+\begin{equation}
+\mathcal{P}_h(k) = \frac{8}{M^2_{\text{pl}}}\left(\frac{H_k}{2\pi}\right)^2
+\end{equation}
+The Friedmann equation has $H^2 = \rho / 3M^2_{\text{pl}} \sim (E^4_{\text{inf}})/3M^2_{\text{pl}}$. Plugging in the numbers;
+\begin{equation*}
+\mathcal{P}_h(k) \sim 1.93 \times 10^{-11}\left(\frac{E_{\text{inf}}}{10^{16}\,\,\text{GeV}}\right)^4
+\end{equation*}
+Thus, the amplitude of the primordial power spectrum gives an indication as to the energy scale of inflation. Observational results are usually quoted in terms of the \emph{tensor to scalar ratio}\index{tensor to scalar ratio};
+\begin{equation}
+r = \frac{\mathcal{P}_h(k_\star)}{\mathcal{P}_{\mR}(k_\star)}
+\end{equation}
+In simple single field inflation for example,
+\begin{equation*}
+\mathcal{P}_{\mR} = \frac{1}{2M^2_{\text{pl}}\epsilon}\left(\frac{H_k}{2\pi}\right)^2
+\end{equation*}
+so that in these very simple models, $r = 16\epsilon$. In other words, $r$ depends on the extent to which inflation departs from de Sitter dynamics. We define a spectral index for tensor perturbations;
+\begin{equation}
+n_t = \frac{\ud \log \mathcal{P}_h(k)}{\ud \log k}
+\end{equation}
+Which for single field gives $n_t \sim -2 \epsilon$ since $\log \mathcal{P}_h \sim 2\log H$. Thus we see that for consistent single field inflation, we must have $r = -8n_t$.
+\subsubsection{Cosmological Evolution of Gravitational Waves}
+The trace-free part of the $ij$-Einstein equation gives;
+\begin{equation}
+\ddot{h}_{ij} + 2\hamilt \dot{h}_{ij} - \nabla^2 h_{ij} = -16\pi Ga^2 \Pi_{ij}
+\end{equation}
+Ignoring the anisotropic stress, in Fourier space we have;
+\begin{equation*}
+\ddot{h}^{\pm} + 2\hamilt \dot{h}^{\pm} + k^2 h^{\pm} = 0
+\end{equation*}
+Outside the Hubble radius, $k \ll aH$ this is like a lightly damped oscillator with solution $h^{\pm}(\eta, \vec{k}) = \text{const.}$ (and a decaying mode). Thus, we can match it to a primordial quantity $h^{\pm}(\vec{k})$. On smaller scales on the other hand, $k \gg aH$ the damping term becomes small with respect to $k^2 h^{\pm}$, rewriting the equation in the form;
+\begin{equation*}
+\frac{\del^2}{\del \eta^2}\left(a h^{\pm}\right) + \left(k^2 - \frac{\ddot{a}}{a}\right)(ah^{\pm}) = 0
+\end{equation*}
+and noting that for $k \gg \hamilt$ we can neglect $\ddot{a}/a$ relative to $k$ we see that;
+\begin{equation}
+h^{\pm} \propto \frac{e^{\pm ik\eta}}{a}
+\end{equation}
+\subsubsection{Gravity Waves and the CMB}
+In a similar way to scalar perturbations, we set up the tetrad;
+\begin{equation*}
+E_0^{\mu} = a^{-1}\delta\indices{^{\mu}_{0}}, \quad E_i^{\mu} = a^{-1}\left(\delta\indices{^{\mu}_{i}} - \frac{1}{2}h\indices{_{i}^{j}}\delta\indices{_{j}^{\mu}}\right)
+\end{equation*}
+So that the photon $4$-momentum is;
+\begin{equation*}
+p^{\mu} = \frac{\epsilon}{a^2}\left(1, e^{i} - \frac{1}{2}h\indices{^{i}_{j}}e^{j}\right)
+\end{equation*}
+We can substitute this into the geodesic equation to find that;
+\begin{equation*}
+\frac{1}{\epsilon}\frac{\ud \epsilon}{\ud \eta} + \frac{1}{2}\dot{h}_{ij}e^{i}e^{j} = 0
+\end{equation*}
+The Boltzmann equation then takes the form;
+\begin{dmath*}
+\frac{\del \Theta}{\del \eta} + \vec{e}\cdot\nabla \Theta = - a\bar{n}_e \sigma_T \Theta + \frac{3}{16\pi}a\bar{n}_e\sigma_T \int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)} - \frac{1}{2}\dot{h}_{ij}e^{i}e^{j}
+\end{dmath*}
+Note that there's no $\vec{e}\cdot\vec{v}_b$ term since we only have tensor perturbations. As such neglecting the ISW term, we find that the line of sight solution is;\footnote{Note that the integration should start at $\eta = 0$, however $e^{-\tau}$ suppresses any contribution before last scattering.}
+\begin{equation}
+\Theta(\eta_0, \vec{x}_0, \vec{e}) \sim -\frac{1}{2}\int_{\eta_\star}^{\eta_0}{\upd{\eta\pr}e^{-\tau}\dot{h}_{ij}e^{i}e^{j}}
+\end{equation}
+If we do this numerically, we find the power spectrum shown in \autoref{fig:hpower};
+\begin{mygraphic}{advcosmo/hpower}{0.6}{Angular power spectra of the temperature anisotropies for scalar (density) perturbations (blue) and gravitational waves (magenta) with tensor-to-scalar ratio $r = 1$.}{hpower}\end{mygraphic}
+Current constraints from $\Delta T$ are that $r < 0.1$ which is now simply cosmic variance limited. We also have $\mathcal{P}_h(k) < 2.6 \times 10^{-1}$ at $k \sim 0.002 \,\,\text{Mpc}^{-1}$ which gives $E_{\text{inf}} < 1.9\times 10^{16}\,\,\text{GeV}$. Recalling that $r = 16\epsilon$ we find that this already constrains models such as $V \propto m^2 \phi^2 \Rightarrow r \sim 0.16$, which is already too large.
+\subsection{CMB Polarisation\index{CMB!polarisation}}
+\subsubsection{Stokes Parameters\index{Stokes parameters}}
+Suppose we have a quasi-monochromatic electromagnetic wave;
+\begin{equation*}
+\vec{E} = \RR\left(\colvec{2}{E_x(t)}{E_y(t)}e^{i(kz - \omega t)}\right)
+\end{equation*}
+Now we consider writing;
+\begin{equation*}
+\twobytwo{\left< E_x E_x^{\star} \right>}{\left< E_x E_y^{\star} \right>}{\left< E_y E_x^{\star} \right>}{\left< E_y E_y^{\star} \right>} \equiv \frac{1}{2}\twobytwo{I + Q}{U + iV}{U - iV}{I - Q}
+\end{equation*}
+$I, Q, U, V$ are all real and known as the Stokes parameters. physically;
+\begin{itemize}
+\item $I$ is the total intensity of radiation ($\left< \abs{E_x}^{2} + \abs{E_y}^{2} \right>$)
+\item $Q$ is the difference in intensity between up and down polarisations
+\item $U$ is similar to $Q$ but rotated by 45 degrees
+\item $V$ measures the intensity of circular polarisation, however we do not expect any for the CMB
+\item Also note that $Q$ and $U$ vanish in an isotropic background so they are first order in perturbations. We define the Stokes parameters with respect to the local tetrad by $\hat{\theta}(\vec{e})$ and $\hat{\phi}(\vec{e})$
+\end{itemize}
+Now consider working in the complex basis $\vec{m}_{\pm} = \hat{\theta} + i\hat{\phi}$. Under a LH rotation about $\vec{e}$ by $\psi$ we have $\vec{m}_{\pm} \mapsto e^{\pm i \psi}\vec{m}_{\pm}$. Then;
+\begin{equation*}
+Q \pm i U \mapsto e^{\pm 2i\psi} \left(Q \pm i U\right)
+\end{equation*}
+Consider an object $\eta_s$ on the $2$-sphere that transforms as;
+\begin{equation*}
+\eta_s(\vec{e}) \mapsto e^{is\psi}\eta_s 
+\end{equation*}
+Then $\eta_s$ is said to have spin $s$.
+\subsection{E and B Mode Decomposition}
+Consider linear polarisation described by;
+\begin{equation*}
+\frac{1}{2}\twobytwo{Q}{U}{U}{-Q} \coloneqq \mathcal{P}(\vec{e})
+\end{equation*}
+Consider decomposing a vector field into a curl-free and divergence-free part;
+\begin{equation*}
+V_a = \nabla_a V_E + \epsilon\indices{^{b}_{a}}\nabla_b V_B
+\end{equation*}
+where $V_{E/B}$ are scalar fields, independent of co-ordinates. Now the spin $\pm 1$ components of $\vec{V}$ are;
+\begin{align*}
+\vec{m}_{\pm}\cdot\vec{V} &= m_{\pm}^{a}V^{a} \\
+&= m_{\pm}^{a}\left(\nabla_a V_E + \epsilon\indices{^{b}_{a}}\nabla_b V_B\right) \\
+&= \left(\vec{m}_{\pm} \cdot \nabla\right)V_E + (\underbrace{\epsilon\indices{^{b}_{a}}}_{\text{rotates by 90 deg. } = i}m_{\pm}^{a})\nabla_b V_B \\
+&= \left(\vec{m}_{\pm}\cdot\nabla\right)V_E \pm i\nabla_b m_{\pm}^{b}V_B \\
+\Rightarrow \vec{m}_{\pm}\cdot \vec{V} &= \left(\vec{m}_{\pm}\cdot \nabla\right)\left(V_E \pm i V_B\right)
+\end{align*}
+We have $m_{\pm}^{a} = (\del_\theta)^{a} \pm i\cosec\theta (\del_\phi)^{a}$ so that;
+\begin{equation*}
+\vec{m}_{\pm}\cdot\vec{V} = \left(\del_\theta \pm i \cosec\theta \del_\phi\right)\left(V_E \pm i V_B\right)
+\end{equation*}
+\subsubsection*{Spin Raising and Lowering Operators}
+This allows us to define spin raising and lowering operators for a spin $s$ object $\eta_s$;
+\begin{align*}
+\slashed{d} \eta_s &= -\sin^s \theta \left(\del_\theta + i\cosec \theta \del_\phi\right)\sin^{-s}\theta \eta_s \\
+\bar{\slashed{d}} \eta_s &= -\sin^{-s}\theta \left(\del_\theta - i \cosec \theta \del_\phi\right)\sin^s \theta \eta_s
+\end{align*}
+Consider the components of the symmetric, trace-free polarisation tensor $P_{ab}$ in terms of scalar fields;
+\begin{equation*}
+P_{ab} = \left(\nabla_{(a}\nabla_{b)}- \frac{1}{2}g_{ab}\nabla^2\right)P_E + \epsilon\indices{^{c}_{(a}}\nabla_{b)}\nabla_c P_B
+\end{equation*}
+We have $Q \pm i U = m_{\pm}^{a}m_{\pm}^{b}P_{ab}$ and $m_{\pm}^{a}$ are null so that $g_{ab}m^{a}_{\pm}m^{b}_{\pm} = 0$. Then we find that;
+\begin{align*}
+Q\pm iU &= m_{\pm}^{a}m_{\pm}^{b}\left(\nabla_a \nabla_b P_E + \epsilon\indices{^{c}_{a}}\nabla_b \nabla_c P_B\right) \\
+&= m_{\pm}^{a}m_{\pm}^{b}\nabla_a\nabla_b\left(P_E \pm i P_B\right) \\
+&= \left(m_{\pm}^{a}\nabla_a\right)^2 \left(P_E \pm i P_B\right) - (m_{\pm}^{a}\nabla_a m_{\pm}^{b})\nabla_b\left(P_E \pm iP_B\right)
+\end{align*}
+We can show that $m_{\pm}^{a}\nabla_a m_{\pm}^{b} = \cot \theta m_{\pm}^{b}$ so that;
+\begin{equation}
+Q\pm iU = (\del_\theta \pm i \cosec \theta \del_\phi)^{2}\left(P_E \pm iP_B\right) - \cot \theta (\del_\theta \pm i\cosec \theta \del_\phi)\left(P_E \pm iP_B\right)
+\end{equation}
+We can also show that this is equivalent to;
+\begin{equation*}
+Q + iU = \slashed{d}\slashed{d}\left(P_E + iP_B\right), \quad Q - iU = \bar{\slashed{d}}\bar{\slashed{d}}\left(P_E - iP_B\right)
+\end{equation*}
+We can also expand the scalar fields as;
+\begin{equation}
+P_E = \sum_{l\geq 2, m}{\sqrt{\frac{(l - 2)!}{(l + 2)!}}E_{lm}Y_{lm}}, \quad P_E = \sum_{l\geq 2, m}{\sqrt{\frac{(l - 2)!}{(l + 2)!}}B_{lm}Y_{lm}}
+\end{equation}
+So that;
+\begin{equation}
+Q \pm iU = \sum_{lm}{(E_{lm}\pm iB_{lm}) _{\pm2}Y_{lm}}
+\end{equation}
+where we have defined the spin-weighted spherical harmonics\index{spherical harmonic!spin-weighted};
+\begin{equation*}
+_{s}Y_{lm} = \sqrt{\frac{(l - s)!}{(l + s)!}}\slashed{d}^{s}Y_{lm}\quad (s \geq 0)
+\end{equation*}
+These form a complete orthonormal basis for expanding a spin $s$ object on the sphere. As a more concrete example consider axisymmetric $P_E$ and $P_B$ (only a function of $\theta$), then;
+\begin{equation*}
+\slashed{d}P_E = -\del_\theta P_E \Rightarrow \slashed{d}\slashed{d} P_E = \sin\theta \del_\theta (\sin^{-1}\theta \del_\theta P_E)
+\end{equation*}
+Defining $\mu = \cos \theta$ we find that;
+\begin{equation*}
+Q \pm i U = (1 - \mu^2) \frac{\ud^2}{\ud \mu^2} (P_E \pm i P_B)
+\end{equation*}
+so that;
+\begin{equation}
+Q = (1 - \mu^2)\frac{\ud^2 P_E}{\ud \mu^2}, \quad U = (1 - \mu^2)\frac{\ud^2 P_B}{\ud \mu^2}
+\end{equation}
+Graphically we can represent linear polarisation by a headless arrow with length $\sqrt{Q^2 + U^2}$ at an angle $\alpha$ to the axis, where;\footnotemark
+\footnotetext{
+This naturally arises by considering linearly polarised radiation;
+\begin{equation*}
+\vec{E} = \epsilon \colvec{2}{\cos\alpha}{\sin\alpha}
+\end{equation*}
+Then we find that;
+\begin{equation*}
+Q \propto E_x^2 - E_y^2 = \epsilon^2 \cos 2\alpha, \quad U \propto 2E_x E_y = \epsilon^2 \sin 2\alpha
+\end{equation*}
+}
+\begin{equation*}
+Q = \sqrt{Q^2 + U^2}\cos 2\alpha, \quad U = \sqrt{Q^2 + U^2}\sin 2\alpha
+\end{equation*}
+Note that for azimuthally symmetric $P_E$ we generate only $Q$ and similarly for $P_B$ and $U$. Plotting this in the local co-ordinates leads to a characteristic curl pattern for the $B$-modes motivating the definition.
+\subsubsection{Statistics of Polarisation}
+$P_E$ and $P_B$ are scalar fields, although it turns out that $P_B$ is actually a pseudo-scalar. We can only have correlations between scalars and scalars or similar for pseudo-scalars. Then we can consider the following two-point functions, constrained by statistical isotropy;
+\begin{align*}
+\left< E_{lm}E^{\star}_{l\pr m\pr} \right> &= C_l^{E} \delta_{l l\pr}\delta_{m m\pr} \\
+\left< B_{lm}B^{\star}_{l\pr m\pr} \right> &= C_l^{B} \delta_{l l\pr}\delta_{m m\pr}
+\end{align*}
+We can also consider $\left< E_{lm}\Theta_{lm} \right>$ but \emph{not} $\left< E_{lm}B_{lm} \right>$ or $\left< B_{lm}\Theta_{lm} \right>$.
+\subsubsection{Boltzmann equation for Polarisation}
+To linear order, recalling that $Q, U$ are already first order we have;
+\begin{equation*}
+\frac{\del}{\del \eta}\left(Q \pm iU\right) + \vec{e}\cdot \nabla \left(Q \pm i U\right) = \left.\frac{\ud}{\ud \eta}\left(Q \pm i U\right)\right|_{\text{scat.}}
+\end{equation*}
+\subsubsection*{Generation of Polarisation by Scattering}
+Recall that for the temperature anisotropies we had a scattering term;
+\begin{equation*}
+\frac{3}{16\pi}a\bar{n}_e \sigma_T \int{\upd{\vec{m}}\Theta(\vec{m})\left(1 + (\vec{e}\cdot\vec{m})^2\right)}
+\end{equation*}
+\begin{mygraphic}{advcosmo/thompol}{0.6}{Graphical illustration of the net polarisation resulting from a quadrupole temperature anisotropy scattering off an electron}{thompol}\end{mygraphic}
+In general the idea is that if we have a temperature quadrupole then this generates linear polarisation. Graphically, as shown in \autoref{fig:thompol} we consider radiation incident on an electron with a quadrupole temperature anistropy. The electron oscillates due to the incoming radiation and emits radiation with a net polarisation due to the differing intensities of the quadrupole anisotropy. Doing the calculations we find that;
+\begin{equation*}
+d\left(Q \pm i U\right) = -\frac{3}{5}\ud \tau \sum_{m}{\frac{\Theta_{2m}}{\sqrt{6}}\, _{\pm2}Y_{2m}(\vec{e})}
+\end{equation*}
+So that the Boltzmann equation becomes;
+\begin{equation*}
+\left(\frac{\del}{\del \eta} + \vec{e}\cdot \nabla\right)\left(Q \pm i U\right) = \dot{\tau}\left(Q \pm i U\right) + \frac{\sqrt{6}}{10}\dot{\tau} \sum_{m}{\Theta_{2m}\, _{\pm2}Y_{2m}}
+\end{equation*}
+The second term here encodes the fact that scattering tends to destroy the polarisation. Integrating with a similar method to that of scalar perturbations we find;
+\begin{dmath*}
+(Q \pm iU)(\eta_0, \vec{x}_0, \vec{e}) = -\frac{\sqrt{6}}{10}\int_0^{\eta_0}{\upd{\eta\pr}g(\eta\pr)\sum_{m}{\Theta_{2m}\left(\eta\pr, \vec{x}_0 - (\eta_0 - \eta\pr)\vec{e}\right)\, _{\pm 2}Y_{2m}(\vec{e})}}
+\end{dmath*}
+This tells us about the temperature quadrupole on the last surface. In general, scattering leads to $l = 2$ $E$ mode polarisation locally. However, if there is spatial variation we will see additional angular structure in higher multipoles and $B$ mode polarisation.
+\subsubsection{Polarisation from Scalar Perturbations}
+Assume that last scattering is instantaneous and ignore reionisation. Then let $\chi_\star = \eta_0 - \eta_\star$ so that;
+\begin{equation*}
+\left(Q \pm i U\right)(\eta_0, \vec{x}_0, \vec{e}) = -\frac{\sqrt{6}}{10}\sum_{m}{\Theta_{2m}(\eta_\star,\vec{x}_0 - \chi_\star \vec{e}) \, _{\pm2}Y_{2m}(\vec{e})}
+\end{equation*}
+and consider a single Fourier mode of scalar perturbations;
+\begin{equation*}
+(Q \pm iU)(\eta_0, \vec{k}, \vec{e}) \propto \sum_{m}{\Theta_{2m}(\eta_\star, \vec{k})e^{-i\chi_\star \vec{k}\cdot\vec{e}}\, _{\pm2}Y_{2m}(\vec{e})}
+\end{equation*}
+For scalar perturbations, we showed previously that;
+\begin{equation*}
+\Theta_{2m}(\eta_\star, \vec{k}) \propto \Theta_2(\eta_\star, \vec{k})Y^{\star}_{2m}(\vec{k})
+\end{equation*}
+So that;
+\begin{equation*}
+(Q \pm i U)(\eta_\star, \vec{k}, \vec{e}) \propto \Theta_2(\eta_\star, \vec{k}) \sum_{m}{Y^{\star}_{2m}(\hat{\vec{k}})\, _{\pm2}Y_{2m}(\vec{e})} e^{-i\chi_\star \vec{k}\cdot \vec{e}}
+\end{equation*}
+If $\vec{k} \propto \vec{z}$ then $m = 0$ is the only contributing mode and $_{\pm2}Y_{20}(\vec{e}) \propto \sin^2 \theta$, so that $Q \pm i U \propto \sin^2 \theta$ and we find $Q \propto \sin^2 \theta$ and $U = 0$. Thus scalar perturbations \emph{only} produce $E$ mode polarisation. 
+\begin{mygraphic}{advcosmo/emode}{0.7}{Polarization power spectra from the 2015 Planck release.}{emode}\end{mygraphic}
+\newpage
+\section{Primordial Non-Gaussianity\index{non-gaussianity}}
+Primordial non-gaussianities are the non-linear modifications during inflation that lead to non-Gaussian statistics of observables. If these primordial non-gaussianities exist they can be masked by late time non-gaussianities such as;
+\begin{itemize}
+\item Gravitational lensing\index{gravitational lensing} of CMB photons
+\item Inherent non-linearities in the gravitational evolution
+\item Tracers (galaxies) that are related to matter by non-linear transformations
+\end{itemize}
+\subsection{Local NG and the Shape Function\index{shape function}}
+Consider the following model;
+\begin{equation}
+\xi(\vec{x}) = \xi_g(\vec{x}) + \frac{3}{5}f_{NL}^{\text{\footnotesize{loc.}}}\left(\xi_g^2(\vec{x}) - \left< \xi_g^2 \right>\right)
+\end{equation}
+In Fourier space we then have;
+\begin{equation*}
+\xi(\vec{k}) = \xi_g(\vec{k}) + \frac{3}{5}f_{NL}^{\text{\footnotesize{loc.}}} \int{\frac{\ud^3 q}{(2\pi)^3}\xi_g(\vec{q})\xi_g(\vec{k} - \vec{q})}
+\end{equation*}
+We want to compute the correlator $\left< \xi(\vec{k})\xi^{\star}(\vec{k}\pr) \right>$, this involves terms like;
+\begin{itemize}
+\item $\left< \xi_g(\vec{k})\xi_g^{\star}(\vec{k}\pr) \right>$
+\item $\left< \xi_g(\vec{k})\xi_g^{\star}(\vec{q})\xi_g^{\star}(\vec{k}\pr -\vec{q}) \right> \equiv 0$ by Wick's theorem (for Gaussian fields)
+\item $\left< \xi_g(\vec{q})\xi_g(\vec{k} - \vec{q})\xi^{\star}_g(\vec{q}\pr)\xi_g^{\star}(\vec{k}\pr - \vec{q}\pr) \right>$ which we can expand by Wick's theorem
+\end{itemize}
+Putting these together we find;
+\begin{align*}
+\left< \xi(\vec{k})\xi^{\star}(\vec{k}\pr) \right> &= \left< \xi_g(\vec{k})\xi_g^{\star}(\vec{k}\pr) \right> \\
+&\qquad + \frac{9}{25}f_{NL}^{\text{\footnotesize{loc.}}} \int{\frac{\ud^3 q \ud^3 q\pr}{(2\pi)^6}\left< \xi_g(\vec{q})\xi_g(\vec{k} - \vec{q})\xi_g(\vec{q}\pr)\xi_g(\vec{k}\pr - \vec{q}\pr) \right>} \\
+\Rightarrow P_{\xi\xi}(\vec{k}) &= P_{\xi_g \xi_g}(\vec{k}) + \frac{9}{25}f_{NL}^{\text{\footnotesize{loc.}}}\int{\frac{\ud^3 q}{(2\pi)^3}P_{\xi_g\xi_g}(\vec{q})P_{\xi_g \xi_g}(\vec{k} - \vec{q})}
+\end{align*}
+For the bispectrum, to leading order we have;
+\begin{equation*}
+\left< \xi(\vec{k}_1)\xi(\vec{k}_2)\xi(\vec{k}_3) \right> = \frac{3}{5}f_{NL}^{\text{\footnotesize{loc.}}}\int{\left< \xi_g(\vec{k}_1)\xi_g(\vec{k}_2) \xi_g(\vec{q})\xi_g(\vec{k}_3 - \vec{q})\right>} + \text{cyc. per.}
+\end{equation*}
+So that we find;
+\begin{dmath*}
+(2\pi)^3 B_{\xi}(k_1, k_2, k_3) \delta(\vec{k}_1 + \vec{k}_2 + \vec{k}_3) = \frac{6}{5}f_{NL}^{\text{\footnotesize{loc.}}}\int{\frac{\ud^3 q}{(2\pi)^3}P_{\xi_g \xi_g}(\vec{k}_1)P_{\xi_g \xi_g}(k_2)\delta(\vec{k}_1 + \vec{q}) \delta(\vec{k}_2 + \vec{k}_3 - \vec{q})}
+\end{dmath*}
+Then at tree level the bispectrum\index{bispectrum} is given by;
+\begin{dmath}
+B_{\xi}(\vec{k}_1, \vec{k}_2, \vec{k}_3) = \frac{6}{5}f_{NL}^{\text{\footnotesize{loc.}}}\set{P_{\xi_g \xi_g}(\vec{k}_1)P_{\xi_g \xi_g}(\vec{k}_2) + P_{\xi_g \xi_g}(\vec{k}_2)P_{\xi_g \xi_g}(\vec{k}_3) + P_{\xi_g \xi_g}(\vec{k}_1)P_{\xi_g \xi_g}(\vec{k}_3)}
+\end{dmath}
+Now, recall that the definition of he dimensionless power spectrum is;\footnote{So that given $P \sim k^{n_s - 4}$ if $n_s \sim 1$ then $\Delta \sim k^{0}$}
+\begin{equation*}
+\Delta_\xi^{2}(k) = \frac{k^3 P_{\xi_g\xi_g}(k)}{2\pi^2}
+\end{equation*}
+This allows us to write the bispectrum as;
+\begin{equation*}
+B_{\xi}(k_1, k_2, k_3) = \frac{6}{5}f_{NL}^{\text{\footnotesize{loc.}}}\set{\frac{\Delta^2_{\xi_g}(k_1)\Delta^2_{\xi_g}(k_2)(2\pi)^2}{k_1^3 k_2^3} + \text{2 perm.}}
+\end{equation*}
+If $\Delta^2_\xi(k)$ really is scale invariant then this becomes;
+\begin{equation*}
+B_\xi(k_1, k_2, k_3) = \frac{6}{5}f_{NL}^{\text{\footnotesize{loc.}}}\frac{(2\pi^2 \Delta^2_{\xi_g})^2}{(k_1 k_2 k_3)^2} \set{\frac{k_1^2}{k_2 k_3} + \frac{k_2^2}{k_1 k_3} + \frac{k_3^2}{k_1 k_2}}
+\end{equation*}
+which motivates the definition of the \emph{shape function}\index{shape function}
+\begin{equation}
+S(k_1, k_2, k_3) \coloneqq \frac{(k_1 k_2 k_3)^2}{(2\pi^2 \Delta^2_{\xi_g})^2}B_{\xi}(k_1, k_2, k_3)
+\end{equation}
+In this case then we have;
+\begin{equation*}
+S_{\text{\footnotesize{loc.}}} = \frac{6}{5}f_{NL}^{\text{\footnotesize{loc.}}}\left(\frac{k_1^2}{k_2 k_3} + \frac{k_2^2}{k_1 k_3} + \frac{k_3^2}{k_1 k_2}\right)
+\end{equation*}
+Then the amplitude for non-Gaussianity $f_{NL}$ is defined to be;
+\begin{equation}
+f_{NL} \coloneqq \frac{5}{18}S(k, k, k)
+\end{equation}
+There are other definitions of the shape function that don't include this amplitude and instead normalise according to $\tilde{S}(k, k, k) = 1$. This allows us to work instead with the dimensionless quantities $x_2 = k_2 / k_1$ and $x_3 = k_3 / k_1$ at a fixed $K = \tfrac{1}{3}(k_1 + k_2 + k_3)$. We can avoid degeneracy by insisting that $0 < x_3 < x_2 < 1$ and emplying the triangle inequality to see that $x_2 > 1/2$ and $1 - x_2 < x_3 < x_2$. We can also define a scalar product of shape functions;
+\begin{equation*}
+S_1 \cdot S_2 \coloneqq \sum_{k}{\frac{S_1(k_1, k_2, k_3) S_2(k_1, k_2, k_3)}{P(k_1)P(k_2)P(k_3)}}
+\end{equation*}
+We can then think about taking some useful limits. For example in the squeezed limit $k_2, k_3 \gg k_1$ we find that;
+\begin{equation*}
+\lim_{k_2, k_3 \gg k_1}S_{\text{\footnotesize{loc.}}}(k_1, k_2, k_3) = \frac{12}{5}f_{NL}^{\text{\footnotesize{loc.}}} \frac{k_{2, 3}}{k_1}
+\end{equation*}
+The local shape is produced by single field, slow roll inflation but $f_{NL}^{\text{\footnotesize{loc.}}} \sim \mO(\epsilon)$. The best constraints from Planck have $f_{NL}^{\text{\footnotesize{loc.}}} = 0.8 \pm 5$. Another form of non-gaussianity is \emph{equilateral non-gaussianity}\index{non-gaussianity!equilateral} where;
+\begin{equation*}
+\tilde{S}_{\text{\footnotesize{equi.}}}(k_1, k_2, k_3) = \left(\frac{k_1}{k_2} + \text{5 perm.}\right) - \left(\frac{k_1^2}{k_2 k_3} + \text{2 perm.}\right) - 2
+\end{equation*} 
+which peaks when all sides are equal. It is generated when all modes are equal and inside the horizon which occurs for non-standard kinetic terms, for example. The best constraint again comes from Planck\index{Planck} and is given by $f_{NL}^{\text{\footnotesize{equi.}}} = -4 \pm 43$. Using the scalar product defined above we can also construct the \emph{orthogonal} template;
+\begin{equation*}
+\tilde{S}_{\text{\footnotesize{orth.}}} \sim -3.84\left(\frac{k_1^2}{k_2 k_3} + \text{2 perm.}\right) + 3.94\left(\frac{k_1}{k_2} + \text{5 perm.}\right) - 11.1
+\end{equation*}
+which has $f_{NL}^{\text{\footnotesize{orth.}}} = -26 \pm 21$.
+\subsection{In-in Formalism}\index{in-in formalism}
+The production of primordial non-Gaussianity can occur via;
+\begin{enumerate}
+\item Quantum effects before horizon exit
+\item Classical non-linear evolution or interactions after horizon exit
+\end{enumerate}
+Starting from the first point of view, at the end of the day we want to calculate;
+\begin{equation*}
+\left< \xi(\vec{k}_1) \xi(\vec{k}_2) \xi(\vec{k}_3) \right> = \bra{0}\xi(\vec{k}_1, t^{\star})\xi(\vec{k}_2, t^{\star})\xi(\vec{k}_3, t^{\star})\ket{0}
+\end{equation*}
+where $t^{\star}$ is the time of horizon exit, and $\ket{0}$ is the Bunch-Davies vacuum\index{Bunch-Davies vacuum}. In the Cosmology course we found the two-point correlator via the Mukhanov-Sasaki equation\index{equation!Mukhanov-Sasaki} where we expanded the $\xi(\vec{k})$ into mode functions;
+\begin{equation*}
+\xi(\vec{k}) = u_{\vec{k}} a(\vec{k}) + u_{\vec{k}}\dagg a\dagg(\vec{k})
+\end{equation*}
+The general program for calculating the bispectrum involves calculating inflationary correlators in the presence of interactions via the in-in formalism, then applying this to particular cubic actions/Hamiltonians and extracting the bispectrum. In QFT we considered $\bra{\text{out}}\mS \ket{\text{in}}$, however the $\ket{\text{out}}$ is taken in the limit $t \rightarrow \infty$. In inflationary terms, this limit is somewhat meaningless so instead, in Cosmology we consider $\bra{\text{in}}Q\ket{\text{in}}$. We can take for example $Q = \phi_1 \cdots \phi_n$ where $\phi \in \set{\xi, h^{\times}, h^{+}}$. The $\ket{\text{in}}$ states are the vacuum eigenstates of the free Hamiltonian $H_0$ which is second order. The full Hamiltonian is;
+\begin{equation*}
+H = \bar{H} + \underbrace{H_0 + H_{\text{int}}}_{\tilde{H}}
+\end{equation*}
+where $\bar{H}$ is the homogeneous background and $H_{\text{int}} = \mO(\phi^3)$. We write;
+\begin{align*}
+\phi(\vec{x}, t) &= \bar{\phi}(\vec{x}, t) + \delta \phi(\vec{x}, t) \\
+\pi(\vec{x}, t) &= \bar{\pi}(\vec{x}, t) + \delta \pi(\vec{x}, t)
+\end{align*}
+where $\left[\delta \phi(\vec{x}, t), \delta \pi (\vec{y}, t)\right] = i \delta(\vec{x} - \vec{y})$. Then the background evolution is governed by;
+\begin{equation*}
+\dot{\bar{\phi}} = \frac{\del \bar{\hamilt}}{\del \bar{\pi}} , \quad \dot{\bar{\pi}} = - \frac{\del \bar{\hamilt}}{\del \bar{\phi}}, \quad \bar{H} = \int{\upd{^3 x} \bar{\hamilt}}
+\end{equation*}
+Then the Heisenberg equations of motion for the perturbations are given by;
+\begin{equation*}
+\dot{\delta \phi}(\vec{x}, t) = i \left[\tilde{H}(\delta \phi, \delta \pi, t), \delta \phi\right], \quad \dot{\delta\pi}(\vec{x}, t) = i \left[\tilde{H}(\delta \phi, \delta \pi, t), \delta \pi\right]
+\end{equation*}
+The unitary time evolution operator satisfies $U(t, t) = \mathbb{I}$ and $U\dagg U = \mathbb{I}$ and allows us to write $\delta \phi(\vec{x}, t) = U^{-1}(t, t_i) \delta\phi(\vec{x}, t_i)U(t, t_i)$ which, plugging into the Heisenberg equation of motion gives;
+\begin{align*}
+\frac{\ud U(t, t_i)}{\ud t} &= -i\tilde{H}(\delta \phi, \delta \pi, t) U(t, t_i) \\
+\Rightarrow U(t, t_i) &= \mT \exp\left(-i \int_{t_i}^{t}{\upd{t\pr}\tilde{\hamilt}(t\pr)}\right)
+\end{align*}
+In the interaction picture the perturbations evolve under the time evolution operator of the free Hamiltonian;
+\begin{equation*}
+\delta \phi^{I}(\vec{x}, t) = U_0^{-1}(t, t_i) \delta\phi(\vec{x}, t_i) U_0(t, t_i) \Rightarrow \dot{\delta\phi^{I}}(\vec{x}, t) = i\left[H_0(\delta \phi^I, \delta \pi^I, t), \delta \phi^I\right]
+\end{equation*}
+In particular, note that $\delta \phi^{I}(\vec{x}, t_i) = \delta \phi(\vec{x}, t_i)$ which are the Bunch-Davies vacuum states. We also have;
+\begin{equation*}
+\frac{\ud U_0(t, t_i)}{\ud t} = -i H_0\left(\delta\phi(\vec{x}, t_i), \delta \pi(\vec{x}, t_i); t\right) U_0(t, t_i)
+\end{equation*}
+We are interested in calculating;
+\begin{align*}
+&\bra{0}Q[\delta \phi(\vec{x}, t), \delta\pi(\vec{x}, t)]\ket{0} \\
+&\quad = \bra{0}U^{-1}(t, t_i)Q[\delta \phi(\vec{x}, t_i), \delta \pi(\vec{x}, t_i)]U(t, t_i) \ket{0} \\
+&\quad = \bra{0}U^{-1}(t, t_i)U_0 U_0^{-1} Q[\delta \phi(\vec{x}, t_i), \delta \pi(\vec{x}, t_i)]U_0 U_0^{-1}U(t, t_i) \ket{0} \\
+&\quad = \bra{0}F^{-1}(t, t_i)U_0^{-1}Q[\delta\phi(t_i), \delta\pi(t_i)] U_0 F(t, t_i)\ket{0} \\
+&\quad = \bra{0}F^{-1} Q^{I} F\ket{0}
+\end{align*}
+where $F = U_0^{-1}U$ and $Q^I = Q[\delta \phi^{I}(t), \delta\pi^{I}(t)]$. The equation of motion for $F$ is given bt;
+\begin{align*}
+\frac{\ud F(t, t_i)}{\ud t} &= \frac{\ud U_{0}^{-1}}{\ud t}U + U_0^{-1}\frac{\ud U}{\ud t} \\
+\Rightarrow \frac{\ud F(t, t_i)}{\ud t} &= -i H_{\text{int}}^{I}[\delta \phi^{I}, \delta \pi^{I}, t]F(t, t_i) \\
+\Rightarrow F(t, t_i) &= \mT \exp\left(-i \int_{t_i}^{t}{\upd{t\pr} H_{\text{int}}^{I}(t\pr)}\right)
+\end{align*}
+This allows us to deduce that;
+\begin{align*}
+\left< Q(t) \right> &= \bra{0}Q(t)\ket{0} \\
+&= \bra{0} \mT \exp\left(i \int_{-\infty(1 - i\epsilon)}^{t}{\upd{t\pr}H_{\text{int}}^{I}(t\pr)}\right) Q^{I}(t) \\
+&\qquad \qquad \qquad \times\mT \exp\left(-i \int_{-\infty(1 + i\epsilon)}^{t}{\upd{t\pr}H_{\text{int}}^{I}(t\pr)}\right) \ket{0} \\
+&\sim \bra{0}i \int_{-\infty(1 - i\epsilon)}^{t}{\upd{t\pr}H_{\text{int}}^{I}(t\pr)} Q^{I}(t) - i Q^{I}(t)\int_{-\infty(1 + i\epsilon)}^{t}{\upd{t\pr}H_{\text{int}}^{I}(t\pr)}\ket{0} \\
+\Rightarrow \left< Q(t) \right>&= \text{Re}\left(\bra{0}-2iQ^I(t)\int_{-\infty(1 + i\epsilon)}^{t}{\upd{t\pr}H^{I}_{\text{int}}(t\pr)}\ket{0}\right) + \left< Q^I(t) \right>
+\end{align*}
+which we understand as integrating along a contour that winds around the negative imaginary axis from just above ($-\infty + i\epsilon$) to just below ($\infty - i \epsilon$), passing through $t$.  
+\subsection{Cubic Actions}
+\subsubsection{Review of Slow Roll}
+Recall that the background equations are given by;
+\begin{equation*}
+\ddot{\bar{\phi}} + 3H \dot{\bar{\phi}} + V\pr = 0
+\end{equation*}
+which leads to the Friedman equations;
+\begin{equation*}
+H^2 = \frac{1}{3}(V + \frac{1}{2}\dot{\bar{\phi}}^2), \quad \dot{H} = - \frac{1}{2}\dot{\bar{\phi}}^2
+\end{equation*}
+while the slow roll parameters are;
+\begin{equation*}
+\epsilon = - \frac{\dot{H}}{H^2}, \quad \eta = - \frac{\dot{\epsilon}}{H\epsilon}, \quad \xi = - \frac{\dot{\eta}}{H \eta}
+\end{equation*}
+\subsection{Introduction to the ADM Formalism\index{ADM formalism}}
+We start from the Einstein-Hilbert action\index{Einstein-Hilbert action};
+\begin{equation*}
+S = \frac{1}{2}\int{\upd{^4 x}\sqrt{-g}R} + \int{\upd{^4 x}\mL_{m}}
+\end{equation*}
+In the ADM ($\equiv 3 + 1$) formalism, we write the metric in the form;
+\begin{equation}
+\ud s^2 = - N^2 \ud t^2 + h_{ij}(\ud x^{i} + \mN^{i}\ud t)(\ud x^{j} + \mN^{j}\ud t)
+\end{equation}
+The functions $\mN^{i}$ and $N$ are known as the \emph{shift} and \emph{lapse} functions respectively\index{shift function}\index{lapse function}. In the formalism we split the spacetime into hypersurfaces $\Sigma_t$. Considering evolution from $\Sigma_t$ to $\Sigma_{t + \delta t}$, the shift and lapse functions encode the evolution by changes $N\delta t$ in the temporal direction, orthogonal to the hypersurface, along $n_{\mu} = (-N, 0, 0, 0)$, and $\mN^{i} \delta t$ within the hypersurface. Now raising and lowering indices with $h_{ij}$ we have the metric;
+\begin{equation}
+g_{\mu\nu} = \twobytwo{-N^2 + \mN^{i}\mN_i}{\mN_{i}}{\mN_{i}}{h_{ij}}, \quad g^{\mu\nu} = \twobytwo{-\frac{1}{N^2}}{\frac{\mN^{i}}{N^2}}{\frac{\mN^{i}}{N^2}}{h_{ij} - \frac{\mN^{i}\mN^{j}}{N^2}}
+\end{equation} 
+This ensures that $\sqrt{g} = N\sqrt{h}$ where $h = \det h_{ij}$. Now, the extrinsic curvature is defined by;\index{extrinsic curvature}
+\begin{align*}
+K_{ij} &= n_{i;j} = n_{i, j} - \Gamma\indices{^{\lambda}_{ij}}n_{\lambda} \\
+&= N \Gamma\indices{^{0}_{ij}} = \frac{1}{2N}\left(h_{ij,0} - \mN_{i | j} - \mN_{j | i}\right)
+\end{align*}
+where $N_{i|j} = ^{(3)}\nabla_j \mN_{i} = \mN_{i, j} - ^{(3)}\Gamma\indices{^{l}_{ij}}\mN_{l}$. In general we use a rescaled version of this;
+\begin{equation*}
+E_{ij} = N K_{ij} = \frac{1}{2}(\dot{h}_{ij} - \mN_{(i|j)})
+\end{equation*}
+Furthermore, the \emph{Gauss-Codazzi equation} gives us;
+\begin{equation}
+R = ^{(3)}R + \frac{1}{N}(E_{ij}E^{ij} - E^2), \quad E = h^{ij}E_{ij}
+\end{equation}
+\subsection{ADM Formalism for Minimally Coupled Scalar Fields}
+We start from the action;
+\begin{equation*}
+S = \int{\upd{^4 x}\sqrt{-g}\left(\frac{1}{2}R + X(\phi, \del_\mu \phi) - V(\phi)\right)}
+\end{equation*}
+where $X(\phi, \del_\mu \phi) = -\tfrac{1}{2}g^{\mu\nu}\del_\mu \phi \del_\nu \phi$. In the ADM formalism this becomes;
+\begin{dmath*}
+S = \frac{1}{2}\int{\upd{^4x}N\sqrt{h}}\left(^{(3)}R + \frac{1}{N^2}(E_{ij}E^{ij} - E^{2}) + \frac{1}{N^2}(\dot{\phi} - \mN^{i} \del_i \phi)^2 - h_{ij}\del_i \phi \del_j \phi - 2V\right)
+\end{dmath*}
+From this we can deduce the \emph{constraint equations}\index{equation!constraint} which arise by considering $\delta S / \delta N = 0$ and $\delta S / \delta \mN^{i} = 0$, these give respectively;
+\begin{align}
+^{(3)}R - \frac{1}{N^2}(E_{ij}E^{ij} - E^{2}) &= \frac{1}{N^2}(\dot{\phi} - \mN^{i}\del_i \phi)^2 + 2V + h^{ij}\del_i \phi \del_j \phi \\
+^{(3)}\nabla_i \left[\frac{1}{N}(E\indices{^{i}_{j}} - \delta\indices{^{i}_{j}}E)\right] &= -\frac{1}{N}(\dot{\phi} - \mN^{j}\del_j \phi)\del_i \phi
+\end{align}
+Now, having derived these non-dynamic equations, the true equations of motion for the $3$-metric $h_{ij}$ arise by considering $\delta S / \delta h_{ij}$. From now on we work in comoving gauge\footnotemark\index{comoving gauge} where $\delta \phi = 0$ ($\phi = \bar{\phi} + \delta \phi$) and write;
+\footnotetext{
+Recall from Cosmology that under a gauge transformation $x^{\mu} \mapsto x^{\mu} + \xi^{\mu}$ where $\xi^{\mu} = (T, \del^i L)$, we have that $\tilde{\delta \phi} = \delta \phi - \bar{\phi}\pr T$ and $\tilde{C} = C - \hamilt T$. In this comoving gauge we have $C = \xi$ and $\delta \phi = 0$
+}
+\begin{equation*}
+h_{ij} = a^2 \exp\left(2 \xi\right)\delta_{ij}
+\end{equation*}
+With this definition we find that;
+\begin{equation*}
+^{(3)}R = - 2a^{-2}e^{-2\xi}\left(2\del^2 \xi + (\del \xi)^2\right)
+\end{equation*}
+Now, we want to solve the constraint equations at order $\xi$ so we write $N = ^{(1)}N + ^{(2)}N + \cdots$ and $\mN^{i} = ^{(1)}\mN^{i} + ^{(2)}\mN^{i} + \cdots$. By plugging in the form of $h_{ij}$ and $^{(3)}R$ into the constraint equations, we find that;
+\begin{equation}
+^{(1)}N = \frac{\dot{\xi}}{H}, \qquad \psi = -\frac{\xi}{H} + a^2 \frac{\dot{\phi}^2}{2H^2} \del^{-2} \dot{\xi}
+\end{equation}
+where $^{(1)}\mN^{i} = \del^{i} \psi$. Ultimately we find then that the action is given by;
+\begin{equation*}
+S_{2} = \int{\upd{^4 x} a^{3}\epsilon \left(\dot{\xi}^2 - \frac{1}{a^2}(\del_i \xi)^2\right)}
+\end{equation*}
+We can reparametrise this as $v = z\xi$ with $z = a\sqrt{2\epsilon}$ so that;
+\begin{equation*}
+S_{2} = \int{\ud \tau \upd{^3 x}\left((v\pr)^2 - (\del v)^2 - \frac{z^{\prime\prime}}{z}v^2\right)}
+\end{equation*}
+The Mukhanov-Sasaki equation\index{equation!Mukhanov-Sasaki} follows immediately as the equations of motion;
+\begin{equation*}
+v^{\prime\prime} - \del^2 v - \frac{z^{\prime\prime}}{z}v = 0 \Rightarrow v^{\prime\prime} + \left(k^2 - \frac{z^{\prime\prime}}{z}\right)v = 0
+\end{equation*}
+In de Sitter space this just becomes;
+\begin{equation*}
+v^{\prime\prime} + \left(k^2 - \frac{2}{\tau^2}\right)v = 0 \Rightarrow v = -\frac{i}{\sqrt{2k^3}\tau}(1 + ik\tau)e^{-ik\tau}
+\end{equation*}
+Writing;
+\begin{align*}
+\xi^{I}(x) &= \int{\frac{\ud^3 k}{(2\pi)^3}\left(a^{I}_k u_k(t)e^{i\vec{k} \cdot \vec{x}} + a^{I\dagger}_k u^{\star}_k(t)e^{-i\vec{k}\cdot \vec{x}}\right)} \\
+&\coloneqq \xi_+^{I}(\vec{x}, t) + \xi_-^{I}(\vec{x}, t)
+\end{align*}
+Where $u_k$ is given by;
+\begin{equation*}
+u_k = \frac{H}{\sqrt{4\epsilon k^3}}(1 + ik\tau)e^{-ik\tau}
+\end{equation*}
+If we consider the power spectrum we find that;
+\begin{align*}
+(2\pi)^3 \delta(\vec{k}_1 + \vec{k}_2) P_\xi(k) &= \bra{0}\xi(k_1)\xi(k_2)\ket{0} \\
+\Rightarrow P_\xi(k) &= \frac{H^2}{4\epsilon k^3}
+\end{align*}
+As usual for creation and annihilation operators we have $a_{\vec{k}}\ket{0} = 0$ and $[a_{\vec{k}}, a\dagg_{\vec{k}\pr}] = (2\pi)^3\delta(\vec{k} - \vec{k}\pr)$. The mode functions then satisfy;
+\begin{equation*}
+u_{\vec{k}} = \frac{H}{\sqrt{4\epsilon k^3}}(1 + ik\tau)e^{-ik\tau} \Rightarrow u\pr_{\vec{k}} = \frac{H}{\sqrt{4\epsilon k^3}}k^2 \tau e^{-ik\tau}
+\end{equation*}
+This implies that $\bra{0}\xi_{\vec{k}}\xi_{\vec{k}\pr}\ket{0} = (2\pi)^3 \delta(\vec{k} + \vec{k}\pr)u_{\vec{k}}u^{\star}_{\vec{k}\pr}$, as such we find that;
+\begin{equation*}
+P_{\xi} = \frac{H^2}{4\epsilon k^3}, \quad \Delta_\xi^2 = \frac{H^2}{8\pi\epsilon}, \quad n_s - 1 = \frac{\ud \log \Delta_\xi^2}{\ud \log k} \sim 0.967
+\end{equation*}
+\subsubsection{The Cubic Action}\index{cubic action}
+It turns out that the first order solutions for $N$ and $\mN_i$ are sufficient to find the action to cubic order;
+\begin{multline}
+S_3 = \int{\upd{^4 x} a^3 \epsilon^2 \xi \dot{\xi}^2 + a \epsilon^2 \xi (\del \xi)^2 - 2a\epsilon^2 \dot{\xi}\del_i \xi \del_i \psi + \frac{a}{2}\epsilon \dot{\eta}\xi^2 \dot{\xi}} \\ + \frac{1}{2}\frac{\epsilon}{a}\del_i \xi \del_i \psi \del^2 \psi + \frac{\epsilon}{4a}\del^2 \xi (\del \psi)^2 + 2 f(\xi) \frac{\delta\mL_{2}}{\delta \xi}
+\end{multline}
+where $\del^2 \psi = - \del^2 \xi / H + a^2 \bar{\dot{\phi}}^2 / 2H^2$, $\mN_i = \del_i \psi$ and $\mL_2$ is the Lagrangian arising in the second order action. Making a field redefinition $\xi_n = \xi - f(\xi)$ where $f(\xi) = \tfrac{1}{4}\xi^2 + \cdots$, then;
+\begin{equation*}
+\left< \xi \xi \xi \right> = \left< \xi_n \xi_n \xi_n \right> + \frac{1}{2}\left< \xi_n \xi_n \right>\left< \xi_n \xi_n \right>
+\end{equation*}
+We then find that the cubic action is;
+\begin{multline*}
+S_3 = \int{\upd{^4 x} a^3 \epsilon^2 \xi \dot{\xi}^2 - 2a^2 \epsilon^2 \dot{\xi}\del_i \xi \del_i (\del^{-2}\dot{\xi})} + a\epsilon^2 \xi (\del \xi)^2 \\+ \text{higher order in slow roll}
+\end{multline*}
+We can define the canonical momentum $\pi = \del \mL / \del \dot{\xi}$ then we have, to first order;
+\begin{equation*}
+H_{\text{int}} = -\int{\upd{^3 x} \mL_{\text{int}}}
+\end{equation*}
+where $\mL = \mL_{0} + \mL_{\text{int}}$.
+\subsection{The three-point function in slow roll single field inflation}
+We want to consider the first term in the $S_3$ action and work in conformal time $\tau \in (-\infty, 0)$ so that $\ud t \rightarrow a \ud \tau$ and $a\dot{\xi} \rightarrow \xi\pr$. Then the expression for $\left< Q(t) \right>$ above gives;
+\begin{multline*}
+\left< \xi(\vec{k}_1, 0) \xi(\vec{k}_2, 0) \xi(\vec{k}_3, 0) \right> \\ = \text{Re}\left(\left< -2i \xi^I(\vec{k}_1, 0) \xi^I(\vec{k}_2, 0) \xi^I(\vec{k}_3, 0) \int{\ud^3 x \upd{\tau} a^2 \epsilon^2}\right. \right.\\
+\left.\left.\times \prod_{i = 1}^{3}{\frac{\ud^3 q_i}{(2\pi)^3}e^{-i\vec{q}_i \cdot \vec{x}}\xi^I(\vec{q}_1, \tau)\xi^{I\prime}(\vec{q}_2, \tau) \xi^{I\prime}(\vec{q}_3, \tau)} \right>\right)
+\end{multline*}
+We use Wick's theorem to expand the expectation to find that the three-point function is given by;
+\begin{multline*}
+\prod_{i = 1}^{3}\left\{\frac{\ud^3 q_i}{(2\pi)^3}\right\}(2\pi)^3 \delta(\vec{q}_1 + \vec{q}_2 + \vec{q}_3) \left((2\pi)^9 \delta(\vec{k}_1 + \vec{q}_1)\delta(\vec{k}_2 + \vec{q}_2)\delta(\vec{k}_3 + \vec{q}_3)\right. \\ \left.\quad+ \text{perm.}\right) \times \text{Re}\left(-2i\int{\upd{\tau}\frac{\epsilon^2}{(H\tau)^2}u_{k_1}(0)u_{k_2}(0)u_{k_3}(0)u_{q_1}(\tau)u\pr_{q_2}(\tau)u_{q_3}\pr(\tau)}\right)
+\end{multline*}
+Plugging in the explicit form of the mode functions and reading off the bispectrum we find;
+\begin{align*}
+B_{\xi \dot{\xi}^2}(k_1, k_2, k_3) &= \frac{H^4}{32\epsilon}\frac{1}{(k_1 k_2 k_3)^2}\text{Re}\left[ik_2^2 k_3^2 \int_{-\infty(1 + i\epsilon)}^{0}{\upd{\tau}(1 + ik_1\tau)e^{-iK\tau}}\right]\\
+&\qquad \qquad \qquad + \text{2 perm.}, \qquad K = k_1 + k_2 + k_3 \\
+&= \frac{H^4}{32\epsilon}\frac{1}{(k_1 k_2 k_3)^2}\left[\frac{k_2^2 k_3^2}{K} + \frac{k_1 k_2^2 k_3^2}{K^2} + \text{2 perm.}\right] \\
+&= \frac{1}{2}\frac{(2\pi^2 \Delta^2_\xi)^2}{(k_1 k_2 k_3)^2}\epsilon\left[\frac{k_2 k_3}{K k_1} + \frac{k_2 k_3}{K^2} + \text{2 perm.}\right]
+\end{align*}
+Importantly, note that the amplitude of the bispectrum, $f_{\text{NL}} \propto \epsilon$ i.e. it is slow roll suppressed. The full expression for the shape function is;\index{shape function}
+\begin{multline*}
+\tilde{S} \propto 4\frac{\eta - \epsilon}{8}\left(\frac{k_1^2}{k_2 k_3} + \text{2 perm.}\right) + \frac{\epsilon}{8}\left(\frac{k_1}{k_2} + \text{5 perm.}\right) \\ + \frac{\epsilon}{K}\left(\frac{k_1 k_2}{k_3} + \text{2 perm.}\right)
+\end{multline*}
+In the squeezed limit this gives;
+\begin{equation*}
+\lim_{k_1 \ll k_2, k_3}\tilde{S} = (\eta + 2\epsilon)\frac{k_2}{k_1} = (1 - n_s)\frac{k_2}{k_1}
+\end{equation*}
+\subsubsection{Consistency Condition for Single Field Inflation}
+Consider a short wavelength mode $\Lambda_s = k_s^{-1}$ in the background of a long mode $\lambda_l = k_l^{-1}$ with $\lambda_s \ll \lambda_l$. Then the spatial part of $\ud s^2 = -\ud t^2 + a^2 e^{2\zeta_l} \ud x^2$ receives a local rescaling $x \mapsto x(1 + \zeta_l)$. The correlation function $\xi(r) = \left< \zeta(x_1)\zeta(x_2) \right>$ then obeys;
+\begin{equation*}
+\left.\xi(r)\right|_{\zeta_l} \mapsto \left.\xi(r)\right|_{\zeta_l = 0} + \left.\frac{\ud \xi}{\ud r}\right|_{\zeta_l = 0}\zeta_l + \cdots = \xi[r(1 + \zeta_l)]
+\end{equation*}
+The power spectrum is then given by;
+\begin{equation*}
+P_\zeta(k_s) = \int{\upd{^3 r}e^{ik_s r}\xi[r(1 + \zeta_l)}
+\end{equation*}
+Let $(1 + \zeta_l)r = \tilde{r}$ so that $r = (1 - \zeta_l) \tilde{r}$, then;
+\begin{align*}
+\left.P_{\zeta}(k_s)\right|_{\zeta_l} &= (1 - \zeta_l)^3 P_\zeta[k_s(1 - \zeta_l)] \\
+&= \left.P_\zeta(k_s)\right|_{\zeta_l = 0}\left(1 - 3 \zeta_l - \zeta_l k \frac{P\pr(k)}{P(k)}\right) \\
+&= P_{\zeta}(k_s)\left(1 - \zeta_l \frac{\ud \log k^3 P(k)}{\ud \log k}\right) \\
+&= \left.P_{\zeta}(k_s)\right|_{\zeta_l = 0}\left(1 + (1 - n_s)\zeta_l\right) \\
+&= \left.P_{\zeta}(k_s)\right|_{\zeta_l = 0}\left(1 + (\eta + 2\epsilon)\zeta_l\right)
+\end{align*}
+Considering the expression $\left< \zeta_l \zeta_s \zeta_s \right>$ and expanding $\zeta_s \zeta_s$ about $\zeta_l = 0$ we find that;
+\begin{equation}
+\lim_{k_1 \rightarrow 0}\left< \zeta(\vec{k}_1)\zeta(\vec{k}_2)\zeta(\vec{k}_3) \right> = (2\pi)^3 \delta(\vec{k}_1 + \vec{k}_2 + \vec{k}_3) P_{\zeta}(k_1) P_{\zeta}(k_2)(1 - n_s)
+\end{equation}
+So there is no large squeezed limit in single field inflation, it is suppressed by $(1 - n_s)$. In multi-field inflation, we would have more than one dynamical degree of freedom, so the above discussion does not work.
+\subsection{Non-standard Kinetic Terms}
+These are often known as $P(X)$ theories\index{P(X) theory} where the standard kinetic terms $X - V$ where $X = -\tfrac{1}{2}g^{\mu\nu}\del_\mu \phi \del_\nu \phi$ are replaced by a generic function $P(X, \phi)$. In general we consider;
+\begin{equation}
+S = \int{\upd{^4 x} \sqrt{-g}\set{\frac{1}{2}R + P(X, \phi)}}
+\end{equation}
+which leads to the expressions;
+\begin{equation}
+\dot{H} = - X P_{,X} , \qquad 3H^2 = 2XP_{,X} - P, \qquad \rho = X P_{, X} - P , \qquad p = P
+\end{equation}
+with a speed of sound;
+\begin{equation}
+c_s^2 = \frac{\ud p}{\ud \rho} = \frac{P_{,X}}{P_{, X} + 2X P_{, XX}}
+\end{equation}
+We make the simplification by imposing homogeneity and isotropy on the background metric, so that $g_{\mu\nu} = \text{diag}(-1, a^2, a^2, a^2)$. Now we write $X = \bar{X} + \delta X$ and $\phi = \bar{\phi} + \delta \phi$. Then, using the explicit form of $g_{\mu\nu}$ we find;
+\begin{equation*}
+X = \bar{X} + \delta X = \frac{1}{2}\dot{\bar{\phi}}^2 + \dot{\bar{\phi}} \dot{\delta \phi} + \frac{1}{2}\dot{\delta \phi}^2 - \frac{1}{2a^2}(\del_i \delta \phi)^2
+\end{equation*}
+With a view to matching up the discussion with curvature perturbations, we write $\delta \phi = - \dot{\bar{\phi}}\zeta/H$, then;
+\begin{equation*}
+\delta X = \frac{\bar{X}}{H^2} \left(- 2H \dot{\zeta} + \dot{\zeta}^2 - \frac{1}{a^2}(\del_i \zeta)^2 + \text{slow roll suppressed}\right)
+\end{equation*}
+We can then expand;
+\begin{equation*}
+P(X) = P(\bar{X}) + P_{,X}\delta X + \frac{1}{2}P_{, XX}(\delta X)^2 + \frac{1}{6}P_{,XXX}(\delta X)^3
+\end{equation*}
+From the matter part of the action we can directly read off;
+\begin{multline}
+S = \int{\upd{^4 x}} a^3 \left(\frac{XP_{,X}}{H^2}\left(\dot{\zeta}^2 - \frac{1}{a^2}(\del_i \zeta)^2\right)\right) \\ + \frac{X^2P_{, XX}}{2H^2}\left(4H^2 \dot{\zeta}^2 - 4H\dot{\zeta}^3 + \frac{4H}{a^2}\dot{\zeta}(\del_i \zeta)^2 - \frac{4X^3 P_{, XXX}}{3}\dot{\zeta}^3\right)
+\end{multline}
+From which we can again extract the quadratic and cubic actions;
+\begin{equation*}
+S_2 = \int{\upd{^4 x}\frac{a^3 \epsilon}{c_s^2}\left(\dot{\zeta}^2 - \frac{c_s^2}{a^2}(\del_i \zeta)^2\right)} \Rightarrow P_{\zeta} = \frac{H^2}{8\pi \epsilon c_s^2}
+\end{equation*}
+and;
+\begin{equation*}
+S_3 = \int{\upd{^4 x}\frac{a^3 \epsilon}{c_s^2}\frac{(1 - c_s^2)}{H} \left(\frac{1}{a^2}\dot{\zeta}(\del_i \zeta)^2 + \mathcal{A}\dot{\zeta}^3\right)}
+\end{equation*}
+where $\mathcal{A} = -1 - 2XP_{,XXX}/3P_{,XX}$. The shape that we get from the first term (which is actually close to the equilateral shape) is;
+\begin{equation*}
+S_{\dot{\zeta}(\del_i \zeta)^2} = \left(\frac{(k_1^2 - k_2^2 - k_3^2)K}{k_1 k_2 k_3}\left(-1 + \frac{1}{9k^2}\sum{k_i k_j} + \frac{1}{27K^3}k_1 k_2 k_3\right) + \text{perm.}\right)
+\end{equation*}
+which gives an amplitude;
+\begin{equation*}
+f_{\text{NL}}^{\dot{\zeta}(\del_i \zeta)^2} = \frac{85}{324}\left(1 - \frac{1}{c_s^2}\right)
+\end{equation*}
+So we see that the shape is enhanced for $c_s \rightarrow 0$. In a similar manner we find that;
+\begin{equation*}
+S_{\dot{\zeta}^3} = \frac{k_1 k_2 k_3}{K^3}, \quad f_{\text{NL}}^{\dot{\zeta}^3} = \frac{10}{243}(1 - \frac{1}{c_s^2})\left(\tilde{c}_3 + \frac{3}{2}c_s^2\right)
+\end{equation*}
+where $\tilde{c}_3 = c_s^2 X P_{, XXX}/P_{, XX}$. This discussion is related to the effective field theory of single field inflation\index{effective field theory!of inflation}, where Planck\index{Planck} has constrained $c_s > 0.024$.\footnote{To read more about this go to \href{https://arxiv.org/pdf/0709.0293.pdf}{this arXiv page} by Cheung et al.} An example of this is \emph{DBI inflation}\index{DBI inflation} where a $3 + 1$ spacetime lives on a brane moving in a higher-dimensional warped background. In this setting the inflaton\index{inflaton} corresponds to the position of the brane in the higher dimensional spacetime;
+\begin{equation}
+P(X, \phi) = \frac{1}{f(\phi)}\left[1 - \sqrt{1 - 2Xf(\phi)}\right] + V(\phi)
+\end{equation}
+where $f(\phi)$ is the warp factor. This gives $c_s^2 = 1 - 2Xf \rightarrow 0$. Beyond this, the key takeaway from this section are that there is \emph{no observable non-Gaussianity} if the following hold;
+\begin{itemize}
+\item Single field inflation\index{inflation!single field}, violation leads to local NG
+\item Canonical kinetic terms, violation leads to equilateral NG which is large for $c_s \rightarrow 0$
+\item There is no violation of slow roll conditions
+\item We have a Bunch-Davies vacuum\index{vacuum!Bunch-Davies}, violation leads to folded NG
+\item We have Einstein gravity
+\end{itemize}
+\newpage
+\section{Large Scale Structure}
+In the late time universe, we have perturbations that are of order unity leading to a breakdown of the perturbative theory we have used up until this point. We now look to work in the regime where $x \ll H^{-1}$ and $v \ll 1$ so that we are well within the Hubble radius at non-relativistic speeds, allowing us to work in a Newtonian picture.\footnote{At least one within an expanding universe.} Writing $\vec{r} = a\vec{x}$, we have that $\ddot{\vec{r}} = - \nabla_{\vec{r}}\Phi$ is equivalent to;
+\begin{equation*}
+\frac{1}{a}\left(\hamilt\pr \vec{x} + \hamilt \vec{x}\pr + \vec{x}^{\prime\prime}\right) = -\frac{1}{a}\nabla_{\vec{x}}\Phi
+\end{equation*} 
+Introducing a peculiar potential, $\phi = \Phi + \tfrac{1}{2}\hamilt\pr \vec{x}\cdot\vec{x}$ we find;
+\begin{equation*}
+\nabla \phi = \nabla \Phi + \hamilt\pr \vec{x}
+\end{equation*}
+So we see that the peculiar potential acts to remove the comoving dynamics that are due solely to the background expansion of the universe. Then the peculiar equation of motion is;
+\begin{equation}
+\vec{x}^{\prime\prime} + \hamilt \vec{x}\pr = -\nabla \phi
+\end{equation}
+Furthermore, $\phi$ satisfies a Poisson equation;
+\begin{equation}
+\nabla^2_{\vec{x}}\phi = 4\pi G \bar{\rho}\delta a^2 \equiv \frac{3}{2}\Omega_{m}(a)\hamilt^2 \delta
+\end{equation}
+where we have introduced the matter density, $\rho(\vec{x}, t) = \bar{\rho}(t)\left(1 + \delta(\vec{x}, t)\right)$ and the fractional matter density $\Omega_m(a) = 8\pi G \bar{\rho}/3\hamilt^2$. Furthermore, we can define a canonical momentum $\vec{p} = am \vec{u}$ so that $\vec{p}\pr = \hamilt \vec{p} + am \vec{x}^{\prime\prime}$. Hence we see that;
+\begin{equation*}
+\vec{p}\pr = \hamilt am \vec{x}\pr + am \vec{x}^{\prime\prime} = -am \nabla \phi \iff \vec{p}\pr = -am \nabla \phi
+\end{equation*}
+\subsection{The Fluid Equations}
+Now we consider an ensemble of particles with some distribution function $f(\vec{x}, \vec{p}, \tau)$. Since we are considering dark matter\index{dark matter} which is non-interacting, $f$ satisfies a collisionless Boltzmann equation\index{equation!Boltzmann};
+\begin{align*}
+\frac{\ud f}{\ud \tau} = \frac{\del f}{\del \tau} + \frac{\del f}{\del \vec{x}}\frac{\del \vec{x}}{\del \tau} + \frac{\del f}{\del \vec{p}} &= 0 \\
+\Rightarrow \frac{\del f}{\del \tau} + \frac{\vec{p}}{am}\cdot\frac{\del f}{\del \vec{x}} - am\nabla \phi \cdot \frac{\del f}{\del \vec{p}} &= 0
+\end{align*}
+We have the following moments of the distribution function;\index{distribution function}
+\begin{itemize}
+\item The density;
+\begin{equation*}
+\rho(\vec{x}, t) = \frac{m}{a^3}\int{\upd{^3 p}f(\vec{x}, \vec{p}, \tau)}
+\end{equation*}
+\item The mean streaming velocity;
+\begin{equation*}
+\vec{v} \delta = \frac{m}{a^3}\int{\upd{^3 p}\frac{\vec{p}}{am}f(\vec{x}, \vec{p}, \tau)}
+\end{equation*}
+\item The velocity dispersion;
+\begin{equation*}
+(v_i v_j + \sigma_{ij}) = \frac{m}{a^3}\int{\upd{^3 p}\frac{p_i}{am}\frac{p_j}{am}f(\vec{x}, \vec{p}, \tau)}
+\end{equation*}
+\end{itemize}
+Integrating the Boltzmann equation (Vlaslov equation\index{equation!Vlaslov}) over $\vec{p}$ we find;
+\begin{align*}
+\int{\upd{^3 p} \frac{\del f}{\del \tau}} + \int{\upd{^3 p}\frac{\vec{p}}{am}\frac{\del f}{\del \vec{x}}} - am \nabla \phi \underbrace{\int{\upd{^3 p}\frac{\del f}{\del \vec{p}}}}_{\text{total deriv.}} &= 0 \\
+\Rightarrow \frac{\del}{\del \tau}\frac{\rho a^3}{m} + \frac{a^3}{m}\frac{\del}{\del \vec{x}}(\vec{v}\rho) &= 0
+\end{align*} 
+Using the definition of $\rho$ and the fact that $\bar{\rho}\pr + 3\hamilt \bar{\rho} = 0$, we find the continuity equation;\index{equation!continuity}
+\begin{equation}
+\delta\pr + \nabla\cdot\left(\vec{v}\left(1 + \delta\right)\right) = 0
+\end{equation}
+We can also integrate;
+\begin{equation*}
+\int{\upd{^3 p}\frac{p_i p_j}{(am)^2}\frac{\ud f}{\ud \tau}} = 0
+\end{equation*}
+which gives us the Euler equation;\index{equation!Euler}
+\begin{equation}
+v_i\pr + \hamilt v_i + v_j \nabla_j v_i + \nabla_i \phi = - \frac{1}{\rho}\del_j(\rho \sigma_{ij})
+\end{equation}
+We can always perform a Helmholtz decomposition\index{Helmholtz decomposition} of the velocity field, splitting it into divergence free and curl free parts; $\vec{v} = \vec{v}_{\perp} + \vec{v}_{\parallel}$, where $\nabla \times \vec{v}_{\parallel} = \nabla\cdot\vec{v}_{\perp} = 0$. We also define the vorticity\index{vorticity} $\vec{w} = \nabla \times \vec{v}$ and the velocity divergence $\theta = \nabla \cdot \vec{v}$.
+\subsection{Linearised Equations of Motion} 
+Linearising the equations of motion above, we find that;
+\begin{equation*}
+\delta\pr + \theta = 0, \qquad \vec{v}\pr + \hamilt \vec{v} = - \nabla \phi
+\end{equation*}
+Combining these we see that;
+\begin{equation*}
+\theta\pr + \hamilt \theta = - \nabla^2 \phi, \qquad \vec{w}\pr + \hamilt \vec{w} = 0
+\end{equation*}
+The second of these shows that in the linear theory $\vec{w} \propto a^{-1}$. Combining the first two equations, we find;
+\begin{equation}
+\delta^{\prime\prime} + \hamilt \delta\pr - \frac{3}{2}\Omega_{m}(a)\hamilt^2 \delta = 0
+\end{equation}
+which has a growing mode solution as well as a decaying one. Writing;
+\begin{equation*}
+\delta(\vec{k}, \tau) = D_+(\tau)\delta_{+,0}(\vec{k}) + D_-(\tau)\delta_{-,0}(\vec{k})
+\end{equation*}
+we find the solutions;
+\begin{equation}
+D_-(\tau) = \frac{\hamilt}{a}D_{-,0}, \qquad D_+(\tau) = D_{+,0}H(\tau)\int_0^{a(\tau)}{\frac{\ud a\pr}{\hamilt^3(a\pr)}}
+\end{equation}
+In an Einstein-de Sitter universe\footnote{Which is just the universe in matter domination.}, we find then that $D_- \propto a^{-3/2}$, so we indeed find a decaying mode. In general we also have to account for the cosmological constant, which causes $D_+(\tau)$ to decrease slightly from the Einstein-de Sitter case after approximately redshift $z = 2$. 
+
+\paraskip
+At the non-linear level now, take the curl of the Euler equation (ignoring $\sigma_{ij}$) to find;
+\begin{equation*}
+\vec{w}\pr + \hamilt \vec{w} + \nabla \times (\vec{v} \times \vec{w}) = 0
+\end{equation*}
+which says that we cannot produce vorticity without it first being present initially. So, in the absence of velocity dispersion, we work with the assumption that $\vec{w} = 0$. Denoting $\rho = D_{+}\rho_{+, 0} \coloneqq D \rho_{+, 0}$ we have, for $\vec{w} = 0$;
+\begin{align*}
+\theta = - \delta\pr \Rightarrow \theta &= - \frac{\ud \rho}{\ud \tau} = - \frac{\ud D_+}{\ud \tau}\delta_{+,0}(\vec{k}) \\
+\Rightarrow \theta &= -\frac{\ud D_+}{\ud a}\frac{\ud a}{\ud \tau} \delta_{+,0} \\
+\Rightarrow \theta &= -\frac{\ud \log D_+}{\ud \log a}D_+ \hamilt \delta_{+,0}
+\end{align*}
+We define the quantity $\ud \log D_+/\ud \log a \coloneqq f$ as the logarithmic growth factor\index{logarithmic growth factor}. We see that in an Einstein-de Sitter universe, $f = 1$. In the $\Lambda$CDM paradigm we have $f_{\Lambda CDM} \sim 0.48$. Now since $\theta = \nabla \cdot \vec{v}$ we find that at linear order;
+\begin{equation}
+\vec{v}(\vec{k}) = \frac{i\vec{k}}{\abs{\vec{k}}^2}\theta(\vec{k}) = -\frac{i\vec{k}}{\abs{\vec{k}}^2}f\hamilt \delta^{(1)}
+\end{equation}
+where the second equality holds at linear level. We can then calculate the variance of the velocity;
+\begin{align*}
+\left< v_i v_j \right> - \left< v_i \right>\left< v_j \right> &= \hamilt^2 f^2 \int{\frac{\ud^3 q \ud^3 q\pr}{(2\pi)^6}\frac{i\vec{q}}{\abs{\vec{q}}^2}\frac{i\vec{q}\pr}{\abs{\vec{q}\pr}^2}\left< \delta^{(1)}(\vec{q})\delta^{(1)}(\vec{q}\pr) \right>} \\
+&= \hamilt^2 f^2 \int{\frac{\ud^3 q}{(2\pi)^3}\frac{q_i q_j}{q^4}P_{\text{lin}}(q)}
+\end{align*}
+We can then define the displacement field, $\bm{\psi}$,\footnote{The second equality follows from the fact that $\theta \sim \delta\pr$, so we can integrate $\int{\delta\pr}$ and $\delta \hamilt f \sim \vec{v}$}
+\begin{equation*}
+\bm{\psi} = \int{\upd{\tau}\vec{v}(\tau)} = \frac{\vec{v}}{\hamilt f}
+\end{equation*}
+Then we find that;
+\begin{equation*}
+\left< \abs{\bm{\psi}}^2 \right> = \frac{1}{\hamilt^2 f^2}\tr{\left< v_i v_j \right>} = \frac{1}{6\pi^2}\int{\upd{q}P_{\text{lin}}(q)} \sim 6 \,\,h^{-1}\text{Mpc}
+\end{equation*}
+The numerical result indicates that on average particles have moved $6$ Mpc since the beginning of the universe.
+\subsection{Fluid Equations in Fourier Space}
+We start by noting that;
+\begin{equation*}
+\nabla\cdot\left(\vec{v}(1 + \delta)\right) = \theta + \nabla \cdot (\vec{v}\delta) = \theta + \theta \delta. + \vec{v}\cdot\nabla \delta
+\end{equation*}
+Then taking the Fourier transform of the continuity equation we see that;
+\begin{multline*}
+\int{\upd{^3 x}e^{ikx}\left(\delta\pr(x) + \theta(x) + \theta(x)\delta(x) + \vec{v}(x)\cdot\nabla \delta(x)\right)}  = \delta\pr(k) + \theta(k) \\ + \int{\upd{^3 x}e^{ikx}\int{\frac{\ud^3 q \ud^3 q\pr}{(2\pi)^6}\left(\theta(q)\delta(q\pr)e^{-i(q - q\pr)x} - \frac{i\vec{q}}{q^2}\theta(q)(-i\vec{q}\pr)\delta(q\pr)\right)}}
+\end{multline*}
+So we find;
+\begin{equation*}
+\delta\pr(k) + \theta(k) = -\int{\frac{\ud^3 q\ud^3 q\pr}{(2\pi)^6}\delta^{(3)}(\vec{k} - \vec{q}- \vec{q}\pr)\alpha(\vec{q}, \vec{q}\pr)\theta(q)\delta(q\pr)}
+\end{equation*}
+where we have defined;
+\begin{equation*}
+\alpha(\vec{q}, \vec{q}\pr) = 1 + \frac{\vec{q}\cdot\vec{q}\pr}{q^2}
+\end{equation*}
+We can do an analogous calculation for the Euler equation to find that;
+\begin{multline*}
+\theta\pr(k) + \hamilt \theta(k) + \frac{3}{2}\Omega_m(a) \hamilt^2 \delta(k) = - \int{\frac{\ud^3 q \ud^3 q\pr}{(2\pi)^6}\theta(q)\theta(q\pr)\beta(\vec{q}, \vec{q}\pr)}
+\end{multline*}
+where again we have defined the function;
+\begin{equation*}
+\beta(\vec{q}, \vec{q}\pr) = \frac{(\vec{q} + \vec{q}\pr)^2 \vec{q}\cdot\vec{q}\pr}{2q^2 q^{\prime 2}}
+\end{equation*}
+\subsubsection{Perturbative Solution of the Fluid Equations}
+We already know what happens when we set $\alpha = \beta = 0$, this is just the linear solution. Starting in the EdS universe where $D_+ = a$, we make the ansatz;
+\begin{equation*}
+\delta(\vec{k}, \tau) = \sum_{i = 1}^{\infty}{a^{i}(\tau)\delta^{(i)}(\vec{k})}, \quad \theta(\vec{k}, \tau) = -\hamilt(\tau)\sum_{i = 1}^{\infty}{a^{i}(\tau)\tilde{\theta}^{(i)}(\vec{k})}
+\end{equation*}
+We can then write the solution as;
+\begin{equation}
+\delta^{(n)}(\vec{k}) = \prod_{m = 1}^{n}{\int{\frac{\ud^3 q_m}{(2\pi)^3}\delta^{(1)}(\vec{q}_m)}}F_n(\vec{q}_1, \ldots \vec{q}_n)(2\pi)^3 \delta(\vec{k} - \vec{q}_1 - \cdots \vec{q}_n)
+\end{equation}
+We define $\tilde{\theta}^{(n)}$ similarly with the kernel $F_n \mapsto G_n$. At second order then we see that;
+\begin{equation*}
+\delta^{(2)}(\vec{k}) = \int{\frac{\ud^3 q\ud^3 q\pr}{(2\pi)^6}\delta^{(1)}(\vec{q})\delta^{(1)}(\vec{q}\pr)(2\pi)^3 \delta(\vec{k} - \vec{q} - \vec{q}\pr)F_2(\vec{q}, \vec{q}\pr)}
+\end{equation*}
+\begin{mygraphic}{advcosmo/delta2}{0.8}{The diagram representing the interaction of the two linear modes via the kernel $F_2(\vec{q}, \vec{q}\pr)$ that contributes to the second order density perturbation. In general for an $F_n$ vertex, there will be $n$ linear density fields on one side of the diagram, and a single $n^{\text{th}}$ order density field on the other.}{delta2}\end{mygraphic}
+We can plug the ansatz into the fluid equations, matching up powers of $a(\tau)$ on either side to find recursion relations for the $F_n$ and $G_n$. The recursion for $F_n$ is given by;
+\begin{multline}
+F_n(\vec{q}_1, \ldots, \vec{q}_n) = \sum_{m = 1}^{n - 1}{\frac{G_m(\vec{q}_1, \ldots, \vec{q}_m)}{(2n + 3)(n - 1)}}\\ \times \left((2n + 1)\alpha(\vec{q}_1 + \cdots + \vec{q}_m, \vec{q}_{m + 1} + \cdots + \vec{q}_n)F_{n - m}(\vec{q}_{m + 1}, \ldots, \vec{q}_n)\right. \\ \left. + 2\beta(\vec{q}_1 + \cdots + \vec{q}_m, \vec{q}_{m + 1} + \cdots  + \vec{q}_n)G_{n - m}(\vec{q}_{m + 1}, \ldots, \vec{q}_n)\right)
+\end{multline}
+For example, at second order we have;
+\begin{equation*}
+F_2(\vec{k}_1, \vec{k}_2) = \frac{5}{7}\alpha(\vec{k}_1, \vec{k}_2) + \frac{2}{7}\beta(\vec{k}_1, \vec{k}_2)
+\end{equation*}
+Symmetrising over $\vec{k}_1, \vec{k}_2$ we find that;
+\begin{equation*}
+F_{2,s}(\vec{k}_1, \vec{k}_2) = \frac{5}{7} + \frac{1}{2}\frac{\vec{k}_1\cdot\vec{k}_2}{k_1 k_2}\left(\frac{k_1}{k_2} + \frac{k_2}{k_1}\right) + \frac{2}{7}\frac{(\vec{k}_1 \cdot\vec{k}_2)^2}{k_1^2 k_2^2}
+\end{equation*}
+So, what happens in $\Lambda$CDM? We make the approximation that we still have $D_+ \sim a$ then we make the ansatz;
+\begin{equation}
+\delta(\vec{k}, \tau) = \sum_{i = 1}^{\infty}{D^i(\tau)\delta^{(i)}(\vec{k})}, \quad \theta(\vec{k}, \tau) = -\hamilt f\sum_{i = 1}^{\infty}{D^i(\tau) \tilde{\theta}^{(i)}(\vec{k})}
+\end{equation}
+This allows us to find for example that;
+\begin{equation*}
+B(k_1, k_2, k_3) = 2\left(F_2(\vec{k}_1, \vec{k}_2)P(k_1)P(k_2) + \text{perm.}\right)
+\end{equation*}
+where schematically we have used $\left< \delta \delta \delta \right> = \left< \delta^{(2)}\delta^{(1)} \delta^{(1)} \right> + \cdots$.
+\subsubsection{Feynman Rules for $n$-spectra}
+As with most scenarios we have the standard procedure;
+\begin{itemize}
+\item Draw all connected diagrams with $n$ external lines up to the desired order in $\delta^{(1)}$
+\item For each vertex with inflowing momenta $\vec{q}_i$ and outgoing momenta $\vec{p}$ write a $\delta$ function $(2\pi)^3\delta(\vec{p} - \sum \vec{q}_i)$ along with a coupling vertex\footnote{We might notice a similarity with Quantum Field Theory here and interpret the vertex function as encoding a series of complicated derivative interactions. Indeed we will see this in the effective theory.} $V(\vec{q}_1, \ldots, \vec{q}_n)$
+\item Connect the internal linear density fields and for each write a propagator factor $(2\pi)^3 \delta(\vec{q} + \vec{q}\pr)P_{\text{lin}}(q)$
+\item Integrate over the internal momenta
+\item Multiply by the symmetry factor of the graph
+\item Sum over all distinct labelings of the external momenta
+\item Sum over all diagrams
+\end{itemize}
+\subsubsection{Matter Power Spectrum at $1$-loop}
+Diagrammatically we can write;
+\begin{mygraphic}{advcosmo/density}{0.8}{We can expand the density field in the vertices $F_n$.}{density}\end{mygraphic}
+The calculation for the bispectrum as above then involves joining up two lots of the first diagram with one of the second in this series, this is illustrated in \autoref{fig:bispec}
+\begin{mygraphic}{advcosmo/bispec}{0.4}{The leading order contribution to the bispectrum.}{bispec}\end{mygraphic}
+Following the Feynman rules, this has a contribution;
+\begin{multline*}
+2\int{\frac{\ud^3 q\ud^3 q\pr}{(2\pi)^6}F_2(\vec{q}, \vec{q}\pr)(2\pi)^9 \delta(\vec{k}_1 - \vec{q} - \vec{q}\pr)P_{\text{lin}}(k_2)P_{\text{lin}}(k_3)} \\ \times \delta(\vec{q} + \vec{k}_2)\delta(\vec{q}\pr + \vec{k}_3) \\ = 2(2\pi)^3 \delta(\vec{k}_1 + \vec{k}_2 + \vec{k}_3)F_2(\vec{k}_2, \vec{k}_3)P_{\text{lin}}(k_2)P_{\text{lin}}(k_3)
+\end{multline*}
+in agreement with our previous expression. We now look to calculate the matter power spectra at one-loop order. We write;
+\begin{align*}
+\left< \delta \delta \right> = \left< \delta^{(1)}\delta^{(1)} \right> + \underbrace{\left< \delta^{(1)}\delta^{(2)} \right>}_{0} + \left< \delta^{(2)}\delta^{(2)} \right> + 2\left< \delta^{(1)}\delta^{(3)} \right>
+\end{align*}
+Defining $P_{22} \coloneqq \left< \delta^{(2)}\delta^{(2)} \right>$ and $P_{13}$ similarly. Looking at $P_{22}$ first, we find the contributing diagram;\footnote{Note that we can understand this calculation in a completely identical way to that in the \emph{Advanced Quantum Field Theory} course, and see this as the leading order correction to the propagator. Thus it is sufficient to just draw the loop diagram with a loop momenta running around it and impose momentum conservation at each vertex.}
+\begin{mygraphic}{advcosmo/p22}{0.8}{Contribution $P_{22}$ to the matter power spectrum at one loop}{p22}\end{mygraphic}
+Then we find that;
+\begin{align*}
+P_{22} &= 2\int{\frac{\ud^3 q \ud^3 q\pr \ud^3 \tilde{q}\ud^2 \tilde{q}\pr}{(2\pi)^12}P(q)P(q\pr)F_2(\tilde{\vec{q}}, \tilde{\vec{q}}\pr)F_2(\vec{q}, \vec{q}\pr)(2\pi)^{12}} \\
+& \qquad \times \delta(\vec{q} + \tilde{\vec{q}})\delta(\vec{q}\pr + \tilde{\vec{q}}\pr)\delta(\vec{k} - \vec{q} - \vec{q}\pr)\delta(\tilde{\vec{k}} - \tilde{\vec{q}} - \tilde{\vec{q}}\pr) \\
+&= 2\int{\frac{\ud^3 q}{(2\pi)^3}P(\vec{q})P(\vec{k} - \vec{q})\abs{F_2(\vec{q}, \vec{k} - \vec{q})}^2}
+\end{align*}
+We can do the same for $P_{13}$ with the diagram;
+\begin{mygraphic}{advcosmo/p13}{0.7}{$P_{13}$ one loop correction to the matter power spectrum.}{p13}\end{mygraphic}
+Doing a very similar calculation and noting that we could join any one of the three internal legs to the linear density field we see that;
+\begin{equation*}
+P_{13} = 3P(k) \int{\frac{\ud^3 q}{(2\pi)^3}P(q)F_3(-\vec{k}, \vec{q}, - \vec{q})}
+\end{equation*}
+Considering the relevant limits, we see that;\footnote{In this calculation we use things such as the limiting behaviour of $F_2$}
+\begin{align*}
+P_{22}(k) \,\,\,&\overset{k \ll q}{\longrightarrow}\,\,\, \frac{9}{98}k^4 \int{\frac{\ud^3 q}{(2\pi)^3}\frac{P^2(q)}{q^4}} \\
+P_{22}(k) \,\,\,&\overset{k \gg q}{\longrightarrow}\,\,\, \sigma^2 \left(\frac{589}{735}P(k) - \frac{47}{105}kP\pr(k) + \frac{1}{10}k^2P^{\prime\prime}(k)\right) \\
+& \qquad \qquad \qquad + \frac{1}{3}k^3 P(k)\int{\frac{\ud^3 q}{(2\pi)^3}\frac{P(q)}{q^2}}
+\end{align*}
+where $\sigma^2 = \int{\ud^3 q/(2\pi)^3 \,\, P(q)}$. Similarly we can find;
+\begin{align*}
+P_{13} \,\,\,&\overset{k \ll q}{\longrightarrow}\,\,\, -\frac{1}{3}k^2 P(k) \int{\frac{\ud^3 q}{(2\pi)^3}\frac{P(q)}{q^2}} \\
+P_{13} \,\,\,&\overset{k \gg q}{\longrightarrow}\,\,\, - \frac{61}{105}\frac{1}{3}k^2 P(k)\int{\frac{\ud^3 q}{(2\pi)^3}\frac{P(q)}{q^2}}
+\end{align*}
+If we assume a power law scaling for $P(q) \sim q^n$ then we see that;
+\begin{center}
+\begin{mytable}{lcc}
+& \textbf{UV Divergence} & \textbf{IR Divergence}				\\ \midrule
+$P_{22}$ & $n \geq \frac{1}{2}$ & $n \leq 1$					\\
+$P_{13}$ & $n \geq -1$ & $n \leq -1$	\\
+Total & $n \geq -1$ & $n \leq -3$			
+\end{mytable}
+\captionof{table}{The relevant divergences in the UV/IR regimes.}
+\end{center}
+We need some notion of when the density contrast is small to understand when perturbation theory works. Consider the variance of the field on some scale $R = 1/\Lambda$;
+\begin{align*}
+\sigma_R^2 = \left< \delta^2_R(x) \right> &= \int_{0}^{\Lambda}{\frac{\ud^3 q}{(2\pi)^3}P(q)} \\
+&= \frac{1}{2\pi^2}\int_0^{\Lambda}{\upd{\log q}q^3 P(q)} \\
+&= \int_0^{\Lambda}{\upd{\log q}\Delta^2(q)}
+\end{align*}
+So provided $P$ varies slower that $q^{-3}$ this is dominated by the upper limit of the integral and we find;
+\begin{equation}
+\sigma_R^2 \sim \frac{P(\Lambda)\Lambda^3}{2\pi^2} = \Delta^2(\Lambda)
+\end{equation}
+Then we can assert that perturbation theory should break down when $\sigma_R^2 \sim 1$;
+\begin{equation*}
+\Rightarrow k_{NL} \sim 0.2 \,\,h\text{Mpc}^{-1}, \qquad R \sim 5\,\,h^{-1}\text{Mpc}
+\end{equation*}
+\subsection{Effective Field Theory of Large Scale Structure}\index{effective field theory!large scale structure}
+\subsubsection{Problems with standard perturbation theory}
+We have a number of issues with perturbation theory and its use to describe the highly non-linear dynamics of Large Scale Structure;
+\begin{itemize}
+\item There is no well-defined expansion parameter as we vary the scale. Whilst on large scales, we have seen that the variance of $\delta$ is suitably small to admit a perturbative approach, this is completely false on small scales.
+\item We have deviations from a pressureless perfect fluid i.e. deviations from a single stream.
+\item There are divergences that arise from certain initial conditions, encoded in the linear power spectrum.
+\item On a performance note, adding higher order corrections doesn't get you any closer to the true answer.
+\end{itemize}
+\subsubsection{Coarse-grained Equation of Motion}
+Suppose we choose our cut off $\Lambda < k_{NL}$, then we can hope to have a well-defined expansion parameter in the coarse-grained $\delta$-field. In particular, the coarse grained distribution function is given by the convolution;
+\begin{equation}
+f_\Lambda(\vec{x}, \vec{p}, \tau) = \int{\upd{^3 x\pr}W_\Lambda(\abs{\vec{x} - \vec{x}\pr})f(\vec{x}\pr, \vec{p}, \tau)}
+\end{equation}
+Similarly, the long-wavelength fluctuations in an arbitrary variable $X$ are defined as;
+\begin{equation}
+X_l(\vec{x}) \coloneqq [X]_\Lambda(\vec{x}) = \int{\upd{^3 x\pr}W_\Lambda(\abs{\vec{x} - \vec{x}\pr})X(\vec{x}\pr)}
+\end{equation}
+As usual, convolutions in real space lead to multiplications in Fourier space, so for example if;
+\begin{equation*}
+W_\Lambda(\vec{x}) = \left(\frac{\Lambda}{\sqrt{2\pi}}\right)^3 \exp\left(-\frac{1}{2}\Lambda^2 x^2\right) \Rightarrow W_\Lambda(\vec{k}) = \exp\left(-\frac{k^2}{2\Lambda^2}\right)
+\end{equation*}
+which we understand as just a suppression of Fourier modes with high wavenumber. We can now define the smoothed density field via the smoothed distribution function as before;
+\begin{equation}
+\delta_\Lambda = \frac{m}{a^3}\int{\upd{^3 p}f_\Lambda(\vec{x}, \vec{p}, \tau)}
+\end{equation}
+as well as an expression for the momentum density, $\mathbf{\Pi}_\Lambda$;
+\begin{equation}
+\mathbf{\Pi}_\Lambda = \frac{m}{a^3}\int{\upd{^3 p}\frac{\vec{p}}{ma}f_\Lambda(\vec{x}, \vec{p}, \tau)}
+\end{equation}
+Then, again in analogy with the expressions in the unfiltered case, we can define the smoothed mean streaming velocity, $\vec{v}_\Lambda$ by;
+\begin{equation*}
+\vec{v}_\Lambda \delta_\Lambda \equiv \mathbf{\Pi}_\Lambda
+\end{equation*}
+By performing the same procedure as before and integrating $\ud f/\ud \tau$ we can derive the coarse-grained continuity/Euler equations;
+\begin{align}
+&\delta_l\pr + \del_j\left((1 + \delta_l)v_{l,j}\right) = 0 \\
+&v_{l,i}\pr + \hamilt v_{l,i} + v_{l, j}\nabla_j v_{l, i} + \del_j \phi_l = -\frac{1}{\rho_\Lambda}\del_j [\tau_{ij}]_\Lambda
+\end{align}
+where $[\tau_{ij}]_\Lambda$ is the effective stress tensor\index{effective stress tensor}. To derive this form, we have moved products of short wavelength modes onto the RHS, into the stress tensor. The fact that we generated a non-vanishing stress tensor arises from the fact that coarse grained products lead to products of long fluctuations plus corrections, for instance the coarse graining of a product of small-scale fluctuations. The short scales are strongly coupled and thus can?t be treated in the EFT, but we are not really interested in their behaviour. We can thus take expectation values over the short wavelength fluctuations. In QFT this procedure is known as integrating out the UV-degrees of freedom.
+\begin{equation*}
+[fg]_{\Lambda} = f_l g_l + [f_s g_s]_\Lambda + \cdots
+\end{equation*}
+The stress tensor then arises from the microscopic stress tensor discussed above plus corrections that arise from the coarse grained products;
+\begin{equation}
+\tau_{ij} = \rho[\sigma_{ij}]_{\Lambda} + \rho v_{s, i}v_{s, j} + \frac{2\del_i \phi_s \del_j \phi_s - \del_m \phi_s \del_m \phi_s \delta_{ij}}{8\pi G}
+\end{equation}
+This implies that even in absence of microscopic velocity dispersion $\sigma_{ij}$, the coarse graining procedure produces an effective stress tensor or velocity dispersion. Ultimately, this yields a non-linear response for an effective stress tensor of an imperfect fluid;
+\begin{multline}
+[\tau_{ij}]_\Lambda = p\delta_{ij} + \bar{\rho} \tilde{c}_s^2 \delta_{ij} \delta_{\Lambda} - \bar{\rho}\frac{\tilde{c}_{v,b}^2}{\hamilt}\delta_{ij}\del_m v_{\Lambda, m} \\ - \frac{3}{4}\bar{\rho}\frac{\tilde{c}^2_{v,s}}{\hamilt}\left[\del_i v_{\Lambda, j} + \del_j v_{\Lambda, i} - \frac{2}{3}\delta_{ij}\del_m v_{\Lambda, m}\right] + \Delta \tau_{ij}
+\end{multline}
+where $\tilde{c}_s^2$ is the sound speed, $\tilde{c}_{v,s/b}^2$ are the shear and bulk viscosities, and $\Delta \tau_{ij}$ is a stochastic term. We can then define;
+\begin{equation*}
+\tau_\theta = \del_i \del_j \tau_{ij} = \bar{\rho}\left(\tilde{c}_s^2 \del^2 \delta_{\Lambda} - \frac{\tilde{c}^2_v}{\hamilt}\del^2 \theta_{\Lambda}\right) + \Delta j
+\end{equation*}
+where $\theta = \nabla \cdot v$. The idea then is to solve the equations of motion in the presence of $\tau_{ij}$. Ultimately this has the functional form;
+\begin{equation*}
+\delta(\vec{k}, \tau) = \delta_\Lambda^{(1)}(\vec{k}, \tau) + \delta^{(2)}(\vec{k}, \tau) + \delta^{(3)}(\vec{k}, \tau) - k^2 c_s^2 \delta_{\Lambda}^{(1)} + \delta_J
+\end{equation*}
+where $c_s^2$ is a free parameter that we will ultimately use as a counter term.
+\subsubsection{EFT and the Power Spectrum}
+Using the functional form above, we see that naively we have;
+\begin{equation*}
+P(\vec{k}) = P_{11}(\vec{k}) + P_{22}(\vec{k}) + 2P_{13}(\vec{k}, \Lambda) - 2c_s^2(\Lambda) k^2 P_{11}(\vec{k}) + P_{jj}(\vec{k}, \Lambda)
+\end{equation*}
+We saw that;
+\begin{align*}
+P_{13, \infty} &= 3P(k)\int_0^{\infty}{\frac{\ud^3 q}{(2\pi)^3}P(q)F_3(\vec{q}, -\vec{q}, \vec{k})} \\
+&= 3P(k)\int_0^{\Lambda}{\frac{\ud^3 q}{(2\pi)^3}P(q)F_3(\vec{q}, -\vec{q}, \vec{k})} + \int_\Lambda^{\infty}{\frac{\ud^3 q}{(2\pi)^3}P(q)F_3(\vec{q}, -\vec{q}, \vec{k})} \\
+&= P_{13,\Lambda}(k) + 3P(k)\int_\Lambda^{\infty}{\frac{\ud^3 q}{(2\pi)^3}P(q)F_3(\vec{q}, -\vec{q}, \vec{k})} \\
+&= P_{13,\Lambda}(\vec{k}) - \frac{61}{210}k^2 P(k)\int_\Lambda^{\infty}{\frac{\ud q}{6\pi^2}P(q)}
+\end{align*}
+Then we can choose $c_s^2(\Lambda)$ as a counterterm;
+\begin{equation}
+c_{s,\infty}^2 = c_{s, \Lambda}^2 - \frac{61}{210}\int_\Lambda^{\infty}{\frac{\ud q}{6\pi^2}P(q)}
+\end{equation}
+Similarly we can choose $P_{JJ}$ to balance the $\Lambda$ contribution in $P_{22}$. Then we find that our power spectrum is the original SPT one with an EFT contribution;
+\begin{equation}
+P(\vec{k}) = P_{11} + P_{22} + 2P_{13} - 2c_{s, \infty}^2 k^2 P_{11}
+\end{equation}
+We will now argue for the scaling of the stochastic term. It defines the strong coupling of the short wavelength modes (e.g. the internal dynamics of dark matter halos). Essentially it tracks the path from the linear initial conditions to the non-linear halos with density $\tilde{\delta}$ with a characteristic scale $R$. Then, expanding about the centre of mass, $\vec{x}_0$;
+\begin{align*}
+J(\vec{k}) &= \int_{\mathcal{R}}{\upd{^3 x}\exp\left(i\vec{k}\cdot (\vec{x}_0 + \vec{x})\right)\left(\delta\left(\vec{x}_0 + \vec{x}\right) - \tilde{\delta}(\vec{x}_0 + \vec{x})\right)} \\
+&= \exp\left(i\vec{k} \cdot\vec{x}_0\right) \int_R{\upd{^3 x}\left(1 + i\vec{k}\cdot\vec{x} - \frac{1}{2}(\vec{k}\cdot\vec{x})^2 + \cdots\right)\left(\delta(\vec{x}_0 + \vec{x}) - \tilde{\delta}(\vec{x}_0 + \vec{x})\right)}
+\end{align*}
+Now note that mass conservation implies that;
+\begin{equation*}
+\int_R{\upd{^3 x} \delta - \tilde{\delta}} = 0
+\end{equation*}
+Whilst momentum conservation ensures the next to leading term also vanishes. Hence we find the leading order contribution $J(\vec{k}) \propto k^2$ so;
+\begin{equation*}
+\left< J(\vec{k}) J(\vec{k}\pr) \right> \propto k^4
+\end{equation*}
+At low scales, the lowest power of $k$ will ultimately dominate, so we consider the scaling of various terms. In EdS, we only have one scale: $k_{NL}$, then if $P(k) \propto k^n$ the dimensionless power spectrum is;
+\begin{equation*}
+\Delta^2 = \frac{k^3 P_{\text{lin}}(k)}{2\pi^2} = \left(\frac{k}{k_{NL}}\right)^{3 + n}
+\end{equation*}
+A loop diagram gives us an additional power spectrum, so;
+\begin{equation*}
+\Delta_{l-\text{loop}} = \left(\frac{k}{k_{NL}}\right)^{(3 + n)(1 + l)}
+\end{equation*}
+whilst $c_s^2$ scales as $k^2 P(k)$, so;
+\begin{equation*}
+\Delta_{c_s^2} = \left(\frac{k}{k_{NL}}\right)^{5 + n}
+\end{equation*}
+This allows us to estimate the dominant contributions at some scale below $k_{NL}$.
+\subsection{Biased Tracers}\index{tracer}
+In \emph{Cosmology} we wrote down the Press-Schechter mass function\index{Press-Schechter mass function};
+\begin{equation*}
+n(M) = -\sqrt{\frac{2}{\pi}}\frac{\bar{\rho}}{M}\frac{\nu}{\sigma}\exp\left(-\frac{\nu^2}{2}\right)\frac{\ud \sigma}{\ud M}
+\end{equation*}
+where $\nu = \delta_c/\sigma(M)$, $\delta_c = 1.686$ and;
+\begin{equation*}
+\sigma = \int{\frac{\ud^3 q}{(2\pi)^3}W_R^2(q) P(q)}
+\end{equation*}
+We use this as a starting point and write the density contrast as $\delta = \delta_l + \delta_s$ where the short wavelength modes are on a physics scale $R \sim M^{1/3}$. This scale can be understood in two ways;
+\begin{enumerate}
+\item \emph{Lagrangian Space:} This is the space of initial conditions that the non-linear solution flows from;
+\begin{equation*}
+M = \frac{4\pi}{3}(1 + \delta^{(L)})R_L^3 \bar{\rho}
+\end{equation*}
+where here $\delta^{(L)} = \mO(1)$.
+\item \emph{Eulerian Space:} This is the space that is actually observed;
+\begin{equation*}
+M = \frac{4\pi}{3}(1 + \delta^{(E)})R_E^3
+\end{equation*}
+where now $\delta^{(E)} = \mO(200)$
+\end{enumerate}
+Introducing a long wavelength mode as a background, we can introduce an effective peak height;
+\begin{equation*}
+\tilde{\nu} = \frac{\delta_c - \delta_l}{\sigma}
+\end{equation*}
+which basically states that when the halo forms in the peak of a long wavelength mode, it is easier to cross the threshold and collapse. Then we can expand;
+\begin{equation*}
+n(\tilde{\nu}) = \bar{n}(\nu) + \frac{\del n(\tilde{\nu})}{\del \delta_l}\delta_l + \frac{1}{2}\frac{\del^2 n(\tilde{\nu})}{\del \delta_l^2}\delta_l^2 + \cdots
+\end{equation*}
+In Lagrangian space, this lets us calculate the \emph{galaxy overdensity}, $\delta_g$;
+\begin{equation}
+\delta_g(\vec{q}) = \frac{n(\tilde{\nu})}{\bar{n}(\nu)} - 1 = b_1^{(L)}\delta_l + \frac{b_2^(L)}{2}\delta_l^2 + \cdots
+\end{equation}
+where the Lagrangian bias parameters\index{Lagrangian bias} are;
+\begin{equation}
+b_i^{(L)} = \frac{1}{\bar{n}}\frac{\del^i n}{\del \delta_l^i}, \quad b_1^{(L)} = \frac{1}{n}\frac{\del n}{\del \nu}\frac{\del \tilde{\nu}}{\del \delta_l} = \frac{\nu^2 - 1}{\delta_c}
+\end{equation}
+This allows us to go ahead and calculate the $2$-point function;
+\begin{equation*}
+\left< \delta_g \delta_g \right> = (b_1^{(L)})^2 \left< \delta \delta \right> + \cdots
+\end{equation*}
+\subsubsection*{Eulerian Bias}\index{Eulerian bias}
+To make the transition from Lagrangian biases to Eulerian ones, we consider the Eulerian co-ordinates;
+\begin{equation*}
+\vec{x} = \vec{q} + \bm{\psi}
+\end{equation*}
+where $\bm{\psi}$ is the displacement field\index{displacement field}. Now, we must have;
+\begin{equation*}
+\left(1 + \delta(\vec{x})\right) \ud^3 x = \ud^3 q
+\end{equation*}
+Now for galaxies;
+\begin{align*}
+\left(1 + \delta_g^{(E)}(\vec{x})\right) \ud^3 x &= \left(1 + \delta_g^{(L)}(\vec{q})\right)\ud^3 q \\
+\Rightarrow \delta_g^{(E)}(\vec{x}) &= \delta_g^{(L)}(\vec{q}) + \delta_g^{(L)}(\vec{q})\delta(\vec{x}) + \delta(\vec{x})
+\end{align*}
+where $\vec{q} = \vec{x} - \bm{\psi}$. We want to find the leading order term, so expanding around $\vec{q} = \vec{x} - \bm{\psi}$;
+\begin{equation*}
+\delta_g^{(E)}(\vec{x}) = \delta_g^{(L)}(\vec{x}) - \bm{\psi}\cdot\nabla \delta_g(\vec{x}) + \delta(\vec{x})
+\end{equation*}
+But we recall that $\bm{\psi} \sim \delta^{(1)}$ so the middle term is in fact second order. Thus we deduce that to leading order;
+\begin{align*}
+\delta_g^{(E)}(\vec{x}) &= (b_1^{(L)} + 1)\delta_g^{(L)}(\vec{x}) \coloneqq b_1^{(E)}\delta^{(L)}_g(\vec{x}) \\
+\Rightarrow b_1^{(E)} &= b_1^{(L)} + 1
+\end{align*}
+Finally, at second order we have;
+\begin{equation*}
+\delta_g^{(E)}(\vec{x}) = (b_1^{L} + 1)\delta^{(L)}_g(\vec{x}) + \left(\frac{b_2^{(L)}}{2} + \frac{4}{21}b_1^{(L)}\right) \delta^{(L)}_g(\vec{x})^2 - \frac{2}{7}b_1^{(L)}S^2(\vec{x})
+\end{equation*}
+where $S^2 \sim \del_i \del_j \phi \del_i \del_j \phi$ is the trace of the tidal tensor.\index{tidal tensor}
+
+
+
+
+
+
+%\end{multicols*}
